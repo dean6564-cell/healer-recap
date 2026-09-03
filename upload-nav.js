@@ -27,7 +27,7 @@
     dialog.id=DIALOG_ID;
     dialog.className='upload-coming-soon';
     dialog.setAttribute('aria-labelledby','uploadComingSoonTitle');
-    dialog.innerHTML=`<div class="upload-coming-soon-card"><div class="upload-coming-soon-icon" aria-hidden="true">↥</div><h2 id="uploadComingSoonTitle">Upload coming soon</h2><p>The log upload feature is being built and will be available here soon.</p><button type="button" data-upload-close>Close</button></div>`;
+    dialog.innerHTML=`<div class="upload-coming-soon-card"><div class="upload-coming-soon-icon" aria-hidden="true">↥</div><h2 id="uploadComingSoonTitle">Upload Run coming soon</h2><p>The log upload feature is being built and will be available here soon.</p><button type="button" data-upload-close>Close</button></div>`;
     document.body.append(dialog);
     dialog.querySelector('[data-upload-close]').addEventListener('click',()=>dialog.close());
     dialog.addEventListener('click',event=>{if(event.target===dialog)dialog.close();});
@@ -41,12 +41,12 @@
     link.href='#';
     link.className='nav-upload';
     link.dataset.uploadComingSoon='';
-    link.textContent='Upload';
+    link.textContent='Upload Run';
     link.addEventListener('click',event=>{
       event.preventDefault();
       const dialog=getDialog();
       if(typeof dialog.showModal==='function')dialog.showModal();
-      else alert('Upload coming soon');
+      else alert('Upload Run coming soon');
     });
     const runLibrary=[...nav.querySelectorAll('a')].find(a=>a.textContent.trim()==='Run Library');
     if(runLibrary)runLibrary.insertAdjacentElement('afterend',link);else nav.append(link);
