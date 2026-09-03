@@ -1,0 +1,106 @@
+/* Run report sections use the same independent panels as the dashboard. */
+body[data-page="run"] main>.wrap{
+ width:min(1120px,calc(100% - 32px));padding:0;
+ background:none;border:0;border-radius:0;box-shadow:none;backdrop-filter:none;
+}
+body[data-page="run"] .review-panel{margin-top:38px}
+body[data-page="run"] .report-tabs{
+ background:rgba(7,12,20,.78);border-color:var(--panel-edge-soft);
+ box-shadow:var(--panel-shadow);backdrop-filter:blur(3px);margin-bottom:24px;
+}
+body[data-page="run"] .report-tab-panel,
+body[data-page="run"] main>.wrap>.two-col>.section{
+ min-width:0;padding:26px 28px 28px;
+ background:rgba(7,12,20,.88);border:1px solid var(--panel-edge-soft);
+ border-radius:16px;box-shadow:var(--panel-shadow);backdrop-filter:blur(3px);
+}
+body[data-page="run"] main>.wrap>.two-col>.section{margin:38px 0 0}
+body[data-page="run"] .report-tab-panel>.report-section-intro:first-child,
+body[data-page="run"] .report-tab-panel>.party-utility:first-child{margin-top:0}
+body[data-page="run"] #reportFacts .two-col{grid-template-columns:minmax(0,1.3fr) minmax(0,.7fr)}
+body[data-page="run"] .report-tab-panel:focus-visible{outline:2px solid var(--gold);outline-offset:4px}
+@media(max-width:900px){
+ body[data-page="run"] #reportFacts .two-col{grid-template-columns:minmax(0,1fr)}
+}
+@media(max-width:650px){
+ body[data-page="run"] main>.wrap{width:calc(100% - 20px)}
+ body[data-page="run"] .review-panel{margin-top:26px}
+ body[data-page="run"] .report-tabs{margin-inline:0;margin-bottom:18px}
+ body[data-page="run"] .report-tab-panel,
+ body[data-page="run"] main>.wrap>.two-col>.section{padding:18px 12px 20px;border-radius:14px}
+}
+@media print{
+ body[data-page="run"] .report-tab-panel{box-shadow:none;backdrop-filter:none;margin-bottom:24px}
+}
+
+/* Compact report navigation sits flush beneath the main navigation. */
+body[data-page="run"] #siteNav .report-tabs{
+ display:flex;justify-content:center;width:max-content;max-width:100%;gap:6px;
+ margin:0 auto;padding:3px 12px;border:1px solid #b4bcc51c;border-radius:0 0 8px 8px;
+ background:rgba(4,8,13,.58);box-shadow:0 4px 12px #0002;backdrop-filter:blur(8px);
+}
+body[data-page="run"] #siteNav .report-tabs [role="tab"]{
+ flex:0 0 auto;min-height:0;padding:8px 16px;border:1px solid transparent;border-radius:4px;
+ font-size:.78rem;font-weight:700;color:#b7c0cb;background:transparent;box-shadow:none;
+}
+body[data-page="run"] #siteNav .report-tabs [role="tab"]:hover{background:#ffffff06;color:var(--text)}
+body[data-page="run"] #siteNav .report-tabs [aria-selected="true"]{
+ color:#d5bb7e;background:#d7ad5208;border-color:transparent;box-shadow:inset 0 -1px #b99c5b99;
+}
+body[data-page="run"] .report-tab-panel{scroll-margin-top:var(--report-scroll-offset,170px)}
+@media(max-width:650px){
+ body[data-page="run"] #siteNav .report-tabs{justify-content:flex-start;padding:3px 5px;gap:3px}
+ body[data-page="run"] #siteNav .report-tabs [role="tab"]{padding:9px 8px;font-size:.72rem}
+}
+@media print{body[data-page="run"] #siteNav .report-tabs{display:none}}
+
+/* Wipe totals link to the relevant boss review. */
+.wipe-stat{display:block;text-align:left;font:inherit;color:inherit;margin:0}
+.wipe-stat.has-wipes{border-color:#f0757559;background:linear-gradient(135deg,#3b2026aa,#111821e8);cursor:pointer}
+.wipe-stat.has-wipes .num,.wipe-stat.has-wipes .label{color:#ff9c9c}
+.wipe-stat.no-wipes{border-color:#70dba459;background:linear-gradient(135deg,#16352baa,#111821e8)}
+.wipe-stat.no-wipes .num,.wipe-stat.no-wipes .label{color:#8fe3af}
+.wipe-stat:focus-visible{outline:2px solid var(--gold-light);outline-offset:4px}
+.wipe-boss-picker{position:fixed;inset:auto;margin:0;padding:16px;width:320px;max-width:calc(100vw - 24px);max-height:70vh;overflow:auto;background:#0d151f;color:var(--text);border:1px solid var(--panel-edge);border-radius:12px;box-shadow:0 12px 34px #0008}
+.wipe-boss-picker>strong{display:block;margin-bottom:10px}
+.wipe-boss-picker a{display:flex;justify-content:space-between;align-items:center;gap:14px;padding:11px 8px;border-top:1px solid var(--panel-edge-soft)}
+.wipe-boss-picker small{color:#ff9c9c;white-space:nowrap}
+.wipe-boss-picker a:focus-visible{outline:2px solid var(--gold)}
+
+.utility-player-identity{display:flex;align-items:center;gap:10px;min-width:0}
+.utility-player-identity strong{min-width:0;overflow-wrap:anywhere}
+.party-guild-portrait{width:36px;height:36px;flex:none;object-fit:cover;border:1px solid #d7ad5299;border-radius:8px;background:#0c1420;box-shadow:0 2px 6px #0005}
+.utility-player>header>.player-role{flex:none}
+
+/* Match the Player deaths hover highlight on actionable wipe cards. */
+.wipe-stat.has-wipes:hover{box-shadow:0 0 0 1px currentColor;color:#fff}
+.wipe-stat.has-wipes{transition:.2s}
+
+/* Selectable player filters and individual encounter attempts. */
+button.recap-party-member{font:inherit;color:var(--text);text-align:left;cursor:pointer}
+button.recap-party-member[aria-pressed="true"]{border-color:var(--gold);background:#d7ad5218;box-shadow:inset 0 -2px var(--gold)}
+button.recap-party-member:hover{border-color:#d7ad5280}
+button.recap-party-member:focus-visible{outline:2px solid var(--gold);outline-offset:3px}
+.recap-attempt-group{margin:22px 0;padding-top:16px;border-top:1px solid var(--panel-edge)}
+.recap-attempt-heading{display:flex;align-items:center;gap:12px;flex-wrap:wrap;margin-bottom:12px}
+.recap-attempt-heading>div{flex:1;min-width:160px}
+.recap-attempt-heading h4{margin:0;color:var(--gold-light)}
+.recap-attempt-heading small,.recap-attempt-count{font-size:.75rem;color:var(--muted)}
+.recap-attempt-result{font-size:.72rem;font-weight:700}
+.recap-attempt-result.is-wipe{color:#ff9c9c}.recap-attempt-result.is-kill{color:#8fe3af}
+.recap-attempt-group[hidden],.death-recap[hidden]{display:none!important}
+.recap-player-status:empty{display:none}
+
+/* Portrait and name on the left, role and count in fixed slots on the right. */
+button.recap-party-member{display:flex;align-items:center;justify-content:space-between;gap:12px;min-width:0}
+.recap-player-identity{display:flex;align-items:center;gap:9px;min-width:0}
+.recap-player-identity>strong{overflow-wrap:anywhere}
+.recap-player-identity .party-guild-portrait{width:32px;height:32px}
+.recap-player-meta{display:flex;align-items:center;gap:14px;flex:none}
+.recap-player-meta .player-role{flex:none;width:20px}
+.recap-player-count{min-width:20px;text-align:right;font-variant-numeric:tabular-nums}
+
+/* Keep opportunity spacing based on the badges, not the wider spell column. */
+.recap-opportunity-overview{align-items:center;gap:6px}
+.recap-opportunity-overview>.spell-help{display:inline-flex;flex:0 1 auto;min-width:0;max-width:100%;line-height:1}
+.recap-opportunity-overview .opportunity-trigger{margin:0;white-space:normal;text-align:left}

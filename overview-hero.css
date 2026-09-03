@@ -1,0 +1,21 @@
+/* Match the guild page's borderless hero while retaining the dashboard identity. */
+body[data-page="dashboard"] .dashboard-intro{
+ isolation:isolate;background:none;border:0;border-radius:0;box-shadow:none;
+ padding:34px 32px;margin-bottom:24px;
+}
+body[data-page="dashboard"] .dashboard-intro::before{
+ content:"";position:absolute;inset:-16px -24px;z-index:-1;pointer-events:none;
+ background:linear-gradient(90deg,transparent,rgba(5,9,16,.82) 6%,rgba(13,12,28,.7) 60%,transparent);
+ mask-image:linear-gradient(transparent,#000 14%,#000 84%,transparent);
+}
+body[data-page="dashboard"] .dashboard-intro::after{display:none}
+body[data-page="dashboard"] .dashboard-intro h1{text-shadow:0 3px 20px #000b}
+body[data-page="dashboard"] .dashboard-intro p{color:#d1d6de;text-shadow:0 1px 6px #000}
+body[data-page="dashboard"] .dashboard-intro .button{backdrop-filter:blur(5px)}
+@media(max-width:650px){
+ body[data-page="dashboard"] .dashboard-intro{padding:24px 14px 28px}
+ body[data-page="dashboard"] .dashboard-intro::before{
+  inset:-10px 0;background:linear-gradient(90deg,transparent,rgba(5,9,16,.8) 5%,rgba(13,12,28,.58) 90%,transparent);
+ }
+}
+@media print{body[data-page="dashboard"] .dashboard-intro::before{display:none}}
