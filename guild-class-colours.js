@@ -8,7 +8,8 @@
   const normal=v=>String(v||'').trim().toLocaleLowerCase();
   const colourFor=name=>{
     const member=members.find(m=>normal(m.name)===normal(name));
-    return member&&colours[member.class];
+    const characterClass=member?.key==='shattered-halls/kazzataur'?'Paladin':member?.class;
+    return colours[characterClass];
   };
   const paint=(element,name)=>{
     const colour=colourFor(name);
