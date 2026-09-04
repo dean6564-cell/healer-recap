@@ -195,7 +195,6 @@ function selectedCharacterRecord(){try{return JSON.parse(localStorage.getItem(SE
 function selectedCharacterMember(){
  const requested=new URLSearchParams(location.search).get('character'),saved=selectedCharacterRecord();
  const match=[...guildRoster.values()].find(m=>m.key===requested||rosterKey(m.name,m.realm)===requested||(!requested&&saved&&rosterKey(m.name,m.realm)===rosterKey(saved.name,saved.realm)));
- if(match?.key==='shattered-halls/kazzataur')match.class='Paladin';
  if(match)localStorage.setItem(SELECTED_CHARACTER_KEY,JSON.stringify({key:match.key,name:match.name,realm:match.realm,class:match.class,role:match.role,spec:match.spec,avatar:match.avatar}));
  return match||null;
 }
