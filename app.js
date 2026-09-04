@@ -375,6 +375,8 @@ function renderCharacterProfileRuns(runs,member){
 function renderDashboard(){
   const member=selectedCharacterMember();
   if(!member){location.replace('index.html');return;}
+  const classSlug=String(member.class||'').toLowerCase().replace(/[^a-z]+/g,'-');
+  document.querySelector('.dashboard-intro')?.style.setProperty('--character-class-art',`url('assets/class-bg-${classSlug}.webp')`);
   document.title=`${member.name}’s M+ Dashboard · Midnight · Season 2`;
   const heading=document.querySelector('#characterDashboardTitle'),identity=document.querySelector('#characterIdentity'),intro=document.querySelector('#characterIntro'),portrait=document.querySelector('#characterPortrait');
   if(heading)heading.textContent=`${member.name}’s M+ Dashboard`;
