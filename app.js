@@ -5,8 +5,7 @@ function spellIcon(id){
   const icon=SPELL_ICONS[id];
   return icon?`<img class="report-spell-icon" src="https://wow.zamimg.com/images/wow/icons/medium/${icon}.jpg" alt="" width="24" height="24" loading="lazy" decoding="async" referrerpolicy="no-referrer">`:'';
 }
-function rinseDungeonBest(name){
- const member=guildRoster.get(rosterKey('Rinse','laughing-skull'));
+function characterDungeonBest(name,member){
  return (member?.bestRuns||[]).filter(run=>slugify(run.dungeon)===slugify(name)&&Number.isFinite(run.level))
  .sort((a,b)=>b.level-a.level||(a.durationMs>0?a.durationMs:Infinity)-(b.durationMs>0?b.durationMs:Infinity))[0]||null;
 }
@@ -189,6 +188,20 @@ const REVIEW_SCHEMA=1;
 let publishedRuns=[];
 const rosterKey=(name,realm)=>[name,realm].map(s=>String(s).normalize('NFKC').toLowerCase().replace(/[^\p{L}\p{N}]/gu,'')).join('|');
 let guildRoster=new Map();
+const SELECTED_CHARACTER_KEY='mplusRecapSelectedCharacterV1';
+const classColours={Warrior:'#C69B6D',Paladin:'#F48CBA',Hunter:'#AAD372',Rogue:'#FFF468',Priest:'#FFFFFF','Death Knight':'#C41E3A',Shaman:'#0070DD',Mage:'#3FC7EB',Warlock:'#8788EE',Monk:'#00FF98',Druid:'#FF7C0A','Demon Hunter':'#A330C9',Evoker:'#33937F'};
+function playerParts(player){const parts=String(player||'').replace(/-EU$/i,'').split('-');return {name:parts.shift()||'',realm:parts.join('-')}}
+function selectedCharacterRecord(){try{return JSON.parse(localStorage.getItem(SELECTED_CHARACTER_KEY)||'null')}catch{return null}}
+function selectedCharacterMember(){
+ const requested=new URLSearchParams(location.search).get('character'),saved=selectedCharacterRecord();
+ const match=[...guildRoster.values()].find(m=>m.key===requested||rosterKey(m.name,m.realm)===requested||(!requested&&saved&&rosterKey(m.name,m.realm)===rosterKey(saved.name,saved.realm)));
+ if(match)localStorage.setItem(SELECTED_CHARACTER_KEY,JSON.stringify({key:match.key,name:match.name,realm:match.realm,class:match.class,role:match.role,spec:match.spec,avatar:match.avatar}));
+ return match||null;
+}
+function selectedDashboardHref(member=selectedCharacterRecord()){return member?`dashboard.html?character=${encodeURIComponent(member.key||`${member.realm}/${String(member.name).toLowerCase()}`)}`:'index.html'}
+function runIncludesCharacter(run,member){return !!member&&(run.players||[]).some(player=>{const p=playerParts(player);return rosterKey(p.name,p.realm)===rosterKey(member.name,member.realm)})}
+function selectedCharacterRuns(runs,member=selectedCharacterMember()){return member?runs.filter(r=>runIncludesCharacter(r,member)):runs}
+function classIcon(member){const icon={Warrior:'classicon_warrior',Paladin:'classicon_paladin',Hunter:'classicon_hunter',Rogue:'classicon_rogue',Priest:'classicon_priest','Death Knight':'classicon_deathknight',Shaman:'classicon_shaman',Mage:'classicon_mage',Warlock:'classicon_warlock',Monk:'classicon_monk',Druid:'classicon_druid','Demon Hunter':'classicon_demonhunter',Evoker:'classicon_evoker'}[member?.class]||'inv_misc_questionmark';return `https://wow.zamimg.com/images/wow/icons/large/${icon}.jpg`}
 async function loadGuildRoster(){
  try{
   const response=await fetch(new URL('data/guild.json',document.baseURI),{cache:'no-store'});
@@ -279,13 +292,14 @@ function confidenceLabel(c){return ({high:'High confidence',medium:'Medium confi
 function inGuildArea(){return document.body.dataset.page==='guild'||new URLSearchParams(location.search).get('group')==='guild'}
 function nav(active=''){
  const el=document.querySelector('#siteNav');if(!el)return;
- const guild=inGuildArea();
+ const guild=inGuildArea(),selected=selectedCharacterRecord(),dashboardName=selected?.name||'M+ Recap',dashboardLink=selectedDashboardHref(selected);
+ const dashboardBack=selected?`← ${esc(dashboardName)}’s Dashboard`:'Choose character';
  const footer=document.querySelector('footer .wrap');
  if(footer&&!footer.querySelector('.footer-horde-logo'))footer.insertAdjacentHTML('afterbegin','<img class="footer-horde-logo" src="assets/horde-logo.svg" alt="M+ Recap" width="150" height="90">');
  el.innerHTML=`<nav aria-label="${guild?'Guild':'Main'} navigation"><div class="wrap nav-wrap">
- <a class="brand" href="${guild?'guild.html':'index.html'}" aria-label="${guild?'Cause and Effect home':'Rinse’s Dashboard home'}"><img class="brand-priest-icon ${guild?'brand-guild-icon':''}" src="${guild?'assets/guild-crest.svg':'https://wow.zamimg.com/images/wow/icons/large/spell_holy_guardianspirit.jpg'}" alt="" width="72" height="72"><span class="brand-rinse-wordmark">${guild?'Cause and Effect':'Rinse’s'}<small>${guild?'Guild M+ Dashboard':'M+ Dashboard'}</small></span><em>Midnight · Season 2</em></a>
+ <a class="brand" href="${guild?'guild.html':dashboardLink}" aria-label="${guild?'Cause and Effect home':selected?esc(dashboardName)+' dashboard home':'Choose character'}"><img class="brand-priest-icon ${guild?'brand-guild-icon':''}" src="${guild?'assets/guild-crest.svg':esc(selected?.avatar||classIcon(selected))}" alt="" width="72" height="72"><span class="brand-rinse-wordmark">${guild?'Cause and Effect':selected?esc(dashboardName)+'’s':'M+ Recap'}<small>${guild?'Guild M+ Dashboard':selected?'M+ Dashboard':'Choose character'}</small></span><em>Midnight · Season 2</em></a>
  <div class="navlinks ${guild?'guild-navigation':''}">
- ${guild?`<a href="index.html" class="nav-back" data-nav-switch>← Rinse’s Dashboard</a><a href="guild.html" class="${active==='guild'?'active':''}"><img class="guild-nav-crest" src="assets/guild-crest.svg" alt="" width="26" height="26">Cause and Effect</a><a href="library.html?group=guild" class="${active==='library'?'active':''}">Run Library</a>`:`<a href="index.html" class="${active==='home'?'active':''}">Overview</a><a href="insights.html" class="${active==='insights'?'active':''}">Insights</a><a href="library.html" class="${active==='library'?'active':''}">Run Library</a><a href="guild.html" data-nav-switch><img class="guild-nav-crest" src="assets/guild-crest.svg" alt="" width="26" height="26">Cause and Effect</a>`}
+ ${guild?`<a href="${dashboardLink}" class="nav-back" data-nav-switch>${dashboardBack}</a><a href="guild.html" class="${active==='guild'?'active':''}"><img class="guild-nav-crest" src="assets/guild-crest.svg" alt="" width="26" height="26">Cause and Effect</a><a href="library.html?group=guild" class="${active==='library'?'active':''}">Run Library</a>`:`<a href="${dashboardLink}" class="${active==='home'?'active':''}">Overview</a><a href="insights.html" class="${active==='insights'?'active':''}">Insights</a><a href="library.html" class="${active==='library'?'active':''}">Run Library</a><a href="index.html" class="nav-change-character">Change character</a><a href="guild.html" data-nav-switch><img class="guild-nav-crest" src="assets/guild-crest.svg" alt="" width="26" height="26">Cause and Effect</a>`}
  </div></div></nav>`;
  el.querySelectorAll('[data-nav-switch]').forEach(link=>link.addEventListener('click',event=>{
  if(event.button!==0||event.ctrlKey||event.metaKey||event.shiftKey||event.altKey||matchMedia('(prefers-reduced-motion: reduce)').matches)return;
@@ -341,14 +355,13 @@ function trackedProfileRun(profile,runs,member={name:'Rinse',realm:'laughing-sku
     &&(r.players||[]).some(p=>rosterKey(String(p).split('-')[0],String(p).replace(/^[^-]+-/,'').replace(/-EU$/i,''))===rosterKey(member.name,member.realm)));
   return matches.length===1?matches[0]:null;
 }
-function renderRinseProfileRuns(runs){
-  const el=document.querySelector('#rinseProfileRuns');if(!el)return;
-  const member=guildRoster.get(rosterKey('Rinse','laughing-skull'));
+function renderCharacterProfileRuns(runs,member){
+  const el=document.querySelector('#characterProfileRuns');if(!el)return;
   const records=member?.bestRuns||[];
-  const info=document.querySelector('#rinseProfileInfo');
+  const info=document.querySelector('#characterProfileInfo');
   if(info)info.textContent=member?`Season score: ${Number(member.score||0).toLocaleString('en-GB')} · Guild profile · Updated ${new Date(member.updatedAt).toLocaleDateString('en-GB')}`:'Guild profile unavailable';
   el.innerHTML=records.length?records.map(r=>{
-    const tracked=trackedProfileRun(r,runs),tag=tracked?'a':'article';
+    const tracked=trackedProfileRun(r,runs,member),tag=tracked?'a':'article';
     const art=({"The Blinding Vale":"https://wow.4fansites.de/bilder/dungeons/das-blendende-tal/das-blendende-tal-ladebild.webp","Voidscar Arena":"https://blz-contentstack-images.akamaized.net/v3/assets/blt3452e3b114fab0cd/blt51a09c26e2e3bcd0/69ab580df54857000812e3be/VoidscarArena_Desktop.jpg","Kings' Rest":"https://wow.zamimg.com/uploads/blog/images/18063-8-3-ptr-build-32861-kings-rest-dungeon-nerfs.jpg","Den of Nalorakk":"https://wow.4fansites.de/bilder/dungeons/nalorakks-bau/nalorakks-bau-ladebild.webp","Altar of Fangs":"https://wow.zamimg.com/uploads/guide/header/11c702265ad6f3432b6bc76bef19f5240b89b3f2.jpg","Ruby Life Pools":"https://blz-contentstack-images.akamaized.net/v3/assets/blt3452e3b114fab0cd/blt432a67c2d539c084/637ec28bf9f61910b42357c7/ruby-life-pools-large.jpg"})[r.dungeon]||dungeonArtwork(r.dungeon);
     return `<${tag} class="profile-run ${tracked?'is-tracked':'is-untracked'}" ${tracked?`href="run.html?id=${encodeURIComponent(tracked.id)}"`:''} ${art?`style="--profile-art:url('${esc(art)}')"`:''}>
       <strong>${esc(r.dungeon)}</strong>
@@ -360,8 +373,17 @@ function renderRinseProfileRuns(runs){
 }
 
 function renderDashboard(){
+  const member=selectedCharacterMember();
+  if(!member){location.replace('index.html');return;}
+  document.title=`${member.name}’s M+ Dashboard · Midnight · Season 2`;
+  const heading=document.querySelector('#characterDashboardTitle'),identity=document.querySelector('#characterIdentity'),intro=document.querySelector('#characterIntro'),portrait=document.querySelector('#characterPortrait');
+  if(heading)heading.textContent=`${member.name}’s M+ Dashboard`;
+  if(identity)identity.innerHTML=`<span>${esc(member.spec||member.class||'Guild member')}</span><span class="rinse-healer" style="color:${classColours[member.class]||'#86efac'}">${roleIcon(member.role)} ${esc(member.role||'')}</span><span>${esc(String(member.realm||'').replace(/-/g,' '))} · EU</span>`;
+  if(intro)intro.textContent=`${member.name}’s recorded dungeon history, run results and available reviews.`;
+  if(portrait){portrait.src=member.avatar||classIcon(member);portrait.alt=`${member.name}, ${member.class}`;portrait.dataset.fallback=classIcon(member);portrait.addEventListener('error',()=>{if(portrait.src!==portrait.dataset.fallback)portrait.src=portrait.dataset.fallback},{once:true})}
+  const profileTitle=document.querySelector('#characterProfileTitle');if(profileTitle)profileTitle.textContent=`${member.name}’s recorded runs`;
   nav('home');
-  const runs=sortRuns(loadRuns()), t=calcTotals(runs);
+  const runs=sortRuns(selectedCharacterRuns(loadRuns(),member)), t=calcTotals(runs);
   document.querySelector('#stats').innerHTML=`
     <div class="stat-card"><div class="num">${t.runs}</div><div class="label">Runs tracked</div></div>
     <div class="stat-card"><div class="num">${t.completed}</div><div class="label">Completed</div></div>
@@ -373,15 +395,15 @@ function renderDashboard(){
   document.querySelector('#dungeons').innerHTML=Object.entries(groups).sort((a,b)=>a[0].localeCompare(b[0])).map(([name,rs])=>{
     rs=sortRuns(rs);
     const best=Math.max(...rs.map(r=>+r.keyLevel||0)), reviewed=rs.filter(isReviewed).length, recent=rs[0];
-    const artwork=dungeonArtwork(name), personal=rinseDungeonBest(name);
+    const artwork=dungeonArtwork(name), personal=characterDungeonBest(name,member);
     return`<a class="dungeon-card${artwork?' has-dungeon-art':''}" ${artwork?`style="--dungeon-art:url('${esc(artwork)}')"`:''} href="dungeon.html?dungeon=${encodeURIComponent(slugify(name))}">
       <div class="dungeon-card-copy"><div class="dungeon-label">${rs.length} run${rs.length===1?'':'s'} tracked</div>
       <h3 class="dungeon-name-heading">${dungeonEmblem(name)}<span>${esc(name)}</span></h3><p>Latest: ${fmtDate(recent.date)}${recent.startTime?` · ${esc(recent.startTime)}`:''}${recent.keyLevel?` · +${recent.keyLevel}`:''}</p>
-      ${personal?`<div class="dungeon-personal-best"><span class="personal-best-label">Rinse’s best · Guild profile</span><strong>+${personal.level} <span>·</span> ${Number.isFinite(personal.durationMs)&&personal.durationMs>0?fmtDuration(personal.durationMs/1000):'Time unavailable'}</strong><span class="personal-best-result ${personal.timed===true?'in-time':personal.timed===false?'over-time':''}">${personal.timed===true?'In time':personal.timed===false?'Over time':'Timing unknown'}</span></div>`:'<p class="personal-best-unavailable">Rinse’s guild-profile best unavailable</p>'}
+      ${personal?`<div class="dungeon-personal-best"><span class="personal-best-label">${esc(member.name)}’s best · Guild profile</span><strong>+${personal.level} <span>·</span> ${Number.isFinite(personal.durationMs)&&personal.durationMs>0?fmtDuration(personal.durationMs/1000):'Time unavailable'}</strong><span class="personal-best-result ${personal.timed===true?'in-time':personal.timed===false?'over-time':''}">${personal.timed===true?'In time':personal.timed===false?'Over time':'Timing unknown'}</span></div>`:`<p class="personal-best-unavailable">${esc(member.name)}’s guild-profile best unavailable</p>`}
       </div><span class="arrow" aria-hidden="true">→</span>
     </a>`}).join('');
   document.querySelector('#recentRuns').innerHTML=runs.slice(0,8).map(runRow).join('');
-  renderRinseProfileRuns(runs);
+  renderCharacterProfileRuns(runs,member);
   if(document.querySelector('#focusArea'))renderFocus(runs);
   renderTrends(runs);
 }
