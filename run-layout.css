@@ -104,3 +104,10 @@ button.recap-party-member{display:flex;align-items:center;justify-content:space-
 .recap-opportunity-overview{align-items:center;gap:6px}
 .recap-opportunity-overview>.spell-help{display:inline-flex;flex:0 1 auto;min-width:0;max-width:100%;line-height:1}
 .recap-opportunity-overview .opportunity-trigger{margin:0;white-space:normal;text-align:left}
+.recap-cascade-note{margin:0 0 10px;padding:10px 13px;border:1px solid rgba(133,219,173,.3);border-radius:10px;background:rgba(72,187,128,.07);color:#b9c8c1;font-size:.79rem;line-height:1.55}
+.recap-cascade-note strong{color:#85dbad}
+.recap-cascade-badge{display:inline-flex;margin:7px 0 0 9px;padding:3px 7px;border:1px solid rgba(133,219,173,.3);border-radius:999px;background:rgba(72,187,128,.08);color:#85dbad;font-size:.62rem;font-weight:800;letter-spacing:.04em;text-transform:uppercase;vertical-align:middle}
+.death-recap.is-after-healer{border-color:rgba(133,219,173,.2)}
+.recap-window-summary{display:flex;align-items:center;gap:7px;flex-wrap:wrap;margin-top:8px;color:var(--muted);font-size:.68rem;line-height:1.35}
+.recap-window-summary span{letter-spacing:.06em;text-transform:uppercase}
+.recap-window-summary strong{padding-left:8px;border-left:1px solid var(--border-bright);color:#f1c56f;font-size:.7rem}
