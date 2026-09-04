@@ -314,9 +314,15 @@ function nav(active=''){
  if(footer&&!footer.querySelector('.footer-horde-logo'))footer.insertAdjacentHTML('afterbegin','<img class="footer-horde-logo" src="assets/horde-logo.svg" alt="M+ Recap" width="150" height="90">');
  el.innerHTML=`<nav aria-label="${guild?'Guild':'Main'} navigation"><div class="wrap nav-wrap">
  <a class="brand" href="${guild?'guild.html':dashboardLink}" aria-label="${guild?'Cause and Effect home':selected?esc(dashboardName)+' dashboard home':'Choose character'}"><img class="brand-priest-icon ${guild?'brand-guild-icon':''}" src="${guild?'assets/guild-crest.svg':esc(selected?.avatar||classIcon(selected))}" alt="" width="72" height="72"><span class="brand-rinse-wordmark">${guild?'Cause and Effect':selected?esc(dashboardName)+'’s':'M+ Recap'}<small>${guild?'Guild M+ Dashboard':selected?'M+ Dashboard':'Choose character'}</small></span><em>Midnight · Season 2</em></a>
- <div class="navlinks ${guild?'guild-navigation':''}">
+ <button class="nav-menu-toggle" type="button" aria-expanded="false" aria-controls="site-nav-links" aria-label="Open navigation menu"><span></span><span></span><span></span></button>
+ <div class="navlinks ${guild?'guild-navigation':''}" id="site-nav-links">
  ${guild?`<a href="${dashboardLink}" class="nav-back" data-nav-switch>${dashboardBack}</a><a href="${guildLink}" class="${active==='guild'?'active':''}"><img class="guild-nav-crest" src="assets/guild-crest.svg" alt="" width="26" height="26">Cause and Effect</a><a href="library.html?group=guild" class="${active==='library'?'active':''}">Run Library</a>`:`<a href="${dashboardLink}" class="${active==='home'?'active':''}">Overview</a><a href="insights.html" class="${active==='insights'?'active':''}">Insights</a><a href="library.html" class="${active==='library'?'active':''}">Run Library</a><a href="index.html" class="nav-change-character">Change character</a><a href="${guildLink}" data-nav-switch><img class="guild-nav-crest" src="assets/guild-crest.svg" alt="" width="26" height="26">Cause and Effect</a>`}
  </div></div></nav>`;
+ const menuButton=el.querySelector('.nav-menu-toggle'),menu=el.querySelector('.navlinks');
+ const closeMenu=()=>{menu.classList.remove('is-open');menuButton.setAttribute('aria-expanded','false');menuButton.setAttribute('aria-label','Open navigation menu')};
+ menuButton.addEventListener('click',()=>{const open=menu.classList.toggle('is-open');menuButton.setAttribute('aria-expanded',String(open));menuButton.setAttribute('aria-label',open?'Close navigation menu':'Open navigation menu')});
+ menu.addEventListener('click',event=>{if(event.target.closest('a'))closeMenu()});
+ document.addEventListener('keydown',event=>{if(event.key==='Escape')closeMenu()});
  el.querySelectorAll('[data-nav-switch]').forEach(link=>link.addEventListener('click',event=>{
  if(event.button!==0||event.ctrlKey||event.metaKey||event.shiftKey||event.altKey||matchMedia('(prefers-reduced-motion: reduce)').matches)return;
  event.preventDefault();el.querySelector('.navlinks').classList.add('nav-sliding-out');
