@@ -883,6 +883,19 @@ footer .footer-horde-logo{position:absolute;left:50%;top:0;transform:translate(-
 @keyframes nav-menu-in{from{opacity:0;transform:translateY(-7px)}to{opacity:1;transform:none}}
 @media(prefers-reduced-motion:reduce){.nav-menu-toggle span{transition:none}#siteNav .navlinks.is-open{animation:none}}
 
+/* Evidence-led boss pull assessment. */
+.boss-pull-evidence{display:flex!important;align-items:center;gap:7px;flex-wrap:wrap;margin-top:5px;color:#aeb8c5!important;font-size:.76rem!important}
+.boss-pull-label{display:inline-flex;padding:4px 7px;border:1px solid #66738455;border-radius:999px;color:#c6ced8!important;font-size:.64rem!important;font-weight:850;letter-spacing:.055em;text-transform:uppercase;background:#111924cc}
+.boss-pull-evidence.is-tank .boss-pull-label{color:#8fe3af!important;border-color:#42ba765c;background:#102a20cc}
+.boss-pull-evidence.is-accidental .boss-pull-label{color:#ffaaa3!important;border-color:#e163635f;background:#35191dcc}
+.boss-pull-evidence.is-aggro .boss-pull-label{color:#ffc58f!important;border-color:#df8c4f66;background:#382317cc}
+.boss-pull-review{margin:0 0 18px;padding:17px 18px;border:1px solid var(--panel-edge-soft);border-radius:13px;background:rgba(11,18,27,.82)}
+.boss-pull-review h3{margin:0 0 5px}.boss-pull-review>p{margin:0;color:var(--muted);font-size:.8rem}
+.boss-pull-review ul{display:grid;gap:8px;margin:14px 0 0;padding:0;list-style:none}
+.boss-pull-review li{display:grid;grid-template-columns:82px 1fr;align-items:center;gap:10px;padding-top:8px;border-top:1px solid rgba(255,255,255,.065)}
+.boss-pull-review li>span:first-child{color:var(--gold-light);font-size:.72rem;font-weight:800;text-transform:uppercase}
+@media(max-width:560px){.boss-pull-review li{grid-template-columns:1fr}.boss-pull-review{padding:14px}}
+
 /* Review copy fills the space beside its confidence label. */
 .review-heading>div:first-child{flex:1;min-width:0}
 
