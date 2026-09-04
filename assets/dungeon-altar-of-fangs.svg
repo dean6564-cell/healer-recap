@@ -1,10 +1,1 @@
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64">
-<defs>
- <linearGradient id="gold" x1="0" y1="0" x2="1" y2="1"><stop stop-color="#ffe28a"/><stop offset=".5" stop-color="#d6a63e"/><stop offset="1" stop-color="#76501b"/></linearGradient>
- <linearGradient id="venom" x1="0" y1="0" x2="0" y2="1"><stop stop-color="#b8ef68"/><stop offset="1" stop-color="#31754b"/></linearGradient>
-</defs>
-<path d="M32 2 55 13v19c0 15-9 24-23 30C18 56 9 47 9 32V13Z" fill="#09130f" stroke="url(#gold)" stroke-width="2"/>
-<path d="M19 17c5 0 9 2 13 7 4-5 8-7 13-7l-5 8 5 6-8 3-5 17-5-17-8-3 5-6Z" fill="url(#venom)" stroke="#d9ba58" stroke-width="1.5" stroke-linejoin="round"/>
-<path d="m24 27 5 3-3 8m14-11-5 3 3 8" fill="none" stroke="#fff1b0" stroke-width="2" stroke-linecap="round"/>
-<path d="M29 25h1m4 0h1" stroke="#10160c" stroke-width="3" stroke-linecap="round"/>
-</svg>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64"><defs><linearGradient id="gold" x2=".8" y2="1"><stop stop-color="#fff0ad"/><stop offset=".5" stop-color="#bd913f"/><stop offset="1" stop-color="#79521f"/></linearGradient><radialGradient id="bg"><stop stop-color="#27313e"/><stop offset="1" stop-color="#090e15"/></radialGradient><linearGradient id="venom" x2=".8" y2="1"><stop stop-color="#b7e36a"/><stop offset=".55" stop-color="#438f55"/><stop offset="1" stop-color="#18523e"/></linearGradient></defs><path d="M32 2 56 12 60 36 48 54 32 62 16 54 4 36 8 12Z" fill="url(#bg)" stroke="url(#gold)" stroke-width="2"/><path d="M32 7 52 16 55 35 44 50 32 56 20 50 9 35 12 16Z" fill="none" stroke="#c49c50" stroke-opacity=".3"/><path d="M18 19c6 0 10 3 14 9 4-6 8-9 14-9l-5 9 5 6-9 3-5 17-5-17-9-3 5-6Z" fill="url(#venom)" stroke="url(#gold)" stroke-width="1.8" stroke-linejoin="round"/><path d="m23 30 6 3-3 9m15-12-6 3 3 9" fill="none" stroke="#ffe49a" stroke-width="2" stroke-linecap="round"/><path d="M27 28h1m8 0h1" stroke="#121b12" stroke-width="3" stroke-linecap="round"/></svg>
