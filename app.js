@@ -42,9 +42,39 @@ function roleIcon(role){
 }
 
 function playerRoleBadge(r,name){
-  const role=(r.playerRoles||[]).find(p=>p.name===name)?.role;
+  const role=playerRoleFor(r,name);
   const kind={Tank:'tank',Healer:'healer',DPS:'dps'}[role]||'unknown';
   return `<span class="player-role player-role-${kind} role-only" role="img" aria-label="${esc(role||'Role unknown')}" title="${esc(role||'Role unknown')}">${roleIcon(role)||'?'}</span>`;
+}
+function playerRoleFor(r,name,providedRole){
+ if(providedRole)return providedRole;
+ const wanted=String(name||'').toLowerCase(),short=wanted.split('-')[0];
+ return (r.playerRoles||[]).find(p=>{const candidate=String(p.name||'').toLowerCase();return candidate===wanted||candidate.split('-')[0]===short})?.role||'';
+}
+function bossAttackIsSingleTarget(hit){
+ return hit?.aoe!==true&&(hit?.singleTarget===true||String(hit?.attackType||hit?.kind||'').toLowerCase()==='melee');
+}
+function bossDamageEvidence(hit,r,type,compact=false){
+ if(!hit||typeof hit!=='object')return '';
+ const player=hit.player||hit.target||hit.name;if(!player)return '';
+ const role=playerRoleFor(r,player,hit.role),single=bossAttackIsSingleTarget(hit),aoe=hit.aoe===true||hit.multiTarget===true;
+ let label='First boss hit',state='';
+ if(type==='pull'&&role&&role!=='Tank'&&single){label='Likely accidental pull';state='is-accidental'}
+ else if(type==='aggro'&&role&&role!=='Tank'&&single){label='Likely over-aggro';state='is-aggro'}
+ else if(type==='pull'&&role==='Tank'){label='Tank took first hit';state='is-tank'}
+ else if(aoe)label='AoE hit · no pull inference';
+ else if(role&&role!=='Tank')label='Attack type unverified';
+ const detail=[hit.spell||hit.ability,hit.time||(Number.isFinite(hit.offsetSeconds)?`${Number(hit.offsetSeconds).toFixed(1)}s into attempt`:null)].filter(Boolean).join(' · ');
+ return `<span class="boss-pull-evidence ${state}"><span class="boss-pull-label">${label}</span><span>${utilityCharacterName(r,player)} ${playerRoleBadge(r,player)}${compact?'':detail?` · ${esc(detail)}`:''}</span></span>`;
+}
+function bossPullEvidence(e,r,compact=false){
+ const first=e.firstBossDamageTaken||e.firstDamageTaken||e.pull?.firstDamageTaken;
+ const overAggro=e.firstNonTankBossDamageTaken||e.pull?.firstNonTankDamageTaken;
+ return [bossDamageEvidence(first,r,'pull',compact),bossDamageEvidence(overAggro,r,'aggro',compact)].filter(Boolean).join('');
+}
+function renderBossPullAttempts(attempts,r){
+ const rows=attempts.map((e,index)=>{const evidence=bossPullEvidence(e,r);return evidence?`<li><span>Attempt ${index+1}</span>${evidence}</li>`:''}).filter(Boolean);
+ return rows.length?`<section class="boss-pull-review"><h3>Boss targeting at the pull</h3><p>A non-tank taking the first confirmed single-target or melee hit suggests an accidental pull. If the tank was hit first, a later first single-target boss hit on a non-tank suggests over-aggro. AoE mechanics are excluded.</p><ul>${rows.join('')}</ul></section>`:'';
 }
 function recapOpportunitySpells(d,v){
   const seen=new Set();
@@ -186,7 +216,7 @@ function setupBossExplorer(r){
     portrait.hidden=!art;
     portrait.innerHTML=art?`<img src="https://www.method.gg/images/guides/dungeons/${art}.jpg" alt="${esc(name)}" width="320" height="180"><figcaption>${esc(name)} <span>· <a href="https://www.method.gg/guides/dungeons/${slugify(r.dungeon)}" target="_blank" rel="noopener noreferrer">Image: Method</a></span></figcaption>`:'';
     portrait.querySelector('img')?.addEventListener('error',()=>{portrait.hidden=true;},{once:true});
-    content.innerHTML=`${bossHeals.length?renderBossHealing({...r,bossHealing:{...r.bossHealing,encounters:bossHeals}}):'<p class="muted">Boss HPS is not available for this selection.</p>'}
+    content.innerHTML=`${renderBossPullAttempts(attempts,r)}${bossHeals.length?renderBossHealing({...r,bossHealing:{...r.bossHealing,encounters:bossHeals}}):'<p class="muted">Boss HPS is not available for this selection.</p>'}
     ${renderDeathRecaps(r,name)}
     ${incidents.length?`<details class="death-recap-block death-recaps-group mechanic-incidents-group"><summary class="recap-heading"><div><span class="tactic-eyebrow">MECHANICS TO REVIEW</span><h3>Mechanic incidents</h3></div><span class="tactic-count">${incidents.length} in this encounter</span></summary><div class="death-recaps-content">${renderIncidents({...v,incidents},r)}</div></details>`:''}
     ${tactics.length?renderTactics({...v,tactics}):'<p class="muted">No separate tactics card for this selection; see the death recap corrections above.</p>'}`;
@@ -798,7 +828,7 @@ function renderRun(){
     ${renderWipeStat(r)}
     <a class="stat-card death-stat-link ${r.deaths>0?'has-deaths':r.deaths===0?'no-deaths':''}" href="#incidents" aria-label="${typeof r.deaths==='number'?r.deaths:'Unknown'} player deaths. Open Damage and deaths"><div class="num">${typeof r.deaths==='number'?r.deaths:'—'}</div><div class="label">Player deaths <span aria-hidden="true">↗</span></div></a>`;
   document.querySelector('#encounters').innerHTML=(r.encounters||[]).map((e,i)=>`
-    <div class="encounter-row"><div><strong>${esc(e.name)}</strong><span>Attempt ${1+r.encounters.slice(0,i).filter(x=>x.name===e.name).length}</span></div>
+    <div class="encounter-row"><div><strong>${esc(e.name)}</strong><span>Attempt ${1+r.encounters.slice(0,i).filter(x=>x.name===e.name).length}</span>${bossPullEvidence(e,r,true)}</div>
     <div class="run-meta"><span>${e.durationSeconds?fmtDuration(e.durationSeconds):'—'}</span><span class="pill ${e.success?'kill':'wipe'}">${e.success?'Kill':'Wipe'}</span></div></div>`).join('')||'<p class="muted">No encounter markers available.</p>';
   document.querySelector('#party').innerHTML=(r.players||[]).map(p=>`<span class="party-chip ${String(p).includes('Rinse')?'self':''}">${esc(p)} ${playerRoleBadge(r,p)}</span>`).join('');
   const db=r.deathBreakdown||{};
