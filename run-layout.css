@@ -108,3 +108,6 @@ button.recap-party-member{display:flex;align-items:center;justify-content:space-
 .recap-cascade-note strong{color:#85dbad}
 .recap-cascade-badge{display:inline-flex;margin:7px 0 0 9px;padding:3px 7px;border:1px solid rgba(133,219,173,.3);border-radius:999px;background:rgba(72,187,128,.08);color:#85dbad;font-size:.62rem;font-weight:800;letter-spacing:.04em;text-transform:uppercase;vertical-align:middle}
 .death-recap.is-after-healer{border-color:rgba(133,219,173,.2)}
+.recap-window-summary{display:flex;align-items:center;gap:7px;flex-wrap:wrap;margin-top:8px;color:var(--muted);font-size:.68rem;line-height:1.35}
+.recap-window-summary span{letter-spacing:.06em;text-transform:uppercase}
+.recap-window-summary strong{padding-left:8px;border-left:1px solid var(--border-bright);color:#f1c56f;font-size:.7rem}
