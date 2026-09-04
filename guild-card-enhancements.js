@@ -1,10 +1,10 @@
 (()=>{
   const emblemFiles={
     'The Blinding Vale':'blinding-vale',
-    'Voidscar Arena':'voidscar-arena?v=2',
+    'Voidscar Arena':'voidscar-arena',
     "Kings' Rest":'kings-rest',
-    'Den of Nalorakk':'den-of-nalorakk?v=2',
-    'Altar of Fangs':'altar-of-fangs?v=2',
+    'Den of Nalorakk':'den-of-nalorakk',
+    'Altar of Fangs':'altar-of-fangs',
     'Ruby Life Pools':'ruby-life-pools',
     'Murder Row':'murder-row',
     'Temple of Sethraliss':'sethraliss'
@@ -14,7 +14,7 @@
     const original=window.dungeonEmblem;
     window.dungeonEmblem=name=>{
       const file=emblemFiles[name];
-      return file?`<img class="dungeon-emblem" src="assets/dungeon-${file}.svg" alt="" aria-hidden="true" width="48" height="48">`:original(name);
+      return file?`<img class="dungeon-emblem" src="assets/dungeon-${file}.svg?v=2" alt="" aria-hidden="true" width="48" height="48">`:original(name);
     };
   }
 
