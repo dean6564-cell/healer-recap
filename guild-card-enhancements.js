@@ -21,9 +21,9 @@
   const style=document.createElement('style');
   style.textContent=`
     .full-dungeon-card{padding-top:20px;padding-right:84px}
-    .full-key-corner{position:absolute;top:16px;right:18px;color:var(--gold-light,#f4cc67);font:800 2rem/1 'Space Grotesk',Inter,sans-serif;letter-spacing:-.04em;text-shadow:0 2px 10px rgba(0,0,0,.65)}
+    .full-key-corner{position:absolute;top:16px;right:18px;color:var(--gold-light,#f4cc67);font:800 2.5rem/1 'Space Grotesk',Inter,sans-serif;letter-spacing:-.04em;text-shadow:0 2px 10px rgba(0,0,0,.65)}
     .full-dungeon-card .dungeon-name-heading{padding-right:0}
-    @media(max-width:620px){.full-key-corner{font-size:1.75rem;top:15px;right:16px}.full-dungeon-card{padding-right:72px}}
+    @media(max-width:620px){.full-key-corner{font-size:2rem;top:15px;right:16px}.full-dungeon-card{padding-right:72px}}
   `;
   document.head.append(style);
 
