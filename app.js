@@ -105,6 +105,17 @@ function groupRecapAttempts(r,deaths){
  });
  return [...groups.values()];
 }
+function healerDeathContext(r,group){
+ const clock=value=>{const m=String(value||'').match(/^(\d{1,2}):(\d{2}):(\d{2}(?:\.\d+)?)/);return m?Number(m[1])*3600+Number(m[2])*60+Number(m[3]):null;};
+ const role=name=>(r.playerRoles||[]).find(p=>p.name===name)?.role;
+ const ordered=[...group.deaths].map(d=>({death:d,time:clock(d.anchorTime||d.deathTime)})).filter(x=>x.time!==null).sort((a,b)=>a.time-b.time);
+ const healer=ordered.find(x=>role(x.death.player)==='Healer');
+ if(!healer)return null;
+ const earlier=ordered.filter(x=>x.time<healer.time-.25);
+ const later=ordered.filter(x=>x.time>healer.time+.25);
+ if(earlier.length||!later.length)return null;
+ return {name:healer.death.player,later:new Set(later.map(x=>x.death))};
+}
 function renderDeathRecaps(r,encounter){
   const pack=r.deathRecaps;
   if(!pack?.deaths)return '<p class="muted">Death recap windows have not been added for this run yet.</p>';
@@ -117,7 +128,7 @@ function renderDeathRecaps(r,encounter){
   <div class="recap-party" aria-label="Filter deaths by player">${[...new Set([...(r.players||[]),...ds.map(d=>d.player)])].map(name=>`<button type="button" class="recap-party-member" data-recap-player="${esc(name)}" aria-pressed="false"><span class="recap-player-identity">${guildPartyPortrait(name)}${utilityCharacterName(r,name)}</span><span class="recap-player-meta">${playerRoleBadge(r,name)}<span class="recap-player-count">${ds.filter(d=>d.player===name).length}</span></span></button>`).join('')}</div>
   <p class="recap-player-status muted" role="status"></p>
   ${ds.length?'':'<p>No player deaths recorded in this encounter.</p>'}
-  ${groups.map(group=>`<section class="recap-attempt-group"><header class="recap-attempt-heading"><div><h4>${esc(group.label)}</h4><small>${esc(group.time)}</small></div><span class="recap-attempt-result ${group.result==='Wipe'?'is-wipe':group.result==='Kill'?'is-kill':''}">${esc(group.result)}</span><span class="recap-attempt-count">${group.deaths.length} deaths</span></header>${group.deaths.map(d=>`<details class="death-recap" data-death-player="${esc(d.player)}"><summary><span><span class="incident-enemy-context">${esc(d.encounter)}</span>${utilityCharacterName(r,d.player)} ${playerRoleBadge(r,d.player)}<span class="recap-time"> · ${esc(d.anchorTime.slice(0,8))}</span>${renderRecapOpportunitySummary(d,r.review)}</span><span class="recap-status ${d.reviewState==='assessed'?'':'pending'}">${d.reviewState==='assessed'?'Assessed':'Needs context'}</span></summary>
+  ${groups.map(group=>{const healerContext=healerDeathContext(r,group);return `<section class="recap-attempt-group"><header class="recap-attempt-heading"><div><h4>${esc(group.label)}</h4><small>${esc(group.time)}</small></div><span class="recap-attempt-result ${group.result==='Wipe'?'is-wipe':group.result==='Kill'?'is-kill':''}">${esc(group.result)}</span><span class="recap-attempt-count">${group.deaths.length} deaths</span></header>${healerContext?`<p class="recap-cascade-note"><strong>Likely death cascade:</strong> ${utilityCharacterName(r,healerContext.name)} was the first recorded death. With the healer down, the ${healerContext.later.size} later ${healerContext.later.size===1?'death is':'deaths are'} more likely to reflect lost healing and pull collapse; individual mechanics below remain relevant where clearly evidenced.</p>`:''}${group.deaths.map(d=>`<details class="death-recap${healerContext?.later.has(d)?' is-after-healer':''}" data-death-player="${esc(d.player)}"><summary><span><span class="incident-enemy-context">${esc(d.encounter)}</span>${utilityCharacterName(r,d.player)} ${playerRoleBadge(r,d.player)}<span class="recap-time"> · ${esc(d.anchorTime.slice(0,8))}</span>${healerContext?.later.has(d)?'<span class="recap-cascade-badge">After healer death</span>':''}${renderRecapOpportunitySummary(d,r.review)}</span><span class="recap-status ${d.reviewState==='assessed'?'':'pending'}">${d.reviewState==='assessed'?'Assessed':'Needs context'}</span></summary>
   <div class="death-recap-body">${renderFinalDamage(d,r.review)}
   ${d.spirit?`<p class="recap-note">Spirit of Redemption starts at ${esc(d.anchorTime)}. The death marker is later, at ${esc(d.deathTime)}; this is one death.</p>`:''}
   <div class="recap-totals"><span><small>Damage (includes overkill)</small><b>${number(d.damageTotal)}</b></span><span><small>Net heal events received</small><b class="healing-value">${number(d.healingTotal)}</b></span><span><small>Tracked survival / utility events</small><b>${d.trackedActions}</b></span></div>
@@ -126,7 +137,7 @@ function renderDeathRecaps(r,encounter){
   <label class="recap-filter-label">Timeline view <select class="recap-filter"><option value="all">Damage, healing & actions</option><option value="damage">Damage only</option><option value="healing">Healing received</option><option value="actions">Survival & utility</option></select></label>
   <div class="recap-table-wrap"><table class="recap-table"><caption>10-second window · negative time is before the death sequence · small positive offsets account for log ordering</caption><thead><tr><th>Before</th><th>Event</th><th>Spell</th><th>Source</th><th>Amount</th></tr></thead><tbody>
   ${d.events.map(e=>`<tr data-recap-kind="${e.kind}" class="${e.overkill>0?'has-overkill':''}"><td>${e.offsetSeconds>0?'+':''}${e.offsetSeconds.toFixed(2)}s</td><td>${e.kind==='aura'?(e.event==='SPELL_AURA_APPLIED'?'Effect gained':'Effect ended'):e.kind==='cast'?'Cast':e.kind==='healing'?'Heal':'Damage'}</td><td>${e.kind==='damage'?renderSpellHelp(e,r.review):esc(e.spell)}</td><td>${esc(e.source)}</td><td class="${e.kind==='healing'?'healing-value':''}">${e.amount===null?'—':number(e.amount)}${e.overkill>0?`<small class="overkill-value">${number(e.overkill)} overkill</small>`:''}</td></tr>`).join('')}
-  </tbody></table><p class="recap-no-events" hidden>No events of this type in the selected window.</p></div></div></details>`).join('')}</section>`).join('')}
+  </tbody></table><p class="recap-no-events" hidden>No events of this type in the selected window.</p></div></div></details>`).join('')}</section>`;}).join('')}
   <details class="tactics-method"><summary>Recap method and limits</summary><p>${esc(pack.method)}</p>${researchLinks(r.review,pack.sourceIds)}</details></div></details>`;
 }
 function setupRecapFilters(root){
