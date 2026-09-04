@@ -14,7 +14,7 @@
     const original=window.dungeonEmblem;
     window.dungeonEmblem=name=>{
       const file=emblemFiles[name];
-      return file?`<img class="dungeon-emblem" src="assets/dungeon-${file}.svg?v=2" alt="" aria-hidden="true" width="48" height="48">`:original(name);
+      return file?`<img class="dungeon-emblem" src="assets/dungeon-${file}.svg?v=3" alt="" aria-hidden="true" width="48" height="48">`:original(name);
     };
   }
 
