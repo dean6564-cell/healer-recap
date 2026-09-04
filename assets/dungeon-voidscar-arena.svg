@@ -1,1 +1,10 @@
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64"><defs><radialGradient id="g"><stop stop-color="#c8a7ff"/><stop offset="1" stop-color="#5a2f91"/></radialGradient></defs><circle cx="32" cy="32" r="30" fill="#0c131c" stroke="#8d63c7" stroke-width="2"/><path d="M32 11 37 25 52 20 41 32 52 44 37 39 32 53 27 39 12 44 23 32 12 20 27 25Z" fill="url(#g)"/><circle cx="32" cy="32" r="7" fill="#111827" stroke="#e0c7ff" stroke-width="2"/></svg>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64">
+<defs>
+ <radialGradient id="void"><stop stop-color="#71e3ff"/><stop offset=".45" stop-color="#7354d8"/><stop offset="1" stop-color="#241547"/></radialGradient>
+ <linearGradient id="edge" x1="0" y1="0" x2="1" y2="1"><stop stop-color="#d9c2ff"/><stop offset=".5" stop-color="#8a5be2"/><stop offset="1" stop-color="#443073"/></linearGradient>
+</defs>
+<path d="M32 2 55 13v19c0 15-9 24-23 30C18 56 9 47 9 32V13Z" fill="#090b18" stroke="url(#edge)" stroke-width="2"/>
+<path d="m17 18 10 8-4-15 9 10 9-10-4 15 10-8-5 14 8 8-13-2-5 14-5-14-13 2 8-8Z" fill="#2b2054" stroke="#9670e8" stroke-width="1.5" stroke-linejoin="round"/>
+<circle cx="32" cy="32" r="10" fill="url(#void)" stroke="#cdb6ff" stroke-width="1.5"/>
+<path d="M32 23c4 5 4 13 0 18-4-5-4-13 0-18Z" fill="#b9f3ff" opacity=".8"/>
+</svg>
