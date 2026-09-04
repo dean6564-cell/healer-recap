@@ -76496,7 +76496,20 @@
         "startTime": "21:34:58.2091",
         "endTime": "21:36:31.8461",
         "durationSeconds": 93.637,
-        "success": false
+        "success": false,
+        "pull": {
+          "enemy": "Aka'ali the Conqueror",
+          "enemyType": "Miniboss",
+          "assessment": "Rinse accidentally pulled Aka'ali and was targeted by its melee attacks. This damage was avoidable by allowing the tank to pull and establish control first.",
+          "firstQualifyingDamageTaken": {
+            "player": "Rinse-LaughingSkull-EU",
+            "role": "Healer",
+            "source": "Aka'ali the Conqueror",
+            "spell": "Melee",
+            "time": "21:35:50.5301",
+            "attackType": "melee"
+          }
+        }
       },
       {
         "name": "The Council of Tribes",
@@ -77022,6 +77035,8 @@
           "player": "Rinse-LaughingSkull-EU",
           "deathTime": "21:36:10.8001",
           "anchorTime": "21:35:55.7501",
+          "enemy": "Aka'ali the Conqueror",
+          "enemyType": "Miniboss · accidental pull",
           "spirit": true,
           "encounter": "The Council of Tribes",
           "events": [
@@ -77359,10 +77374,12 @@
           "damageTotal": 2289690,
           "healingTotal": 1132866,
           "overkillTotal": 491884,
+          "avoidableDamageTotal": 2289690,
+          "avoidableReason": "Allow the tank to pull and establish control first.",
           "trackedActions": 6,
           "incidentTitle": "First Council attempt",
-          "assessment": "Confirmed boss contact on the healer and later shared-charge damage. Architooth has only small deferred-damage ticks at the end; a definite lethal cause is unresolved. Deadmajesty has a separate Purgatory instakill marker. See this player’s timeline for the observed damage; the final hit alone does not assign blame.",
-          "correction": "Tank: re-establish boss control before healer recovery; mitigate or kite Backhand. Everyone: share Barrel Through at a safe location. Rinse: recover the affected target and keep clear of axes.",
+          "assessment": "Rinse accidentally pulled Aka'ali the Conqueror and was targeted by the miniboss. The healer then took Barrel Through, repeated melee damage and Debilitating Backhand before entering Spirit of Redemption; the final melee hit included 491,884 overkill.",
+          "correction": "Rinse: do not move into Aka'ali's aggro range before the tank establishes control. Tank: secure Aka'ali before the group moves in. Everyone: share Barrel Through at a safe location once the pull is established.",
           "sourceIds": [
             "guide-kings8",
             "spell-266237",
