@@ -304,7 +304,30 @@ function sortRuns(runs){return runs.slice().sort((a,b)=>`${b.date||''}${b.startT
 function isReviewed(r){return !!(r.review && (r.review.summary || r.review.improvements?.length || r.review.whatWentWell?.length))}
 function confidenceLabel(c){return ({high:'High confidence',medium:'Medium confidence',low:'Low confidence'})[String(c||'').toLowerCase()]||''}
 
-(r){
+function inGuildArea(){return document.body.dataset.page==='guild'||new URLSearchParams(location.search).get('group')==='guild'}
+function nav(active=''){
+ const el=document.querySelector('#siteNav');if(!el)return;
+ const guild=inGuildArea(),hasCharacterContext=new URLSearchParams(location.search).has('character'),selected=guild&&!hasCharacterContext?null:selectedCharacterRecord(),dashboardName=selected?.name||'M+ Recap',dashboardLink=selectedDashboardHref(selected);
+ const guildLink=selected?`guild.html?character=${encodeURIComponent(selected.key||'selected')}`:'guild.html';
+ const dashboardBack=selected?`← ${esc(dashboardName)}’s Dashboard`:'← Character selection';
+ const footer=document.querySelector('footer .wrap');
+ if(footer&&!footer.querySelector('.footer-horde-logo'))footer.insertAdjacentHTML('afterbegin','<img class="footer-horde-logo" src="assets/horde-logo.svg" alt="M+ Recap" width="150" height="90">');
+ el.innerHTML=`<nav aria-label="${guild?'Guild':'Main'} navigation"><div class="wrap nav-wrap">
+ <a class="brand" href="${guild?'guild.html':dashboardLink}" aria-label="${guild?'Cause and Effect home':selected?esc(dashboardName)+' dashboard home':'Choose character'}"><img class="brand-priest-icon ${guild?'brand-guild-icon':''}" src="${guild?'assets/guild-crest.svg':esc(selected?.avatar||classIcon(selected))}" alt="" width="72" height="72"><span class="brand-rinse-wordmark">${guild?'Cause and Effect':selected?esc(dashboardName)+'’s':'M+ Recap'}<small>${guild?'Guild M+ Dashboard':selected?'M+ Dashboard':'Choose character'}</small></span><em>Midnight · Season 2</em></a>
+ <div class="navlinks ${guild?'guild-navigation':''}">
+ ${guild?`<a href="${dashboardLink}" class="nav-back" data-nav-switch>${dashboardBack}</a><a href="${guildLink}" class="${active==='guild'?'active':''}"><img class="guild-nav-crest" src="assets/guild-crest.svg" alt="" width="26" height="26">Cause and Effect</a><a href="library.html?group=guild" class="${active==='library'?'active':''}">Run Library</a>`:`<a href="${dashboardLink}" class="${active==='home'?'active':''}">Overview</a><a href="insights.html" class="${active==='insights'?'active':''}">Insights</a><a href="library.html" class="${active==='library'?'active':''}">Run Library</a><a href="index.html" class="nav-change-character">Change character</a><a href="${guildLink}" data-nav-switch><img class="guild-nav-crest" src="assets/guild-crest.svg" alt="" width="26" height="26">Cause and Effect</a>`}
+ </div></div></nav>`;
+ el.querySelectorAll('[data-nav-switch]').forEach(link=>link.addEventListener('click',event=>{
+ if(event.button!==0||event.ctrlKey||event.metaKey||event.shiftKey||event.altKey||matchMedia('(prefers-reduced-motion: reduce)').matches)return;
+ event.preventDefault();el.querySelector('.navlinks').classList.add('nav-sliding-out');
+ setTimeout(()=>location.assign(link.href),220);
+ }));
+}
+
+function statusPill(r){
+  return `<span class="review-pill ${isReviewed(r)?'reviewed':'facts'}">${isReviewed(r)?'Reviewed':'Facts only'}</span>`;
+}
+function runTiming(r){
  if(r.success===false)return {state:'unfinished',label:'Not completed',detail:''};
  if(!Number.isFinite(r.durationSeconds))return {state:'unknown',label:'Time unknown',detail:''};
  const limit=r.timeLimitSeconds;
@@ -1034,5 +1057,4 @@ document.addEventListener('DOMContentLoaded',async()=>{
 
 // A failed decorative image must never obscure report content.
 document.addEventListener('error',event=>{if(event.target instanceof HTMLImageElement&&event.target.matches('.report-spell-icon,.run-thumbnail'))event.target.hidden=true;},true);
-
 
