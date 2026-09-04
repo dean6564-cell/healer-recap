@@ -111,3 +111,13 @@ button.recap-party-member{display:flex;align-items:center;justify-content:space-
 .recap-window-summary{display:flex;align-items:center;gap:7px;flex-wrap:wrap;margin-top:8px;color:var(--muted);font-size:.68rem;line-height:1.35}
 .recap-window-summary span{letter-spacing:.06em;text-transform:uppercase}
 .recap-window-summary strong{padding-left:8px;border-left:1px solid var(--border-bright);color:#f1c56f;font-size:.7rem}
+.recap-card-content{display:grid;gap:8px;min-width:0}
+.recap-card-content>.incident-enemy-context{margin:0}
+.recap-death-identity{display:flex;align-items:center;gap:10px;min-width:0}
+.recap-death-identity .party-guild-portrait{width:38px;height:38px;border-radius:9px}
+.recap-death-identity .party-guild-portrait.is-class-fallback{object-fit:cover;border-color:var(--border-bright)}
+.recap-death-name{display:flex;align-items:center;gap:4px;flex-wrap:wrap;min-width:0}
+.recap-death-name>.player-role{margin-left:2px}
+.recap-card-content .recap-window-summary,.recap-card-content .recap-opportunity-overview{margin-left:48px;margin-top:0}
+.recap-card-content .recap-cascade-badge{margin:0 0 0 5px}
+@media(max-width:650px){.recap-card-content .recap-window-summary,.recap-card-content .recap-opportunity-overview{margin-left:0}.recap-death-identity .party-guild-portrait{width:34px;height:34px}}
