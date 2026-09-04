@@ -860,7 +860,7 @@ footer .footer-horde-logo{position:absolute;left:50%;top:0;transform:translate(-
 .nav-menu-toggle[aria-expanded="true"] span:nth-child(1){transform:translateY(7px) rotate(45deg)}
 .nav-menu-toggle[aria-expanded="true"] span:nth-child(2){opacity:0}
 .nav-menu-toggle[aria-expanded="true"] span:nth-child(3){transform:translateY(-7px) rotate(-45deg)}
-@media(max-width:1080px){
+@media(max-width:1320px){
  #siteNav nav .wrap{position:relative;min-height:72px;height:72px;padding:0 18px;flex-direction:row;align-items:center;gap:14px}
  #siteNav .brand{height:auto;justify-content:flex-start;flex:1;overflow:hidden}
  #siteNav .brand-priest-icon{width:58px;height:58px;flex:none}
