@@ -628,9 +628,15 @@ function renderUtilityHelp(b){
   <footer class="spell-card-sources"><p>${b.kind==='ccApplications'?'Counts are successful aura applications per target, including repeat applications; they do not prove a cast was stopped.':'Counts are successful removal or interrupt events, not attempted casts.'} Enemies with the same name are grouped together.</p></footer></template></span>`;
 }
 const PARTY_CLASS_ART={Warrior:'classicon_warrior',Paladin:'classicon_paladin',Hunter:'classicon_hunter',Rogue:'classicon_rogue',Priest:'classicon_priest','Death Knight':'classicon_deathknight',Shaman:'classicon_shaman',Mage:'classicon_mage',Warlock:'classicon_warlock',Monk:'classicon_monk',Druid:'classicon_druid','Demon Hunter':'classicon_demonhunter',Evoker:'classicon_evoker'};
+function guildMemberForPlayer(name){
+ const parts=String(name).replace(/-EU$/i,'').split('-'),character=parts.shift(),realm=parts.join('-');
+ const exact=guildRoster.get(rosterKey(character,realm));
+ if(exact||realm)return exact||null;
+ const matches=[...guildRoster.values()].filter(member=>rosterKey(member.name,'').split('|')[0]===rosterKey(character,'').split('|')[0]);
+ return matches.length===1?matches[0]:null;
+}
 function guildPartyPortrait(name){
- const parts=String(name).replace(/-EU$/i,'').split('-'),character=parts.shift();
- const member=guildRoster.get(rosterKey(character,parts.join('-')));
+ const member=guildMemberForPlayer(name);
  if(!member)return '';
  const fallback='https://wow.zamimg.com/images/wow/icons/large/'+(PARTY_CLASS_ART[member.class]||'inv_misc_questionmark')+'.jpg';
  let src=fallback;
@@ -648,7 +654,7 @@ function deathPlayerPortrait(r,name){
 
 function utilityCharacterName(r,name){
  const parts=String(name).replace(/-EU$/i,'').split('-'),short=parts.shift();
- const member=guildRoster.get(rosterKey(short,parts.join('-')));
+ const member=guildMemberForPlayer(name);
  const spec=(r.playerRoles||[]).find(p=>p.name===name)?.specializationId;
  const specs={Warrior:[71,72,73],Paladin:[65,66,70],Hunter:[253,254,255],Rogue:[259,260,261],Priest:[256,257,258],'Death Knight':[250,251,252],Shaman:[262,263,264],Mage:[62,63,64],Warlock:[265,266,267],Monk:[268,269,270],Druid:[102,103,104,105],'Demon Hunter':[577,581,1480],Evoker:[1467,1468,1473]};
  const klass=member?.class||Object.keys(specs).find(k=>specs[k].includes(Number(spec)));
