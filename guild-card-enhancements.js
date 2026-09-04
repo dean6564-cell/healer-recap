@@ -1,10 +1,10 @@
 (()=>{
   const emblemFiles={
     'The Blinding Vale':'blinding-vale',
-    'Voidscar Arena':'voidscar-arena',
+    'Voidscar Arena':'voidscar-arena?v=2',
     "Kings' Rest":'kings-rest',
-    'Den of Nalorakk':'den-of-nalorakk',
-    'Altar of Fangs':'altar-of-fangs',
+    'Den of Nalorakk':'den-of-nalorakk?v=2',
+    'Altar of Fangs':'altar-of-fangs?v=2',
     'Ruby Life Pools':'ruby-life-pools',
     'Murder Row':'murder-row',
     'Temple of Sethraliss':'sethraliss'
