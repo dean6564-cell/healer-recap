@@ -894,6 +894,8 @@ footer .footer-horde-logo{position:absolute;left:50%;top:0;transform:translate(-
 .boss-pull-review ul{display:grid;gap:8px;margin:14px 0 0;padding:0;list-style:none}
 .boss-pull-review li{display:grid;grid-template-columns:82px 1fr;align-items:center;gap:10px;padding-top:8px;border-top:1px solid rgba(255,255,255,.065)}
 .boss-pull-review li>span:first-child{color:var(--gold-light);font-size:.72rem;font-weight:800;text-transform:uppercase}
+.incident-enemy-context small{color:#c8a66b;font-size:.66rem;font-weight:700;text-transform:uppercase;letter-spacing:.045em}
+.recap-avoidable-reason{display:block;margin-top:4px;color:#d9c18a;font-size:.67rem;line-height:1.35}
 @media(max-width:560px){.boss-pull-review li{grid-template-columns:1fr}.boss-pull-review{padding:14px}}
 
 /* Review copy fills the space beside its confidence label. */
