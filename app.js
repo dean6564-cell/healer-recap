@@ -304,11 +304,7 @@ function sortRuns(runs){return runs.slice().sort((a,b)=>`${b.date||''}${b.startT
 function isReviewed(r){return !!(r.review && (r.review.summary || r.review.improvements?.length || r.review.whatWentWell?.length))}
 function confidenceLabel(c){return ({high:'High confidence',medium:'Medium confidence',low:'Low confidence'})[String(c||'').toLowerCase()]||''}
 
-function inGuildArea(){return document.body.dataset.page==='guild'||new URLSearchParams(location.search).get('group')==='guild'}
 (r){
-  return `<span class="review-pill ${isReviewed(r)?'reviewed':'facts'}">${isReviewed(r)?'Reviewed':'Facts only'}</span>`;
-}
-function runTiming(r){
  if(r.success===false)return {state:'unfinished',label:'Not completed',detail:''};
  if(!Number.isFinite(r.durationSeconds))return {state:'unknown',label:'Time unknown',detail:''};
  const limit=r.timeLimitSeconds;
