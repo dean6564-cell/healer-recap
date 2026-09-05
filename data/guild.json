@@ -5,9 +5,530 @@
     "region": "EU"
   },
   "seasonId": 18,
-  "updatedAt": "2026-09-03T08:52:57.920107+00:00",
+  "updatedAt": "2026-09-05T07:17:29.396960+00:00",
   "maxLevel": 90,
   "members": [
+    {
+      "key": "stormscale/izzal",
+      "name": "Izzal",
+      "realm": "stormscale",
+      "level": 90,
+      "class": "Demon Hunter",
+      "role": "DPS",
+      "spec": "Devourer",
+      "score": 2713.6,
+      "bestRuns": [
+        {
+          "dungeon": "The Blinding Vale",
+          "dungeonId": 584,
+          "level": 11,
+          "durationMs": 1308355,
+          "timed": true,
+          "completedAt": 1788554633000,
+          "rating": 345.2426,
+          "members": [
+            {
+              "name": "Laundaris",
+              "realm": "aszune",
+              "spec": "Blood"
+            },
+            {
+              "name": "Geesarupink",
+              "realm": "ravencrest",
+              "spec": "Holy"
+            },
+            {
+              "name": "Qablooie",
+              "realm": "archimonde",
+              "spec": "Arcane"
+            },
+            {
+              "name": "Izzal",
+              "realm": "stormscale",
+              "spec": "Devourer"
+            },
+            {
+              "name": "Johnywick",
+              "realm": "aszune",
+              "spec": "Beast Mastery"
+            }
+          ]
+        },
+        {
+          "dungeon": "Kings' Rest",
+          "dungeonId": 249,
+          "level": 10,
+          "durationMs": 2198169,
+          "timed": false,
+          "completedAt": 1787406956000,
+          "rating": 300.868,
+          "members": [
+            {
+              "name": "Sapphirre",
+              "realm": "wildhammer",
+              "spec": "Arms"
+            },
+            {
+              "name": "Roaro",
+              "realm": "hyjal",
+              "spec": "Enhancement"
+            },
+            {
+              "name": "Izzal",
+              "realm": "stormscale",
+              "spec": "Devourer"
+            },
+            {
+              "name": "Elry",
+              "realm": "argent-dawn",
+              "spec": "Vengeance"
+            },
+            {
+              "name": "Antrak",
+              "realm": "hyjal",
+              "spec": "Discipline"
+            }
+          ]
+        },
+        {
+          "dungeon": "Voidscar Arena",
+          "dungeonId": 585,
+          "level": 10,
+          "durationMs": 1816697,
+          "timed": false,
+          "completedAt": 1787507527000,
+          "rating": 304.65213,
+          "members": [
+            {
+              "name": "Izzal",
+              "realm": "stormscale",
+              "spec": "Devourer"
+            },
+            {
+              "name": "Darkshara",
+              "realm": "outland",
+              "spec": "Beast Mastery"
+            },
+            {
+              "name": "Gorotsuki",
+              "realm": "antonidas",
+              "spec": "Subtlety"
+            },
+            {
+              "name": "Ilyshpriest",
+              "realm": "blackrock",
+              "spec": "Discipline"
+            },
+            {
+              "name": "Canónized",
+              "realm": "argent-dawn",
+              "spec": "Protection"
+            }
+          ]
+        },
+        {
+          "dungeon": "Voidscar Arena",
+          "dungeonId": 585,
+          "level": 12,
+          "durationMs": 1744696,
+          "timed": true,
+          "completedAt": 1788370109000,
+          "rating": 366.15216,
+          "members": [
+            {
+              "name": "Prvorozen",
+              "realm": "drakthul",
+              "spec": "Beast Mastery"
+            },
+            {
+              "name": "Izzal",
+              "realm": "stormscale",
+              "spec": "Devourer"
+            },
+            {
+              "name": "Strosak",
+              "realm": "drakthul",
+              "spec": "Restoration"
+            },
+            {
+              "name": "Kosmodisk",
+              "realm": "drakthul",
+              "spec": "Blood"
+            },
+            {
+              "name": "Hotkoreandog",
+              "realm": "silvermoon",
+              "spec": "Enhancement"
+            }
+          ]
+        },
+        {
+          "dungeon": "Kings' Rest",
+          "dungeonId": 249,
+          "level": 10,
+          "durationMs": 1762111,
+          "timed": true,
+          "completedAt": 1787417741000,
+          "rating": 324.12668,
+          "members": [
+            {
+              "name": "Pilope",
+              "realm": "throkferoth",
+              "spec": "Balance"
+            },
+            {
+              "name": "Warriaglus",
+              "realm": "drakthul",
+              "spec": "Protection"
+            },
+            {
+              "name": "Karonina",
+              "realm": "blackhand",
+              "spec": "Discipline"
+            },
+            {
+              "name": "Izzal",
+              "realm": "stormscale",
+              "spec": "Devourer"
+            },
+            {
+              "name": "Péèt",
+              "realm": "drakthul",
+              "spec": "Marksmanship"
+            }
+          ]
+        },
+        {
+          "dungeon": "Temple of Sethraliss",
+          "dungeonId": 250,
+          "level": 10,
+          "durationMs": 2080489,
+          "timed": false,
+          "completedAt": 1787920082000,
+          "rating": 301.86545,
+          "members": [
+            {
+              "name": "Rhelian",
+              "realm": "silvermoon",
+              "spec": "Arcane"
+            },
+            {
+              "name": "Izzal",
+              "realm": "stormscale",
+              "spec": "Devourer"
+            },
+            {
+              "name": "Cecìlìa",
+              "realm": "nemesis",
+              "spec": "Protection"
+            },
+            {
+              "name": "Elmental",
+              "realm": "tarren-mill",
+              "spec": "Elemental"
+            },
+            {
+              "name": "Misantropy",
+              "realm": "pozzo-delleternità",
+              "spec": "Discipline"
+            }
+          ]
+        },
+        {
+          "dungeon": "Den of Nalorakk",
+          "dungeonId": 586,
+          "level": 9,
+          "durationMs": 1927062,
+          "timed": false,
+          "completedAt": 1788214330000,
+          "rating": 274.86206,
+          "members": [
+            {
+              "name": "Годмодофф",
+              "realm": "gordunni",
+              "spec": "Holy"
+            },
+            {
+              "name": "Apöllo",
+              "realm": "silvermoon",
+              "spec": "Retribution"
+            },
+            {
+              "name": "Bodoswar",
+              "realm": "turalyon",
+              "spec": "Protection"
+            },
+            {
+              "name": "Devanua",
+              "realm": "ravencrest",
+              "spec": "Arcane"
+            },
+            {
+              "name": "Izzal",
+              "realm": "stormscale",
+              "spec": "Devourer"
+            }
+          ]
+        },
+        {
+          "dungeon": "Temple of Sethraliss",
+          "dungeonId": 250,
+          "level": 10,
+          "durationMs": 1643381,
+          "timed": true,
+          "completedAt": 1787421767000,
+          "rating": 325.4027,
+          "members": [
+            {
+              "name": "Vailoth",
+              "realm": "antonidas",
+              "spec": "Arcane"
+            },
+            {
+              "name": "Pira",
+              "realm": "antonidas",
+              "spec": "Discipline"
+            },
+            {
+              "name": "Kontekrabber",
+              "realm": "silvermoon",
+              "spec": "Guardian"
+            },
+            {
+              "name": "Warriorofc",
+              "realm": "kargath",
+              "spec": "Arms"
+            },
+            {
+              "name": "Izzal",
+              "realm": "stormscale",
+              "spec": "Devourer"
+            }
+          ]
+        },
+        {
+          "dungeon": "Den of Nalorakk",
+          "dungeonId": 586,
+          "level": 11,
+          "durationMs": 1500468,
+          "timed": true,
+          "completedAt": 1787840081000,
+          "rating": 343.194,
+          "members": [
+            {
+              "name": "Izzal",
+              "realm": "stormscale",
+              "spec": "Devourer"
+            },
+            {
+              "name": "Zazutiv",
+              "realm": "thrall",
+              "spec": "Arcane"
+            },
+            {
+              "name": "Darevin",
+              "realm": "antonidas",
+              "spec": "Blood"
+            },
+            {
+              "name": "Satindrah",
+              "realm": "silvermoon",
+              "spec": "Demonology"
+            },
+            {
+              "name": "Zlopal",
+              "realm": "ravencrest",
+              "spec": "Holy"
+            }
+          ]
+        },
+        {
+          "dungeon": "Murder Row",
+          "dungeonId": 587,
+          "level": 10,
+          "durationMs": 1559530,
+          "timed": true,
+          "completedAt": 1787512055000,
+          "rating": 328.83218,
+          "members": [
+            {
+              "name": "Narí",
+              "realm": "proudmoore",
+              "spec": "Guardian"
+            },
+            {
+              "name": "Nuantan",
+              "realm": "twisting-nether",
+              "spec": "Restoration"
+            },
+            {
+              "name": "Clumsybeard",
+              "realm": "malganis",
+              "spec": "Marksmanship"
+            },
+            {
+              "name": "Vaycheon",
+              "realm": "silvermoon",
+              "spec": "Frost"
+            },
+            {
+              "name": "Izzal",
+              "realm": "stormscale",
+              "spec": "Devourer"
+            }
+          ]
+        },
+        {
+          "dungeon": "Altar of Fangs",
+          "dungeonId": 588,
+          "level": 9,
+          "durationMs": 2133349,
+          "timed": false,
+          "completedAt": 1787441836000,
+          "rating": 268.05524,
+          "members": [
+            {
+              "name": "Bmage",
+              "realm": "sanguino",
+              "spec": "Arcane"
+            },
+            {
+              "name": "Kunkkas",
+              "realm": "zuljin",
+              "spec": "Blood"
+            },
+            {
+              "name": "Рокнролли",
+              "realm": "howling-fjord",
+              "spec": "Unholy"
+            },
+            {
+              "name": "Izzal",
+              "realm": "stormscale",
+              "spec": "Devourer"
+            },
+            {
+              "name": "Heneal",
+              "realm": "elune",
+              "spec": "Restoration"
+            }
+          ]
+        },
+        {
+          "dungeon": "Altar of Fangs",
+          "dungeonId": 588,
+          "level": 11,
+          "durationMs": 1612145,
+          "timed": true,
+          "completedAt": 1788011562000,
+          "rating": 338.91364,
+          "members": [
+            {
+              "name": "Leionends",
+              "realm": "draenor",
+              "spec": "Holy"
+            },
+            {
+              "name": "Miotzrogue",
+              "realm": "draenor",
+              "spec": "Outlaw"
+            },
+            {
+              "name": "Churchfister",
+              "realm": "draenor",
+              "spec": "Protection"
+            },
+            {
+              "name": "Thagounet",
+              "realm": "sargeras",
+              "spec": "Elemental"
+            },
+            {
+              "name": "Izzal",
+              "realm": "stormscale",
+              "spec": "Devourer"
+            }
+          ]
+        },
+        {
+          "dungeon": "Ruby Life Pools",
+          "dungeonId": 399,
+          "level": 11,
+          "durationMs": 1872190,
+          "timed": false,
+          "completedAt": 1787926057000,
+          "rating": 300.71005,
+          "members": [
+            {
+              "name": "Laryngo",
+              "realm": "khaz-modan",
+              "spec": "Blood"
+            },
+            {
+              "name": "Msrgrundie",
+              "realm": "moonglade",
+              "spec": "Affliction"
+            },
+            {
+              "name": "Näätäqt",
+              "realm": "stormreaver",
+              "spec": "Restoration"
+            },
+            {
+              "name": "Lifesaver",
+              "realm": "malygos",
+              "spec": "Devastation"
+            },
+            {
+              "name": "Izzal",
+              "realm": "stormscale",
+              "spec": "Devourer"
+            }
+          ]
+        },
+        {
+          "dungeon": "Ruby Life Pools",
+          "dungeonId": 399,
+          "level": 11,
+          "durationMs": 1377963,
+          "timed": true,
+          "completedAt": 1788367859000,
+          "rating": 341.7419,
+          "members": [
+            {
+              "name": "Izzal",
+              "realm": "stormscale",
+              "spec": "Devourer"
+            },
+            {
+              "name": "Garsvrosh",
+              "realm": "ysondre",
+              "spec": "Blood"
+            },
+            {
+              "name": "Fileali",
+              "realm": "throkferoth",
+              "spec": "Holy"
+            },
+            {
+              "name": "Shintaro",
+              "realm": "throkferoth",
+              "spec": "Beast Mastery"
+            },
+            {
+              "name": "Khrognain",
+              "realm": "khaz-modan",
+              "spec": "Retribution"
+            }
+          ]
+        }
+      ],
+      "status": "current",
+      "updatedAt": "2026-09-05T07:17:29.396960+00:00",
+      "change": null,
+      "avatar": "https://render.worldofwarcraft.com/eu/character/stormscale/102/177075046-avatar.jpg",
+      "avatarUpdatedAt": "2026-09-05T07:17:29.396960+00:00"
+    },
     {
       "key": "shattered-halls/grarl",
       "name": "Grarl",
@@ -16,7 +537,7 @@
       "class": "Hunter",
       "role": "DPS",
       "spec": "Beast Mastery",
-      "score": 2571.5,
+      "score": 2632.9,
       "bestRuns": [
         {
           "dungeon": "The Blinding Vale",
@@ -28,6 +549,11 @@
           "rating": 344.20874,
           "members": [
             {
+              "name": "Lenote",
+              "realm": "kazzak",
+              "spec": "Vengeance"
+            },
+            {
               "name": "Grarl",
               "realm": "shattered-halls",
               "spec": "Beast Mastery"
@@ -38,19 +564,14 @@
               "spec": "Restoration"
             },
             {
-              "name": "Deflai",
-              "realm": "kazzak",
-              "spec": "Retribution"
-            },
-            {
               "name": "Леротель",
               "realm": "eversong",
               "spec": "Havoc"
             },
             {
-              "name": "Lenote",
+              "name": "Deflai",
               "realm": "kazzak",
-              "spec": "Vengeance"
+              "spec": "Retribution"
             }
           ]
         },
@@ -63,11 +584,6 @@
           "completedAt": 1788005083000,
           "rating": 269.17932,
           "members": [
-            {
-              "name": "Krasshole",
-              "realm": "twisting-nether",
-              "spec": "Restoration"
-            },
             {
               "name": "Grarl",
               "realm": "shattered-halls",
@@ -82,6 +598,11 @@
               "name": "Dsty",
               "realm": "daggerspine",
               "spec": "Elemental"
+            },
+            {
+              "name": "Krasshole",
+              "realm": "twisting-nether",
+              "spec": "Restoration"
             },
             {
               "name": "Alxdk",
@@ -213,16 +734,6 @@
               "spec": "Discipline"
             },
             {
-              "name": "Grarl",
-              "realm": "shattered-halls",
-              "spec": "Beast Mastery"
-            },
-            {
-              "name": "Eclypsis",
-              "realm": "shattered-halls",
-              "spec": "Outlaw"
-            },
-            {
               "name": "Whitestalker",
               "realm": "shattered-halls",
               "spec": "Beast Mastery"
@@ -231,6 +742,16 @@
               "name": "Kazzataur",
               "realm": "shattered-halls",
               "spec": "Protection"
+            },
+            {
+              "name": "Eclypsis",
+              "realm": "shattered-halls",
+              "spec": "Outlaw"
+            },
+            {
+              "name": "Grarl",
+              "realm": "shattered-halls",
+              "spec": "Beast Mastery"
             }
           ]
         },
@@ -273,16 +794,16 @@
         {
           "dungeon": "Den of Nalorakk",
           "dungeonId": 586,
-          "level": 10,
-          "durationMs": 1773887,
+          "level": 11,
+          "durationMs": 1812835,
           "timed": true,
-          "completedAt": 1787501717000,
-          "rating": 322.85376,
+          "completedAt": 1788550964000,
+          "rating": 337.09308,
           "members": [
             {
-              "name": "Baldbloke",
-              "realm": "draenor",
-              "spec": "Holy"
+              "name": "Brewki",
+              "realm": "der-mithrilorden",
+              "spec": "Mistweaver"
             },
             {
               "name": "Grarl",
@@ -290,19 +811,19 @@
               "spec": "Beast Mastery"
             },
             {
-              "name": "Edzus",
-              "realm": "silvermoon",
-              "spec": "Arms"
-            },
-            {
-              "name": "Kuroy",
-              "realm": "silvermoon",
-              "spec": "Protection"
-            },
-            {
-              "name": "Kollbjorn",
-              "realm": "tarren-mill",
+              "name": "Release",
+              "realm": "jaedenar",
               "spec": "Arcane"
+            },
+            {
+              "name": "Pinkypan",
+              "realm": "ravencrest",
+              "spec": "Windwalker"
+            },
+            {
+              "name": "Murgundon",
+              "realm": "lightnings-blade",
+              "spec": "Blood"
             }
           ]
         },
@@ -352,6 +873,11 @@
           "rating": 302.1321,
           "members": [
             {
+              "name": "Zömbrî",
+              "realm": "zuljin",
+              "spec": "Holy"
+            },
+            {
               "name": "Gigamamas",
               "realm": "zuljin",
               "spec": "Shadow"
@@ -367,11 +893,6 @@
               "spec": "Beast Mastery"
             },
             {
-              "name": "Zömbrî",
-              "realm": "zuljin",
-              "spec": "Holy"
-            },
-            {
               "name": "Mórtém",
               "realm": "amanthul",
               "spec": "Guardian"
@@ -381,26 +902,21 @@
         {
           "dungeon": "Altar of Fangs",
           "dungeonId": 588,
-          "level": 8,
-          "durationMs": 1332186,
+          "level": 10,
+          "durationMs": 1228360,
           "timed": true,
-          "completedAt": 1787996490000,
-          "rating": 284.74612,
+          "completedAt": 1788555302000,
+          "rating": 331.90918,
           "members": [
             {
-              "name": "Avalerya",
-              "realm": "ragnaros",
-              "spec": "Retribution"
+              "name": "Totemzugzug",
+              "realm": "blackhand",
+              "spec": "Elemental"
             },
             {
-              "name": "Auba",
-              "realm": "zuljin",
-              "spec": "Arcane"
-            },
-            {
-              "name": "Beavs",
-              "realm": "stormscale",
-              "spec": "Blood"
+              "name": "Fistmymist",
+              "realm": "draenor",
+              "spec": "Mistweaver"
             },
             {
               "name": "Grarl",
@@ -408,9 +924,14 @@
               "spec": "Beast Mastery"
             },
             {
-              "name": "Kssu",
-              "realm": "zuljin",
-              "spec": "Restoration"
+              "name": "Cassadeekay",
+              "realm": "draenor",
+              "spec": "Blood"
+            },
+            {
+              "name": "Venerablê",
+              "realm": "hyjal",
+              "spec": "Assassination"
             }
           ]
         },
@@ -424,14 +945,14 @@
           "rating": 327.95294,
           "members": [
             {
+              "name": "Seeun",
+              "realm": "kazzak",
+              "spec": "Holy"
+            },
+            {
               "name": "Grarl",
               "realm": "shattered-halls",
               "spec": "Beast Mastery"
-            },
-            {
-              "name": "Alik",
-              "realm": "argent-dawn",
-              "spec": "Retribution"
             },
             {
               "name": "Lovelymom",
@@ -439,23 +960,23 @@
               "spec": "Brewmaster"
             },
             {
-              "name": "Seeun",
-              "realm": "kazzak",
-              "spec": "Holy"
-            },
-            {
               "name": "Bobior",
               "realm": "draenor",
               "spec": "Frost"
+            },
+            {
+              "name": "Alik",
+              "realm": "argent-dawn",
+              "spec": "Retribution"
             }
           ]
         }
       ],
       "status": "current",
-      "updatedAt": "2026-09-03T08:52:57.920107+00:00",
-      "change": 0.0,
+      "updatedAt": "2026-09-05T07:17:29.396960+00:00",
+      "change": 61.4,
       "avatar": "https://render.worldofwarcraft.com/eu/character/shattered-halls/34/1061154-avatar.jpg",
-      "avatarUpdatedAt": "2026-09-03T08:52:57.920107+00:00"
+      "avatarUpdatedAt": "2026-09-05T07:17:29.396960+00:00"
     },
     {
       "key": "shattered-halls/wetpatch",
@@ -465,7 +986,7 @@
       "class": "Druid",
       "role": "DPS",
       "spec": "Feral",
-      "score": 2411.9,
+      "score": 2538.4,
       "bestRuns": [
         {
           "dungeon": "The Blinding Vale",
@@ -477,14 +998,14 @@
           "rating": 274.93832,
           "members": [
             {
+              "name": "Sólmáge",
+              "realm": "ravencrest",
+              "spec": "Arcane"
+            },
+            {
               "name": "Fondecuve",
               "realm": "dalaran",
               "spec": "Unholy"
-            },
-            {
-              "name": "Cáraxes",
-              "realm": "ravencrest",
-              "spec": "Holy"
             },
             {
               "name": "Wetpatch",
@@ -492,9 +1013,9 @@
               "spec": "Feral"
             },
             {
-              "name": "Sólmáge",
+              "name": "Cáraxes",
               "realm": "ravencrest",
-              "spec": "Arcane"
+              "spec": "Holy"
             },
             {
               "name": "Paulthepanda",
@@ -513,19 +1034,14 @@
           "rating": 332.40524,
           "members": [
             {
-              "name": "Unay",
-              "realm": "hyjal",
-              "spec": "Beast Mastery"
-            },
-            {
               "name": "Ауш",
               "realm": "gordunni",
               "spec": "Arms"
             },
             {
-              "name": "Fayevega",
-              "realm": "blackmoore",
-              "spec": "Guardian"
+              "name": "Wetpatch",
+              "realm": "shattered-halls",
+              "spec": "Feral"
             },
             {
               "name": "Møønweaver",
@@ -533,9 +1049,14 @@
               "spec": "Mistweaver"
             },
             {
-              "name": "Wetpatch",
-              "realm": "shattered-halls",
-              "spec": "Feral"
+              "name": "Fayevega",
+              "realm": "blackmoore",
+              "spec": "Guardian"
+            },
+            {
+              "name": "Unay",
+              "realm": "hyjal",
+              "spec": "Beast Mastery"
             }
           ]
         },
@@ -554,14 +1075,14 @@
               "spec": "Protection"
             },
             {
-              "name": "Caliginous",
-              "realm": "kazzak",
-              "spec": "Devastation"
-            },
-            {
               "name": "Wetpatch",
               "realm": "shattered-halls",
               "spec": "Feral"
+            },
+            {
+              "name": "Caliginous",
+              "realm": "kazzak",
+              "spec": "Devastation"
             },
             {
               "name": "Nevirr",
@@ -585,19 +1106,14 @@
           "rating": 326.00595,
           "members": [
             {
+              "name": "Fief",
+              "realm": "dalaran",
+              "spec": "Survival"
+            },
+            {
               "name": "Defrager",
               "realm": "twisting-nether",
               "spec": "Protection"
-            },
-            {
-              "name": "Poée",
-              "realm": "kirin-tor",
-              "spec": "Mistweaver"
-            },
-            {
-              "name": "Wetpatch",
-              "realm": "shattered-halls",
-              "spec": "Feral"
             },
             {
               "name": "Sarkofif",
@@ -605,45 +1121,50 @@
               "spec": "Arcane"
             },
             {
-              "name": "Fief",
-              "realm": "dalaran",
-              "spec": "Survival"
+              "name": "Wetpatch",
+              "realm": "shattered-halls",
+              "spec": "Feral"
+            },
+            {
+              "name": "Poée",
+              "realm": "kirin-tor",
+              "spec": "Mistweaver"
             }
           ]
         },
         {
           "dungeon": "Den of Nalorakk",
           "dungeonId": 586,
-          "level": 9,
-          "durationMs": 1862999,
+          "level": 10,
+          "durationMs": 1217469,
           "timed": true,
-          "completedAt": 1788085484000,
-          "rating": 291.1133,
+          "completedAt": 1788474022000,
+          "rating": 333.7213,
           "members": [
+            {
+              "name": "Nino",
+              "realm": "terokkar",
+              "spec": "Affliction"
+            },
+            {
+              "name": "Vensie",
+              "realm": "silvermoon",
+              "spec": "Subtlety"
+            },
+            {
+              "name": "Fiinis",
+              "realm": "twisting-nether",
+              "spec": "Restoration"
+            },
+            {
+              "name": "Dwaifu",
+              "realm": "terokkar",
+              "spec": "Protection"
+            },
             {
               "name": "Wetpatch",
               "realm": "shattered-halls",
               "spec": "Feral"
-            },
-            {
-              "name": "Cali",
-              "realm": "dalaran",
-              "spec": "Restoration"
-            },
-            {
-              "name": "Charvis",
-              "realm": "ysera",
-              "spec": "Protection"
-            },
-            {
-              "name": "Dydy",
-              "realm": "blackhand",
-              "spec": "Shadow"
-            },
-            {
-              "name": "Рейдже",
-              "realm": "gordunni",
-              "spec": "Arms"
             }
           ]
         },
@@ -657,6 +1178,16 @@
           "rating": 269.54816,
           "members": [
             {
+              "name": "Tumble",
+              "realm": "zirkel-des-cenarius",
+              "spec": "Brewmaster"
+            },
+            {
+              "name": "Perrin",
+              "realm": "zirkel-des-cenarius",
+              "spec": "Holy"
+            },
+            {
               "name": "Wetpatch",
               "realm": "shattered-halls",
               "spec": "Feral"
@@ -667,19 +1198,9 @@
               "spec": "Demonology"
             },
             {
-              "name": "Tumble",
-              "realm": "zirkel-des-cenarius",
-              "spec": "Brewmaster"
-            },
-            {
               "name": "Bujorel",
               "realm": "silvermoon",
               "spec": "Frost"
-            },
-            {
-              "name": "Perrin",
-              "realm": "zirkel-des-cenarius",
-              "spec": "Holy"
             }
           ]
         },
@@ -734,14 +1255,14 @@
               "spec": "Preservation"
             },
             {
-              "name": "Monkdrielle",
-              "realm": "ragnaros",
-              "spec": "Brewmaster"
-            },
-            {
               "name": "Wetpatch",
               "realm": "shattered-halls",
               "spec": "Feral"
+            },
+            {
+              "name": "Bukî",
+              "realm": "blackmoore",
+              "spec": "Arms"
             },
             {
               "name": "Barakass",
@@ -749,9 +1270,45 @@
               "spec": "Enhancement"
             },
             {
-              "name": "Bukî",
-              "realm": "blackmoore",
-              "spec": "Arms"
+              "name": "Monkdrielle",
+              "realm": "ragnaros",
+              "spec": "Brewmaster"
+            }
+          ]
+        },
+        {
+          "dungeon": "Altar of Fangs",
+          "dungeonId": 588,
+          "level": 11,
+          "durationMs": 1512590,
+          "timed": true,
+          "completedAt": 1788476285000,
+          "rating": 340.9877,
+          "members": [
+            {
+              "name": "Mûrazôr",
+              "realm": "thrall",
+              "spec": "Demonology"
+            },
+            {
+              "name": "Wetpatch",
+              "realm": "shattered-halls",
+              "spec": "Feral"
+            },
+            {
+              "name": "Ardelya",
+              "realm": "thrall",
+              "spec": "Preservation"
+            },
+            {
+              "name": "Môrbid",
+              "realm": "thrall",
+              "spec": "Protection"
+            },
+            {
+              "name": "Concretegoat",
+              "realm": "burning-legion",
+              "spec": "Havoc"
             }
           ]
         },
@@ -764,16 +1321,6 @@
           "completedAt": 1788387347000,
           "rating": 323.67688,
           "members": [
-            {
-              "name": "Kvaliths",
-              "realm": "burning-legion",
-              "spec": "Restoration"
-            },
-            {
-              "name": "Swolerat",
-              "realm": "arathor",
-              "spec": "Assassination"
-            },
             {
               "name": "Tizutti",
               "realm": "burning-legion",
@@ -788,15 +1335,25 @@
               "name": "Någash",
               "realm": "sanguino",
               "spec": "Unholy"
+            },
+            {
+              "name": "Swolerat",
+              "realm": "arathor",
+              "spec": "Assassination"
+            },
+            {
+              "name": "Kvaliths",
+              "realm": "burning-legion",
+              "spec": "Restoration"
             }
           ]
         }
       ],
       "status": "current",
-      "updatedAt": "2026-09-03T08:52:57.920107+00:00",
-      "change": 0.0,
+      "updatedAt": "2026-09-05T07:17:29.396960+00:00",
+      "change": 126.5,
       "avatar": "https://render.worldofwarcraft.com/eu/character/shattered-halls/199/180737479-avatar.jpg",
-      "avatarUpdatedAt": "2026-09-03T08:52:57.920107+00:00"
+      "avatarUpdatedAt": "2026-09-05T07:17:29.396960+00:00"
     },
     {
       "key": "shattered-halls/kazzataur",
@@ -854,14 +1411,19 @@
           "rating": 180.59245,
           "members": [
             {
-              "name": "Kazzataur",
+              "name": "Sophrosune",
               "realm": "shattered-halls",
-              "spec": "Protection"
+              "spec": "Retribution"
             },
             {
               "name": "Canthus",
               "realm": "shattered-halls",
               "spec": "Discipline"
+            },
+            {
+              "name": "Kazzataur",
+              "realm": "shattered-halls",
+              "spec": "Protection"
             },
             {
               "name": "Eclypsis",
@@ -872,11 +1434,6 @@
               "name": "Whitestalker",
               "realm": "shattered-halls",
               "spec": "Beast Mastery"
-            },
-            {
-              "name": "Sophrosune",
-              "realm": "shattered-halls",
-              "spec": "Retribution"
             }
           ]
         },
@@ -962,19 +1519,19 @@
           "rating": 281.20532,
           "members": [
             {
-              "name": "Kazzataur",
-              "realm": "shattered-halls",
-              "spec": "Protection"
-            },
-            {
               "name": "Grarl",
               "realm": "shattered-halls",
               "spec": "Beast Mastery"
             },
             {
-              "name": "Whitestalker",
+              "name": "Sophrosune",
               "realm": "shattered-halls",
-              "spec": "Beast Mastery"
+              "spec": "Retribution"
+            },
+            {
+              "name": "Kazzataur",
+              "realm": "shattered-halls",
+              "spec": "Protection"
             },
             {
               "name": "Canthus",
@@ -982,9 +1539,9 @@
               "spec": "Discipline"
             },
             {
-              "name": "Sophrosune",
+              "name": "Whitestalker",
               "realm": "shattered-halls",
-              "spec": "Retribution"
+              "spec": "Beast Mastery"
             }
           ]
         },
@@ -998,9 +1555,9 @@
           "rating": 164.88916,
           "members": [
             {
-              "name": "Kazzataur",
+              "name": "Asha",
               "realm": "shattered-halls",
-              "spec": "Protection"
+              "spec": "Beast Mastery"
             },
             {
               "name": "Canthus",
@@ -1008,19 +1565,19 @@
               "spec": "Discipline"
             },
             {
-              "name": "Sophrosune",
-              "realm": "shattered-halls",
-              "spec": "Retribution"
-            },
-            {
               "name": "Whitestalker",
               "realm": "shattered-halls",
               "spec": "Beast Mastery"
             },
             {
-              "name": "Asha",
+              "name": "Kazzataur",
               "realm": "shattered-halls",
-              "spec": "Beast Mastery"
+              "spec": "Protection"
+            },
+            {
+              "name": "Sophrosune",
+              "realm": "shattered-halls",
+              "spec": "Retribution"
             }
           ]
         },
@@ -1070,9 +1627,14 @@
           "rating": 193.27702,
           "members": [
             {
-              "name": "Huagh",
+              "name": "Eclypsis",
               "realm": "shattered-halls",
-              "spec": "Enhancement"
+              "spec": "Outlaw"
+            },
+            {
+              "name": "Kazzataur",
+              "realm": "shattered-halls",
+              "spec": "Protection"
             },
             {
               "name": "Rinse",
@@ -1080,19 +1642,14 @@
               "spec": "Holy"
             },
             {
-              "name": "Eclypsis",
-              "realm": "shattered-halls",
-              "spec": "Outlaw"
-            },
-            {
               "name": "Whitestalker",
               "realm": "shattered-halls",
               "spec": "Beast Mastery"
             },
             {
-              "name": "Kazzataur",
+              "name": "Huagh",
               "realm": "shattered-halls",
-              "spec": "Protection"
+              "spec": "Enhancement"
             }
           ]
         },
@@ -1111,6 +1668,16 @@
               "spec": "Discipline"
             },
             {
+              "name": "Eclypsis",
+              "realm": "shattered-halls",
+              "spec": "Outlaw"
+            },
+            {
+              "name": "Grarl",
+              "realm": "shattered-halls",
+              "spec": "Beast Mastery"
+            },
+            {
               "name": "Whitestalker",
               "realm": "shattered-halls",
               "spec": "Beast Mastery"
@@ -1119,16 +1686,6 @@
               "name": "Kazzataur",
               "realm": "shattered-halls",
               "spec": "Protection"
-            },
-            {
-              "name": "Grarl",
-              "realm": "shattered-halls",
-              "spec": "Beast Mastery"
-            },
-            {
-              "name": "Eclypsis",
-              "realm": "shattered-halls",
-              "spec": "Outlaw"
             }
           ]
         },
@@ -1141,6 +1698,11 @@
           "completedAt": 1788207418000,
           "rating": 290.37195,
           "members": [
+            {
+              "name": "Grarl",
+              "realm": "shattered-halls",
+              "spec": "Beast Mastery"
+            },
             {
               "name": "Huagh",
               "realm": "shattered-halls",
@@ -1157,11 +1719,6 @@
               "spec": "Protection"
             },
             {
-              "name": "Grarl",
-              "realm": "shattered-halls",
-              "spec": "Beast Mastery"
-            },
-            {
               "name": "Eclypsis",
               "realm": "shattered-halls",
               "spec": "Outlaw"
@@ -1170,10 +1727,10 @@
         }
       ],
       "status": "current",
-      "updatedAt": "2026-09-03T08:52:57.920107+00:00",
+      "updatedAt": "2026-09-05T07:17:29.396960+00:00",
       "change": 0.0,
       "avatar": "https://render.worldofwarcraft.com/eu/character/shattered-halls/194/10463170-avatar.jpg",
-      "avatarUpdatedAt": "2026-09-03T08:52:57.920107+00:00"
+      "avatarUpdatedAt": "2026-09-05T07:17:29.396960+00:00"
     },
     {
       "key": "shattered-halls/eclypsis",
@@ -1416,24 +1973,24 @@
               "spec": "Beast Mastery"
             },
             {
-              "name": "Eclypsis",
-              "realm": "shattered-halls",
-              "spec": "Outlaw"
-            },
-            {
               "name": "Rinse",
               "realm": "laughing-skull",
               "spec": "Holy"
             },
             {
-              "name": "Huagh",
-              "realm": "shattered-halls",
-              "spec": "Enhancement"
-            },
-            {
               "name": "Kazzataur",
               "realm": "shattered-halls",
               "spec": "Protection"
+            },
+            {
+              "name": "Eclypsis",
+              "realm": "shattered-halls",
+              "spec": "Outlaw"
+            },
+            {
+              "name": "Huagh",
+              "realm": "shattered-halls",
+              "spec": "Enhancement"
             }
           ]
         },
@@ -1511,10 +2068,10 @@
         }
       ],
       "status": "current",
-      "updatedAt": "2026-09-03T08:52:57.920107+00:00",
+      "updatedAt": "2026-09-05T07:17:29.396960+00:00",
       "change": 0.0,
       "avatar": "https://render.worldofwarcraft.com/eu/character/shattered-halls/195/3826883-avatar.jpg",
-      "avatarUpdatedAt": "2026-09-03T08:52:57.920107+00:00"
+      "avatarUpdatedAt": "2026-09-05T07:17:29.396960+00:00"
     },
     {
       "key": "shattered-halls/whitestalker",
@@ -1852,10 +2409,10 @@
         }
       ],
       "status": "current",
-      "updatedAt": "2026-09-03T08:52:57.920107+00:00",
+      "updatedAt": "2026-09-05T07:17:29.396960+00:00",
       "change": 0.0,
       "avatar": "https://render.worldofwarcraft.com/eu/character/shattered-halls/206/11137230-avatar.jpg",
-      "avatarUpdatedAt": "2026-09-03T08:52:57.920107+00:00"
+      "avatarUpdatedAt": "2026-09-05T07:17:29.396960+00:00"
     },
     {
       "key": "laughing-skull/rinse",
@@ -2021,19 +2578,9 @@
           "rating": 266.7565,
           "members": [
             {
-              "name": "Grunzgrol",
-              "realm": "blackrock",
-              "spec": "Blood"
-            },
-            {
               "name": "Rinse",
               "realm": "laughing-skull",
               "spec": "Holy"
-            },
-            {
-              "name": "Lomey",
-              "realm": "kazzak",
-              "spec": "Beast Mastery"
             },
             {
               "name": "Roidraged",
@@ -2041,9 +2588,19 @@
               "spec": "Fury"
             },
             {
+              "name": "Grunzgrol",
+              "realm": "blackrock",
+              "spec": "Blood"
+            },
+            {
               "name": "Ventricles",
               "realm": "twisting-nether",
               "spec": "Elemental"
+            },
+            {
+              "name": "Lomey",
+              "realm": "kazzak",
+              "spec": "Beast Mastery"
             }
           ]
         },
@@ -2193,10 +2750,10 @@
         }
       ],
       "status": "current",
-      "updatedAt": "2026-09-03T08:52:57.920107+00:00",
+      "updatedAt": "2026-09-05T07:17:29.396960+00:00",
       "change": 0.0,
       "avatar": "https://render.worldofwarcraft.com/eu/character/laughing-skull/81/114241105-avatar.jpg",
-      "avatarUpdatedAt": "2026-09-03T08:52:57.920107+00:00"
+      "avatarUpdatedAt": "2026-09-05T07:17:29.396960+00:00"
     },
     {
       "key": "shattered-halls/huagh",
@@ -2462,10 +3019,10 @@
         }
       ],
       "status": "current",
-      "updatedAt": "2026-09-03T08:52:57.920107+00:00",
+      "updatedAt": "2026-09-05T07:17:29.396960+00:00",
       "change": 0.0,
       "avatar": "https://render.worldofwarcraft.com/eu/character/shattered-halls/208/1266896-avatar.jpg",
-      "avatarUpdatedAt": "2026-09-03T08:52:57.920107+00:00"
+      "avatarUpdatedAt": "2026-09-05T07:17:29.396960+00:00"
     },
     {
       "key": "shattered-halls/asha",
@@ -2731,10 +3288,10 @@
         }
       ],
       "status": "current",
-      "updatedAt": "2026-09-03T08:52:57.920107+00:00",
+      "updatedAt": "2026-09-05T07:17:29.396960+00:00",
       "change": 0.0,
       "avatar": "https://render.worldofwarcraft.com/eu/character/shattered-halls/95/263901791-avatar.jpg",
-      "avatarUpdatedAt": "2026-09-03T08:52:57.920107+00:00"
+      "avatarUpdatedAt": "2026-09-05T07:17:29.396960+00:00"
     },
     {
       "key": "shattered-halls/canthus",
@@ -2964,10 +3521,10 @@
         }
       ],
       "status": "current",
-      "updatedAt": "2026-09-03T08:52:57.920107+00:00",
+      "updatedAt": "2026-09-05T07:17:29.396960+00:00",
       "change": 0.0,
       "avatar": "https://render.worldofwarcraft.com/eu/character/shattered-halls/244/4828404-avatar.jpg",
-      "avatarUpdatedAt": "2026-09-03T08:52:57.920107+00:00"
+      "avatarUpdatedAt": "2026-09-05T07:17:29.396960+00:00"
     },
     {
       "key": "shattered-halls/sophrosune",
@@ -3133,6 +3690,11 @@
           "rating": 244.97467,
           "members": [
             {
+              "name": "Whitestalker",
+              "realm": "shattered-halls",
+              "spec": "Beast Mastery"
+            },
+            {
               "name": "Eclypsis",
               "realm": "shattered-halls",
               "spec": "Outlaw"
@@ -3148,11 +3710,6 @@
               "spec": "Protection"
             },
             {
-              "name": "Whitestalker",
-              "realm": "shattered-halls",
-              "spec": "Beast Mastery"
-            },
-            {
               "name": "Sophrosune",
               "realm": "shattered-halls",
               "spec": "Retribution"
@@ -3161,10 +3718,10 @@
         }
       ],
       "status": "current",
-      "updatedAt": "2026-09-03T08:52:57.920107+00:00",
+      "updatedAt": "2026-09-05T07:17:29.396960+00:00",
       "change": 0.0,
       "avatar": "https://render.worldofwarcraft.com/eu/character/shattered-halls/244/71679988-avatar.jpg",
-      "avatarUpdatedAt": "2026-09-03T08:52:57.920107+00:00"
+      "avatarUpdatedAt": "2026-09-05T07:17:29.396960+00:00"
     },
     {
       "key": "blackmoore/cheatcode",
@@ -3173,7 +3730,7 @@
       "level": 90,
       "class": "Rogue",
       "role": "DPS",
-      "spec": "Assassination",
+      "spec": "Subtlety",
       "score": 951.8,
       "bestRuns": [
         {
@@ -3186,14 +3743,14 @@
           "rating": 339.57056,
           "members": [
             {
-              "name": "Yokaitengu",
-              "realm": "blackmoore",
-              "spec": "Blood"
-            },
-            {
               "name": "Cheatcode",
               "realm": "blackmoore",
               "spec": "Subtlety"
+            },
+            {
+              "name": "Zephya",
+              "realm": "blackmoore",
+              "spec": "Arcane"
             },
             {
               "name": "Shortyheal",
@@ -3201,14 +3758,14 @@
               "spec": "Holy"
             },
             {
+              "name": "Yokaitengu",
+              "realm": "blackmoore",
+              "spec": "Blood"
+            },
+            {
               "name": "Basri",
               "realm": "blackrock",
               "spec": "Retribution"
-            },
-            {
-              "name": "Zephya",
-              "realm": "blackmoore",
-              "spec": "Arcane"
             }
           ]
         },
@@ -3258,6 +3815,11 @@
           "rating": 286.59506,
           "members": [
             {
+              "name": "Globbes",
+              "realm": "blackmoore",
+              "spec": "Protection"
+            },
+            {
               "name": "Coltcabana",
               "realm": "blackmoore",
               "spec": "Restoration"
@@ -3273,11 +3835,6 @@
               "spec": "Subtlety"
             },
             {
-              "name": "Globbes",
-              "realm": "blackmoore",
-              "spec": "Protection"
-            },
-            {
               "name": "Calymari",
               "realm": "blackmoore",
               "spec": "Devastation"
@@ -3286,10 +3843,10 @@
         }
       ],
       "status": "current",
-      "updatedAt": "2026-09-03T08:52:57.920107+00:00",
+      "updatedAt": "2026-09-05T07:17:29.396960+00:00",
       "change": 0.0,
       "avatar": "https://render.worldofwarcraft.com/eu/character/blackmoore/187/174880443-avatar.jpg",
-      "avatarUpdatedAt": "2026-09-03T08:52:57.920107+00:00"
+      "avatarUpdatedAt": "2026-09-05T07:17:29.396960+00:00"
     },
     {
       "key": "shattered-halls/eclipses",
@@ -3375,10 +3932,10 @@
         }
       ],
       "status": "current",
-      "updatedAt": "2026-09-03T08:52:57.920107+00:00",
+      "updatedAt": "2026-09-05T07:17:29.396960+00:00",
       "change": 0.0,
       "avatar": "https://render.worldofwarcraft.com/eu/character/shattered-halls/17/17557265-avatar.jpg",
-      "avatarUpdatedAt": "2026-09-03T08:52:57.920107+00:00"
+      "avatarUpdatedAt": "2026-09-05T07:17:29.396960+00:00"
     },
     {
       "key": "shattered-halls/ecies",
@@ -3464,10 +4021,10 @@
         }
       ],
       "status": "current",
-      "updatedAt": "2026-09-03T08:52:57.920107+00:00",
+      "updatedAt": "2026-09-05T07:17:29.396960+00:00",
       "change": 0.0,
       "avatar": "https://render.worldofwarcraft.com/eu/character/shattered-halls/27/19665947-avatar.jpg",
-      "avatarUpdatedAt": "2026-09-03T08:52:57.920107+00:00"
+      "avatarUpdatedAt": "2026-09-05T07:17:29.396960+00:00"
     },
     {
       "key": "shattered-halls/elypsis",
@@ -3553,10 +4110,10 @@
         }
       ],
       "status": "current",
-      "updatedAt": "2026-09-03T08:52:57.920107+00:00",
+      "updatedAt": "2026-09-05T07:17:29.396960+00:00",
       "change": 0.0,
       "avatar": "https://render.worldofwarcraft.com/eu/character/shattered-halls/79/64151887-avatar.jpg",
-      "avatarUpdatedAt": "2026-09-03T08:52:57.920107+00:00"
+      "avatarUpdatedAt": "2026-09-05T07:17:29.396960+00:00"
     },
     {
       "key": "shattered-halls/siplys",
@@ -3642,10 +4199,10 @@
         }
       ],
       "status": "current",
-      "updatedAt": "2026-09-03T08:52:57.920107+00:00",
+      "updatedAt": "2026-09-05T07:17:29.396960+00:00",
       "change": 0.0,
       "avatar": "https://render.worldofwarcraft.com/eu/character/shattered-halls/239/70901487-avatar.jpg",
-      "avatarUpdatedAt": "2026-09-03T08:52:57.920107+00:00"
+      "avatarUpdatedAt": "2026-09-05T07:17:29.396960+00:00"
     },
     {
       "key": "shattered-halls/narkysos",
@@ -3731,10 +4288,10 @@
         }
       ],
       "status": "current",
-      "updatedAt": "2026-09-03T08:52:57.920107+00:00",
+      "updatedAt": "2026-09-05T07:17:29.396960+00:00",
       "change": 0.0,
       "avatar": "https://render.worldofwarcraft.com/eu/character/shattered-halls/240/35939824-avatar.jpg",
-      "avatarUpdatedAt": "2026-09-03T08:52:57.920107+00:00"
+      "avatarUpdatedAt": "2026-09-05T07:17:29.396960+00:00"
     },
     {
       "key": "shattered-halls/abilene",
@@ -3747,7 +4304,7 @@
       "score": null,
       "bestRuns": [],
       "status": "below_max_level",
-      "updatedAt": "2026-09-03T08:52:57.920107+00:00"
+      "updatedAt": "2026-09-05T07:17:29.396960+00:00"
     },
     {
       "key": "shattered-halls/adrieth",
@@ -3760,10 +4317,10 @@
       "score": null,
       "bestRuns": [],
       "status": "unavailable",
-      "updatedAt": "2026-09-03T08:52:57.920107+00:00",
+      "updatedAt": "2026-09-05T07:17:29.396960+00:00",
       "error": "HTTP 404",
       "avatar": "https://render.worldofwarcraft.com/eu/character/shattered-halls/25/3235609-avatar.jpg",
-      "avatarUpdatedAt": "2026-09-03T08:52:57.920107+00:00"
+      "avatarUpdatedAt": "2026-09-05T07:17:29.396960+00:00"
     },
     {
       "key": "shattered-halls/aeronwyn",
@@ -3776,7 +4333,7 @@
       "score": null,
       "bestRuns": [],
       "status": "below_max_level",
-      "updatedAt": "2026-09-03T08:52:57.920107+00:00"
+      "updatedAt": "2026-09-05T07:17:29.396960+00:00"
     },
     {
       "key": "shattered-halls/aezriel",
@@ -3789,7 +4346,7 @@
       "score": null,
       "bestRuns": [],
       "status": "below_max_level",
-      "updatedAt": "2026-09-03T08:52:57.920107+00:00"
+      "updatedAt": "2026-09-05T07:17:29.396960+00:00"
     },
     {
       "key": "shattered-halls/aggura",
@@ -3802,10 +4359,10 @@
       "score": null,
       "bestRuns": [],
       "status": "unavailable",
-      "updatedAt": "2026-09-03T08:52:57.920107+00:00",
+      "updatedAt": "2026-09-05T07:17:29.396960+00:00",
       "error": "HTTP 404",
       "avatar": "https://render.worldofwarcraft.com/eu/character/shattered-halls/195/183990979-avatar.jpg",
-      "avatarUpdatedAt": "2026-09-03T08:52:57.920107+00:00"
+      "avatarUpdatedAt": "2026-09-05T07:17:29.396960+00:00"
     },
     {
       "key": "blackmoore/agonist",
@@ -3818,10 +4375,10 @@
       "score": null,
       "bestRuns": [],
       "status": "unavailable",
-      "updatedAt": "2026-09-03T08:52:57.920107+00:00",
+      "updatedAt": "2026-09-05T07:17:29.396960+00:00",
       "error": "HTTP 404",
       "avatar": "https://render.worldofwarcraft.com/eu/character/blackmoore/72/180865608-avatar.jpg",
-      "avatarUpdatedAt": "2026-09-03T08:52:57.920107+00:00"
+      "avatarUpdatedAt": "2026-09-05T07:17:29.396960+00:00"
     },
     {
       "key": "shattered-halls/ahuane",
@@ -3834,10 +4391,10 @@
       "score": null,
       "bestRuns": [],
       "status": "unavailable",
-      "updatedAt": "2026-09-03T08:52:57.920107+00:00",
+      "updatedAt": "2026-09-05T07:17:29.396960+00:00",
       "error": "HTTP 404",
       "avatar": "https://render.worldofwarcraft.com/eu/character/shattered-halls/97/186982241-avatar.jpg",
-      "avatarUpdatedAt": "2026-09-03T08:52:57.920107+00:00"
+      "avatarUpdatedAt": "2026-09-05T07:17:29.396960+00:00"
     },
     {
       "key": "darkmoon-faire/aidhan",
@@ -3850,7 +4407,7 @@
       "score": null,
       "bestRuns": [],
       "status": "below_max_level",
-      "updatedAt": "2026-09-03T08:52:57.920107+00:00"
+      "updatedAt": "2026-09-05T07:17:29.396960+00:00"
     },
     {
       "key": "shattered-halls/aluriel",
@@ -3863,7 +4420,7 @@
       "score": null,
       "bestRuns": [],
       "status": "below_max_level",
-      "updatedAt": "2026-09-03T08:52:57.920107+00:00"
+      "updatedAt": "2026-09-05T07:17:29.396960+00:00"
     },
     {
       "key": "talnivarr/amarantha",
@@ -3876,7 +4433,7 @@
       "score": null,
       "bestRuns": [],
       "status": "below_max_level",
-      "updatedAt": "2026-09-03T08:52:57.920107+00:00"
+      "updatedAt": "2026-09-05T07:17:29.396960+00:00"
     },
     {
       "key": "tichondrius/amarina",
@@ -3889,7 +4446,7 @@
       "score": null,
       "bestRuns": [],
       "status": "below_max_level",
-      "updatedAt": "2026-09-03T08:52:57.920107+00:00"
+      "updatedAt": "2026-09-05T07:17:29.396960+00:00"
     },
     {
       "key": "tichondrius/amaris",
@@ -3902,10 +4459,10 @@
       "score": null,
       "bestRuns": [],
       "status": "unavailable",
-      "updatedAt": "2026-09-03T08:52:57.920107+00:00",
+      "updatedAt": "2026-09-05T07:17:29.396960+00:00",
       "error": "HTTP 404",
       "avatar": "https://render.worldofwarcraft.com/eu/character/tichondrius/177/174628273-avatar.jpg",
-      "avatarUpdatedAt": "2026-09-03T08:52:57.920107+00:00"
+      "avatarUpdatedAt": "2026-09-05T07:17:29.396960+00:00"
     },
     {
       "key": "shattered-halls/ameekabeth",
@@ -3918,7 +4475,7 @@
       "score": null,
       "bestRuns": [],
       "status": "below_max_level",
-      "updatedAt": "2026-09-03T08:52:57.920107+00:00"
+      "updatedAt": "2026-09-05T07:17:29.396960+00:00"
     },
     {
       "key": "shattered-halls/amethyst",
@@ -3931,7 +4488,7 @@
       "score": null,
       "bestRuns": [],
       "status": "below_max_level",
-      "updatedAt": "2026-09-03T08:52:57.920107+00:00"
+      "updatedAt": "2026-09-05T07:17:29.396960+00:00"
     },
     {
       "key": "shattered-halls/anari",
@@ -3944,10 +4501,10 @@
       "score": null,
       "bestRuns": [],
       "status": "unavailable",
-      "updatedAt": "2026-09-03T08:52:57.920107+00:00",
+      "updatedAt": "2026-09-05T07:17:29.396960+00:00",
       "error": "HTTP 404",
       "avatar": "https://render.worldofwarcraft.com/eu/character/shattered-halls/182/159857590-avatar.jpg",
-      "avatarUpdatedAt": "2026-09-03T08:52:57.920107+00:00"
+      "avatarUpdatedAt": "2026-09-05T07:17:29.396960+00:00"
     },
     {
       "key": "draenor/areidaras",
@@ -3960,10 +4517,10 @@
       "score": null,
       "bestRuns": [],
       "status": "unavailable",
-      "updatedAt": "2026-09-03T08:52:57.920107+00:00",
+      "updatedAt": "2026-09-05T07:17:29.396960+00:00",
       "error": "HTTP 404",
       "avatar": "https://render.worldofwarcraft.com/eu/character/draenor/216/106267096-avatar.jpg",
-      "avatarUpdatedAt": "2026-09-03T08:52:57.920107+00:00"
+      "avatarUpdatedAt": "2026-09-05T07:17:29.396960+00:00"
     },
     {
       "key": "shadowsong/arendelle",
@@ -3976,7 +4533,7 @@
       "score": null,
       "bestRuns": [],
       "status": "below_max_level",
-      "updatedAt": "2026-09-03T08:52:57.920107+00:00"
+      "updatedAt": "2026-09-05T07:17:29.396960+00:00"
     },
     {
       "key": "shattered-halls/arideth",
@@ -3989,7 +4546,7 @@
       "score": null,
       "bestRuns": [],
       "status": "below_max_level",
-      "updatedAt": "2026-09-03T08:52:57.920107+00:00"
+      "updatedAt": "2026-09-05T07:17:29.396960+00:00"
     },
     {
       "key": "talnivarr/asmodis",
@@ -4002,7 +4559,7 @@
       "score": null,
       "bestRuns": [],
       "status": "below_max_level",
-      "updatedAt": "2026-09-03T08:52:57.920107+00:00"
+      "updatedAt": "2026-09-05T07:17:29.396960+00:00"
     },
     {
       "key": "shattered-halls/asoth",
@@ -4015,10 +4572,10 @@
       "score": null,
       "bestRuns": [],
       "status": "unavailable",
-      "updatedAt": "2026-09-03T08:52:57.920107+00:00",
+      "updatedAt": "2026-09-05T07:17:29.396960+00:00",
       "error": "HTTP 404",
       "avatar": "https://render.worldofwarcraft.com/eu/character/shattered-halls/227/20006627-avatar.jpg",
-      "avatarUpdatedAt": "2026-09-03T08:52:57.920107+00:00"
+      "avatarUpdatedAt": "2026-09-05T07:17:29.396960+00:00"
     },
     {
       "key": "shattered-halls/astaria",
@@ -4031,7 +4588,7 @@
       "score": null,
       "bestRuns": [],
       "status": "below_max_level",
-      "updatedAt": "2026-09-03T08:52:57.920107+00:00"
+      "updatedAt": "2026-09-05T07:17:29.396960+00:00"
     },
     {
       "key": "shattered-halls/ava",
@@ -4044,7 +4601,7 @@
       "score": null,
       "bestRuns": [],
       "status": "below_max_level",
-      "updatedAt": "2026-09-03T08:52:57.920107+00:00"
+      "updatedAt": "2026-09-05T07:17:29.396960+00:00"
     },
     {
       "key": "shattered-halls/aysa",
@@ -4057,7 +4614,7 @@
       "score": null,
       "bestRuns": [],
       "status": "below_max_level",
-      "updatedAt": "2026-09-03T08:52:57.920107+00:00"
+      "updatedAt": "2026-09-05T07:17:29.396960+00:00"
     },
     {
       "key": "shattered-halls/bearhugs",
@@ -4070,7 +4627,7 @@
       "score": null,
       "bestRuns": [],
       "status": "below_max_level",
-      "updatedAt": "2026-09-03T08:52:57.920107+00:00"
+      "updatedAt": "2026-09-05T07:17:29.396960+00:00"
     },
     {
       "key": "ravencrest/beepink",
@@ -4083,7 +4640,7 @@
       "score": null,
       "bestRuns": [],
       "status": "below_max_level",
-      "updatedAt": "2026-09-03T08:52:57.920107+00:00"
+      "updatedAt": "2026-09-05T07:17:29.396960+00:00"
     },
     {
       "key": "draenor/beewarrior",
@@ -4096,10 +4653,10 @@
       "score": null,
       "bestRuns": [],
       "status": "unavailable",
-      "updatedAt": "2026-09-03T08:52:57.920107+00:00",
+      "updatedAt": "2026-09-05T07:17:29.396960+00:00",
       "error": "HTTP 404",
       "avatar": "https://render.worldofwarcraft.com/eu/character/draenor/81/172226897-avatar.jpg",
-      "avatarUpdatedAt": "2026-09-03T08:52:57.920107+00:00"
+      "avatarUpdatedAt": "2026-09-05T07:17:29.396960+00:00"
     },
     {
       "key": "shattered-halls/belaya",
@@ -4112,7 +4669,7 @@
       "score": null,
       "bestRuns": [],
       "status": "below_max_level",
-      "updatedAt": "2026-09-03T08:52:57.920107+00:00"
+      "updatedAt": "2026-09-05T07:17:29.396960+00:00"
     },
     {
       "key": "shattered-halls/bentley",
@@ -4125,10 +4682,10 @@
       "score": null,
       "bestRuns": [],
       "status": "unavailable",
-      "updatedAt": "2026-09-03T08:52:57.920107+00:00",
+      "updatedAt": "2026-09-05T07:17:29.396960+00:00",
       "error": "HTTP 404",
       "avatar": "https://render.worldofwarcraft.com/eu/character/shattered-halls/17/266495505-avatar.jpg",
-      "avatarUpdatedAt": "2026-09-03T08:52:57.920107+00:00"
+      "avatarUpdatedAt": "2026-09-05T07:17:29.396960+00:00"
     },
     {
       "key": "shattered-halls/bexxi",
@@ -4141,7 +4698,7 @@
       "score": null,
       "bestRuns": [],
       "status": "below_max_level",
-      "updatedAt": "2026-09-03T08:52:57.920107+00:00"
+      "updatedAt": "2026-09-05T07:17:29.396960+00:00"
     },
     {
       "key": "chromaggus/bikki",
@@ -4154,7 +4711,7 @@
       "score": null,
       "bestRuns": [],
       "status": "below_max_level",
-      "updatedAt": "2026-09-03T08:52:57.920107+00:00"
+      "updatedAt": "2026-09-05T07:17:29.396960+00:00"
     },
     {
       "key": "chromaggus/bimmeela",
@@ -4167,7 +4724,7 @@
       "score": null,
       "bestRuns": [],
       "status": "below_max_level",
-      "updatedAt": "2026-09-03T08:52:57.920107+00:00"
+      "updatedAt": "2026-09-05T07:17:29.396960+00:00"
     },
     {
       "key": "eonar/birdey",
@@ -4180,7 +4737,7 @@
       "score": null,
       "bestRuns": [],
       "status": "below_max_level",
-      "updatedAt": "2026-09-03T08:52:57.920107+00:00"
+      "updatedAt": "2026-09-05T07:17:29.396960+00:00"
     },
     {
       "key": "talnivarr/blomplockarn",
@@ -4193,10 +4750,10 @@
       "score": null,
       "bestRuns": [],
       "status": "unavailable",
-      "updatedAt": "2026-09-03T08:52:57.920107+00:00",
+      "updatedAt": "2026-09-05T07:17:29.396960+00:00",
       "error": "HTTP 404",
       "avatar": "https://render.worldofwarcraft.com/eu/character/talnivarr/221/262571229-avatar.jpg",
-      "avatarUpdatedAt": "2026-09-03T08:52:57.920107+00:00"
+      "avatarUpdatedAt": "2026-09-05T07:17:29.396960+00:00"
     },
     {
       "key": "shattered-halls/bloodoath",
@@ -4209,10 +4766,10 @@
       "score": null,
       "bestRuns": [],
       "status": "unavailable",
-      "updatedAt": "2026-09-03T08:52:57.920107+00:00",
+      "updatedAt": "2026-09-05T07:17:29.396960+00:00",
       "error": "HTTP 404",
       "avatar": "https://render.worldofwarcraft.com/eu/character/shattered-halls/234/8949226-avatar.jpg",
-      "avatarUpdatedAt": "2026-09-03T08:52:57.920107+00:00"
+      "avatarUpdatedAt": "2026-09-05T07:17:29.396960+00:00"
     },
     {
       "key": "boulderfist/bloodsurge",
@@ -4225,7 +4782,7 @@
       "score": null,
       "bestRuns": [],
       "status": "below_max_level",
-      "updatedAt": "2026-09-03T08:52:57.920107+00:00"
+      "updatedAt": "2026-09-05T07:17:29.396960+00:00"
     },
     {
       "key": "shattered-halls/bomaye",
@@ -4238,7 +4795,7 @@
       "score": null,
       "bestRuns": [],
       "status": "below_max_level",
-      "updatedAt": "2026-09-03T08:52:57.920107+00:00"
+      "updatedAt": "2026-09-05T07:17:29.396960+00:00"
     },
     {
       "key": "chromaggus/bomo",
@@ -4251,7 +4808,7 @@
       "score": null,
       "bestRuns": [],
       "status": "below_max_level",
-      "updatedAt": "2026-09-03T08:52:57.920107+00:00"
+      "updatedAt": "2026-09-05T07:17:29.396960+00:00"
     },
     {
       "key": "talnivarr/bondjames",
@@ -4264,7 +4821,7 @@
       "score": null,
       "bestRuns": [],
       "status": "below_max_level",
-      "updatedAt": "2026-09-03T08:52:57.920107+00:00"
+      "updatedAt": "2026-09-05T07:17:29.396960+00:00"
     },
     {
       "key": "shattered-halls/bootea",
@@ -4277,7 +4834,7 @@
       "score": null,
       "bestRuns": [],
       "status": "below_max_level",
-      "updatedAt": "2026-09-03T08:52:57.920107+00:00"
+      "updatedAt": "2026-09-05T07:17:29.396960+00:00"
     },
     {
       "key": "shattered-halls/borin",
@@ -4290,7 +4847,7 @@
       "score": null,
       "bestRuns": [],
       "status": "below_max_level",
-      "updatedAt": "2026-09-03T08:52:57.920107+00:00"
+      "updatedAt": "2026-09-05T07:17:29.396960+00:00"
     },
     {
       "key": "shattered-halls/bowbuster",
@@ -4303,7 +4860,7 @@
       "score": null,
       "bestRuns": [],
       "status": "below_max_level",
-      "updatedAt": "2026-09-03T08:52:57.920107+00:00"
+      "updatedAt": "2026-09-05T07:17:29.396960+00:00"
     },
     {
       "key": "shattered-halls/brayen",
@@ -4316,7 +4873,7 @@
       "score": null,
       "bestRuns": [],
       "status": "below_max_level",
-      "updatedAt": "2026-09-03T08:52:57.920107+00:00"
+      "updatedAt": "2026-09-05T07:17:29.396960+00:00"
     },
     {
       "key": "chromaggus/brindal",
@@ -4329,7 +4886,7 @@
       "score": null,
       "bestRuns": [],
       "status": "below_max_level",
-      "updatedAt": "2026-09-03T08:52:57.920107+00:00"
+      "updatedAt": "2026-09-05T07:17:29.396960+00:00"
     },
     {
       "key": "shattered-halls/bronzefoot",
@@ -4342,7 +4899,7 @@
       "score": null,
       "bestRuns": [],
       "status": "below_max_level",
-      "updatedAt": "2026-09-03T08:52:57.920107+00:00"
+      "updatedAt": "2026-09-05T07:17:29.396960+00:00"
     },
     {
       "key": "talnivarr/bubbelbadet",
@@ -4355,10 +4912,10 @@
       "score": null,
       "bestRuns": [],
       "status": "unavailable",
-      "updatedAt": "2026-09-03T08:52:57.920107+00:00",
+      "updatedAt": "2026-09-05T07:17:29.396960+00:00",
       "error": "HTTP 404",
       "avatar": "https://render.worldofwarcraft.com/eu/character/talnivarr/131/262541443-avatar.jpg",
-      "avatarUpdatedAt": "2026-09-03T08:52:57.920107+00:00"
+      "avatarUpdatedAt": "2026-09-05T07:17:29.396960+00:00"
     },
     {
       "key": "dragonmaw/bwontambi",
@@ -4371,7 +4928,7 @@
       "score": null,
       "bestRuns": [],
       "status": "below_max_level",
-      "updatedAt": "2026-09-03T08:52:57.920107+00:00"
+      "updatedAt": "2026-09-05T07:17:29.396960+00:00"
     },
     {
       "key": "tichondrius/caramelina",
@@ -4384,7 +4941,7 @@
       "score": null,
       "bestRuns": [],
       "status": "below_max_level",
-      "updatedAt": "2026-09-03T08:52:57.920107+00:00"
+      "updatedAt": "2026-09-05T07:17:29.396960+00:00"
     },
     {
       "key": "sunstrider/cezsra",
@@ -4397,7 +4954,7 @@
       "score": null,
       "bestRuns": [],
       "status": "below_max_level",
-      "updatedAt": "2026-09-03T08:52:57.920107+00:00"
+      "updatedAt": "2026-09-05T07:17:29.396960+00:00"
     },
     {
       "key": "sunstrider/chaosheart",
@@ -4410,7 +4967,7 @@
       "score": null,
       "bestRuns": [],
       "status": "below_max_level",
-      "updatedAt": "2026-09-03T08:52:57.920107+00:00"
+      "updatedAt": "2026-09-05T07:17:29.396960+00:00"
     },
     {
       "key": "shattered-halls/chaoslover",
@@ -4423,7 +4980,7 @@
       "score": null,
       "bestRuns": [],
       "status": "below_max_level",
-      "updatedAt": "2026-09-03T08:52:57.920107+00:00"
+      "updatedAt": "2026-09-05T07:17:29.396960+00:00"
     },
     {
       "key": "shattered-halls/charr",
@@ -4436,7 +4993,7 @@
       "score": null,
       "bestRuns": [],
       "status": "below_max_level",
-      "updatedAt": "2026-09-03T08:52:57.920107+00:00"
+      "updatedAt": "2026-09-05T07:17:29.396960+00:00"
     },
     {
       "key": "twilights-hammer/choastouch",
@@ -4449,7 +5006,7 @@
       "score": null,
       "bestRuns": [],
       "status": "below_max_level",
-      "updatedAt": "2026-09-03T08:52:57.920107+00:00"
+      "updatedAt": "2026-09-05T07:17:29.396960+00:00"
     },
     {
       "key": "shattered-halls/codeene",
@@ -4462,10 +5019,10 @@
       "score": null,
       "bestRuns": [],
       "status": "unavailable",
-      "updatedAt": "2026-09-03T08:52:57.920107+00:00",
+      "updatedAt": "2026-09-05T07:17:29.396960+00:00",
       "error": "HTTP 404",
       "avatar": "https://render.worldofwarcraft.com/eu/character/shattered-halls/218/57026778-avatar.jpg",
-      "avatarUpdatedAt": "2026-09-03T08:52:57.920107+00:00"
+      "avatarUpdatedAt": "2026-09-05T07:17:29.396960+00:00"
     },
     {
       "key": "shattered-halls/cowofvanity",
@@ -4478,10 +5035,10 @@
       "score": null,
       "bestRuns": [],
       "status": "unavailable",
-      "updatedAt": "2026-09-03T08:52:57.920107+00:00",
+      "updatedAt": "2026-09-05T07:17:29.396960+00:00",
       "error": "HTTP 404",
       "avatar": "https://render.worldofwarcraft.com/eu/character/shattered-halls/221/25454557-avatar.jpg",
-      "avatarUpdatedAt": "2026-09-03T08:52:57.920107+00:00"
+      "avatarUpdatedAt": "2026-09-05T07:17:29.396960+00:00"
     },
     {
       "key": "shattered-halls/cupholder",
@@ -4494,7 +5051,7 @@
       "score": null,
       "bestRuns": [],
       "status": "below_max_level",
-      "updatedAt": "2026-09-03T08:52:57.920107+00:00"
+      "updatedAt": "2026-09-05T07:17:29.396960+00:00"
     },
     {
       "key": "shattered-halls/cyuu",
@@ -4507,7 +5064,7 @@
       "score": null,
       "bestRuns": [],
       "status": "below_max_level",
-      "updatedAt": "2026-09-03T08:52:57.920107+00:00"
+      "updatedAt": "2026-09-05T07:17:29.396960+00:00"
     },
     {
       "key": "shattered-halls/daisey",
@@ -4520,7 +5077,7 @@
       "score": null,
       "bestRuns": [],
       "status": "below_max_level",
-      "updatedAt": "2026-09-03T08:52:57.920107+00:00"
+      "updatedAt": "2026-09-05T07:17:29.396960+00:00"
     },
     {
       "key": "chromaggus/darkscale",
@@ -4533,10 +5090,10 @@
       "score": null,
       "bestRuns": [],
       "status": "unavailable",
-      "updatedAt": "2026-09-03T08:52:57.920107+00:00",
+      "updatedAt": "2026-09-05T07:17:29.396960+00:00",
       "error": "HTTP 404",
       "avatar": "https://render.worldofwarcraft.com/eu/character/chromaggus/226/143434210-avatar.jpg",
-      "avatarUpdatedAt": "2026-09-03T08:52:57.920107+00:00"
+      "avatarUpdatedAt": "2026-09-05T07:17:29.396960+00:00"
     },
     {
       "key": "shattered-halls/darkstrider",
@@ -4549,7 +5106,7 @@
       "score": null,
       "bestRuns": [],
       "status": "below_max_level",
-      "updatedAt": "2026-09-03T08:52:57.920107+00:00"
+      "updatedAt": "2026-09-05T07:17:29.396960+00:00"
     },
     {
       "key": "shattered-halls/daspein",
@@ -4562,7 +5119,7 @@
       "score": null,
       "bestRuns": [],
       "status": "below_max_level",
-      "updatedAt": "2026-09-03T08:52:57.920107+00:00"
+      "updatedAt": "2026-09-05T07:17:29.396960+00:00"
     },
     {
       "key": "shattered-halls/daspien",
@@ -4575,10 +5132,10 @@
       "score": null,
       "bestRuns": [],
       "status": "unavailable",
-      "updatedAt": "2026-09-03T08:52:57.920107+00:00",
+      "updatedAt": "2026-09-05T07:17:29.396960+00:00",
       "error": "HTTP 404",
       "avatar": "https://render.worldofwarcraft.com/eu/character/shattered-halls/175/2880943-avatar.jpg",
-      "avatarUpdatedAt": "2026-09-03T08:52:57.920107+00:00"
+      "avatarUpdatedAt": "2026-09-05T07:17:29.396960+00:00"
     },
     {
       "key": "shattered-halls/davegotsu",
@@ -4591,7 +5148,7 @@
       "score": null,
       "bestRuns": [],
       "status": "below_max_level",
-      "updatedAt": "2026-09-03T08:52:57.920107+00:00"
+      "updatedAt": "2026-09-05T07:17:29.396960+00:00"
     },
     {
       "key": "shattered-halls/deki",
@@ -4604,10 +5161,10 @@
       "score": null,
       "bestRuns": [],
       "status": "unavailable",
-      "updatedAt": "2026-09-03T08:52:57.920107+00:00",
+      "updatedAt": "2026-09-05T07:17:29.396960+00:00",
       "error": "HTTP 404",
       "avatar": "https://render.worldofwarcraft.com/eu/character/shattered-halls/109/264403309-avatar.jpg",
-      "avatarUpdatedAt": "2026-09-03T08:52:57.920107+00:00"
+      "avatarUpdatedAt": "2026-09-05T07:17:29.396960+00:00"
     },
     {
       "key": "shattered-halls/demonpatch",
@@ -4620,7 +5177,7 @@
       "score": null,
       "bestRuns": [],
       "status": "below_max_level",
-      "updatedAt": "2026-09-03T08:52:57.920107+00:00"
+      "updatedAt": "2026-09-05T07:17:29.396960+00:00"
     },
     {
       "key": "shattered-halls/demos",
@@ -4633,7 +5190,7 @@
       "score": null,
       "bestRuns": [],
       "status": "below_max_level",
-      "updatedAt": "2026-09-03T08:52:57.920107+00:00"
+      "updatedAt": "2026-09-05T07:17:29.396960+00:00"
     },
     {
       "key": "shattered-halls/discdrive",
@@ -4646,7 +5203,7 @@
       "score": null,
       "bestRuns": [],
       "status": "below_max_level",
-      "updatedAt": "2026-09-03T08:52:57.920107+00:00"
+      "updatedAt": "2026-09-05T07:17:29.396960+00:00"
     },
     {
       "key": "shattered-halls/diwata",
@@ -4659,7 +5216,7 @@
       "score": null,
       "bestRuns": [],
       "status": "below_max_level",
-      "updatedAt": "2026-09-03T08:52:57.920107+00:00"
+      "updatedAt": "2026-09-05T07:17:29.396960+00:00"
     },
     {
       "key": "talnivarr/drazgul",
@@ -4672,7 +5229,7 @@
       "score": null,
       "bestRuns": [],
       "status": "below_max_level",
-      "updatedAt": "2026-09-03T08:52:57.920107+00:00"
+      "updatedAt": "2026-09-05T07:17:29.396960+00:00"
     },
     {
       "key": "shattered-halls/earthpatch",
@@ -4685,7 +5242,7 @@
       "score": null,
       "bestRuns": [],
       "status": "below_max_level",
-      "updatedAt": "2026-09-03T08:52:57.920107+00:00"
+      "updatedAt": "2026-09-05T07:17:29.396960+00:00"
     },
     {
       "key": "shattered-halls/eclypses",
@@ -4698,23 +5255,36 @@
       "score": null,
       "bestRuns": [],
       "status": "unavailable",
-      "updatedAt": "2026-09-03T08:52:57.920107+00:00",
+      "updatedAt": "2026-09-05T07:17:29.396960+00:00",
       "error": "HTTP 404",
       "avatar": "https://render.worldofwarcraft.com/eu/character/shattered-halls/60/254133308-avatar.jpg",
-      "avatarUpdatedAt": "2026-09-03T08:52:57.920107+00:00"
+      "avatarUpdatedAt": "2026-09-05T07:17:29.396960+00:00"
     },
     {
       "key": "shattered-halls/edari",
       "name": "Edari",
       "realm": "shattered-halls",
-      "level": 87,
+      "level": 89,
       "class": "Warlock",
       "role": "Unknown",
       "spec": null,
       "score": null,
       "bestRuns": [],
       "status": "below_max_level",
-      "updatedAt": "2026-09-03T08:52:57.920107+00:00"
+      "updatedAt": "2026-09-05T07:17:29.396960+00:00"
+    },
+    {
+      "key": "shattered-halls/ekko",
+      "name": "Ekko",
+      "realm": "shattered-halls",
+      "level": 80,
+      "class": "Hunter",
+      "role": "Unknown",
+      "spec": null,
+      "score": null,
+      "bestRuns": [],
+      "status": "below_max_level",
+      "updatedAt": "2026-09-05T07:17:29.396960+00:00"
     },
     {
       "key": "shattered-halls/elensår",
@@ -4727,7 +5297,7 @@
       "score": null,
       "bestRuns": [],
       "status": "below_max_level",
-      "updatedAt": "2026-09-03T08:52:57.920107+00:00"
+      "updatedAt": "2026-09-05T07:17:29.396960+00:00"
     },
     {
       "key": "shattered-halls/eleothir",
@@ -4740,7 +5310,7 @@
       "score": null,
       "bestRuns": [],
       "status": "below_max_level",
-      "updatedAt": "2026-09-03T08:52:57.920107+00:00"
+      "updatedAt": "2026-09-05T07:17:29.396960+00:00"
     },
     {
       "key": "shattered-halls/elirai",
@@ -4753,10 +5323,10 @@
       "score": null,
       "bestRuns": [],
       "status": "unavailable",
-      "updatedAt": "2026-09-03T08:52:57.920107+00:00",
+      "updatedAt": "2026-09-05T07:17:29.396960+00:00",
       "error": "HTTP 404",
       "avatar": "https://render.worldofwarcraft.com/eu/character/shattered-halls/100/14477156-avatar.jpg",
-      "avatarUpdatedAt": "2026-09-03T08:52:57.920107+00:00"
+      "avatarUpdatedAt": "2026-09-05T07:17:29.396960+00:00"
     },
     {
       "key": "shattered-halls/elisabetta",
@@ -4769,10 +5339,10 @@
       "score": null,
       "bestRuns": [],
       "status": "unavailable",
-      "updatedAt": "2026-09-03T08:52:57.920107+00:00",
+      "updatedAt": "2026-09-05T07:17:29.396960+00:00",
       "error": "HTTP 404",
       "avatar": "https://render.worldofwarcraft.com/eu/character/shattered-halls/221/116464349-avatar.jpg",
-      "avatarUpdatedAt": "2026-09-03T08:52:57.920107+00:00"
+      "avatarUpdatedAt": "2026-09-05T07:17:29.396960+00:00"
     },
     {
       "key": "shattered-halls/ellitha",
@@ -4785,7 +5355,7 @@
       "score": null,
       "bestRuns": [],
       "status": "below_max_level",
-      "updatedAt": "2026-09-03T08:52:57.920107+00:00"
+      "updatedAt": "2026-09-05T07:17:29.396960+00:00"
     },
     {
       "key": "shattered-halls/eloradanan",
@@ -4798,7 +5368,7 @@
       "score": null,
       "bestRuns": [],
       "status": "below_max_level",
-      "updatedAt": "2026-09-03T08:52:57.920107+00:00"
+      "updatedAt": "2026-09-05T07:17:29.396960+00:00"
     },
     {
       "key": "shattered-halls/eloramya",
@@ -4811,7 +5381,7 @@
       "score": null,
       "bestRuns": [],
       "status": "below_max_level",
-      "updatedAt": "2026-09-03T08:52:57.920107+00:00"
+      "updatedAt": "2026-09-05T07:17:29.396960+00:00"
     },
     {
       "key": "shattered-halls/eltaar",
@@ -4824,7 +5394,7 @@
       "score": null,
       "bestRuns": [],
       "status": "below_max_level",
-      "updatedAt": "2026-09-03T08:52:57.920107+00:00"
+      "updatedAt": "2026-09-05T07:17:29.396960+00:00"
     },
     {
       "key": "shattered-halls/elurial",
@@ -4837,7 +5407,7 @@
       "score": null,
       "bestRuns": [],
       "status": "below_max_level",
-      "updatedAt": "2026-09-03T08:52:57.920107+00:00"
+      "updatedAt": "2026-09-05T07:17:29.396960+00:00"
     },
     {
       "key": "shattered-halls/eluriál",
@@ -4850,7 +5420,7 @@
       "score": null,
       "bestRuns": [],
       "status": "below_max_level",
-      "updatedAt": "2026-09-03T08:52:57.920107+00:00"
+      "updatedAt": "2026-09-05T07:17:29.396960+00:00"
     },
     {
       "key": "shattered-halls/emberwolf",
@@ -4863,10 +5433,10 @@
       "score": null,
       "bestRuns": [],
       "status": "unavailable",
-      "updatedAt": "2026-09-03T08:52:57.920107+00:00",
+      "updatedAt": "2026-09-05T07:17:29.396960+00:00",
       "error": "HTTP 404",
       "avatar": "https://render.worldofwarcraft.com/eu/character/shattered-halls/24/1564440-avatar.jpg",
-      "avatarUpdatedAt": "2026-09-03T08:52:57.920107+00:00"
+      "avatarUpdatedAt": "2026-09-05T07:17:29.396960+00:00"
     },
     {
       "key": "darkmoon-faire/emul",
@@ -4879,7 +5449,7 @@
       "score": null,
       "bestRuns": [],
       "status": "below_max_level",
-      "updatedAt": "2026-09-03T08:52:57.920107+00:00"
+      "updatedAt": "2026-09-05T07:17:29.396960+00:00"
     },
     {
       "key": "shattered-halls/enhira",
@@ -4892,10 +5462,10 @@
       "score": null,
       "bestRuns": [],
       "status": "unavailable",
-      "updatedAt": "2026-09-03T08:52:57.920107+00:00",
+      "updatedAt": "2026-09-05T07:17:29.396960+00:00",
       "error": "HTTP 404",
       "avatar": "https://render.worldofwarcraft.com/eu/character/shattered-halls/243/265482483-avatar.jpg",
-      "avatarUpdatedAt": "2026-09-03T08:52:57.920107+00:00"
+      "avatarUpdatedAt": "2026-09-05T07:17:29.396960+00:00"
     },
     {
       "key": "shattered-halls/erikka",
@@ -4908,7 +5478,7 @@
       "score": null,
       "bestRuns": [],
       "status": "below_max_level",
-      "updatedAt": "2026-09-03T08:52:57.920107+00:00"
+      "updatedAt": "2026-09-05T07:17:29.396960+00:00"
     },
     {
       "key": "darkmoon-faire/erinyes",
@@ -4921,7 +5491,7 @@
       "score": null,
       "bestRuns": [],
       "status": "below_max_level",
-      "updatedAt": "2026-09-03T08:52:57.920107+00:00"
+      "updatedAt": "2026-09-05T07:17:29.396960+00:00"
     },
     {
       "key": "argent-dawn/eumenídes",
@@ -4934,7 +5504,7 @@
       "score": null,
       "bestRuns": [],
       "status": "below_max_level",
-      "updatedAt": "2026-09-03T08:52:57.920107+00:00"
+      "updatedAt": "2026-09-05T07:17:29.396960+00:00"
     },
     {
       "key": "shattered-halls/extremeorder",
@@ -4947,7 +5517,7 @@
       "score": null,
       "bestRuns": [],
       "status": "below_max_level",
-      "updatedAt": "2026-09-03T08:52:57.920107+00:00"
+      "updatedAt": "2026-09-05T07:17:29.396960+00:00"
     },
     {
       "key": "shattered-halls/faebiah",
@@ -4960,10 +5530,10 @@
       "score": null,
       "bestRuns": [],
       "status": "unavailable",
-      "updatedAt": "2026-09-03T08:52:57.920107+00:00",
+      "updatedAt": "2026-09-05T07:17:29.396960+00:00",
       "error": "HTTP 404",
       "avatar": "https://render.worldofwarcraft.com/eu/character/shattered-halls/42/89939754-avatar.jpg",
-      "avatarUpdatedAt": "2026-09-03T08:52:57.920107+00:00"
+      "avatarUpdatedAt": "2026-09-05T07:17:29.396960+00:00"
     },
     {
       "key": "shattered-halls/falcon",
@@ -4976,10 +5546,10 @@
       "score": null,
       "bestRuns": [],
       "status": "unavailable",
-      "updatedAt": "2026-09-03T08:52:57.920107+00:00",
+      "updatedAt": "2026-09-05T07:17:29.396960+00:00",
       "error": "HTTP 404",
       "avatar": "https://render.worldofwarcraft.com/eu/character/shattered-halls/243/21552883-avatar.jpg",
-      "avatarUpdatedAt": "2026-09-03T08:52:57.920107+00:00"
+      "avatarUpdatedAt": "2026-09-05T07:17:29.396960+00:00"
     },
     {
       "key": "doomhammer/fazu",
@@ -4992,7 +5562,7 @@
       "score": null,
       "bestRuns": [],
       "status": "below_max_level",
-      "updatedAt": "2026-09-03T08:52:57.920107+00:00"
+      "updatedAt": "2026-09-05T07:17:29.396960+00:00"
     },
     {
       "key": "magtheridon/feared",
@@ -5005,7 +5575,7 @@
       "score": null,
       "bestRuns": [],
       "status": "below_max_level",
-      "updatedAt": "2026-09-03T08:52:57.920107+00:00"
+      "updatedAt": "2026-09-05T07:17:29.396960+00:00"
     },
     {
       "key": "magtheridon/fearomo",
@@ -5018,7 +5588,7 @@
       "score": null,
       "bestRuns": [],
       "status": "below_max_level",
-      "updatedAt": "2026-09-03T08:52:57.920107+00:00"
+      "updatedAt": "2026-09-05T07:17:29.396960+00:00"
     },
     {
       "key": "shattered-halls/fexofenadine",
@@ -5031,10 +5601,10 @@
       "score": null,
       "bestRuns": [],
       "status": "unavailable",
-      "updatedAt": "2026-09-03T08:52:57.920107+00:00",
+      "updatedAt": "2026-09-05T07:17:29.396960+00:00",
       "error": "HTTP 404",
       "avatar": "https://render.worldofwarcraft.com/eu/character/shattered-halls/39/200581671-avatar.jpg",
-      "avatarUpdatedAt": "2026-09-03T08:52:57.920107+00:00"
+      "avatarUpdatedAt": "2026-09-05T07:17:29.396960+00:00"
     },
     {
       "key": "daggerspine/feydrine",
@@ -5047,7 +5617,7 @@
       "score": null,
       "bestRuns": [],
       "status": "below_max_level",
-      "updatedAt": "2026-09-03T08:52:57.920107+00:00"
+      "updatedAt": "2026-09-05T07:17:29.396960+00:00"
     },
     {
       "key": "shattered-halls/filbert",
@@ -5060,7 +5630,7 @@
       "score": null,
       "bestRuns": [],
       "status": "below_max_level",
-      "updatedAt": "2026-09-03T08:52:57.920107+00:00"
+      "updatedAt": "2026-09-05T07:17:29.396960+00:00"
     },
     {
       "key": "shattered-halls/fishsoup",
@@ -5073,7 +5643,7 @@
       "score": null,
       "bestRuns": [],
       "status": "below_max_level",
-      "updatedAt": "2026-09-03T08:52:57.920107+00:00"
+      "updatedAt": "2026-09-05T07:17:29.396960+00:00"
     },
     {
       "key": "shattered-halls/flamewave",
@@ -5086,10 +5656,10 @@
       "score": null,
       "bestRuns": [],
       "status": "unavailable",
-      "updatedAt": "2026-09-03T08:52:57.920107+00:00",
+      "updatedAt": "2026-09-05T07:17:29.396960+00:00",
       "error": "HTTP 404",
       "avatar": "https://render.worldofwarcraft.com/eu/character/shattered-halls/136/26533256-avatar.jpg",
-      "avatarUpdatedAt": "2026-09-03T08:52:57.920107+00:00"
+      "avatarUpdatedAt": "2026-09-05T07:17:29.396960+00:00"
     },
     {
       "key": "chromaggus/fragcat",
@@ -5102,7 +5672,7 @@
       "score": null,
       "bestRuns": [],
       "status": "below_max_level",
-      "updatedAt": "2026-09-03T08:52:57.920107+00:00"
+      "updatedAt": "2026-09-05T07:17:29.396960+00:00"
     },
     {
       "key": "shattered-halls/frostylight",
@@ -5115,7 +5685,7 @@
       "score": null,
       "bestRuns": [],
       "status": "below_max_level",
-      "updatedAt": "2026-09-03T08:52:57.920107+00:00"
+      "updatedAt": "2026-09-05T07:17:29.396960+00:00"
     },
     {
       "key": "shattered-halls/frozentouch",
@@ -5128,7 +5698,7 @@
       "score": null,
       "bestRuns": [],
       "status": "below_max_level",
-      "updatedAt": "2026-09-03T08:52:57.920107+00:00"
+      "updatedAt": "2026-09-05T07:17:29.396960+00:00"
     },
     {
       "key": "chromaggus/fyrr",
@@ -5141,7 +5711,7 @@
       "score": null,
       "bestRuns": [],
       "status": "below_max_level",
-      "updatedAt": "2026-09-03T08:52:57.920107+00:00"
+      "updatedAt": "2026-09-05T07:17:29.396960+00:00"
     },
     {
       "key": "shattered-halls/garmok",
@@ -5154,7 +5724,7 @@
       "score": null,
       "bestRuns": [],
       "status": "below_max_level",
-      "updatedAt": "2026-09-03T08:52:57.920107+00:00"
+      "updatedAt": "2026-09-05T07:17:29.396960+00:00"
     },
     {
       "key": "shattered-halls/gemsocket",
@@ -5167,7 +5737,7 @@
       "score": null,
       "bestRuns": [],
       "status": "below_max_level",
-      "updatedAt": "2026-09-03T08:52:57.920107+00:00"
+      "updatedAt": "2026-09-05T07:17:29.396960+00:00"
     },
     {
       "key": "chromaggus/ghostie",
@@ -5180,10 +5750,10 @@
       "score": null,
       "bestRuns": [],
       "status": "unavailable",
-      "updatedAt": "2026-09-03T08:52:57.920107+00:00",
+      "updatedAt": "2026-09-05T07:17:29.396960+00:00",
       "error": "HTTP 404",
       "avatar": "https://render.worldofwarcraft.com/eu/character/chromaggus/96/176896608-avatar.jpg",
-      "avatarUpdatedAt": "2026-09-03T08:52:57.920107+00:00"
+      "avatarUpdatedAt": "2026-09-05T07:17:29.396960+00:00"
     },
     {
       "key": "shattered-halls/gloriosa",
@@ -5196,7 +5766,7 @@
       "score": null,
       "bestRuns": [],
       "status": "below_max_level",
-      "updatedAt": "2026-09-03T08:52:57.920107+00:00"
+      "updatedAt": "2026-09-05T07:17:29.396960+00:00"
     },
     {
       "key": "shattered-halls/goatee",
@@ -5209,10 +5779,10 @@
       "score": null,
       "bestRuns": [],
       "status": "unavailable",
-      "updatedAt": "2026-09-03T08:52:57.920107+00:00",
+      "updatedAt": "2026-09-05T07:17:29.396960+00:00",
       "error": "HTTP 404",
       "avatar": "https://render.worldofwarcraft.com/eu/character/shattered-halls/76/264546636-avatar.jpg",
-      "avatarUpdatedAt": "2026-09-03T08:52:57.920107+00:00"
+      "avatarUpdatedAt": "2026-09-05T07:17:29.396960+00:00"
     },
     {
       "key": "shattered-halls/goatwillow",
@@ -5225,7 +5795,7 @@
       "score": null,
       "bestRuns": [],
       "status": "below_max_level",
-      "updatedAt": "2026-09-03T08:52:57.920107+00:00"
+      "updatedAt": "2026-09-05T07:17:29.396960+00:00"
     },
     {
       "key": "die-silberne-hand/gogogo",
@@ -5238,7 +5808,7 @@
       "score": null,
       "bestRuns": [],
       "status": "below_max_level",
-      "updatedAt": "2026-09-03T08:52:57.920107+00:00"
+      "updatedAt": "2026-09-05T07:17:29.396960+00:00"
     },
     {
       "key": "shattered-halls/greencannon",
@@ -5251,7 +5821,7 @@
       "score": null,
       "bestRuns": [],
       "status": "below_max_level",
-      "updatedAt": "2026-09-03T08:52:57.920107+00:00"
+      "updatedAt": "2026-09-05T07:17:29.396960+00:00"
     },
     {
       "key": "sunstrider/greyo",
@@ -5264,7 +5834,7 @@
       "score": null,
       "bestRuns": [],
       "status": "below_max_level",
-      "updatedAt": "2026-09-03T08:52:57.920107+00:00"
+      "updatedAt": "2026-09-05T07:17:29.396960+00:00"
     },
     {
       "key": "talnivarr/gudsgåva",
@@ -5277,7 +5847,7 @@
       "score": null,
       "bestRuns": [],
       "status": "below_max_level",
-      "updatedAt": "2026-09-03T08:52:57.920107+00:00"
+      "updatedAt": "2026-09-05T07:17:29.396960+00:00"
     },
     {
       "key": "kazzak/guppie",
@@ -5290,7 +5860,7 @@
       "score": null,
       "bestRuns": [],
       "status": "below_max_level",
-      "updatedAt": "2026-09-03T08:52:57.920107+00:00"
+      "updatedAt": "2026-09-05T07:17:29.396960+00:00"
     },
     {
       "key": "sunstrider/hanni",
@@ -5303,7 +5873,7 @@
       "score": null,
       "bestRuns": [],
       "status": "below_max_level",
-      "updatedAt": "2026-09-03T08:52:57.920107+00:00"
+      "updatedAt": "2026-09-05T07:17:29.396960+00:00"
     },
     {
       "key": "shattered-halls/harimella",
@@ -5316,7 +5886,7 @@
       "score": null,
       "bestRuns": [],
       "status": "below_max_level",
-      "updatedAt": "2026-09-03T08:52:57.920107+00:00"
+      "updatedAt": "2026-09-05T07:17:29.396960+00:00"
     },
     {
       "key": "shattered-halls/hathan",
@@ -5329,10 +5899,10 @@
       "score": null,
       "bestRuns": [],
       "status": "unavailable",
-      "updatedAt": "2026-09-03T08:52:57.920107+00:00",
+      "updatedAt": "2026-09-05T07:17:29.396960+00:00",
       "error": "HTTP 404",
       "avatar": "https://render.worldofwarcraft.com/eu/character/shattered-halls/185/23792057-avatar.jpg",
-      "avatarUpdatedAt": "2026-09-03T08:52:57.920107+00:00"
+      "avatarUpdatedAt": "2026-09-05T07:17:29.396960+00:00"
     },
     {
       "key": "shattered-halls/healkoe",
@@ -5345,7 +5915,7 @@
       "score": null,
       "bestRuns": [],
       "status": "below_max_level",
-      "updatedAt": "2026-09-03T08:52:57.920107+00:00"
+      "updatedAt": "2026-09-05T07:17:29.396960+00:00"
     },
     {
       "key": "shattered-halls/hetepheres",
@@ -5358,7 +5928,7 @@
       "score": null,
       "bestRuns": [],
       "status": "below_max_level",
-      "updatedAt": "2026-09-03T08:52:57.920107+00:00"
+      "updatedAt": "2026-09-05T07:17:29.396960+00:00"
     },
     {
       "key": "shattered-halls/hobnob",
@@ -5371,7 +5941,7 @@
       "score": null,
       "bestRuns": [],
       "status": "below_max_level",
-      "updatedAt": "2026-09-03T08:52:57.920107+00:00"
+      "updatedAt": "2026-09-05T07:17:29.396960+00:00"
     },
     {
       "key": "shattered-halls/hornebon",
@@ -5384,7 +5954,7 @@
       "score": null,
       "bestRuns": [],
       "status": "below_max_level",
-      "updatedAt": "2026-09-03T08:52:57.920107+00:00"
+      "updatedAt": "2026-09-05T07:17:29.396960+00:00"
     },
     {
       "key": "aggramar/hornsofevil",
@@ -5397,7 +5967,7 @@
       "score": null,
       "bestRuns": [],
       "status": "below_max_level",
-      "updatedAt": "2026-09-03T08:52:57.920107+00:00"
+      "updatedAt": "2026-09-05T07:17:29.396960+00:00"
     },
     {
       "key": "shattered-halls/hornsofevil",
@@ -5410,7 +5980,7 @@
       "score": null,
       "bestRuns": [],
       "status": "below_max_level",
-      "updatedAt": "2026-09-03T08:52:57.920107+00:00"
+      "updatedAt": "2026-09-05T07:17:29.396960+00:00"
     },
     {
       "key": "doomhammer/hoschi",
@@ -5423,7 +5993,7 @@
       "score": null,
       "bestRuns": [],
       "status": "below_max_level",
-      "updatedAt": "2026-09-03T08:52:57.920107+00:00"
+      "updatedAt": "2026-09-05T07:17:29.396960+00:00"
     },
     {
       "key": "argent-dawn/hosiotes",
@@ -5436,7 +6006,7 @@
       "score": null,
       "bestRuns": [],
       "status": "below_max_level",
-      "updatedAt": "2026-09-03T08:52:57.920107+00:00"
+      "updatedAt": "2026-09-05T07:17:29.396960+00:00"
     },
     {
       "key": "sunstrider/hsinkang",
@@ -5449,7 +6019,7 @@
       "score": null,
       "bestRuns": [],
       "status": "below_max_level",
-      "updatedAt": "2026-09-03T08:52:57.920107+00:00"
+      "updatedAt": "2026-09-05T07:17:29.396960+00:00"
     },
     {
       "key": "talnivarr/hårbollen",
@@ -5462,7 +6032,7 @@
       "score": null,
       "bestRuns": [],
       "status": "below_max_level",
-      "updatedAt": "2026-09-03T08:52:57.920107+00:00"
+      "updatedAt": "2026-09-05T07:17:29.396960+00:00"
     },
     {
       "key": "shattered-halls/ifechi",
@@ -5475,7 +6045,7 @@
       "score": null,
       "bestRuns": [],
       "status": "below_max_level",
-      "updatedAt": "2026-09-03T08:52:57.920107+00:00"
+      "updatedAt": "2026-09-05T07:17:29.396960+00:00"
     },
     {
       "key": "shattered-halls/illyria",
@@ -5488,7 +6058,7 @@
       "score": null,
       "bestRuns": [],
       "status": "below_max_level",
-      "updatedAt": "2026-09-03T08:52:57.920107+00:00"
+      "updatedAt": "2026-09-05T07:17:29.396960+00:00"
     },
     {
       "key": "shattered-halls/indari",
@@ -5501,10 +6071,10 @@
       "score": null,
       "bestRuns": [],
       "status": "unavailable",
-      "updatedAt": "2026-09-03T08:52:57.920107+00:00",
+      "updatedAt": "2026-09-05T07:17:29.396960+00:00",
       "error": "HTTP 404",
       "avatar": "https://render.worldofwarcraft.com/eu/character/shattered-halls/251/161355259-avatar.jpg",
-      "avatarUpdatedAt": "2026-09-03T08:52:57.920107+00:00"
+      "avatarUpdatedAt": "2026-09-05T07:17:29.396960+00:00"
     },
     {
       "key": "shattered-halls/indee",
@@ -5517,7 +6087,7 @@
       "score": null,
       "bestRuns": [],
       "status": "below_max_level",
-      "updatedAt": "2026-09-03T08:52:57.920107+00:00"
+      "updatedAt": "2026-09-05T07:17:29.396960+00:00"
     },
     {
       "key": "shattered-halls/independance",
@@ -5530,10 +6100,10 @@
       "score": null,
       "bestRuns": [],
       "status": "unavailable",
-      "updatedAt": "2026-09-03T08:52:57.920107+00:00",
+      "updatedAt": "2026-09-05T07:17:29.396960+00:00",
       "error": "HTTP 404",
       "avatar": "https://render.worldofwarcraft.com/eu/character/shattered-halls/123/20858747-avatar.jpg",
-      "avatarUpdatedAt": "2026-09-03T08:52:57.920107+00:00"
+      "avatarUpdatedAt": "2026-09-05T07:17:29.396960+00:00"
     },
     {
       "key": "shattered-halls/iska",
@@ -5546,7 +6116,7 @@
       "score": null,
       "bestRuns": [],
       "status": "below_max_level",
-      "updatedAt": "2026-09-03T08:52:57.920107+00:00"
+      "updatedAt": "2026-09-05T07:17:29.396960+00:00"
     },
     {
       "key": "shattered-halls/ithi",
@@ -5559,7 +6129,7 @@
       "score": null,
       "bestRuns": [],
       "status": "below_max_level",
-      "updatedAt": "2026-09-03T08:52:57.920107+00:00"
+      "updatedAt": "2026-09-05T07:17:29.396960+00:00"
     },
     {
       "key": "shattered-halls/jarok",
@@ -5572,7 +6142,7 @@
       "score": null,
       "bestRuns": [],
       "status": "below_max_level",
-      "updatedAt": "2026-09-03T08:52:57.920107+00:00"
+      "updatedAt": "2026-09-05T07:17:29.396960+00:00"
     },
     {
       "key": "chromaggus/jezarya",
@@ -5585,10 +6155,10 @@
       "score": null,
       "bestRuns": [],
       "status": "unavailable",
-      "updatedAt": "2026-09-03T08:52:57.920107+00:00",
+      "updatedAt": "2026-09-05T07:17:29.396960+00:00",
       "error": "HTTP 404",
       "avatar": "https://render.worldofwarcraft.com/eu/character/chromaggus/231/113907175-avatar.jpg",
-      "avatarUpdatedAt": "2026-09-03T08:52:57.920107+00:00"
+      "avatarUpdatedAt": "2026-09-05T07:17:29.396960+00:00"
     },
     {
       "key": "shattered-halls/jintsu",
@@ -5601,7 +6171,7 @@
       "score": null,
       "bestRuns": [],
       "status": "below_max_level",
-      "updatedAt": "2026-09-03T08:52:57.920107+00:00"
+      "updatedAt": "2026-09-05T07:17:29.396960+00:00"
     },
     {
       "key": "shattered-halls/junipa",
@@ -5614,7 +6184,7 @@
       "score": null,
       "bestRuns": [],
       "status": "below_max_level",
-      "updatedAt": "2026-09-03T08:52:57.920107+00:00"
+      "updatedAt": "2026-09-05T07:17:29.396960+00:00"
     },
     {
       "key": "shattered-halls/kaelyssa",
@@ -5627,10 +6197,10 @@
       "score": null,
       "bestRuns": [],
       "status": "unavailable",
-      "updatedAt": "2026-09-03T08:52:57.920107+00:00",
+      "updatedAt": "2026-09-05T07:17:29.396960+00:00",
       "error": "HTTP 404",
       "avatar": "https://render.worldofwarcraft.com/eu/character/shattered-halls/254/161402622-avatar.jpg",
-      "avatarUpdatedAt": "2026-09-03T08:52:57.920107+00:00"
+      "avatarUpdatedAt": "2026-09-05T07:17:29.396960+00:00"
     },
     {
       "key": "shattered-halls/kahlizwe",
@@ -5643,7 +6213,7 @@
       "score": null,
       "bestRuns": [],
       "status": "below_max_level",
-      "updatedAt": "2026-09-03T08:52:57.920107+00:00"
+      "updatedAt": "2026-09-05T07:17:29.396960+00:00"
     },
     {
       "key": "chromaggus/kairileigh",
@@ -5656,7 +6226,7 @@
       "score": null,
       "bestRuns": [],
       "status": "below_max_level",
-      "updatedAt": "2026-09-03T08:52:57.920107+00:00"
+      "updatedAt": "2026-09-05T07:17:29.396960+00:00"
     },
     {
       "key": "shattered-halls/kanna",
@@ -5669,7 +6239,7 @@
       "score": null,
       "bestRuns": [],
       "status": "below_max_level",
-      "updatedAt": "2026-09-03T08:52:57.920107+00:00"
+      "updatedAt": "2026-09-05T07:17:29.396960+00:00"
     },
     {
       "key": "shattered-halls/karakuru",
@@ -5682,7 +6252,7 @@
       "score": null,
       "bestRuns": [],
       "status": "below_max_level",
-      "updatedAt": "2026-09-03T08:52:57.920107+00:00"
+      "updatedAt": "2026-09-05T07:17:29.396960+00:00"
     },
     {
       "key": "shattered-halls/karamanda",
@@ -5695,7 +6265,7 @@
       "score": null,
       "bestRuns": [],
       "status": "below_max_level",
-      "updatedAt": "2026-09-03T08:52:57.920107+00:00"
+      "updatedAt": "2026-09-05T07:17:29.396960+00:00"
     },
     {
       "key": "ravencrest/katching",
@@ -5708,7 +6278,7 @@
       "score": null,
       "bestRuns": [],
       "status": "below_max_level",
-      "updatedAt": "2026-09-03T08:52:57.920107+00:00"
+      "updatedAt": "2026-09-05T07:17:29.396960+00:00"
     },
     {
       "key": "shattered-halls/katherine",
@@ -5721,7 +6291,7 @@
       "score": null,
       "bestRuns": [],
       "status": "below_max_level",
-      "updatedAt": "2026-09-03T08:52:57.920107+00:00"
+      "updatedAt": "2026-09-05T07:17:29.396960+00:00"
     },
     {
       "key": "shattered-halls/katsu",
@@ -5734,7 +6304,7 @@
       "score": null,
       "bestRuns": [],
       "status": "below_max_level",
-      "updatedAt": "2026-09-03T08:52:57.920107+00:00"
+      "updatedAt": "2026-09-05T07:17:29.396960+00:00"
     },
     {
       "key": "laughing-skull/kattmat",
@@ -5747,10 +6317,10 @@
       "score": null,
       "bestRuns": [],
       "status": "unavailable",
-      "updatedAt": "2026-09-03T08:52:57.920107+00:00",
+      "updatedAt": "2026-09-05T07:17:29.396960+00:00",
       "error": "HTTP 404",
       "avatar": "https://render.worldofwarcraft.com/eu/character/laughing-skull/19/253814035-avatar.jpg",
-      "avatarUpdatedAt": "2026-09-03T08:52:57.920107+00:00"
+      "avatarUpdatedAt": "2026-09-05T07:17:29.396960+00:00"
     },
     {
       "key": "shattered-halls/kaven",
@@ -5763,7 +6333,7 @@
       "score": null,
       "bestRuns": [],
       "status": "below_max_level",
-      "updatedAt": "2026-09-03T08:52:57.920107+00:00"
+      "updatedAt": "2026-09-05T07:17:29.396960+00:00"
     },
     {
       "key": "ragnaros/kaynirix",
@@ -5776,7 +6346,7 @@
       "score": null,
       "bestRuns": [],
       "status": "below_max_level",
-      "updatedAt": "2026-09-03T08:52:57.920107+00:00"
+      "updatedAt": "2026-09-05T07:17:29.396960+00:00"
     },
     {
       "key": "ragnaros/kaynres",
@@ -5789,10 +6359,10 @@
       "score": null,
       "bestRuns": [],
       "status": "unavailable",
-      "updatedAt": "2026-09-03T08:52:57.920107+00:00",
+      "updatedAt": "2026-09-05T07:17:29.396960+00:00",
       "error": "HTTP 404",
       "avatar": "https://render.worldofwarcraft.com/eu/character/ragnaros/145/193140113-avatar.jpg",
-      "avatarUpdatedAt": "2026-09-03T08:52:57.920107+00:00"
+      "avatarUpdatedAt": "2026-09-05T07:17:29.396960+00:00"
     },
     {
       "key": "shattered-halls/kazzaspride",
@@ -5805,10 +6375,10 @@
       "score": null,
       "bestRuns": [],
       "status": "unavailable",
-      "updatedAt": "2026-09-03T08:52:57.920107+00:00",
+      "updatedAt": "2026-09-05T07:17:29.396960+00:00",
       "error": "HTTP 404",
       "avatar": "https://render.worldofwarcraft.com/eu/character/shattered-halls/165/17961893-avatar.jpg",
-      "avatarUpdatedAt": "2026-09-03T08:52:57.920107+00:00"
+      "avatarUpdatedAt": "2026-09-05T07:17:29.396960+00:00"
     },
     {
       "key": "sunstrider/keenai",
@@ -5821,7 +6391,7 @@
       "score": null,
       "bestRuns": [],
       "status": "below_max_level",
-      "updatedAt": "2026-09-03T08:52:57.920107+00:00"
+      "updatedAt": "2026-09-05T07:17:29.396960+00:00"
     },
     {
       "key": "shattered-halls/kelzi",
@@ -5834,10 +6404,10 @@
       "score": null,
       "bestRuns": [],
       "status": "unavailable",
-      "updatedAt": "2026-09-03T08:52:57.920107+00:00",
+      "updatedAt": "2026-09-05T07:17:29.396960+00:00",
       "error": "HTTP 404",
       "avatar": "https://render.worldofwarcraft.com/eu/character/shattered-halls/200/89108936-avatar.jpg",
-      "avatarUpdatedAt": "2026-09-03T08:52:57.920107+00:00"
+      "avatarUpdatedAt": "2026-09-05T07:17:29.396960+00:00"
     },
     {
       "key": "dragonmaw/kenobii",
@@ -5850,7 +6420,7 @@
       "score": null,
       "bestRuns": [],
       "status": "below_max_level",
-      "updatedAt": "2026-09-03T08:52:57.920107+00:00"
+      "updatedAt": "2026-09-05T07:17:29.396960+00:00"
     },
     {
       "key": "shattered-halls/kiara",
@@ -5863,7 +6433,7 @@
       "score": null,
       "bestRuns": [],
       "status": "below_max_level",
-      "updatedAt": "2026-09-03T08:52:57.920107+00:00"
+      "updatedAt": "2026-09-05T07:17:29.396960+00:00"
     },
     {
       "key": "shattered-halls/kinkytaur",
@@ -5876,10 +6446,10 @@
       "score": null,
       "bestRuns": [],
       "status": "unavailable",
-      "updatedAt": "2026-09-03T08:52:57.920107+00:00",
+      "updatedAt": "2026-09-05T07:17:29.396960+00:00",
       "error": "HTTP 404",
       "avatar": "https://render.worldofwarcraft.com/eu/character/shattered-halls/158/21938078-avatar.jpg",
-      "avatarUpdatedAt": "2026-09-03T08:52:57.920107+00:00"
+      "avatarUpdatedAt": "2026-09-05T07:17:29.396960+00:00"
     },
     {
       "key": "shattered-halls/kiril",
@@ -5892,10 +6462,10 @@
       "score": null,
       "bestRuns": [],
       "status": "unavailable",
-      "updatedAt": "2026-09-03T08:52:57.920107+00:00",
+      "updatedAt": "2026-09-05T07:17:29.396960+00:00",
       "error": "HTTP 404",
       "avatar": "https://render.worldofwarcraft.com/eu/character/shattered-halls/3/7807235-avatar.jpg",
-      "avatarUpdatedAt": "2026-09-03T08:52:57.920107+00:00"
+      "avatarUpdatedAt": "2026-09-05T07:17:29.396960+00:00"
     },
     {
       "key": "shattered-halls/kitt",
@@ -5908,7 +6478,7 @@
       "score": null,
       "bestRuns": [],
       "status": "below_max_level",
-      "updatedAt": "2026-09-03T08:52:57.920107+00:00"
+      "updatedAt": "2026-09-05T07:17:29.396960+00:00"
     },
     {
       "key": "shattered-halls/kittens",
@@ -5921,10 +6491,10 @@
       "score": null,
       "bestRuns": [],
       "status": "unavailable",
-      "updatedAt": "2026-09-03T08:52:57.920107+00:00",
+      "updatedAt": "2026-09-05T07:17:29.396960+00:00",
       "error": "HTTP 404",
       "avatar": "https://render.worldofwarcraft.com/eu/character/shattered-halls/240/33256688-avatar.jpg",
-      "avatarUpdatedAt": "2026-09-03T08:52:57.920107+00:00"
+      "avatarUpdatedAt": "2026-09-05T07:17:29.396960+00:00"
     },
     {
       "key": "shattered-halls/kittytaur",
@@ -5937,10 +6507,10 @@
       "score": null,
       "bestRuns": [],
       "status": "unavailable",
-      "updatedAt": "2026-09-03T08:52:57.920107+00:00",
+      "updatedAt": "2026-09-05T07:17:29.396960+00:00",
       "error": "HTTP 404",
       "avatar": "https://render.worldofwarcraft.com/eu/character/shattered-halls/56/85427000-avatar.jpg",
-      "avatarUpdatedAt": "2026-09-03T08:52:57.920107+00:00"
+      "avatarUpdatedAt": "2026-09-05T07:17:29.396960+00:00"
     },
     {
       "key": "daggerspine/knegoff",
@@ -5953,10 +6523,10 @@
       "score": null,
       "bestRuns": [],
       "status": "unavailable",
-      "updatedAt": "2026-09-03T08:52:57.920107+00:00",
+      "updatedAt": "2026-09-05T07:17:29.396960+00:00",
       "error": "HTTP 404",
       "avatar": "https://render.worldofwarcraft.com/eu/character/daggerspine/192/103265984-avatar.jpg",
-      "avatarUpdatedAt": "2026-09-03T08:52:57.920107+00:00"
+      "avatarUpdatedAt": "2026-09-05T07:17:29.396960+00:00"
     },
     {
       "key": "shattered-halls/konlan",
@@ -5969,7 +6539,7 @@
       "score": null,
       "bestRuns": [],
       "status": "below_max_level",
-      "updatedAt": "2026-09-03T08:52:57.920107+00:00"
+      "updatedAt": "2026-09-05T07:17:29.396960+00:00"
     },
     {
       "key": "shattered-halls/korgar",
@@ -5982,7 +6552,7 @@
       "score": null,
       "bestRuns": [],
       "status": "below_max_level",
-      "updatedAt": "2026-09-03T08:52:57.920107+00:00"
+      "updatedAt": "2026-09-05T07:17:29.396960+00:00"
     },
     {
       "key": "chromaggus/korvul",
@@ -5995,10 +6565,10 @@
       "score": null,
       "bestRuns": [],
       "status": "unavailable",
-      "updatedAt": "2026-09-03T08:52:57.920107+00:00",
+      "updatedAt": "2026-09-05T07:17:29.396960+00:00",
       "error": "HTTP 404",
       "avatar": "https://render.worldofwarcraft.com/eu/character/chromaggus/98/265048162-avatar.jpg",
-      "avatarUpdatedAt": "2026-09-03T08:52:57.920107+00:00"
+      "avatarUpdatedAt": "2026-09-05T07:17:29.396960+00:00"
     },
     {
       "key": "laughing-skull/krabaten",
@@ -6011,7 +6581,7 @@
       "score": null,
       "bestRuns": [],
       "status": "below_max_level",
-      "updatedAt": "2026-09-03T08:52:57.920107+00:00"
+      "updatedAt": "2026-09-05T07:17:29.396960+00:00"
     },
     {
       "key": "boulderfist/kregoth",
@@ -6024,7 +6594,7 @@
       "score": null,
       "bestRuns": [],
       "status": "below_max_level",
-      "updatedAt": "2026-09-03T08:52:57.920107+00:00"
+      "updatedAt": "2026-09-05T07:17:29.396960+00:00"
     },
     {
       "key": "shattered-halls/krenna",
@@ -6037,10 +6607,10 @@
       "score": null,
       "bestRuns": [],
       "status": "unavailable",
-      "updatedAt": "2026-09-03T08:52:57.920107+00:00",
+      "updatedAt": "2026-09-05T07:17:29.396960+00:00",
       "error": "HTTP 404",
       "avatar": "https://render.worldofwarcraft.com/eu/character/shattered-halls/65/264166977-avatar.jpg",
-      "avatarUpdatedAt": "2026-09-03T08:52:57.920107+00:00"
+      "avatarUpdatedAt": "2026-09-05T07:17:29.396960+00:00"
     },
     {
       "key": "shattered-halls/krls",
@@ -6053,7 +6623,7 @@
       "score": null,
       "bestRuns": [],
       "status": "below_max_level",
-      "updatedAt": "2026-09-03T08:52:57.920107+00:00"
+      "updatedAt": "2026-09-05T07:17:29.396960+00:00"
     },
     {
       "key": "turalyon/kynia",
@@ -6066,10 +6636,10 @@
       "score": null,
       "bestRuns": [],
       "status": "unavailable",
-      "updatedAt": "2026-09-03T08:52:57.920107+00:00",
+      "updatedAt": "2026-09-05T07:17:29.396960+00:00",
       "error": "HTTP 404",
       "avatar": "https://render.worldofwarcraft.com/eu/character/turalyon/89/189161561-avatar.jpg",
-      "avatarUpdatedAt": "2026-09-03T08:52:57.920107+00:00"
+      "avatarUpdatedAt": "2026-09-05T07:17:29.396960+00:00"
     },
     {
       "key": "dragonmaw/lana",
@@ -6082,7 +6652,7 @@
       "score": null,
       "bestRuns": [],
       "status": "below_max_level",
-      "updatedAt": "2026-09-03T08:52:57.920107+00:00"
+      "updatedAt": "2026-09-05T07:17:29.396960+00:00"
     },
     {
       "key": "shattered-halls/lightballs",
@@ -6095,7 +6665,7 @@
       "score": null,
       "bestRuns": [],
       "status": "below_max_level",
-      "updatedAt": "2026-09-03T08:52:57.920107+00:00"
+      "updatedAt": "2026-09-05T07:17:29.396960+00:00"
     },
     {
       "key": "shattered-halls/lightcrash",
@@ -6108,7 +6678,7 @@
       "score": null,
       "bestRuns": [],
       "status": "below_max_level",
-      "updatedAt": "2026-09-03T08:52:57.920107+00:00"
+      "updatedAt": "2026-09-05T07:17:29.396960+00:00"
     },
     {
       "key": "shattered-halls/lightofchaos",
@@ -6121,10 +6691,10 @@
       "score": null,
       "bestRuns": [],
       "status": "unavailable",
-      "updatedAt": "2026-09-03T08:52:57.920107+00:00",
+      "updatedAt": "2026-09-05T07:17:29.396960+00:00",
       "error": "HTTP 404",
       "avatar": "https://render.worldofwarcraft.com/eu/character/shattered-halls/55/14638903-avatar.jpg",
-      "avatarUpdatedAt": "2026-09-03T08:52:57.920107+00:00"
+      "avatarUpdatedAt": "2026-09-05T07:17:29.396960+00:00"
     },
     {
       "key": "shattered-halls/liliwen",
@@ -6137,7 +6707,7 @@
       "score": null,
       "bestRuns": [],
       "status": "below_max_level",
-      "updatedAt": "2026-09-03T08:52:57.920107+00:00"
+      "updatedAt": "2026-09-05T07:17:29.396960+00:00"
     },
     {
       "key": "shattered-halls/linktus",
@@ -6150,7 +6720,7 @@
       "score": null,
       "bestRuns": [],
       "status": "below_max_level",
-      "updatedAt": "2026-09-03T08:52:57.920107+00:00"
+      "updatedAt": "2026-09-05T07:17:29.396960+00:00"
     },
     {
       "key": "shattered-halls/linkus",
@@ -6163,7 +6733,7 @@
       "score": null,
       "bestRuns": [],
       "status": "below_max_level",
-      "updatedAt": "2026-09-03T08:52:57.920107+00:00"
+      "updatedAt": "2026-09-05T07:17:29.396960+00:00"
     },
     {
       "key": "talnivarr/litenmenstor",
@@ -6176,7 +6746,7 @@
       "score": null,
       "bestRuns": [],
       "status": "below_max_level",
-      "updatedAt": "2026-09-03T08:52:57.920107+00:00"
+      "updatedAt": "2026-09-05T07:17:29.396960+00:00"
     },
     {
       "key": "chromaggus/littletea",
@@ -6189,7 +6759,7 @@
       "score": null,
       "bestRuns": [],
       "status": "below_max_level",
-      "updatedAt": "2026-09-03T08:52:57.920107+00:00"
+      "updatedAt": "2026-09-05T07:17:29.396960+00:00"
     },
     {
       "key": "shattered-halls/lonex",
@@ -6202,7 +6772,7 @@
       "score": null,
       "bestRuns": [],
       "status": "below_max_level",
-      "updatedAt": "2026-09-03T08:52:57.920107+00:00"
+      "updatedAt": "2026-09-05T07:17:29.396960+00:00"
     },
     {
       "key": "shattered-halls/luminie",
@@ -6215,10 +6785,10 @@
       "score": null,
       "bestRuns": [],
       "status": "unavailable",
-      "updatedAt": "2026-09-03T08:52:57.920107+00:00",
+      "updatedAt": "2026-09-05T07:17:29.396960+00:00",
       "error": "HTTP 404",
       "avatar": "https://render.worldofwarcraft.com/eu/character/shattered-halls/77/264865613-avatar.jpg",
-      "avatarUpdatedAt": "2026-09-03T08:52:57.920107+00:00"
+      "avatarUpdatedAt": "2026-09-05T07:17:29.396960+00:00"
     },
     {
       "key": "chromaggus/lunarius",
@@ -6231,10 +6801,10 @@
       "score": null,
       "bestRuns": [],
       "status": "unavailable",
-      "updatedAt": "2026-09-03T08:52:57.920107+00:00",
+      "updatedAt": "2026-09-05T07:17:29.396960+00:00",
       "error": "HTTP 404",
       "avatar": "https://render.worldofwarcraft.com/eu/character/chromaggus/252/109863420-avatar.jpg",
-      "avatarUpdatedAt": "2026-09-03T08:52:57.920107+00:00"
+      "avatarUpdatedAt": "2026-09-05T07:17:29.396960+00:00"
     },
     {
       "key": "shattered-halls/lunate",
@@ -6247,10 +6817,10 @@
       "score": null,
       "bestRuns": [],
       "status": "unavailable",
-      "updatedAt": "2026-09-03T08:52:57.920107+00:00",
+      "updatedAt": "2026-09-05T07:17:29.396960+00:00",
       "error": "HTTP 404",
       "avatar": "https://render.worldofwarcraft.com/eu/character/shattered-halls/142/2820494-avatar.jpg",
-      "avatarUpdatedAt": "2026-09-03T08:52:57.920107+00:00"
+      "avatarUpdatedAt": "2026-09-05T07:17:29.396960+00:00"
     },
     {
       "key": "balnazzar/lycorislani",
@@ -6263,7 +6833,7 @@
       "score": null,
       "bestRuns": [],
       "status": "below_max_level",
-      "updatedAt": "2026-09-03T08:52:57.920107+00:00"
+      "updatedAt": "2026-09-05T07:17:29.396960+00:00"
     },
     {
       "key": "shattered-halls/lyria",
@@ -6276,10 +6846,10 @@
       "score": null,
       "bestRuns": [],
       "status": "unavailable",
-      "updatedAt": "2026-09-03T08:52:57.920107+00:00",
+      "updatedAt": "2026-09-05T07:17:29.396960+00:00",
       "error": "HTTP 404",
       "avatar": "https://render.worldofwarcraft.com/eu/character/shattered-halls/192/174881216-avatar.jpg",
-      "avatarUpdatedAt": "2026-09-03T08:52:57.920107+00:00"
+      "avatarUpdatedAt": "2026-09-05T07:17:29.396960+00:00"
     },
     {
       "key": "boulderfist/magmastorm",
@@ -6292,7 +6862,7 @@
       "score": null,
       "bestRuns": [],
       "status": "below_max_level",
-      "updatedAt": "2026-09-03T08:52:57.920107+00:00"
+      "updatedAt": "2026-09-05T07:17:29.396960+00:00"
     },
     {
       "key": "shattered-halls/martin",
@@ -6305,7 +6875,7 @@
       "score": null,
       "bestRuns": [],
       "status": "below_max_level",
-      "updatedAt": "2026-09-03T08:52:57.920107+00:00"
+      "updatedAt": "2026-09-05T07:17:29.396960+00:00"
     },
     {
       "key": "shattered-halls/marwyn",
@@ -6318,10 +6888,10 @@
       "score": null,
       "bestRuns": [],
       "status": "unavailable",
-      "updatedAt": "2026-09-03T08:52:57.920107+00:00",
+      "updatedAt": "2026-09-05T07:17:29.396960+00:00",
       "error": "HTTP 404",
       "avatar": "https://render.worldofwarcraft.com/eu/character/shattered-halls/240/264180720-avatar.jpg",
-      "avatarUpdatedAt": "2026-09-03T08:52:57.920107+00:00"
+      "avatarUpdatedAt": "2026-09-05T07:17:29.396960+00:00"
     },
     {
       "key": "draenor/mathaesh",
@@ -6334,10 +6904,10 @@
       "score": null,
       "bestRuns": [],
       "status": "unavailable",
-      "updatedAt": "2026-09-03T08:52:57.920107+00:00",
+      "updatedAt": "2026-09-05T07:17:29.396960+00:00",
       "error": "HTTP 404",
       "avatar": "https://render.worldofwarcraft.com/eu/character/draenor/142/100339854-avatar.jpg",
-      "avatarUpdatedAt": "2026-09-03T08:52:57.920107+00:00"
+      "avatarUpdatedAt": "2026-09-05T07:17:29.396960+00:00"
     },
     {
       "key": "shattered-halls/mattcs",
@@ -6350,7 +6920,7 @@
       "score": null,
       "bestRuns": [],
       "status": "below_max_level",
-      "updatedAt": "2026-09-03T08:52:57.920107+00:00"
+      "updatedAt": "2026-09-05T07:17:29.396960+00:00"
     },
     {
       "key": "shattered-halls/mauka",
@@ -6363,7 +6933,7 @@
       "score": null,
       "bestRuns": [],
       "status": "below_max_level",
-      "updatedAt": "2026-09-03T08:52:57.920107+00:00"
+      "updatedAt": "2026-09-05T07:17:29.396960+00:00"
     },
     {
       "key": "shattered-halls/mechlock",
@@ -6376,7 +6946,7 @@
       "score": null,
       "bestRuns": [],
       "status": "below_max_level",
-      "updatedAt": "2026-09-03T08:52:57.920107+00:00"
+      "updatedAt": "2026-09-05T07:17:29.396960+00:00"
     },
     {
       "key": "shattered-halls/melioda",
@@ -6389,10 +6959,10 @@
       "score": null,
       "bestRuns": [],
       "status": "unavailable",
-      "updatedAt": "2026-09-03T08:52:57.920107+00:00",
+      "updatedAt": "2026-09-05T07:17:29.396960+00:00",
       "error": "HTTP 404",
       "avatar": "https://render.worldofwarcraft.com/eu/character/shattered-halls/97/162160737-avatar.jpg",
-      "avatarUpdatedAt": "2026-09-03T08:52:57.920107+00:00"
+      "avatarUpdatedAt": "2026-09-05T07:17:29.396960+00:00"
     },
     {
       "key": "talnivarr/melkje",
@@ -6405,7 +6975,7 @@
       "score": null,
       "bestRuns": [],
       "status": "below_max_level",
-      "updatedAt": "2026-09-03T08:52:57.920107+00:00"
+      "updatedAt": "2026-09-05T07:17:29.396960+00:00"
     },
     {
       "key": "shattered-halls/merax",
@@ -6418,7 +6988,7 @@
       "score": null,
       "bestRuns": [],
       "status": "below_max_level",
-      "updatedAt": "2026-09-03T08:52:57.920107+00:00"
+      "updatedAt": "2026-09-05T07:17:29.396960+00:00"
     },
     {
       "key": "shattered-halls/meraxas",
@@ -6431,7 +7001,7 @@
       "score": null,
       "bestRuns": [],
       "status": "below_max_level",
-      "updatedAt": "2026-09-03T08:52:57.920107+00:00"
+      "updatedAt": "2026-09-05T07:17:29.396960+00:00"
     },
     {
       "key": "chromaggus/mezari",
@@ -6444,10 +7014,10 @@
       "score": null,
       "bestRuns": [],
       "status": "unavailable",
-      "updatedAt": "2026-09-03T08:52:57.920107+00:00",
+      "updatedAt": "2026-09-05T07:17:29.396960+00:00",
       "error": "HTTP 404",
       "avatar": "https://render.worldofwarcraft.com/eu/character/chromaggus/6/109976326-avatar.jpg",
-      "avatarUpdatedAt": "2026-09-03T08:52:57.920107+00:00"
+      "avatarUpdatedAt": "2026-09-05T07:17:29.396960+00:00"
     },
     {
       "key": "darkmoon-faire/mohrt",
@@ -6460,7 +7030,7 @@
       "score": null,
       "bestRuns": [],
       "status": "below_max_level",
-      "updatedAt": "2026-09-03T08:52:57.920107+00:00"
+      "updatedAt": "2026-09-05T07:17:29.396960+00:00"
     },
     {
       "key": "boulderfist/moontide",
@@ -6473,7 +7043,7 @@
       "score": null,
       "bestRuns": [],
       "status": "below_max_level",
-      "updatedAt": "2026-09-03T08:52:57.920107+00:00"
+      "updatedAt": "2026-09-05T07:17:29.396960+00:00"
     },
     {
       "key": "shattered-halls/mooraxus",
@@ -6486,7 +7056,7 @@
       "score": null,
       "bestRuns": [],
       "status": "below_max_level",
-      "updatedAt": "2026-09-03T08:52:57.920107+00:00"
+      "updatedAt": "2026-09-05T07:17:29.396960+00:00"
     },
     {
       "key": "darkmoon-faire/morghana",
@@ -6499,7 +7069,7 @@
       "score": null,
       "bestRuns": [],
       "status": "below_max_level",
-      "updatedAt": "2026-09-03T08:52:57.920107+00:00"
+      "updatedAt": "2026-09-05T07:17:29.396960+00:00"
     },
     {
       "key": "shattered-halls/mournbringer",
@@ -6512,7 +7082,7 @@
       "score": null,
       "bestRuns": [],
       "status": "below_max_level",
-      "updatedAt": "2026-09-03T08:52:57.920107+00:00"
+      "updatedAt": "2026-09-05T07:17:29.396960+00:00"
     },
     {
       "key": "shattered-halls/munro",
@@ -6525,7 +7095,7 @@
       "score": null,
       "bestRuns": [],
       "status": "below_max_level",
-      "updatedAt": "2026-09-03T08:52:57.920107+00:00"
+      "updatedAt": "2026-09-05T07:17:29.396960+00:00"
     },
     {
       "key": "chromaggus/naprox",
@@ -6538,10 +7108,10 @@
       "score": null,
       "bestRuns": [],
       "status": "unavailable",
-      "updatedAt": "2026-09-03T08:52:57.920107+00:00",
+      "updatedAt": "2026-09-05T07:17:29.396960+00:00",
       "error": "HTTP 404",
       "avatar": "https://render.worldofwarcraft.com/eu/character/chromaggus/248/183819512-avatar.jpg",
-      "avatarUpdatedAt": "2026-09-03T08:52:57.920107+00:00"
+      "avatarUpdatedAt": "2026-09-05T07:17:29.396960+00:00"
     },
     {
       "key": "shattered-halls/nightnips",
@@ -6554,7 +7124,7 @@
       "score": null,
       "bestRuns": [],
       "status": "below_max_level",
-      "updatedAt": "2026-09-03T08:52:57.920107+00:00"
+      "updatedAt": "2026-09-05T07:17:29.396960+00:00"
     },
     {
       "key": "shattered-halls/nishia",
@@ -6567,7 +7137,7 @@
       "score": null,
       "bestRuns": [],
       "status": "below_max_level",
-      "updatedAt": "2026-09-03T08:52:57.920107+00:00"
+      "updatedAt": "2026-09-05T07:17:29.396960+00:00"
     },
     {
       "key": "shattered-halls/ntharo",
@@ -6580,7 +7150,7 @@
       "score": null,
       "bestRuns": [],
       "status": "below_max_level",
-      "updatedAt": "2026-09-03T08:52:57.920107+00:00"
+      "updatedAt": "2026-09-05T07:17:29.396960+00:00"
     },
     {
       "key": "shattered-halls/ntombi",
@@ -6593,10 +7163,10 @@
       "score": null,
       "bestRuns": [],
       "status": "unavailable",
-      "updatedAt": "2026-09-03T08:52:57.920107+00:00",
+      "updatedAt": "2026-09-05T07:17:29.396960+00:00",
       "error": "HTTP 404",
       "avatar": "https://render.worldofwarcraft.com/eu/character/shattered-halls/162/257589666-avatar.jpg",
-      "avatarUpdatedAt": "2026-09-03T08:52:57.920107+00:00"
+      "avatarUpdatedAt": "2026-09-05T07:17:29.396960+00:00"
     },
     {
       "key": "shattered-halls/nyssa",
@@ -6609,7 +7179,7 @@
       "score": null,
       "bestRuns": [],
       "status": "below_max_level",
-      "updatedAt": "2026-09-03T08:52:57.920107+00:00"
+      "updatedAt": "2026-09-05T07:17:29.396960+00:00"
     },
     {
       "key": "talnivarr/oklartnamn",
@@ -6622,10 +7192,10 @@
       "score": null,
       "bestRuns": [],
       "status": "unavailable",
-      "updatedAt": "2026-09-03T08:52:57.920107+00:00",
+      "updatedAt": "2026-09-05T07:17:29.396960+00:00",
       "error": "HTTP 404",
       "avatar": "https://render.worldofwarcraft.com/eu/character/talnivarr/95/265839967-avatar.jpg",
-      "avatarUpdatedAt": "2026-09-03T08:52:57.920107+00:00"
+      "avatarUpdatedAt": "2026-09-05T07:17:29.396960+00:00"
     },
     {
       "key": "chromaggus/onyxielle",
@@ -6638,10 +7208,10 @@
       "score": null,
       "bestRuns": [],
       "status": "unavailable",
-      "updatedAt": "2026-09-03T08:52:57.920107+00:00",
+      "updatedAt": "2026-09-05T07:17:29.396960+00:00",
       "error": "HTTP 404",
       "avatar": "https://render.worldofwarcraft.com/eu/character/chromaggus/147/260402579-avatar.jpg",
-      "avatarUpdatedAt": "2026-09-03T08:52:57.920107+00:00"
+      "avatarUpdatedAt": "2026-09-05T07:17:29.396960+00:00"
     },
     {
       "key": "shattered-halls/pabu",
@@ -6654,10 +7224,10 @@
       "score": null,
       "bestRuns": [],
       "status": "unavailable",
-      "updatedAt": "2026-09-03T08:52:57.920107+00:00",
+      "updatedAt": "2026-09-05T07:17:29.396960+00:00",
       "error": "HTTP 404",
       "avatar": "https://render.worldofwarcraft.com/eu/character/shattered-halls/35/85562915-avatar.jpg",
-      "avatarUpdatedAt": "2026-09-03T08:52:57.920107+00:00"
+      "avatarUpdatedAt": "2026-09-05T07:17:29.396960+00:00"
     },
     {
       "key": "shattered-halls/painlover",
@@ -6670,7 +7240,7 @@
       "score": null,
       "bestRuns": [],
       "status": "below_max_level",
-      "updatedAt": "2026-09-03T08:52:57.920107+00:00"
+      "updatedAt": "2026-09-05T07:17:29.396960+00:00"
     },
     {
       "key": "shattered-halls/palamoo",
@@ -6683,10 +7253,10 @@
       "score": null,
       "bestRuns": [],
       "status": "unavailable",
-      "updatedAt": "2026-09-03T08:52:57.920107+00:00",
+      "updatedAt": "2026-09-05T07:17:29.396960+00:00",
       "error": "HTTP 404",
       "avatar": "https://render.worldofwarcraft.com/eu/character/shattered-halls/211/74808531-avatar.jpg",
-      "avatarUpdatedAt": "2026-09-03T08:52:57.920107+00:00"
+      "avatarUpdatedAt": "2026-09-05T07:17:29.396960+00:00"
     },
     {
       "key": "shattered-halls/pandyhoon",
@@ -6699,7 +7269,7 @@
       "score": null,
       "bestRuns": [],
       "status": "below_max_level",
-      "updatedAt": "2026-09-03T08:52:57.920107+00:00"
+      "updatedAt": "2026-09-05T07:17:29.396960+00:00"
     },
     {
       "key": "chromaggus/paned",
@@ -6712,7 +7282,7 @@
       "score": null,
       "bestRuns": [],
       "status": "below_max_level",
-      "updatedAt": "2026-09-03T08:52:57.920107+00:00"
+      "updatedAt": "2026-09-05T07:17:29.396960+00:00"
     },
     {
       "key": "shattered-halls/panzerth",
@@ -6725,7 +7295,7 @@
       "score": null,
       "bestRuns": [],
       "status": "below_max_level",
-      "updatedAt": "2026-09-03T08:52:57.920107+00:00"
+      "updatedAt": "2026-09-05T07:17:29.396960+00:00"
     },
     {
       "key": "shattered-halls/patchmagic",
@@ -6738,7 +7308,7 @@
       "score": null,
       "bestRuns": [],
       "status": "below_max_level",
-      "updatedAt": "2026-09-03T08:52:57.920107+00:00"
+      "updatedAt": "2026-09-05T07:17:29.396960+00:00"
     },
     {
       "key": "boulderfist/pathwalker",
@@ -6751,7 +7321,7 @@
       "score": null,
       "bestRuns": [],
       "status": "below_max_level",
-      "updatedAt": "2026-09-03T08:52:57.920107+00:00"
+      "updatedAt": "2026-09-05T07:17:29.396960+00:00"
     },
     {
       "key": "daggerspine/paul",
@@ -6764,7 +7334,7 @@
       "score": null,
       "bestRuns": [],
       "status": "below_max_level",
-      "updatedAt": "2026-09-03T08:52:57.920107+00:00"
+      "updatedAt": "2026-09-05T07:17:29.396960+00:00"
     },
     {
       "key": "shattered-halls/peltpeeler",
@@ -6777,7 +7347,7 @@
       "score": null,
       "bestRuns": [],
       "status": "below_max_level",
-      "updatedAt": "2026-09-03T08:52:57.920107+00:00"
+      "updatedAt": "2026-09-05T07:17:29.396960+00:00"
     },
     {
       "key": "chromaggus/periwinkle",
@@ -6790,7 +7360,7 @@
       "score": null,
       "bestRuns": [],
       "status": "below_max_level",
-      "updatedAt": "2026-09-03T08:52:57.920107+00:00"
+      "updatedAt": "2026-09-05T07:17:29.396960+00:00"
     },
     {
       "key": "shattered-halls/pixelshifter",
@@ -6803,7 +7373,7 @@
       "score": null,
       "bestRuns": [],
       "status": "below_max_level",
-      "updatedAt": "2026-09-03T08:52:57.920107+00:00"
+      "updatedAt": "2026-09-05T07:17:29.396960+00:00"
     },
     {
       "key": "shattered-halls/pokme",
@@ -6816,7 +7386,7 @@
       "score": null,
       "bestRuns": [],
       "status": "below_max_level",
-      "updatedAt": "2026-09-03T08:52:57.920107+00:00"
+      "updatedAt": "2026-09-05T07:17:29.396960+00:00"
     },
     {
       "key": "shattered-halls/porksord",
@@ -6829,7 +7399,7 @@
       "score": null,
       "bestRuns": [],
       "status": "below_max_level",
-      "updatedAt": "2026-09-03T08:52:57.920107+00:00"
+      "updatedAt": "2026-09-05T07:17:29.396960+00:00"
     },
     {
       "key": "draenor/puchaton",
@@ -6842,10 +7412,10 @@
       "score": null,
       "bestRuns": [],
       "status": "unavailable",
-      "updatedAt": "2026-09-03T08:52:57.920107+00:00",
+      "updatedAt": "2026-09-05T07:17:29.396960+00:00",
       "error": "HTTP 404",
       "avatar": "https://render.worldofwarcraft.com/eu/character/draenor/234/175207402-avatar.jpg",
-      "avatarUpdatedAt": "2026-09-03T08:52:57.920107+00:00"
+      "avatarUpdatedAt": "2026-09-05T07:17:29.396960+00:00"
     },
     {
       "key": "shattered-halls/pusyinboots",
@@ -6858,7 +7428,7 @@
       "score": null,
       "bestRuns": [],
       "status": "below_max_level",
-      "updatedAt": "2026-09-03T08:52:57.920107+00:00"
+      "updatedAt": "2026-09-05T07:17:29.396960+00:00"
     },
     {
       "key": "shattered-halls/raenori",
@@ -6871,10 +7441,10 @@
       "score": null,
       "bestRuns": [],
       "status": "unavailable",
-      "updatedAt": "2026-09-03T08:52:57.920107+00:00",
+      "updatedAt": "2026-09-05T07:17:29.396960+00:00",
       "error": "HTTP 404",
       "avatar": "https://render.worldofwarcraft.com/eu/character/shattered-halls/255/77607423-avatar.jpg",
-      "avatarUpdatedAt": "2026-09-03T08:52:57.920107+00:00"
+      "avatarUpdatedAt": "2026-09-05T07:17:29.396960+00:00"
     },
     {
       "key": "shattered-halls/ragingsoul",
@@ -6887,7 +7457,7 @@
       "score": null,
       "bestRuns": [],
       "status": "below_max_level",
-      "updatedAt": "2026-09-03T08:52:57.920107+00:00"
+      "updatedAt": "2026-09-05T07:17:29.396960+00:00"
     },
     {
       "key": "shattered-halls/raha",
@@ -6900,10 +7470,10 @@
       "score": null,
       "bestRuns": [],
       "status": "unavailable",
-      "updatedAt": "2026-09-03T08:52:57.920107+00:00",
+      "updatedAt": "2026-09-05T07:17:29.396960+00:00",
       "error": "HTTP 404",
       "avatar": "https://render.worldofwarcraft.com/eu/character/shattered-halls/61/265569085-avatar.jpg",
-      "avatarUpdatedAt": "2026-09-03T08:52:57.920107+00:00"
+      "avatarUpdatedAt": "2026-09-05T07:17:29.396960+00:00"
     },
     {
       "key": "shattered-halls/ralindra",
@@ -6916,7 +7486,7 @@
       "score": null,
       "bestRuns": [],
       "status": "below_max_level",
-      "updatedAt": "2026-09-03T08:52:57.920107+00:00"
+      "updatedAt": "2026-09-05T07:17:29.396960+00:00"
     },
     {
       "key": "shattered-halls/redluna",
@@ -6929,7 +7499,7 @@
       "score": null,
       "bestRuns": [],
       "status": "below_max_level",
-      "updatedAt": "2026-09-03T08:52:57.920107+00:00"
+      "updatedAt": "2026-09-05T07:17:29.396960+00:00"
     },
     {
       "key": "shattered-halls/renanari",
@@ -6942,7 +7512,7 @@
       "score": null,
       "bestRuns": [],
       "status": "below_max_level",
-      "updatedAt": "2026-09-03T08:52:57.920107+00:00"
+      "updatedAt": "2026-09-05T07:17:29.396960+00:00"
     },
     {
       "key": "ravencrest/resplease",
@@ -6955,7 +7525,7 @@
       "score": null,
       "bestRuns": [],
       "status": "below_max_level",
-      "updatedAt": "2026-09-03T08:52:57.920107+00:00"
+      "updatedAt": "2026-09-05T07:17:29.396960+00:00"
     },
     {
       "key": "shattered-halls/rhonorena",
@@ -6968,7 +7538,7 @@
       "score": null,
       "bestRuns": [],
       "status": "below_max_level",
-      "updatedAt": "2026-09-03T08:52:57.920107+00:00"
+      "updatedAt": "2026-09-05T07:17:29.396960+00:00"
     },
     {
       "key": "shattered-halls/rinara",
@@ -6981,10 +7551,10 @@
       "score": null,
       "bestRuns": [],
       "status": "unavailable",
-      "updatedAt": "2026-09-03T08:52:57.920107+00:00",
+      "updatedAt": "2026-09-05T07:17:29.396960+00:00",
       "error": "HTTP 404",
       "avatar": "https://render.worldofwarcraft.com/eu/character/shattered-halls/111/264047727-avatar.jpg",
-      "avatarUpdatedAt": "2026-09-03T08:52:57.920107+00:00"
+      "avatarUpdatedAt": "2026-09-05T07:17:29.396960+00:00"
     },
     {
       "key": "kilrogg/rinarahe",
@@ -6997,7 +7567,7 @@
       "score": null,
       "bestRuns": [],
       "status": "below_max_level",
-      "updatedAt": "2026-09-03T08:52:57.920107+00:00"
+      "updatedAt": "2026-09-05T07:17:29.396960+00:00"
     },
     {
       "key": "shattered-halls/rinhajime",
@@ -7010,7 +7580,7 @@
       "score": null,
       "bestRuns": [],
       "status": "below_max_level",
-      "updatedAt": "2026-09-03T08:52:57.920107+00:00"
+      "updatedAt": "2026-09-05T07:17:29.396960+00:00"
     },
     {
       "key": "shattered-halls/rizzen",
@@ -7023,10 +7593,10 @@
       "score": null,
       "bestRuns": [],
       "status": "unavailable",
-      "updatedAt": "2026-09-03T08:52:57.920107+00:00",
+      "updatedAt": "2026-09-05T07:17:29.396960+00:00",
       "error": "HTTP 404",
       "avatar": "https://render.worldofwarcraft.com/eu/character/shattered-halls/44/21936684-avatar.jpg",
-      "avatarUpdatedAt": "2026-09-03T08:52:57.920107+00:00"
+      "avatarUpdatedAt": "2026-09-05T07:17:29.396960+00:00"
     },
     {
       "key": "shattered-halls/roahana",
@@ -7039,10 +7609,10 @@
       "score": null,
       "bestRuns": [],
       "status": "unavailable",
-      "updatedAt": "2026-09-03T08:52:57.920107+00:00",
+      "updatedAt": "2026-09-05T07:17:29.396960+00:00",
       "error": "HTTP 404",
       "avatar": "https://render.worldofwarcraft.com/eu/character/shattered-halls/77/88929869-avatar.jpg",
-      "avatarUpdatedAt": "2026-09-03T08:52:57.920107+00:00"
+      "avatarUpdatedAt": "2026-09-05T07:17:29.396960+00:00"
     },
     {
       "key": "chromaggus/rohakanzini",
@@ -7055,10 +7625,10 @@
       "score": null,
       "bestRuns": [],
       "status": "unavailable",
-      "updatedAt": "2026-09-03T08:52:57.920107+00:00",
+      "updatedAt": "2026-09-05T07:17:29.396960+00:00",
       "error": "HTTP 404",
       "avatar": "https://render.worldofwarcraft.com/eu/character/chromaggus/59/168695099-avatar.jpg",
-      "avatarUpdatedAt": "2026-09-03T08:52:57.920107+00:00"
+      "avatarUpdatedAt": "2026-09-05T07:17:29.396960+00:00"
     },
     {
       "key": "zenedar/roshu",
@@ -7071,10 +7641,10 @@
       "score": null,
       "bestRuns": [],
       "status": "unavailable",
-      "updatedAt": "2026-09-03T08:52:57.920107+00:00",
+      "updatedAt": "2026-09-05T07:17:29.396960+00:00",
       "error": "HTTP 404",
       "avatar": "https://render.worldofwarcraft.com/eu/character/zenedar/1/96017409-avatar.jpg",
-      "avatarUpdatedAt": "2026-09-03T08:52:57.920107+00:00"
+      "avatarUpdatedAt": "2026-09-05T07:17:29.396960+00:00"
     },
     {
       "key": "chromaggus/rotfist",
@@ -7087,10 +7657,10 @@
       "score": null,
       "bestRuns": [],
       "status": "unavailable",
-      "updatedAt": "2026-09-03T08:52:57.920107+00:00",
+      "updatedAt": "2026-09-05T07:17:29.396960+00:00",
       "error": "HTTP 404",
       "avatar": "https://render.worldofwarcraft.com/eu/character/chromaggus/84/112046420-avatar.jpg",
-      "avatarUpdatedAt": "2026-09-03T08:52:57.920107+00:00"
+      "avatarUpdatedAt": "2026-09-05T07:17:29.396960+00:00"
     },
     {
       "key": "shattered-halls/rotpatch",
@@ -7103,7 +7673,7 @@
       "score": null,
       "bestRuns": [],
       "status": "below_max_level",
-      "updatedAt": "2026-09-03T08:52:57.920107+00:00"
+      "updatedAt": "2026-09-05T07:17:29.396960+00:00"
     },
     {
       "key": "shattered-halls/rudehunter",
@@ -7116,7 +7686,7 @@
       "score": null,
       "bestRuns": [],
       "status": "below_max_level",
-      "updatedAt": "2026-09-03T08:52:57.920107+00:00"
+      "updatedAt": "2026-09-05T07:17:29.396960+00:00"
     },
     {
       "key": "shattered-halls/rui",
@@ -7129,10 +7699,10 @@
       "score": null,
       "bestRuns": [],
       "status": "unavailable",
-      "updatedAt": "2026-09-03T08:52:57.920107+00:00",
+      "updatedAt": "2026-09-05T07:17:29.396960+00:00",
       "error": "HTTP 404",
       "avatar": "https://render.worldofwarcraft.com/eu/character/shattered-halls/230/259613926-avatar.jpg",
-      "avatarUpdatedAt": "2026-09-03T08:52:57.920107+00:00"
+      "avatarUpdatedAt": "2026-09-05T07:17:29.396960+00:00"
     },
     {
       "key": "shattered-halls/sacredvoodoo",
@@ -7145,7 +7715,7 @@
       "score": null,
       "bestRuns": [],
       "status": "below_max_level",
-      "updatedAt": "2026-09-03T08:52:57.920107+00:00"
+      "updatedAt": "2026-09-05T07:17:29.396960+00:00"
     },
     {
       "key": "boulderfist/saitama",
@@ -7158,7 +7728,7 @@
       "score": null,
       "bestRuns": [],
       "status": "below_max_level",
-      "updatedAt": "2026-09-03T08:52:57.920107+00:00"
+      "updatedAt": "2026-09-05T07:17:29.396960+00:00"
     },
     {
       "key": "shattered-halls/samtheslayer",
@@ -7171,7 +7741,7 @@
       "score": null,
       "bestRuns": [],
       "status": "below_max_level",
-      "updatedAt": "2026-09-03T08:52:57.920107+00:00"
+      "updatedAt": "2026-09-05T07:17:29.396960+00:00"
     },
     {
       "key": "shattered-halls/sathrir",
@@ -7184,7 +7754,7 @@
       "score": null,
       "bestRuns": [],
       "status": "below_max_level",
-      "updatedAt": "2026-09-03T08:52:57.920107+00:00"
+      "updatedAt": "2026-09-05T07:17:29.396960+00:00"
     },
     {
       "key": "twilights-hammer/savagehunter",
@@ -7197,7 +7767,7 @@
       "score": null,
       "bestRuns": [],
       "status": "below_max_level",
-      "updatedAt": "2026-09-03T08:52:57.920107+00:00"
+      "updatedAt": "2026-09-05T07:17:29.396960+00:00"
     },
     {
       "key": "azjolnerub/scattershot",
@@ -7210,7 +7780,7 @@
       "score": null,
       "bestRuns": [],
       "status": "below_max_level",
-      "updatedAt": "2026-09-03T08:52:57.920107+00:00"
+      "updatedAt": "2026-09-05T07:17:29.396960+00:00"
     },
     {
       "key": "shattered-halls/scourgelight",
@@ -7223,7 +7793,7 @@
       "score": null,
       "bestRuns": [],
       "status": "below_max_level",
-      "updatedAt": "2026-09-03T08:52:57.920107+00:00"
+      "updatedAt": "2026-09-05T07:17:29.396960+00:00"
     },
     {
       "key": "shattered-halls/sera",
@@ -7236,7 +7806,7 @@
       "score": null,
       "bestRuns": [],
       "status": "below_max_level",
-      "updatedAt": "2026-09-03T08:52:57.920107+00:00"
+      "updatedAt": "2026-09-05T07:17:29.396960+00:00"
     },
     {
       "key": "shattered-halls/shadowlash",
@@ -7249,7 +7819,7 @@
       "score": null,
       "bestRuns": [],
       "status": "below_max_level",
-      "updatedAt": "2026-09-03T08:52:57.920107+00:00"
+      "updatedAt": "2026-09-05T07:17:29.396960+00:00"
     },
     {
       "key": "shattered-halls/shadowmaw",
@@ -7262,7 +7832,7 @@
       "score": null,
       "bestRuns": [],
       "status": "below_max_level",
-      "updatedAt": "2026-09-03T08:52:57.920107+00:00"
+      "updatedAt": "2026-09-05T07:17:29.396960+00:00"
     },
     {
       "key": "shattered-halls/shadowpatch",
@@ -7275,7 +7845,7 @@
       "score": null,
       "bestRuns": [],
       "status": "below_max_level",
-      "updatedAt": "2026-09-03T08:52:57.920107+00:00"
+      "updatedAt": "2026-09-05T07:17:29.396960+00:00"
     },
     {
       "key": "chromaggus/shalelu",
@@ -7288,7 +7858,7 @@
       "score": null,
       "bestRuns": [],
       "status": "below_max_level",
-      "updatedAt": "2026-09-03T08:52:57.920107+00:00"
+      "updatedAt": "2026-09-05T07:17:29.396960+00:00"
     },
     {
       "key": "shattered-halls/shammypatch",
@@ -7301,7 +7871,7 @@
       "score": null,
       "bestRuns": [],
       "status": "below_max_level",
-      "updatedAt": "2026-09-03T08:52:57.920107+00:00"
+      "updatedAt": "2026-09-05T07:17:29.396960+00:00"
     },
     {
       "key": "shattered-halls/shenron",
@@ -7314,7 +7884,7 @@
       "score": null,
       "bestRuns": [],
       "status": "below_max_level",
-      "updatedAt": "2026-09-03T08:52:57.920107+00:00"
+      "updatedAt": "2026-09-05T07:17:29.396960+00:00"
     },
     {
       "key": "shattered-halls/shirai",
@@ -7327,7 +7897,7 @@
       "score": null,
       "bestRuns": [],
       "status": "below_max_level",
-      "updatedAt": "2026-09-03T08:52:57.920107+00:00"
+      "updatedAt": "2026-09-05T07:17:29.396960+00:00"
     },
     {
       "key": "daggerspine/sickbars",
@@ -7340,7 +7910,7 @@
       "score": null,
       "bestRuns": [],
       "status": "below_max_level",
-      "updatedAt": "2026-09-03T08:52:57.920107+00:00"
+      "updatedAt": "2026-09-05T07:17:29.396960+00:00"
     },
     {
       "key": "shattered-halls/simurg",
@@ -7353,7 +7923,7 @@
       "score": null,
       "bestRuns": [],
       "status": "below_max_level",
-      "updatedAt": "2026-09-03T08:52:57.920107+00:00"
+      "updatedAt": "2026-09-05T07:17:29.396960+00:00"
     },
     {
       "key": "shattered-halls/sjora",
@@ -7366,10 +7936,10 @@
       "score": null,
       "bestRuns": [],
       "status": "unavailable",
-      "updatedAt": "2026-09-03T08:52:57.920107+00:00",
+      "updatedAt": "2026-09-05T07:17:29.396960+00:00",
       "error": "HTTP 404",
       "avatar": "https://render.worldofwarcraft.com/eu/character/shattered-halls/33/21724705-avatar.jpg",
-      "avatarUpdatedAt": "2026-09-03T08:52:57.920107+00:00"
+      "avatarUpdatedAt": "2026-09-05T07:17:29.396960+00:00"
     },
     {
       "key": "shattered-halls/slapntickles",
@@ -7382,7 +7952,7 @@
       "score": null,
       "bestRuns": [],
       "status": "below_max_level",
-      "updatedAt": "2026-09-03T08:52:57.920107+00:00"
+      "updatedAt": "2026-09-05T07:17:29.396960+00:00"
     },
     {
       "key": "shattered-halls/sluttybelf",
@@ -7395,7 +7965,7 @@
       "score": null,
       "bestRuns": [],
       "status": "below_max_level",
-      "updatedAt": "2026-09-03T08:52:57.920107+00:00"
+      "updatedAt": "2026-09-05T07:17:29.396960+00:00"
     },
     {
       "key": "shattered-halls/smobu",
@@ -7408,7 +7978,7 @@
       "score": null,
       "bestRuns": [],
       "status": "below_max_level",
-      "updatedAt": "2026-09-03T08:52:57.920107+00:00"
+      "updatedAt": "2026-09-05T07:17:29.396960+00:00"
     },
     {
       "key": "shattered-halls/snaggletooth",
@@ -7421,7 +7991,7 @@
       "score": null,
       "bestRuns": [],
       "status": "below_max_level",
-      "updatedAt": "2026-09-03T08:52:57.920107+00:00"
+      "updatedAt": "2026-09-05T07:17:29.396960+00:00"
     },
     {
       "key": "shattered-halls/snig",
@@ -7434,7 +8004,7 @@
       "score": null,
       "bestRuns": [],
       "status": "below_max_level",
-      "updatedAt": "2026-09-03T08:52:57.920107+00:00"
+      "updatedAt": "2026-09-05T07:17:29.396960+00:00"
     },
     {
       "key": "shattered-halls/snuggie",
@@ -7447,7 +8017,7 @@
       "score": null,
       "bestRuns": [],
       "status": "below_max_level",
-      "updatedAt": "2026-09-03T08:52:57.920107+00:00"
+      "updatedAt": "2026-09-05T07:17:29.396960+00:00"
     },
     {
       "key": "shattered-halls/sookme",
@@ -7460,7 +8030,7 @@
       "score": null,
       "bestRuns": [],
       "status": "below_max_level",
-      "updatedAt": "2026-09-03T08:52:57.920107+00:00"
+      "updatedAt": "2026-09-05T07:17:29.396960+00:00"
     },
     {
       "key": "shattered-halls/sora",
@@ -7473,7 +8043,7 @@
       "score": null,
       "bestRuns": [],
       "status": "below_max_level",
-      "updatedAt": "2026-09-03T08:52:57.920107+00:00"
+      "updatedAt": "2026-09-05T07:17:29.396960+00:00"
     },
     {
       "key": "shattered-halls/sparky",
@@ -7486,7 +8056,7 @@
       "score": null,
       "bestRuns": [],
       "status": "below_max_level",
-      "updatedAt": "2026-09-03T08:52:57.920107+00:00"
+      "updatedAt": "2026-09-05T07:17:29.396960+00:00"
     },
     {
       "key": "talnivarr/specialcase",
@@ -7499,7 +8069,7 @@
       "score": null,
       "bestRuns": [],
       "status": "below_max_level",
-      "updatedAt": "2026-09-03T08:52:57.920107+00:00"
+      "updatedAt": "2026-09-05T07:17:29.396960+00:00"
     },
     {
       "key": "ravencrest/spunkmeyer",
@@ -7512,7 +8082,7 @@
       "score": null,
       "bestRuns": [],
       "status": "below_max_level",
-      "updatedAt": "2026-09-03T08:52:57.920107+00:00"
+      "updatedAt": "2026-09-05T07:17:29.396960+00:00"
     },
     {
       "key": "shattered-halls/squidge",
@@ -7525,7 +8095,7 @@
       "score": null,
       "bestRuns": [],
       "status": "below_max_level",
-      "updatedAt": "2026-09-03T08:52:57.920107+00:00"
+      "updatedAt": "2026-09-05T07:17:29.396960+00:00"
     },
     {
       "key": "shattered-halls/starcow",
@@ -7538,7 +8108,7 @@
       "score": null,
       "bestRuns": [],
       "status": "below_max_level",
-      "updatedAt": "2026-09-03T08:52:57.920107+00:00"
+      "updatedAt": "2026-09-05T07:17:29.396960+00:00"
     },
     {
       "key": "shattered-halls/starflower",
@@ -7551,7 +8121,7 @@
       "score": null,
       "bestRuns": [],
       "status": "below_max_level",
-      "updatedAt": "2026-09-03T08:52:57.920107+00:00"
+      "updatedAt": "2026-09-05T07:17:29.396960+00:00"
     },
     {
       "key": "shattered-halls/stormsfury",
@@ -7564,10 +8134,10 @@
       "score": null,
       "bestRuns": [],
       "status": "unavailable",
-      "updatedAt": "2026-09-03T08:52:57.920107+00:00",
+      "updatedAt": "2026-09-05T07:17:29.396960+00:00",
       "error": "HTTP 404",
       "avatar": "https://render.worldofwarcraft.com/eu/character/shattered-halls/180/53999284-avatar.jpg",
-      "avatarUpdatedAt": "2026-09-03T08:52:57.920107+00:00"
+      "avatarUpdatedAt": "2026-09-05T07:17:29.396960+00:00"
     },
     {
       "key": "shattered-halls/stormwave",
@@ -7580,7 +8150,7 @@
       "score": null,
       "bestRuns": [],
       "status": "below_max_level",
-      "updatedAt": "2026-09-03T08:52:57.920107+00:00"
+      "updatedAt": "2026-09-05T07:17:29.396960+00:00"
     },
     {
       "key": "shattered-halls/stridehoof",
@@ -7593,10 +8163,10 @@
       "score": null,
       "bestRuns": [],
       "status": "unavailable",
-      "updatedAt": "2026-09-03T08:52:57.920107+00:00",
+      "updatedAt": "2026-09-05T07:17:29.396960+00:00",
       "error": "HTTP 404",
       "avatar": "https://render.worldofwarcraft.com/eu/character/shattered-halls/195/183325123-avatar.jpg",
-      "avatarUpdatedAt": "2026-09-03T08:52:57.920107+00:00"
+      "avatarUpdatedAt": "2026-09-05T07:17:29.396960+00:00"
     },
     {
       "key": "talnivarr/störstahorn",
@@ -7609,7 +8179,7 @@
       "score": null,
       "bestRuns": [],
       "status": "below_max_level",
-      "updatedAt": "2026-09-03T08:52:57.920107+00:00"
+      "updatedAt": "2026-09-05T07:17:29.396960+00:00"
     },
     {
       "key": "shattered-halls/surge",
@@ -7622,10 +8192,10 @@
       "score": null,
       "bestRuns": [],
       "status": "unavailable",
-      "updatedAt": "2026-09-03T08:52:57.920107+00:00",
+      "updatedAt": "2026-09-05T07:17:29.396960+00:00",
       "error": "HTTP 404",
       "avatar": "https://render.worldofwarcraft.com/eu/character/shattered-halls/225/57162721-avatar.jpg",
-      "avatarUpdatedAt": "2026-09-03T08:52:57.920107+00:00"
+      "avatarUpdatedAt": "2026-09-05T07:17:29.396960+00:00"
     },
     {
       "key": "talnivarr/svenskkille",
@@ -7638,7 +8208,7 @@
       "score": null,
       "bestRuns": [],
       "status": "below_max_level",
-      "updatedAt": "2026-09-03T08:52:57.920107+00:00"
+      "updatedAt": "2026-09-05T07:17:29.396960+00:00"
     },
     {
       "key": "shattered-halls/sweeneytodd",
@@ -7651,10 +8221,10 @@
       "score": null,
       "bestRuns": [],
       "status": "unavailable",
-      "updatedAt": "2026-09-03T08:52:57.920107+00:00",
+      "updatedAt": "2026-09-05T07:17:29.396960+00:00",
       "error": "HTTP 404",
       "avatar": "https://render.worldofwarcraft.com/eu/character/shattered-halls/72/21394248-avatar.jpg",
-      "avatarUpdatedAt": "2026-09-03T08:52:57.920107+00:00"
+      "avatarUpdatedAt": "2026-09-05T07:17:29.396960+00:00"
     },
     {
       "key": "shattered-halls/swolenmember",
@@ -7667,7 +8237,7 @@
       "score": null,
       "bestRuns": [],
       "status": "below_max_level",
-      "updatedAt": "2026-09-03T08:52:57.920107+00:00"
+      "updatedAt": "2026-09-05T07:17:29.396960+00:00"
     },
     {
       "key": "shattered-halls/syllith",
@@ -7680,7 +8250,7 @@
       "score": null,
       "bestRuns": [],
       "status": "below_max_level",
-      "updatedAt": "2026-09-03T08:52:57.920107+00:00"
+      "updatedAt": "2026-09-05T07:17:29.396960+00:00"
     },
     {
       "key": "shattered-halls/syviis",
@@ -7693,10 +8263,10 @@
       "score": null,
       "bestRuns": [],
       "status": "unavailable",
-      "updatedAt": "2026-09-03T08:52:57.920107+00:00",
+      "updatedAt": "2026-09-05T07:17:29.396960+00:00",
       "error": "HTTP 404",
       "avatar": "https://render.worldofwarcraft.com/eu/character/shattered-halls/178/260567730-avatar.jpg",
-      "avatarUpdatedAt": "2026-09-03T08:52:57.920107+00:00"
+      "avatarUpdatedAt": "2026-09-05T07:17:29.396960+00:00"
     },
     {
       "key": "shattered-halls/talaedra",
@@ -7709,10 +8279,10 @@
       "score": null,
       "bestRuns": [],
       "status": "unavailable",
-      "updatedAt": "2026-09-03T08:52:57.920107+00:00",
+      "updatedAt": "2026-09-05T07:17:29.396960+00:00",
       "error": "HTTP 404",
       "avatar": "https://render.worldofwarcraft.com/eu/character/shattered-halls/1/263755777-avatar.jpg",
-      "avatarUpdatedAt": "2026-09-03T08:52:57.920107+00:00"
+      "avatarUpdatedAt": "2026-09-05T07:17:29.396960+00:00"
     },
     {
       "key": "chamber-of-aspects/tamorak",
@@ -7725,7 +8295,7 @@
       "score": null,
       "bestRuns": [],
       "status": "below_max_level",
-      "updatedAt": "2026-09-03T08:52:57.920107+00:00"
+      "updatedAt": "2026-09-05T07:17:29.396960+00:00"
     },
     {
       "key": "chromaggus/tehahtimeh",
@@ -7738,7 +8308,7 @@
       "score": null,
       "bestRuns": [],
       "status": "below_max_level",
-      "updatedAt": "2026-09-03T08:52:57.920107+00:00"
+      "updatedAt": "2026-09-05T07:17:29.396960+00:00"
     },
     {
       "key": "shattered-halls/tessia",
@@ -7751,10 +8321,10 @@
       "score": null,
       "bestRuns": [],
       "status": "unavailable",
-      "updatedAt": "2026-09-03T08:52:57.920107+00:00",
+      "updatedAt": "2026-09-05T07:17:29.396960+00:00",
       "error": "HTTP 404",
       "avatar": "https://render.worldofwarcraft.com/eu/character/shattered-halls/173/264049837-avatar.jpg",
-      "avatarUpdatedAt": "2026-09-03T08:52:57.920107+00:00"
+      "avatarUpdatedAt": "2026-09-05T07:17:29.396960+00:00"
     },
     {
       "key": "shattered-halls/themyra",
@@ -7767,7 +8337,7 @@
       "score": null,
       "bestRuns": [],
       "status": "below_max_level",
-      "updatedAt": "2026-09-03T08:52:57.920107+00:00"
+      "updatedAt": "2026-09-05T07:17:29.396960+00:00"
     },
     {
       "key": "turalyon/theros",
@@ -7780,10 +8350,10 @@
       "score": null,
       "bestRuns": [],
       "status": "unavailable",
-      "updatedAt": "2026-09-03T08:52:57.920107+00:00",
+      "updatedAt": "2026-09-05T07:17:29.396960+00:00",
       "error": "HTTP 404",
       "avatar": "https://render.worldofwarcraft.com/eu/character/turalyon/73/79515721-avatar.jpg",
-      "avatarUpdatedAt": "2026-09-03T08:52:57.920107+00:00"
+      "avatarUpdatedAt": "2026-09-05T07:17:29.396960+00:00"
     },
     {
       "key": "chromaggus/thia",
@@ -7796,7 +8366,7 @@
       "score": null,
       "bestRuns": [],
       "status": "below_max_level",
-      "updatedAt": "2026-09-03T08:52:57.920107+00:00"
+      "updatedAt": "2026-09-05T07:17:29.396960+00:00"
     },
     {
       "key": "shattered-halls/thunderspark",
@@ -7809,7 +8379,7 @@
       "score": null,
       "bestRuns": [],
       "status": "below_max_level",
-      "updatedAt": "2026-09-03T08:52:57.920107+00:00"
+      "updatedAt": "2026-09-05T07:17:29.396960+00:00"
     },
     {
       "key": "daggerspine/ticklemebum",
@@ -7822,7 +8392,7 @@
       "score": null,
       "bestRuns": [],
       "status": "below_max_level",
-      "updatedAt": "2026-09-03T08:52:57.920107+00:00"
+      "updatedAt": "2026-09-05T07:17:29.396960+00:00"
     },
     {
       "key": "daggerspine/ticklemeflap",
@@ -7835,7 +8405,7 @@
       "score": null,
       "bestRuns": [],
       "status": "below_max_level",
-      "updatedAt": "2026-09-03T08:52:57.920107+00:00"
+      "updatedAt": "2026-09-05T07:17:29.396960+00:00"
     },
     {
       "key": "daggerspine/ticklemelips",
@@ -7848,7 +8418,7 @@
       "score": null,
       "bestRuns": [],
       "status": "below_max_level",
-      "updatedAt": "2026-09-03T08:52:57.920107+00:00"
+      "updatedAt": "2026-09-05T07:17:29.396960+00:00"
     },
     {
       "key": "daggerspine/ticklememeat",
@@ -7861,7 +8431,7 @@
       "score": null,
       "bestRuns": [],
       "status": "below_max_level",
-      "updatedAt": "2026-09-03T08:52:57.920107+00:00"
+      "updatedAt": "2026-09-05T07:17:29.396960+00:00"
     },
     {
       "key": "shattered-halls/tigu",
@@ -7874,7 +8444,7 @@
       "score": null,
       "bestRuns": [],
       "status": "below_max_level",
-      "updatedAt": "2026-09-03T08:52:57.920107+00:00"
+      "updatedAt": "2026-09-05T07:17:29.396960+00:00"
     },
     {
       "key": "shattered-halls/toija",
@@ -7887,7 +8457,7 @@
       "score": null,
       "bestRuns": [],
       "status": "below_max_level",
-      "updatedAt": "2026-09-03T08:52:57.920107+00:00"
+      "updatedAt": "2026-09-05T07:17:29.396960+00:00"
     },
     {
       "key": "shattered-halls/totalchaos",
@@ -7900,7 +8470,7 @@
       "score": null,
       "bestRuns": [],
       "status": "below_max_level",
-      "updatedAt": "2026-09-03T08:52:57.920107+00:00"
+      "updatedAt": "2026-09-05T07:17:29.396960+00:00"
     },
     {
       "key": "shattered-halls/totalorder",
@@ -7913,7 +8483,7 @@
       "score": null,
       "bestRuns": [],
       "status": "below_max_level",
-      "updatedAt": "2026-09-03T08:52:57.920107+00:00"
+      "updatedAt": "2026-09-05T07:17:29.396960+00:00"
     },
     {
       "key": "shattered-halls/totalrage",
@@ -7926,7 +8496,7 @@
       "score": null,
       "bestRuns": [],
       "status": "below_max_level",
-      "updatedAt": "2026-09-03T08:52:57.920107+00:00"
+      "updatedAt": "2026-09-05T07:17:29.396960+00:00"
     },
     {
       "key": "shattered-halls/totalshock",
@@ -7939,7 +8509,7 @@
       "score": null,
       "bestRuns": [],
       "status": "below_max_level",
-      "updatedAt": "2026-09-03T08:52:57.920107+00:00"
+      "updatedAt": "2026-09-05T07:17:29.396960+00:00"
     },
     {
       "key": "shattered-halls/totaltrack",
@@ -7952,7 +8522,7 @@
       "score": null,
       "bestRuns": [],
       "status": "below_max_level",
-      "updatedAt": "2026-09-03T08:52:57.920107+00:00"
+      "updatedAt": "2026-09-05T07:17:29.396960+00:00"
     },
     {
       "key": "shattered-halls/tramix",
@@ -7965,7 +8535,7 @@
       "score": null,
       "bestRuns": [],
       "status": "below_max_level",
-      "updatedAt": "2026-09-03T08:52:57.920107+00:00"
+      "updatedAt": "2026-09-05T07:17:29.396960+00:00"
     },
     {
       "key": "shattered-halls/tucamanca",
@@ -7978,10 +8548,10 @@
       "score": null,
       "bestRuns": [],
       "status": "unavailable",
-      "updatedAt": "2026-09-03T08:52:57.920107+00:00",
+      "updatedAt": "2026-09-05T07:17:29.396960+00:00",
       "error": "HTTP 404",
       "avatar": "https://render.worldofwarcraft.com/eu/character/shattered-halls/52/264180276-avatar.jpg",
-      "avatarUpdatedAt": "2026-09-03T08:52:57.920107+00:00"
+      "avatarUpdatedAt": "2026-09-05T07:17:29.396960+00:00"
     },
     {
       "key": "shattered-halls/turai",
@@ -7994,7 +8564,7 @@
       "score": null,
       "bestRuns": [],
       "status": "below_max_level",
-      "updatedAt": "2026-09-03T08:52:57.920107+00:00"
+      "updatedAt": "2026-09-05T07:17:29.396960+00:00"
     },
     {
       "key": "shattered-halls/tylee",
@@ -8007,7 +8577,7 @@
       "score": null,
       "bestRuns": [],
       "status": "below_max_level",
-      "updatedAt": "2026-09-03T08:52:57.920107+00:00"
+      "updatedAt": "2026-09-05T07:17:29.396960+00:00"
     },
     {
       "key": "magtheridon/ugar",
@@ -8020,10 +8590,10 @@
       "score": null,
       "bestRuns": [],
       "status": "unavailable",
-      "updatedAt": "2026-09-03T08:52:57.920107+00:00",
+      "updatedAt": "2026-09-05T07:17:29.396960+00:00",
       "error": "HTTP 404",
       "avatar": "https://render.worldofwarcraft.com/eu/character/magtheridon/82/179686738-avatar.jpg",
-      "avatarUpdatedAt": "2026-09-03T08:52:57.920107+00:00"
+      "avatarUpdatedAt": "2026-09-05T07:17:29.396960+00:00"
     },
     {
       "key": "shattered-halls/ulfr",
@@ -8036,7 +8606,7 @@
       "score": null,
       "bestRuns": [],
       "status": "below_max_level",
-      "updatedAt": "2026-09-03T08:52:57.920107+00:00"
+      "updatedAt": "2026-09-05T07:17:29.396960+00:00"
     },
     {
       "key": "shattered-halls/umbrascale",
@@ -8049,7 +8619,7 @@
       "score": null,
       "bestRuns": [],
       "status": "below_max_level",
-      "updatedAt": "2026-09-03T08:52:57.920107+00:00"
+      "updatedAt": "2026-09-05T07:17:29.396960+00:00"
     },
     {
       "key": "darkmoon-faire/undeadkate",
@@ -8062,7 +8632,7 @@
       "score": null,
       "bestRuns": [],
       "status": "below_max_level",
-      "updatedAt": "2026-09-03T08:52:57.920107+00:00"
+      "updatedAt": "2026-09-05T07:17:29.396960+00:00"
     },
     {
       "key": "darksorrow/urban",
@@ -8075,7 +8645,7 @@
       "score": null,
       "bestRuns": [],
       "status": "below_max_level",
-      "updatedAt": "2026-09-03T08:52:57.920107+00:00"
+      "updatedAt": "2026-09-05T07:17:29.396960+00:00"
     },
     {
       "key": "shattered-halls/uturuncu",
@@ -8088,10 +8658,10 @@
       "score": null,
       "bestRuns": [],
       "status": "unavailable",
-      "updatedAt": "2026-09-03T08:52:57.920107+00:00",
+      "updatedAt": "2026-09-05T07:17:29.396960+00:00",
       "error": "HTTP 404",
       "avatar": "https://render.worldofwarcraft.com/eu/character/shattered-halls/51/263824947-avatar.jpg",
-      "avatarUpdatedAt": "2026-09-03T08:52:57.920107+00:00"
+      "avatarUpdatedAt": "2026-09-05T07:17:29.396960+00:00"
     },
     {
       "key": "daggerspine/valandil",
@@ -8104,7 +8674,7 @@
       "score": null,
       "bestRuns": [],
       "status": "below_max_level",
-      "updatedAt": "2026-09-03T08:52:57.920107+00:00"
+      "updatedAt": "2026-09-05T07:17:29.396960+00:00"
     },
     {
       "key": "dragonmaw/veroni",
@@ -8117,7 +8687,7 @@
       "score": null,
       "bestRuns": [],
       "status": "below_max_level",
-      "updatedAt": "2026-09-03T08:52:57.920107+00:00"
+      "updatedAt": "2026-09-05T07:17:29.396960+00:00"
     },
     {
       "key": "shattered-halls/vestria",
@@ -8130,7 +8700,7 @@
       "score": null,
       "bestRuns": [],
       "status": "below_max_level",
-      "updatedAt": "2026-09-03T08:52:57.920107+00:00"
+      "updatedAt": "2026-09-05T07:17:29.396960+00:00"
     },
     {
       "key": "chromaggus/victalyssa",
@@ -8143,7 +8713,7 @@
       "score": null,
       "bestRuns": [],
       "status": "below_max_level",
-      "updatedAt": "2026-09-03T08:52:57.920107+00:00"
+      "updatedAt": "2026-09-05T07:17:29.396960+00:00"
     },
     {
       "key": "ahnqiraj/visi",
@@ -8156,7 +8726,7 @@
       "score": null,
       "bestRuns": [],
       "status": "below_max_level",
-      "updatedAt": "2026-09-03T08:52:57.920107+00:00"
+      "updatedAt": "2026-09-05T07:17:29.396960+00:00"
     },
     {
       "key": "shattered-halls/voidsong",
@@ -8169,7 +8739,7 @@
       "score": null,
       "bestRuns": [],
       "status": "below_max_level",
-      "updatedAt": "2026-09-03T08:52:57.920107+00:00"
+      "updatedAt": "2026-09-05T07:17:29.396960+00:00"
     },
     {
       "key": "boulderfist/voidstalker",
@@ -8182,7 +8752,7 @@
       "score": null,
       "bestRuns": [],
       "status": "below_max_level",
-      "updatedAt": "2026-09-03T08:52:57.920107+00:00"
+      "updatedAt": "2026-09-05T07:17:29.396960+00:00"
     },
     {
       "key": "shattered-halls/voidstar",
@@ -8195,7 +8765,7 @@
       "score": null,
       "bestRuns": [],
       "status": "below_max_level",
-      "updatedAt": "2026-09-03T08:52:57.920107+00:00"
+      "updatedAt": "2026-09-05T07:17:29.396960+00:00"
     },
     {
       "key": "shattered-halls/vulpine",
@@ -8208,7 +8778,7 @@
       "score": null,
       "bestRuns": [],
       "status": "below_max_level",
-      "updatedAt": "2026-09-03T08:52:57.920107+00:00"
+      "updatedAt": "2026-09-05T07:17:29.396960+00:00"
     },
     {
       "key": "draenor/wakamoto",
@@ -8221,10 +8791,10 @@
       "score": null,
       "bestRuns": [],
       "status": "unavailable",
-      "updatedAt": "2026-09-03T08:52:57.920107+00:00",
+      "updatedAt": "2026-09-05T07:17:29.396960+00:00",
       "error": "HTTP 404",
       "avatar": "https://render.worldofwarcraft.com/eu/character/draenor/123/122634107-avatar.jpg",
-      "avatarUpdatedAt": "2026-09-03T08:52:57.920107+00:00"
+      "avatarUpdatedAt": "2026-09-05T07:17:29.396960+00:00"
     },
     {
       "key": "ravencrest/wetgoat",
@@ -8237,7 +8807,7 @@
       "score": null,
       "bestRuns": [],
       "status": "below_max_level",
-      "updatedAt": "2026-09-03T08:52:57.920107+00:00"
+      "updatedAt": "2026-09-05T07:17:29.396960+00:00"
     },
     {
       "key": "shattered-halls/willa",
@@ -8250,7 +8820,7 @@
       "score": null,
       "bestRuns": [],
       "status": "below_max_level",
-      "updatedAt": "2026-09-03T08:52:57.920107+00:00"
+      "updatedAt": "2026-09-05T07:17:29.396960+00:00"
     },
     {
       "key": "shattered-halls/wishroo",
@@ -8263,7 +8833,7 @@
       "score": null,
       "bestRuns": [],
       "status": "below_max_level",
-      "updatedAt": "2026-09-03T08:52:57.920107+00:00"
+      "updatedAt": "2026-09-05T07:17:29.396960+00:00"
     },
     {
       "key": "shattered-halls/xanji",
@@ -8276,10 +8846,10 @@
       "score": null,
       "bestRuns": [],
       "status": "unavailable",
-      "updatedAt": "2026-09-03T08:52:57.920107+00:00",
+      "updatedAt": "2026-09-05T07:17:29.396960+00:00",
       "error": "HTTP 404",
       "avatar": "https://render.worldofwarcraft.com/eu/character/shattered-halls/143/187779471-avatar.jpg",
-      "avatarUpdatedAt": "2026-09-03T08:52:57.920107+00:00"
+      "avatarUpdatedAt": "2026-09-05T07:17:29.396960+00:00"
     },
     {
       "key": "shattered-halls/xiulan",
@@ -8292,7 +8862,7 @@
       "score": null,
       "bestRuns": [],
       "status": "below_max_level",
-      "updatedAt": "2026-09-03T08:52:57.920107+00:00"
+      "updatedAt": "2026-09-05T07:17:29.396960+00:00"
     },
     {
       "key": "draenor/xizhu",
@@ -8305,10 +8875,10 @@
       "score": null,
       "bestRuns": [],
       "status": "unavailable",
-      "updatedAt": "2026-09-03T08:52:57.920107+00:00",
+      "updatedAt": "2026-09-05T07:17:29.396960+00:00",
       "error": "HTTP 404",
       "avatar": "https://render.worldofwarcraft.com/eu/character/draenor/41/88929321-avatar.jpg",
-      "avatarUpdatedAt": "2026-09-03T08:52:57.920107+00:00"
+      "avatarUpdatedAt": "2026-09-05T07:17:29.396960+00:00"
     },
     {
       "key": "shattered-halls/zadrab",
@@ -8321,7 +8891,7 @@
       "score": null,
       "bestRuns": [],
       "status": "below_max_level",
-      "updatedAt": "2026-09-03T08:52:57.920107+00:00"
+      "updatedAt": "2026-09-05T07:17:29.396960+00:00"
     },
     {
       "key": "shattered-halls/zakoria",
@@ -8334,7 +8904,7 @@
       "score": null,
       "bestRuns": [],
       "status": "below_max_level",
-      "updatedAt": "2026-09-03T08:52:57.920107+00:00"
+      "updatedAt": "2026-09-05T07:17:29.396960+00:00"
     },
     {
       "key": "laughing-skull/zandrui",
@@ -8347,7 +8917,7 @@
       "score": null,
       "bestRuns": [],
       "status": "below_max_level",
-      "updatedAt": "2026-09-03T08:52:57.920107+00:00"
+      "updatedAt": "2026-09-05T07:17:29.396960+00:00"
     },
     {
       "key": "shattered-halls/zelanya",
@@ -8360,7 +8930,7 @@
       "score": null,
       "bestRuns": [],
       "status": "below_max_level",
-      "updatedAt": "2026-09-03T08:52:57.920107+00:00"
+      "updatedAt": "2026-09-05T07:17:29.396960+00:00"
     },
     {
       "key": "shattered-halls/zentira",
@@ -8373,7 +8943,7 @@
       "score": null,
       "bestRuns": [],
       "status": "below_max_level",
-      "updatedAt": "2026-09-03T08:52:57.920107+00:00"
+      "updatedAt": "2026-09-05T07:17:29.396960+00:00"
     },
     {
       "key": "shattered-halls/zerthblade",
@@ -8386,7 +8956,7 @@
       "score": null,
       "bestRuns": [],
       "status": "below_max_level",
-      "updatedAt": "2026-09-03T08:52:57.920107+00:00"
+      "updatedAt": "2026-09-05T07:17:29.396960+00:00"
     },
     {
       "key": "shattered-halls/zerthshade",
@@ -8399,7 +8969,7 @@
       "score": null,
       "bestRuns": [],
       "status": "below_max_level",
-      "updatedAt": "2026-09-03T08:52:57.920107+00:00"
+      "updatedAt": "2026-09-05T07:17:29.396960+00:00"
     },
     {
       "key": "shattered-halls/zizi",
@@ -8412,7 +8982,7 @@
       "score": null,
       "bestRuns": [],
       "status": "below_max_level",
-      "updatedAt": "2026-09-03T08:52:57.920107+00:00"
+      "updatedAt": "2026-09-05T07:17:29.396960+00:00"
     },
     {
       "key": "shattered-halls/zoe",
@@ -8425,7 +8995,7 @@
       "score": null,
       "bestRuns": [],
       "status": "below_max_level",
-      "updatedAt": "2026-09-03T08:52:57.920107+00:00"
+      "updatedAt": "2026-09-05T07:17:29.396960+00:00"
     },
     {
       "key": "shattered-halls/zunjo",
@@ -8438,16 +9008,16 @@
       "score": null,
       "bestRuns": [],
       "status": "unavailable",
-      "updatedAt": "2026-09-03T08:52:57.920107+00:00",
+      "updatedAt": "2026-09-05T07:17:29.396960+00:00",
       "error": "HTTP 404",
       "avatar": "https://render.worldofwarcraft.com/eu/character/shattered-halls/211/264174291-avatar.jpg",
-      "avatarUpdatedAt": "2026-09-03T08:52:57.920107+00:00"
+      "avatarUpdatedAt": "2026-09-05T07:17:29.396960+00:00"
     }
   ],
   "coverage": {
-    "roster": 358,
-    "attempted": 103,
-    "current": 16
+    "roster": 360,
+    "attempted": 104,
+    "current": 17
   },
   "source": "Blizzard World of Warcraft APIs",
   "fullGuildRuns": [
@@ -8488,8 +9058,8 @@
       ],
       "id": "66a36fecbfe42af8bc885889",
       "firstSeenAt": "2026-09-03T07:59:01.575074+00:00",
-      "lastSeenAt": "2026-09-03T08:52:57.920107+00:00",
-      "guildVerifiedAt": "2026-09-03T08:52:57.920107+00:00",
+      "lastSeenAt": "2026-09-05T07:17:29.396960+00:00",
+      "guildVerifiedAt": "2026-09-05T07:17:29.396960+00:00",
       "source": "Blizzard"
     },
     {
@@ -8529,8 +9099,8 @@
       ],
       "id": "a2e593a77168a591d77e6d2d",
       "firstSeenAt": "2026-09-03T07:59:01.575074+00:00",
-      "lastSeenAt": "2026-09-03T08:52:57.920107+00:00",
-      "guildVerifiedAt": "2026-09-03T08:52:57.920107+00:00",
+      "lastSeenAt": "2026-09-05T07:17:29.396960+00:00",
+      "guildVerifiedAt": "2026-09-05T07:17:29.396960+00:00",
       "source": "Blizzard"
     },
     {
@@ -8570,8 +9140,8 @@
       ],
       "id": "4297cc8683c6aab565e3efdc",
       "firstSeenAt": "2026-09-03T07:59:01.575074+00:00",
-      "lastSeenAt": "2026-09-03T08:52:57.920107+00:00",
-      "guildVerifiedAt": "2026-09-03T08:52:57.920107+00:00",
+      "lastSeenAt": "2026-09-05T07:17:29.396960+00:00",
+      "guildVerifiedAt": "2026-09-05T07:17:29.396960+00:00",
       "source": "Blizzard"
     },
     {
@@ -8611,8 +9181,8 @@
       ],
       "id": "e77dc2a00fb2ced065328bea",
       "firstSeenAt": "2026-09-03T07:59:01.575074+00:00",
-      "lastSeenAt": "2026-09-03T08:52:57.920107+00:00",
-      "guildVerifiedAt": "2026-09-03T08:52:57.920107+00:00",
+      "lastSeenAt": "2026-09-05T07:17:29.396960+00:00",
+      "guildVerifiedAt": "2026-09-05T07:17:29.396960+00:00",
       "source": "Blizzard"
     },
     {
@@ -8624,6 +9194,11 @@
       "completedAt": 1788289931000,
       "rating": 244.97467,
       "members": [
+        {
+          "name": "Whitestalker",
+          "realm": "shattered-halls",
+          "spec": "Beast Mastery"
+        },
         {
           "name": "Eclypsis",
           "realm": "shattered-halls",
@@ -8640,11 +9215,6 @@
           "spec": "Protection"
         },
         {
-          "name": "Whitestalker",
-          "realm": "shattered-halls",
-          "spec": "Beast Mastery"
-        },
-        {
           "name": "Sophrosune",
           "realm": "shattered-halls",
           "spec": "Retribution"
@@ -8652,8 +9222,8 @@
       ],
       "id": "53cd8cc63b04ad75f1d5b895",
       "firstSeenAt": "2026-09-03T07:59:01.575074+00:00",
-      "lastSeenAt": "2026-09-03T08:52:57.920107+00:00",
-      "guildVerifiedAt": "2026-09-03T08:52:57.920107+00:00",
+      "lastSeenAt": "2026-09-05T07:17:29.396960+00:00",
+      "guildVerifiedAt": "2026-09-05T07:17:29.396960+00:00",
       "source": "Blizzard"
     },
     {
@@ -8693,8 +9263,8 @@
       ],
       "id": "28e3d1dec2371220b78e4fa4",
       "firstSeenAt": "2026-09-03T07:59:01.575074+00:00",
-      "lastSeenAt": "2026-09-03T08:52:57.920107+00:00",
-      "guildVerifiedAt": "2026-09-03T08:52:57.920107+00:00",
+      "lastSeenAt": "2026-09-05T07:17:29.396960+00:00",
+      "guildVerifiedAt": "2026-09-05T07:17:29.396960+00:00",
       "source": "Blizzard"
     },
     {
@@ -8734,8 +9304,8 @@
       ],
       "id": "e2a32e3fa5abb3f0211bc587",
       "firstSeenAt": "2026-09-03T07:59:01.575074+00:00",
-      "lastSeenAt": "2026-09-03T08:52:57.920107+00:00",
-      "guildVerifiedAt": "2026-09-03T08:52:57.920107+00:00",
+      "lastSeenAt": "2026-09-05T07:17:29.396960+00:00",
+      "guildVerifiedAt": "2026-09-05T07:17:29.396960+00:00",
       "source": "Blizzard"
     },
     {
@@ -8775,8 +9345,8 @@
       ],
       "id": "e83cbade042e9200e4a199e3",
       "firstSeenAt": "2026-09-03T07:59:01.575074+00:00",
-      "lastSeenAt": "2026-09-03T08:52:57.920107+00:00",
-      "guildVerifiedAt": "2026-09-03T08:52:57.920107+00:00",
+      "lastSeenAt": "2026-09-05T07:17:29.396960+00:00",
+      "guildVerifiedAt": "2026-09-05T07:17:29.396960+00:00",
       "source": "Blizzard"
     },
     {
@@ -8816,8 +9386,8 @@
       ],
       "id": "c98be6515fe8c687229e9f2a",
       "firstSeenAt": "2026-09-03T07:59:01.575074+00:00",
-      "lastSeenAt": "2026-09-03T08:52:57.920107+00:00",
-      "guildVerifiedAt": "2026-09-03T08:52:57.920107+00:00",
+      "lastSeenAt": "2026-09-05T07:17:29.396960+00:00",
+      "guildVerifiedAt": "2026-09-05T07:17:29.396960+00:00",
       "source": "Blizzard"
     },
     {
@@ -8857,8 +9427,8 @@
       ],
       "id": "3c966ab74c8a97c5321ede4b",
       "firstSeenAt": "2026-09-03T07:59:01.575074+00:00",
-      "lastSeenAt": "2026-09-03T08:52:57.920107+00:00",
-      "guildVerifiedAt": "2026-09-03T08:52:57.920107+00:00",
+      "lastSeenAt": "2026-09-05T07:17:29.396960+00:00",
+      "guildVerifiedAt": "2026-09-05T07:17:29.396960+00:00",
       "source": "Blizzard"
     },
     {
@@ -8898,8 +9468,8 @@
       ],
       "id": "a46ad442e0ce13c3972bcd3e",
       "firstSeenAt": "2026-09-03T07:59:01.575074+00:00",
-      "lastSeenAt": "2026-09-03T08:52:57.920107+00:00",
-      "guildVerifiedAt": "2026-09-03T08:52:57.920107+00:00",
+      "lastSeenAt": "2026-09-05T07:17:29.396960+00:00",
+      "guildVerifiedAt": "2026-09-05T07:17:29.396960+00:00",
       "source": "Blizzard"
     },
     {
@@ -8939,8 +9509,8 @@
       ],
       "id": "0df9a0ddbff9d7308af5c931",
       "firstSeenAt": "2026-09-03T07:59:01.575074+00:00",
-      "lastSeenAt": "2026-09-03T08:52:57.920107+00:00",
-      "guildVerifiedAt": "2026-09-03T08:52:57.920107+00:00",
+      "lastSeenAt": "2026-09-05T07:17:29.396960+00:00",
+      "guildVerifiedAt": "2026-09-05T07:17:29.396960+00:00",
       "source": "Blizzard"
     },
     {
@@ -8980,8 +9550,8 @@
       ],
       "id": "7867c0bb53de9b0d8246e4d1",
       "firstSeenAt": "2026-09-03T07:59:01.575074+00:00",
-      "lastSeenAt": "2026-09-03T08:52:57.920107+00:00",
-      "guildVerifiedAt": "2026-09-03T08:52:57.920107+00:00",
+      "lastSeenAt": "2026-09-05T07:17:29.396960+00:00",
+      "guildVerifiedAt": "2026-09-05T07:17:29.396960+00:00",
       "source": "Blizzard"
     },
     {
@@ -9021,8 +9591,8 @@
       ],
       "id": "f0f02dc53442120c27c8958e",
       "firstSeenAt": "2026-09-03T07:59:01.575074+00:00",
-      "lastSeenAt": "2026-09-03T08:52:57.920107+00:00",
-      "guildVerifiedAt": "2026-09-03T08:52:57.920107+00:00",
+      "lastSeenAt": "2026-09-05T07:17:29.396960+00:00",
+      "guildVerifiedAt": "2026-09-05T07:17:29.396960+00:00",
       "source": "Blizzard"
     },
     {
@@ -9062,8 +9632,8 @@
       ],
       "id": "cc2d743709a544941f38868c",
       "firstSeenAt": "2026-09-03T07:59:01.575074+00:00",
-      "lastSeenAt": "2026-09-03T08:52:57.920107+00:00",
-      "guildVerifiedAt": "2026-09-03T08:52:57.920107+00:00",
+      "lastSeenAt": "2026-09-05T07:17:29.396960+00:00",
+      "guildVerifiedAt": "2026-09-05T07:17:29.396960+00:00",
       "source": "Blizzard"
     },
     {
@@ -9103,8 +9673,8 @@
       ],
       "id": "18b48f77d1327ca3cb07a05d",
       "firstSeenAt": "2026-09-03T07:59:01.575074+00:00",
-      "lastSeenAt": "2026-09-03T08:52:57.920107+00:00",
-      "guildVerifiedAt": "2026-09-03T08:52:57.920107+00:00",
+      "lastSeenAt": "2026-09-05T07:17:29.396960+00:00",
+      "guildVerifiedAt": "2026-09-05T07:17:29.396960+00:00",
       "source": "Blizzard"
     },
     {
@@ -9144,8 +9714,8 @@
       ],
       "id": "77639e04e5f8698749ef2634",
       "firstSeenAt": "2026-09-03T07:59:01.575074+00:00",
-      "lastSeenAt": "2026-09-03T08:52:57.920107+00:00",
-      "guildVerifiedAt": "2026-09-03T08:52:57.920107+00:00",
+      "lastSeenAt": "2026-09-05T07:17:29.396960+00:00",
+      "guildVerifiedAt": "2026-09-05T07:17:29.396960+00:00",
       "source": "Blizzard"
     },
     {
@@ -9185,8 +9755,8 @@
       ],
       "id": "31e3c43e456a255fc619d330",
       "firstSeenAt": "2026-09-03T07:59:01.575074+00:00",
-      "lastSeenAt": "2026-09-03T08:52:57.920107+00:00",
-      "guildVerifiedAt": "2026-09-03T08:52:57.920107+00:00",
+      "lastSeenAt": "2026-09-05T07:17:29.396960+00:00",
+      "guildVerifiedAt": "2026-09-05T07:17:29.396960+00:00",
       "source": "Blizzard"
     },
     {
@@ -9226,10 +9796,10 @@
       ],
       "id": "1711eaf49d3f0d6b9d235428",
       "firstSeenAt": "2026-09-03T07:59:01.575074+00:00",
-      "lastSeenAt": "2026-09-03T08:52:57.920107+00:00",
-      "guildVerifiedAt": "2026-09-03T08:52:57.920107+00:00",
+      "lastSeenAt": "2026-09-05T07:17:29.396960+00:00",
+      "guildVerifiedAt": "2026-09-05T07:17:29.396960+00:00",
       "source": "Blizzard"
     }
   ],
-  "partyDataCollectedAt": "2026-09-03T08:52:57.920107+00:00"
+  "partyDataCollectedAt": "2026-09-05T07:17:29.396960+00:00"
 }
