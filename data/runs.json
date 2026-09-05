@@ -13153,23 +13153,12 @@
         }
       ],
       "evidenceLimits": [
-        "Character deaths exclude unconscious markers; repeated real deaths after recovery are retained.",
         "No footage, complete cooldown audit or reconstructed positioning; proposed assignments are not claims about past availability.",
         "Damage IDs and removable aura IDs may differ; unresolved cleanse or kick eligibility remains explicit.",
-        "Heal-event rates exclude separate absorbs and are not a complete healing meter.",
         "Current-season guides may differ from this log’s exact hotfix; numeric tooltip damage is not substituted for logged hits."
       ],
       "researchedAt": "2026-09-03",
       "sources": [
-        {
-          "id": "log-schema",
-          "title": "Blizzard combat log processor: unconscious events",
-          "url": "https://github.com/Gethe/wow-ui-source/blob/live/Interface/AddOns/Blizzard_CombatLogProcessor/Blizzard_CombatLogProcessor.lua",
-          "author": "Blizzard UI source mirror",
-          "updated": "Retrieved 2026-09-03",
-          "accessed": "2026-09-03",
-          "compatibility": "Distinguishes unconscious events from deaths; file log omits recap ID."
-        },
         {
           "id": "timers",
           "title": "Midnight Season 2 dungeon timers",
@@ -13668,7 +13657,6 @@
           }
         }
       ],
-      "damageMethod": "Combat-log v22, advanced logging, build 12.1.0. Damage fields (zero-based): spell/range 31, overkill 33; SWING_DAMAGE_LANDED 28/30, excluding SWING_DAMAGE to avoid duplication. Logged damage includes overkill; no pre-mitigation reconstruction. Heal fields 31/32/33/34 are HP amount/total/overheal/heal-absorbed; HP+absorbed=total asserted, net=total-overheal. Separate shields and misses excluded. Deaths use player UNIT_DIED with unconscious flag 0; flag 1 is excluded. Spirit of Redemption (27827) anchors each delayed death once within 17 seconds. Recaps cover 10 seconds before that anchor, with 50 ms grace for event ordering. Damage minus healing is not a health-bar reconstruction.",
       "spellGuide": {
         "0": {
           "kind": "Physical melee",
@@ -13958,10 +13946,7 @@
       ]
     },
     "deathRecaps": {
-      "method": "Combat-log v22, advanced logging, build 12.1.0. Damage fields (zero-based): spell/range 31, overkill 33; SWING_DAMAGE_LANDED 28/30, excluding SWING_DAMAGE to avoid duplication. Logged damage includes overkill; no pre-mitigation reconstruction. Heal fields 31/32/33/34 are HP amount/total/overheal/heal-absorbed; HP+absorbed=total asserted, net=total-overheal. Separate shields and misses excluded. Deaths use player UNIT_DIED with unconscious flag 0; flag 1 is excluded. Spirit of Redemption (27827) anchors each delayed death once within 17 seconds. Recaps cover 10 seconds before that anchor, with 50 ms grace for event ordering. Damage minus healing is not a health-bar reconstruction.",
-      "sourceIds": [
-        "log-schema"
-      ],
+      "sourceIds": [],
       "windowSeconds": 10,
       "deaths": [
         {
@@ -27255,9 +27240,7 @@
     "bossHealing": {
       "healer": "Rinse-LaughingSkull-EU",
       "method": "Net SPELL_HEAL/SPELL_PERIODIC_HEAL total minus overheal divided by full encounter duration, including time dead/Spirit. All-target and player-only separated; separate shields excluded.",
-      "sourceIds": [
-        "log-schema"
-      ],
+      "sourceIds": [],
       "encounters": [
         {
           "name": "Melidrussa Chillworn",
@@ -27471,23 +27454,12 @@
         }
       ],
       "evidenceLimits": [
-        "Character deaths exclude unconscious markers; repeated real deaths after recovery are retained.",
         "No footage, complete cooldown audit or reconstructed positioning; proposed assignments are not claims about past availability.",
         "Damage IDs and removable aura IDs may differ; unresolved cleanse or kick eligibility remains explicit.",
-        "Heal-event rates exclude separate absorbs and are not a complete healing meter.",
         "Current-season guides may differ from this log’s exact hotfix; numeric tooltip damage is not substituted for logged hits."
       ],
       "researchedAt": "2026-09-03",
       "sources": [
-        {
-          "id": "log-schema",
-          "title": "Blizzard combat log processor: unconscious events",
-          "url": "https://github.com/Gethe/wow-ui-source/blob/live/Interface/AddOns/Blizzard_CombatLogProcessor/Blizzard_CombatLogProcessor.lua",
-          "author": "Blizzard UI source mirror",
-          "updated": "Retrieved 2026-09-03",
-          "accessed": "2026-09-03",
-          "compatibility": "Distinguishes unconscious events from deaths; file log omits recap ID."
-        },
         {
           "id": "timers",
           "title": "Midnight Season 2 dungeon timers",
@@ -28395,7 +28367,6 @@
           }
         }
       ],
-      "damageMethod": "Combat-log v22, advanced logging, build 12.1.0. Damage fields (zero-based): spell/range 31, overkill 33; SWING_DAMAGE_LANDED 28/30, excluding SWING_DAMAGE to avoid duplication. Logged damage includes overkill; no pre-mitigation reconstruction. Heal fields 31/32/33/34 are HP amount/total/overheal/heal-absorbed; HP+absorbed=total asserted, net=total-overheal. Separate shields and misses excluded. Deaths use player UNIT_DIED with unconscious flag 0; flag 1 is excluded. Spirit of Redemption (27827) anchors each delayed death once within 17 seconds. Recaps cover 10 seconds before that anchor, with 50 ms grace for event ordering. Damage minus healing is not a health-bar reconstruction.",
       "spellGuide": {
         "0": {
           "kind": "Physical melee",
@@ -28712,10 +28683,7 @@
       ]
     },
     "deathRecaps": {
-      "method": "Combat-log v22, advanced logging, build 12.1.0. Damage fields (zero-based): spell/range 31, overkill 33; SWING_DAMAGE_LANDED 28/30, excluding SWING_DAMAGE to avoid duplication. Logged damage includes overkill; no pre-mitigation reconstruction. Heal fields 31/32/33/34 are HP amount/total/overheal/heal-absorbed; HP+absorbed=total asserted, net=total-overheal. Separate shields and misses excluded. Deaths use player UNIT_DIED with unconscious flag 0; flag 1 is excluded. Spirit of Redemption (27827) anchors each delayed death once within 17 seconds. Recaps cover 10 seconds before that anchor, with 50 ms grace for event ordering. Damage minus healing is not a health-bar reconstruction.",
-      "sourceIds": [
-        "log-schema"
-      ],
+      "sourceIds": [],
       "windowSeconds": 10,
       "deaths": [
         {
@@ -45306,9 +45274,7 @@
     "bossHealing": {
       "healer": "Rinse-LaughingSkull-EU",
       "method": "Net SPELL_HEAL/SPELL_PERIODIC_HEAL total minus overheal divided by full encounter duration, including time dead/Spirit. All-target and player-only separated; separate shields excluded.",
-      "sourceIds": [
-        "log-schema"
-      ],
+      "sourceIds": [],
       "encounters": [
         {
           "name": "Kystia Manaheart",
@@ -45536,23 +45502,12 @@
         }
       ],
       "evidenceLimits": [
-        "Character deaths exclude unconscious markers; repeated real deaths after recovery are retained.",
         "No footage, complete cooldown audit or reconstructed positioning; proposed assignments are not claims about past availability.",
         "Damage IDs and removable aura IDs may differ; unresolved cleanse or kick eligibility remains explicit.",
-        "Heal-event rates exclude separate absorbs and are not a complete healing meter.",
         "Current-season guides may differ from this log’s exact hotfix; numeric tooltip damage is not substituted for logged hits."
       ],
       "researchedAt": "2026-09-03",
       "sources": [
-        {
-          "id": "log-schema",
-          "title": "Blizzard combat log processor: unconscious events",
-          "url": "https://github.com/Gethe/wow-ui-source/blob/live/Interface/AddOns/Blizzard_CombatLogProcessor/Blizzard_CombatLogProcessor.lua",
-          "author": "Blizzard UI source mirror",
-          "updated": "Retrieved 2026-09-03",
-          "accessed": "2026-09-03",
-          "compatibility": "Distinguishes unconscious events from deaths; file log omits recap ID."
-        },
         {
           "id": "timers",
           "title": "Midnight Season 2 dungeon timers",
@@ -45971,7 +45926,6 @@
           }
         }
       ],
-      "damageMethod": "Combat-log v22, advanced logging, build 12.1.0. Damage fields (zero-based): spell/range 31, overkill 33; SWING_DAMAGE_LANDED 28/30, excluding SWING_DAMAGE to avoid duplication. Logged damage includes overkill; no pre-mitigation reconstruction. Heal fields 31/32/33/34 are HP amount/total/overheal/heal-absorbed; HP+absorbed=total asserted, net=total-overheal. Separate shields and misses excluded. Deaths use player UNIT_DIED with unconscious flag 0; flag 1 is excluded. Spirit of Redemption (27827) anchors each delayed death once within 17 seconds. Recaps cover 10 seconds before that anchor, with 50 ms grace for event ordering. Damage minus healing is not a health-bar reconstruction.",
       "spellGuide": {
         "0": {
           "kind": "Physical melee",
@@ -46133,10 +46087,7 @@
       ]
     },
     "deathRecaps": {
-      "method": "Combat-log v22, advanced logging, build 12.1.0. Damage fields (zero-based): spell/range 31, overkill 33; SWING_DAMAGE_LANDED 28/30, excluding SWING_DAMAGE to avoid duplication. Logged damage includes overkill; no pre-mitigation reconstruction. Heal fields 31/32/33/34 are HP amount/total/overheal/heal-absorbed; HP+absorbed=total asserted, net=total-overheal. Separate shields and misses excluded. Deaths use player UNIT_DIED with unconscious flag 0; flag 1 is excluded. Spirit of Redemption (27827) anchors each delayed death once within 17 seconds. Recaps cover 10 seconds before that anchor, with 50 ms grace for event ordering. Damage minus healing is not a health-bar reconstruction.",
-      "sourceIds": [
-        "log-schema"
-      ],
+      "sourceIds": [],
       "windowSeconds": 10,
       "deaths": [
         {
@@ -52438,9 +52389,7 @@
     "bossHealing": {
       "healer": "Rinse-LaughingSkull-EU",
       "method": "Net SPELL_HEAL/SPELL_PERIODIC_HEAL total minus overheal divided by full encounter duration, including time dead/Spirit. All-target and player-only separated; separate shields excluded.",
-      "sourceIds": [
-        "log-schema"
-      ],
+      "sourceIds": [],
       "encounters": [
         {
           "name": "The Golden Serpent",
@@ -52673,24 +52622,13 @@
         }
       ],
       "evidenceLimits": [
-        "Character deaths exclude unconscious markers; repeated real deaths after recovery are retained.",
         "No footage, complete cooldown audit or reconstructed positioning; proposed assignments are not claims about past availability.",
         "Damage IDs and removable aura IDs may differ; unresolved cleanse or kick eligibility remains explicit.",
-        "Heal-event rates exclude separate absorbs and are not a complete healing meter.",
         "Current-season guides may differ from this log’s exact hotfix; numeric tooltip damage is not substituted for logged hits.",
         "Environmental damage occurred outside all death windows. Deaths without a supported terminal event remain needs-context. Utility sources not resolved to one of the five players are excluded."
       ],
       "researchedAt": "2026-09-03",
       "sources": [
-        {
-          "id": "log-schema",
-          "title": "Blizzard combat log processor: unconscious events",
-          "url": "https://github.com/Gethe/wow-ui-source/blob/live/Interface/AddOns/Blizzard_CombatLogProcessor/Blizzard_CombatLogProcessor.lua",
-          "author": "Blizzard UI source mirror",
-          "updated": "Retrieved 2026-09-03",
-          "accessed": "2026-09-03",
-          "compatibility": "Blizzard UI source explains unconscious versus death events; local log layouts separately validated."
-        },
         {
           "id": "timers",
           "title": "Midnight Season 2 dungeon timers",
@@ -53888,7 +53826,6 @@
           }
         }
       ],
-      "damageMethod": "Combat-log v22, advanced logging, build 12.1.0. Damage fields (zero-based): spell/range 31, overkill 33; SWING_DAMAGE_LANDED 28/30, excluding SWING_DAMAGE to avoid duplication. Logged damage includes overkill; no pre-mitigation reconstruction. Heal fields 31/32/33/34 are HP amount/total/overheal/heal-absorbed; HP+absorbed=total asserted, net=total-overheal. Separate shields and misses excluded. Deaths use player UNIT_DIED with unconscious flag 0; flag 1 is excluded. Spirit of Redemption (27827) anchors each delayed death once within 17 seconds. Recaps cover 10 seconds before that anchor, with 50 ms grace for event ordering. Damage minus healing is not a health-bar reconstruction.",
       "spellGuide": {
         "0": {
           "kind": "Enemy melee",
@@ -54394,10 +54331,7 @@
       ]
     },
     "deathRecaps": {
-      "method": "Combat-log v22, advanced logging, build 12.1.0. Damage fields (zero-based): spell/range 31, overkill 33; SWING_DAMAGE_LANDED 28/30, excluding SWING_DAMAGE to avoid duplication. Logged damage includes overkill; no pre-mitigation reconstruction. Heal fields 31/32/33/34 are HP amount/total/overheal/heal-absorbed; HP+absorbed=total asserted, net=total-overheal. Separate shields and misses excluded. Deaths use player UNIT_DIED with unconscious flag 0; flag 1 is excluded. Spirit of Redemption (27827) anchors each delayed death once within 17 seconds. Recaps cover 10 seconds before that anchor, with 50 ms grace for event ordering. Damage minus healing is not a health-bar reconstruction.",
-      "sourceIds": [
-        "log-schema"
-      ],
+      "sourceIds": [],
       "windowSeconds": 10,
       "deaths": [
         {
@@ -74524,9 +74458,7 @@
     "bossHealing": {
       "healer": "Rinse-LaughingSkull-EU",
       "method": "Net SPELL_HEAL/SPELL_PERIODIC_HEAL total minus overheal divided by full encounter duration, including time dead/Spirit. All-target and player-only separated; separate shields excluded.",
-      "sourceIds": [
-        "log-schema"
-      ],
+      "sourceIds": [],
       "encounters": [
         {
           "name": "Lightblossom Trinity",
@@ -74739,24 +74671,13 @@
         }
       ],
       "evidenceLimits": [
-        "Character deaths exclude unconscious markers; repeated real deaths after recovery are retained.",
         "No footage, complete cooldown audit or reconstructed positioning; proposed assignments are not claims about past availability.",
         "Damage IDs and removable aura IDs may differ; unresolved cleanse or kick eligibility remains explicit.",
-        "Heal-event rates exclude separate absorbs and are not a complete healing meter.",
         "Current-season guides may differ from this log’s exact hotfix; numeric tooltip damage is not substituted for logged hits.",
         "Environmental damage occurred outside all death windows. Deaths without a supported terminal event remain needs-context. Utility sources not resolved to one of the five players are excluded."
       ],
       "researchedAt": "2026-09-03",
       "sources": [
-        {
-          "id": "log-schema",
-          "title": "Blizzard combat log processor: unconscious events",
-          "url": "https://github.com/Gethe/wow-ui-source/blob/live/Interface/AddOns/Blizzard_CombatLogProcessor/Blizzard_CombatLogProcessor.lua",
-          "author": "Blizzard UI source mirror",
-          "updated": "Retrieved 2026-09-03",
-          "accessed": "2026-09-03",
-          "compatibility": "Blizzard UI source explains unconscious versus death events; local log layouts separately validated."
-        },
         {
           "id": "timers",
           "title": "Midnight Season 2 dungeon timers",
@@ -75068,7 +74989,6 @@
           }
         }
       ],
-      "damageMethod": "Combat-log v22, advanced logging, build 12.1.0. Damage fields (zero-based): spell/range 31, overkill 33; SWING_DAMAGE_LANDED 28/30, excluding SWING_DAMAGE to avoid duplication. Logged damage includes overkill; no pre-mitigation reconstruction. Heal fields 31/32/33/34 are HP amount/total/overheal/heal-absorbed; HP+absorbed=total asserted, net=total-overheal. Separate shields and misses excluded. Deaths use player UNIT_DIED with unconscious flag 0; flag 1 is excluded. Spirit of Redemption (27827) anchors each delayed death once within 17 seconds. Recaps cover 10 seconds before that anchor, with 50 ms grace for event ordering. Damage minus healing is not a health-bar reconstruction.",
       "spellGuide": {
         "265966": {
           "kind": "Group hit and knockback",
@@ -75138,9 +75058,7 @@
         {
           "encounter": "Avatar of Sethraliss",
           "text": "Keep objective healing distinct from party recovery when assessing this fight. See the Avatar-only column.",
-          "sourceIds": [
-            "log-schema"
-          ]
+          "sourceIds": []
         }
       ],
       "recurringIssues": [
@@ -75172,10 +75090,7 @@
       ]
     },
     "deathRecaps": {
-      "method": "Combat-log v22, advanced logging, build 12.1.0. Damage fields (zero-based): spell/range 31, overkill 33; SWING_DAMAGE_LANDED 28/30, excluding SWING_DAMAGE to avoid duplication. Logged damage includes overkill; no pre-mitigation reconstruction. Heal fields 31/32/33/34 are HP amount/total/overheal/heal-absorbed; HP+absorbed=total asserted, net=total-overheal. Separate shields and misses excluded. Deaths use player UNIT_DIED with unconscious flag 0; flag 1 is excluded. Spirit of Redemption (27827) anchors each delayed death once within 17 seconds. Recaps cover 10 seconds before that anchor, with 50 ms grace for event ordering. Damage minus healing is not a health-bar reconstruction.",
-      "sourceIds": [
-        "log-schema"
-      ],
+      "sourceIds": [],
       "windowSeconds": 10,
       "deaths": [
         {
@@ -76382,9 +76297,7 @@
     "bossHealing": {
       "healer": "Rinse-LaughingSkull-EU",
       "method": "Net SPELL_HEAL/SPELL_PERIODIC_HEAL total minus overheal divided by full encounter duration, including time dead/Spirit. All-target and player-only separated; separate shields excluded.",
-      "sourceIds": [
-        "log-schema"
-      ],
+      "sourceIds": [],
       "encounters": [
         {
           "name": "Adderis and Aspix",
@@ -76591,24 +76504,13 @@
         }
       ],
       "evidenceLimits": [
-        "Character deaths exclude unconscious markers; repeated real deaths after recovery are retained.",
         "No footage, complete cooldown audit or reconstructed positioning; proposed assignments are not claims about past availability.",
         "Damage IDs and removable aura IDs may differ; unresolved cleanse or kick eligibility remains explicit.",
-        "Heal-event rates exclude separate absorbs and are not a complete healing meter.",
         "Current-season guides may differ from this log’s exact hotfix; numeric tooltip damage is not substituted for logged hits.",
         "Environmental damage occurred outside all death windows. Deaths without a supported terminal event remain needs-context. Utility sources not resolved to one of the five players are excluded."
       ],
       "researchedAt": "2026-09-03",
       "sources": [
-        {
-          "id": "log-schema",
-          "title": "Blizzard combat log processor: unconscious events",
-          "url": "https://github.com/Gethe/wow-ui-source/blob/live/Interface/AddOns/Blizzard_CombatLogProcessor/Blizzard_CombatLogProcessor.lua",
-          "author": "Blizzard UI source mirror",
-          "updated": "Retrieved 2026-09-03",
-          "accessed": "2026-09-03",
-          "compatibility": "Blizzard UI source explains unconscious versus death events; local log layouts separately validated."
-        },
         {
           "id": "timers",
           "title": "Midnight Season 2 dungeon timers",
@@ -76870,7 +76772,6 @@
           }
         }
       ],
-      "damageMethod": "Combat-log v22, advanced logging, build 12.1.0. Damage fields (zero-based): spell/range 31, overkill 33; SWING_DAMAGE_LANDED 28/30, excluding SWING_DAMAGE to avoid duplication. Logged damage includes overkill; no pre-mitigation reconstruction. Heal fields 31/32/33/34 are HP amount/total/overheal/heal-absorbed; HP+absorbed=total asserted, net=total-overheal. Separate shields and misses excluded. Deaths use player UNIT_DIED with unconscious flag 0; flag 1 is excluded. Spirit of Redemption (27827) anchors each delayed death once within 17 seconds. Recaps cover 10 seconds before that anchor, with 50 ms grace for event ordering. Damage minus healing is not a health-bar reconstruction.",
       "spellGuide": {
         "0": {
           "kind": "Enemy melee",
@@ -76985,9 +76886,7 @@
         {
           "encounter": "The Council of Tribes",
           "text": "Call immediately if Akaali reaches you; the first collapse includes boss melee on Rinse before other deaths.",
-          "sourceIds": [
-            "log-schema"
-          ]
+          "sourceIds": []
         },
         {
           "encounter": "The Council of Tribes",
@@ -77025,10 +76924,7 @@
       ]
     },
     "deathRecaps": {
-      "method": "Combat-log v22, advanced logging, build 12.1.0. Damage fields (zero-based): spell/range 31, overkill 33; SWING_DAMAGE_LANDED 28/30, excluding SWING_DAMAGE to avoid duplication. Logged damage includes overkill; no pre-mitigation reconstruction. Heal fields 31/32/33/34 are HP amount/total/overheal/heal-absorbed; HP+absorbed=total asserted, net=total-overheal. Separate shields and misses excluded. Deaths use player UNIT_DIED with unconscious flag 0; flag 1 is excluded. Spirit of Redemption (27827) anchors each delayed death once within 17 seconds. Recaps cover 10 seconds before that anchor, with 50 ms grace for event ordering. Damage minus healing is not a health-bar reconstruction.",
-      "sourceIds": [
-        "log-schema"
-      ],
+      "sourceIds": [],
       "windowSeconds": 10,
       "deaths": [
         {
@@ -79016,9 +78912,7 @@
     "bossHealing": {
       "healer": "Rinse-LaughingSkull-EU",
       "method": "Net SPELL_HEAL/SPELL_PERIODIC_HEAL total minus overheal divided by full encounter duration, including time dead/Spirit. All-target and player-only separated; separate shields excluded.",
-      "sourceIds": [
-        "log-schema"
-      ],
+      "sourceIds": [],
       "encounters": [
         {
           "name": "The Golden Serpent",
