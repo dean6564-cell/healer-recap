@@ -156,3 +156,19 @@ body[data-page="guild"] .guild-category{margin:38px 0 0;padding:26px 28px 28px;b
 /* Best timed key, then fastest time, among the selected characters. */
 .progress-matrix tbody td.matrix-best-run{box-shadow:none}
 .progress-matrix .matrix-best-star{position:absolute;left:8px;top:50%;transform:translateY(-50%);width:16px;min-width:0;color:#ef5350;font-size:17px;line-height:1;text-shadow:0 1px 6px #4b0000aa}
+
+/* One gold treatment for Mythic+ ratings and key values throughout the guild view. */
+body[data-page="guild"] #guildStats .stat-card:nth-child(n+3) .stat-value,
+body[data-page="guild"] .guild-score,
+body[data-page="guild"] .progress-matrix tbody td.matrix-run-cell>span,
+body[data-page="guild"] .progress-matrix .matrix-fastest strong,
+body[data-page="guild"] .progress-matrix tfoot td:not(.matrix-missing){
+ color:#f3ce72;
+ background:linear-gradient(180deg,#fff0b0 0%,#e4bd59 48%,#a87925 100%);
+ -webkit-background-clip:text;background-clip:text;-webkit-text-fill-color:transparent;
+ text-shadow:none;
+}
+body[data-page="guild"] .guild-score small,
+body[data-page="guild"] .progress-matrix tbody td.matrix-run-cell>span small{
+ background:none;-webkit-background-clip:border-box;background-clip:border-box;-webkit-text-fill-color:currentColor;
+}
