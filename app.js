@@ -691,12 +691,17 @@ function deathPlayerPortrait(r,name){
  return cls?`<img class="party-guild-portrait is-class-fallback" src="https://wow.zamimg.com/images/wow/icons/large/${PARTY_CLASS_ART[cls]}.jpg" alt="${esc(cls)} class icon" width="36" height="36" loading="lazy">`:'';
 }
 
-function utilityCharacterName(r,name){
+function utilityCharacterClass(r,name){
  const parts=String(name).replace(/-EU$/i,'').split('-'),short=parts.shift();
  const member=guildRoster.get(rosterKey(short,parts.join('-')));
  const spec=(r.playerRoles||[]).find(p=>p.name===name)?.specializationId;
  const specs={Warrior:[71,72,73],Paladin:[65,66,70],Hunter:[253,254,255],Rogue:[259,260,261],Priest:[256,257,258],'Death Knight':[250,251,252],Shaman:[262,263,264],Mage:[62,63,64],Warlock:[265,266,267],Monk:[268,269,270],Druid:[102,103,104,105],'Demon Hunter':[577,581,1480],Evoker:[1467,1468,1473]};
- const klass=member?.class||Object.keys(specs).find(k=>specs[k].includes(Number(spec)));
+ return member?.class||Object.keys(specs).find(k=>specs[k].includes(Number(spec)))||'';
+}
+
+function utilityCharacterName(r,name){
+ const short=String(name).replace(/-EU$/i,'').split('-')[0];
+ const klass=utilityCharacterClass(r,name);
  const colours={Warrior:'#c79c6e',Paladin:'#f58cba',Hunter:'#abd473',Rogue:'#fff569',Priest:'#ffffff','Death Knight':'#c41f3b',Shaman:'#0070de',Mage:'#69ccf0',Warlock:'#9482c9',Monk:'#00ff96',Druid:'#ff7d0a','Demon Hunter':'#a330c9',Evoker:'#33937f'};
  return `<strong title="${esc(name)}" style="color:${colours[klass]||'var(--text)'}">${esc(short)}</strong>`;
 }
@@ -707,7 +712,8 @@ function renderPartyUtility(r){
   <p class="muted">Successful interrupts and removals · CC counts affected targets, not casts stopped.</p>
   <div class="utility-party-grid">${(r.players||[]).map(name=>{
     const p=u?.players?.find(x=>x.name===name);
-    return `<article class="utility-player"><header><span class="utility-player-identity">${guildPartyPortrait(name)}${utilityCharacterName(r,name)}</span>${playerRoleBadge(r,name)}</header>
+    const classSlug=utilityCharacterClass(r,name).toLowerCase().replace(/[^a-z]+/g,'-');
+    return `<article class="utility-player"${classSlug?` style="--utility-class-art:url('assets/class-bg-${esc(classSlug)}.webp')"`:''}><header><span class="utility-player-identity">${guildPartyPortrait(name)}${utilityCharacterName(r,name)}</span>${playerRoleBadge(r,name)}</header>
     <div class="utility-player-stats">${metrics.map(([key,label])=>`<div><b>${p?Number(p[key]||0).toLocaleString('en-GB'):'—'}</b><span>${label}</span></div>`).join('')}</div>
     ${p?.abilities?.length?`<details><summary>Ability breakdown</summary><ul>${p.abilities.map(b=>`<li><span>${renderUtilityHelp(b)} <small>· ${esc(metrics.find(m=>m[0]===b.kind)?.[1]||b.kind)}</small></span><b>${b.count}</b></li>`).join('')}</ul></details>`:''}</article>`;
   }).join('')}</div>
