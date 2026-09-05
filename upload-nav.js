@@ -12,9 +12,17 @@
     return true;
   }
 
-  if(addUploadLink())return;
+  function setupMenu(){
+    const button=document.querySelector('#siteNav .nav-menu-toggle'),menu=document.querySelector('#siteNav .navlinks');
+    if(!button||!menu||button.dataset.ready)return;
+    button.dataset.ready='true';
+    button.addEventListener('click',()=>{const open=menu.classList.toggle('is-open');button.setAttribute('aria-expanded',String(open));button.setAttribute('aria-label',open?'Close navigation menu':'Open navigation menu')});
+    menu.addEventListener('click',event=>{if(event.target.closest('a')){menu.classList.remove('is-open');button.setAttribute('aria-expanded','false')}});
+  }
+
+  if(addUploadLink()){setupMenu();return;}
   const target=document.getElementById('siteNav');
   if(!target)return;
-  const observer=new MutationObserver(()=>{if(addUploadLink())observer.disconnect();});
+  const observer=new MutationObserver(()=>{if(addUploadLink()){setupMenu();observer.disconnect()}});
   observer.observe(target,{childList:true,subtree:true});
 })();
