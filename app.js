@@ -743,8 +743,8 @@ function perspectiveMeta(r,player){
  return {name:parts.name||player,player,role:role||'Role unknown',spec:member?.spec||'',className:member?.class||utilityCharacterClass(r,player),specializationId:roleEntry.specializationId,portrait:deathPlayerPortrait(r,player)};
 }
 function renderPerspectiveBar(r,perspective){
- const meta=perspectiveMeta(r,perspective.player),option=p=>`<option value="${esc(p)}" ${p===perspective.player?'selected':''}>${esc(playerParts(p).name)} · ${esc(playerRoleFor(r,p)||'Role unknown')}</option>`;
- return `<section class="perspective-bar" aria-label="Run report perspective"><div class="perspective-switch" role="group" aria-label="Report view"><button type="button" data-perspective-mode="personal" class="${perspective.mode==='personal'?'active':''}" aria-pressed="${perspective.mode==='personal'}">Personal Analysis</button><button type="button" data-perspective-mode="party" class="${perspective.mode==='party'?'active':''}" aria-pressed="${perspective.mode==='party'}">Party Overview</button></div><label class="perspective-character">Character <select id="reportCharacter">${(r.players||[]).map(option).join('')}</select></label><div class="perspective-current">${meta.portrait}<span><small>${perspective.mode==='personal'?'VIEWING THIS RUN AS':'CHARACTER CONTEXT'}</small><strong>${esc(meta.name)}</strong><em>${esc([meta.spec,meta.className,meta.role].filter(Boolean).join(' · '))}</em></span></div></section>`;
+ const meta=perspectiveMeta(r,perspective.player);
+ return `<section class="perspective-bar" aria-label="Run report perspective"><div class="perspective-switch" role="group" aria-label="Report view"><button type="button" data-perspective-mode="personal" class="${perspective.mode==='personal'?'active':''}" aria-pressed="${perspective.mode==='personal'}">${esc(meta.name)}’s Analysis</button><button type="button" data-perspective-mode="party" class="${perspective.mode==='party'?'active':''}" aria-pressed="${perspective.mode==='party'}">Party Overview</button></div><div class="perspective-current">${meta.portrait}<span><small>${perspective.mode==='personal'?'CHARACTER PERSPECTIVE':'RUN CONTEXT'}</small><strong>${perspective.mode==='personal'?esc(meta.name):'Entire party'}</strong><em>${perspective.mode==='personal'?esc([meta.spec,meta.className,meta.role].filter(Boolean).join(' · ')):'Shared events and group performance'}</em></span></div></section>`;
 }
 function renderPersonalSnapshot(r,player){
  const meta=perspectiveMeta(r,player),utility=r.utilitySummary?.players?.find(x=>x.name===player)||{},deaths=Number(r.deathBreakdown?.[player]||0),recaps=(r.deathRecaps?.deaths||[]).filter(d=>d.player===player),avoidable=recaps.reduce((sum,d)=>sum+(Number(d.avoidableDamageTotal)||0),0);
@@ -798,7 +798,7 @@ function renderReview(r,perspective=runPerspective(r)){
     while(section.firstChild)body.append(section.firstChild);
     detail.append(summary,body);section.replaceWith(detail);
   });
-  setupRecapFilters(el,perspective.mode==='personal'?perspective.player:'');setupBossExplorer(r,perspective.mode==='personal'?perspective.player:'');
+  setupRecapFilters(el);setupBossExplorer(r);
   const buttons=[...el.querySelectorAll('[data-report-tab]')];
   const reportTabs=el.querySelector('.report-tabs'),siteHeader=document.getElementById('siteNav');
   siteHeader.querySelector('.report-tabs')?.remove();
@@ -821,7 +821,6 @@ function renderReview(r,perspective=runPerspective(r)){
   activate(location.hash.slice(1));
   window.addEventListener('hashchange',()=>activate(location.hash.slice(1)));
   el.querySelectorAll('[data-perspective-mode]').forEach(button=>button.addEventListener('click',()=>{const next=new URL(location.href);if(button.dataset.perspectiveMode==='party')next.searchParams.set('view','party');else next.searchParams.delete('view');location.assign(next)}));
-  el.querySelector('#reportCharacter')?.addEventListener('change',event=>{const next=new URL(location.href);next.searchParams.set('character',event.target.value);next.searchParams.delete('view');location.assign(next)});
 }
 
 function renderMetrics(r){
