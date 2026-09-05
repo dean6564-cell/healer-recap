@@ -155,4 +155,4 @@ body[data-page="guild"] .guild-category{margin:38px 0 0;padding:26px 28px 28px;b
 
 /* Best timed key, then fastest time, among the selected characters. */
 .progress-matrix tbody td.matrix-best-run{box-shadow:none}
-.progress-matrix .matrix-best-star{position:absolute;left:8px;top:50%;transform:translateY(-50%);width:16px;min-width:0;color:#f1cf78;font-size:17px;line-height:1;text-shadow:0 1px 5px #0006}
+.progress-matrix .matrix-best-star{position:absolute;left:8px;top:50%;transform:translateY(-50%);width:16px;min-width:0;color:#ef5350;font-size:17px;line-height:1;text-shadow:0 1px 6px #4b0000aa}
