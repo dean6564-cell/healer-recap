@@ -661,7 +661,7 @@ function renderIncidents(v,r){
     ${i.preventability?`<p><strong>Was it preventable?</strong> ${esc(i.preventability)}</p>`:''}
     <p><strong>Correct response:</strong> ${esc(i.correction)}</p>
     <p><strong>Who acts:</strong> ${esc(i.owner)}</p><p>${researchLinks(v,i.sourceIds)}</p></section>`).join('')}
-    ${v.damageMethod?`<details><summary>How damage is measured</summary><p>${esc(v.damageMethod)}</p><p><a href="https://wowcoach.gg/docs/combat-log/damage-and-healing" target="_blank" rel="noopener noreferrer">Combat-log damage field reference</a></p></details>`:''}</article>`;
+    </article>`;
 }
 function renderUtilityHelp(b){
   if(!b.targets?.length)return spellIcon(b.spellId)+esc(b.spell);
