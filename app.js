@@ -713,7 +713,7 @@ function renderPartyUtility(r){
   <div class="utility-party-grid">${(r.players||[]).map(name=>{
     const p=u?.players?.find(x=>x.name===name);
     const classSlug=utilityCharacterClass(r,name).toLowerCase().replace(/[^a-z]+/g,'-');
-    return `<article class="utility-player"${classSlug?` style="--utility-class-art:url('assets/class-bg-${esc(classSlug)}.webp')"`:''}><header><span class="utility-player-identity">${guildPartyPortrait(name)}${utilityCharacterName(r,name)}</span>${playerRoleBadge(r,name)}</header>
+    return `<article class="utility-player"${classSlug?` style="--utility-class-art:url('assets/class-bg-${esc(classSlug)}.webp')"`:''}><span class="utility-card-art" aria-hidden="true"></span><header><span class="utility-player-identity">${guildPartyPortrait(name)}${utilityCharacterName(r,name)}</span>${playerRoleBadge(r,name)}</header>
     <div class="utility-player-stats">${metrics.map(([key,label])=>`<div><b>${p?Number(p[key]||0).toLocaleString('en-GB'):'—'}</b><span>${label}</span></div>`).join('')}</div>
     ${p?.abilities?.length?`<details><summary>Ability breakdown</summary><ul>${p.abilities.map(b=>`<li><span>${renderUtilityHelp(b)} <small>· ${esc(metrics.find(m=>m[0]===b.kind)?.[1]||b.kind)}</small></span><b>${b.count}</b></li>`).join('')}</ul></details>`:''}</article>`;
   }).join('')}</div>
