@@ -908,6 +908,16 @@ body[data-page="run"] .utility-player summary:hover,body[data-page="run"] .utili
 body[data-page="run"] .recap-party-member{position:relative;isolation:isolate;overflow:hidden;background:rgba(10,16,25,.7)}
 body[data-page="run"] .recap-party-member>.recap-card-art{position:absolute;inset:0;z-index:0;pointer-events:none;background:linear-gradient(90deg,rgba(8,14,22,.93) 0%,rgba(8,14,22,.68) 44%,rgba(8,14,22,.12) 100%),var(--recap-class-art) 76% center/cover no-repeat;opacity:.76}
 body[data-page="run"] .recap-party-member>.recap-player-identity,body[data-page="run"] .recap-party-member>.recap-player-meta{position:relative;z-index:1}
+
+/* Shared public-site footer. */
+footer .site-footer-wrap{display:grid;grid-template-columns:1fr;justify-items:center;gap:15px;min-height:190px;padding:70px 20px 30px}
+footer .site-footer-wrap .footer-horde-logo{top:0}
+.footer-links{display:flex;align-items:center;justify-content:center;flex-wrap:wrap;gap:8px 22px}
+.footer-links a{position:relative;padding:5px 0;color:#b9c1cc;font-size:.78rem;font-weight:700;text-decoration:none;transition:color .18s ease}
+.footer-links a:after{content:"";position:absolute;left:50%;right:50%;bottom:0;height:1px;background:var(--gold);transition:left .18s ease,right .18s ease}
+.footer-links a:hover,.footer-links a:focus-visible{color:#fff}.footer-links a:hover:after,.footer-links a:focus-visible:after{left:0;right:0}
+.footer-copy,.footer-note{margin:0;color:#8993a1;font-size:.7rem;line-height:1.5;text-align:center}.footer-note{max-width:680px;font-size:.65rem}
+@media(max-width:650px){footer .site-footer-wrap{padding:62px 14px 26px;gap:13px}.footer-links{gap:6px 16px}.footer-links a{font-size:.74rem}}
 @media(max-width:650px){body[data-page="run"] main>.wrap{width:calc(100% - 20px)}body[data-page="run"] .run-hero.has-dungeon-art{min-height:240px;padding:24px 14px}body[data-page="run"] .run-hero.has-dungeon-art:before{inset:-10px 0}body[data-page="run"] #runStats{padding:10px 0;row-gap:8px}body[data-page="run"] #runStats .stat-card{padding:12px 6px}body[data-page="run"] #runStats .stat-card:nth-child(3):before{display:none}}
 @media(max-width:560px){
  #siteNav{padding:10px 8px 8px}
