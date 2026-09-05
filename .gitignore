@@ -1,0 +1,13 @@
+*.log
+*.combatlog
+.env
+.env.*
+!.env.example
+private/
+secrets/
+uploads/
+raw-logs/
+credentials*.json
+service-account*.json
+*.pem
+*.key
