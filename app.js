@@ -801,8 +801,8 @@ function renderMetrics(r){
 
 function renderWipeStat(r){
  const wipes=(r.encounters||[]).filter(e=>e.success===false),count=r.bossWipes??wipes.length;
- const label=`<div class="num">${esc(count)}</div><div class="label">Boss wipes ${count>0?'<span aria-hidden="true">↗</span>':''}</div>`;
- if(!count)return `<div class="stat-card wipe-stat no-wipes">${label}</div>`;
+ const label=`<div class="num">${esc(count)}</div><div class="label">Boss wipes <span aria-hidden="true">↗</span></div>`;
+ if(!count)return `<a class="stat-card wipe-stat no-wipes" href="#bosses" data-open-boss-view aria-label="0 boss wipes. Open Boss view">${label}</a>`;
  const names=[...new Set(wipes.map(e=>e.name))];
  if(count===1&&names.length===1)return `<a class="stat-card wipe-stat has-wipes" href="#bosses" data-wipe-boss="${esc(names[0])}" aria-label="1 boss wipe. Review ${esc(names[0])}">${label}</a>`;
  return `<button type="button" class="stat-card wipe-stat has-wipes" popovertarget="wipe-boss-picker" aria-label="${esc(count)} boss wipes. Choose a boss to review">${label}</button><div id="wipe-boss-picker" class="wipe-boss-picker" popover><strong>Review boss wipes</strong>${names.map(name=>`<a href="#bosses" data-wipe-boss="${esc(name)}"><span>${esc(name)}</span><small>${wipes.filter(e=>e.name===name).length} wipe${wipes.filter(e=>e.name===name).length===1?'':'s'} →</small></a>`).join('')||'<p>Boss encounter details are unavailable.</p>'}</div>`;
@@ -838,8 +838,8 @@ function renderRun(){
   document.querySelector('#runSub').innerHTML=`${fmtDate(r.date)} · ${esc(r.startTime||'')}${r.endTime?`–${esc(r.endTime)}`:''} · ${r.success?'Completed':'Not completed'} · ${statusPill(r)}`;
   const allBossesKilled=r.success&&Number(r.bossKills)>0;
   document.querySelector('#runStats').innerHTML=`
-    ${runTiming(r).state==='unfinished'?'<div class="stat-card timing-unfinished"><div class="num">—</div><div class="label">Not completed</div></div>':`<div class="stat-card timing-${runTiming(r).state}"><div class="num">${fmtDuration(r.durationSeconds)}</div><div class="label">${runTiming(r).label}</div><small class="timing-margin">${runTiming(r).detail}</small></div>`}
-    ${allBossesKilled?`<a class="stat-card boss-kill-stat complete" href="#bosses" aria-label="${r.bossKills} boss kills. Open Boss view"><div class="num">${r.bossKills}</div><div class="label">Boss kills <span aria-hidden="true">↗</span></div></a>`:`<div class="stat-card boss-kill-stat"><div class="num">${r.bossKills||0}</div><div class="label">Boss kills</div></div>`}
+    ${runTiming(r).state==='unfinished'?'<div class="stat-card timing-unfinished"><div class="num">—</div><div class="label">Not completed</div></div>':`<div class="stat-card timing-${runTiming(r).state}"><div class="num">${fmtDuration(r.durationSeconds)}</div><div class="label timing-label">${runTiming(r).label}<small class="timing-margin">${runTiming(r).detail}</small></div></div>`}
+    ${allBossesKilled?`<a class="stat-card boss-kill-stat complete" href="#bosses" data-open-boss-view aria-label="${r.bossKills} boss kills. Open Boss view"><div class="num">${r.bossKills}</div><div class="label">Boss kills <span aria-hidden="true">↗</span></div></a>`:`<div class="stat-card boss-kill-stat"><div class="num">${r.bossKills||0}</div><div class="label">Boss kills</div></div>`}
     ${renderWipeStat(r)}
     <a class="stat-card death-stat-link ${r.deaths>0?'has-deaths':r.deaths===0?'no-deaths':''}" href="#incidents" aria-label="${typeof r.deaths==='number'?r.deaths:'Unknown'} player deaths. Open Damage and deaths"><div class="num">${typeof r.deaths==='number'?r.deaths:'—'}</div><div class="label">Player deaths <span aria-hidden="true">↗</span></div></a>`;
   document.querySelector('#encounters').innerHTML=(r.encounters||[]).map((e,i)=>`
@@ -860,12 +860,12 @@ function renderRun(){
     tab.click();tab.focus({preventScroll:true});
     tab.closest('.report-tabs').scrollIntoView({block:'start',behavior:matchMedia('(prefers-reduced-motion: reduce)').matches?'auto':'smooth'});
   });
-  document.querySelector('.boss-kill-stat.complete')?.addEventListener('click',event=>{
+  document.querySelectorAll('[data-open-boss-view]').forEach(link=>link.addEventListener('click',event=>{
     event.preventDefault();
     const tab=document.querySelector('#tab-bosses');
     tab.click();tab.focus({preventScroll:true});
     tab.closest('.report-tabs').scrollIntoView({block:'start',behavior:matchMedia('(prefers-reduced-motion: reduce)').matches?'auto':'smooth'});
-  });
+  }));
   document.querySelector('#backDungeon').href=`dungeon.html?dungeon=${encodeURIComponent(slugify(r.dungeon))}`;
   if(r.legacyPage)document.querySelector('#legacy').innerHTML=`<a class="button secondary" href="${esc(r.legacyPage)}">Open original detailed report</a>`;
 }
