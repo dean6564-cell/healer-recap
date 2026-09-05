@@ -903,6 +903,11 @@ body[data-page="run"] .utility-player>.utility-card-art{position:absolute;inset:
 body[data-page="run"] .utility-player>header,body[data-page="run"] .utility-player>.utility-player-stats,body[data-page="run"] .utility-player>details{position:relative;z-index:1}
 body[data-page="run"] .utility-player summary{transition:color .18s ease}
 body[data-page="run"] .utility-player summary:hover,body[data-page="run"] .utility-player summary:focus-visible{color:#fff}
+
+/* Death-recap player filters share the class-art glass treatment. */
+body[data-page="run"] .recap-party-member{position:relative;isolation:isolate;overflow:hidden;background:rgba(10,16,25,.7)}
+body[data-page="run"] .recap-party-member>.recap-card-art{position:absolute;inset:0;z-index:0;pointer-events:none;background:linear-gradient(90deg,rgba(8,14,22,.93) 0%,rgba(8,14,22,.68) 44%,rgba(8,14,22,.12) 100%),var(--recap-class-art) 76% center/cover no-repeat;opacity:.76}
+body[data-page="run"] .recap-party-member>.recap-player-identity,body[data-page="run"] .recap-party-member>.recap-player-meta{position:relative;z-index:1}
 @media(max-width:650px){body[data-page="run"] main>.wrap{width:calc(100% - 20px)}body[data-page="run"] .run-hero.has-dungeon-art{min-height:240px;padding:24px 14px}body[data-page="run"] .run-hero.has-dungeon-art:before{inset:-10px 0}body[data-page="run"] #runStats{padding:10px 0;row-gap:8px}body[data-page="run"] #runStats .stat-card{padding:12px 6px}body[data-page="run"] #runStats .stat-card:nth-child(3):before{display:none}}
 @media(max-width:560px){
  #siteNav{padding:10px 8px 8px}
