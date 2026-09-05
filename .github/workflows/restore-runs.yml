@@ -1,0 +1,25 @@
+name: Restore complete run library
+on:
+  workflow_dispatch:
+permissions:
+  contents: write
+jobs:
+  restore:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - name: Restore and validate runs.json
+        shell: bash
+        run: |
+          cat data/runs-json-gzip-b64-part-1.txt data/runs-json-gzip-b64-part-2.txt | base64 --decode > /tmp/runs.json.gz
+          gzip --decompress --stdout /tmp/runs.json.gz > data/runs.json
+          python -m json.tool data/runs.json > /dev/null
+          rm data/runs-json-gzip-b64-part-1.txt data/runs-json-gzip-b64-part-2.txt
+      - name: Commit restored library
+        shell: bash
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add data/runs.json data/runs-json-gzip-b64-part-1.txt data/runs-json-gzip-b64-part-2.txt
+          git commit -m "Restore complete published run library"
+          git push
