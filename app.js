@@ -901,6 +901,8 @@ function setupImporter(){
   const input=document.querySelector('#reviewFile'),drop=document.querySelector('#dropzone'),status=document.querySelector('#importStatus'),preview=document.querySelector('#importPreview');
   async function handle(file){
     if(!file)return;
+    if(file.size>25*1024*1024){status.innerHTML='<strong>File is too large</strong><span>Select a processed M+ Recap JSON file smaller than 25 MB.</span>';return;}
+    if(!file.name.toLowerCase().endsWith('.json')){status.innerHTML='<strong>Unsupported file</strong><span>Raw combat logs are not accepted. Select a processed M+ Recap JSON file.</span>';return;}
     status.innerHTML=`<strong>Reading ${esc(file.name)}</strong><span>Checking the reviewed-run format…</span>`;
     preview.innerHTML='';
     try{
@@ -1066,6 +1068,7 @@ document.addEventListener('DOMContentLoaded',async()=>{
   if(p==='run')renderRun();
   if(p==='library')renderLibrary();
   if(p==='insights')renderInsights();
+  if(p==='import')setupImporter();
 });
 
 
