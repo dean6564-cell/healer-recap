@@ -173,7 +173,7 @@ function renderDeathRecaps(r,encounter){
   <div class="recap-table-wrap"><table class="recap-table"><caption>10-second window · negative time is before the death sequence · small positive offsets account for log ordering</caption><thead><tr><th>Before</th><th>Event</th><th>Spell</th><th>Source</th><th>Amount</th></tr></thead><tbody>
   ${d.events.map(e=>`<tr data-recap-kind="${e.kind}" class="${e.overkill>0?'has-overkill':''}"><td>${e.offsetSeconds>0?'+':''}${e.offsetSeconds.toFixed(2)}s</td><td>${e.kind==='aura'?(e.event==='SPELL_AURA_APPLIED'?'Effect gained':'Effect ended'):e.kind==='cast'?'Cast':e.kind==='healing'?'Heal':'Damage'}</td><td>${e.kind==='damage'?renderSpellHelp(e,r.review):esc(e.spell)}</td><td>${esc(e.source)}</td><td class="${e.kind==='healing'?'healing-value':''}">${e.amount===null?'—':number(e.amount)}${e.overkill>0?`<small class="overkill-value">${number(e.overkill)} overkill</small>`:''}</td></tr>`).join('')}
   </tbody></table><p class="recap-no-events" hidden>No events of this type in the selected window.</p></div></div></details>`).join('')}</section>`;}).join('')}
-  <details class="tactics-method"><summary>Recap method and limits</summary><p>${esc(pack.method)}</p>${researchLinks(r.review,pack.sourceIds)}</details></div></details>`;
+  <details class="tactics-method"><summary>About this recap</summary><p>This recap is generated from recorded combat events. It highlights factual events and possible improvement opportunities, while leaving uncertain causes clearly marked for review.</p></details></div></details>`;
 }
 function setupRecapFilters(root){
  root.querySelectorAll('[data-player-recaps]').forEach(pack=>{
