@@ -619,6 +619,8 @@ main>.wrap{padding-top:26px;padding-bottom:30px;background:rgba(7,12,20,.80);bor
 .dashboard-intro{position:relative;padding:30px 32px;margin-bottom:28px;border:1px solid #d7ad5240;border-radius:16px;background:linear-gradient(110deg,#101b2bee,#132234a6);box-shadow:inset 3px 0 #cfa34c}
 .dashboard-intro h1{margin-top:12px;font-size:clamp(2rem,4vw,3.2rem)}
 .dashboard-intro p{color:#c0c8d2}
+.character-hero-score{position:absolute;top:28px;right:32px;display:grid;justify-items:end;gap:2px;text-align:right;text-shadow:0 2px 12px #000}.character-hero-score[hidden]{display:none}.character-hero-score strong{font:800 clamp(1.65rem,3vw,2.5rem)/1 'Space Grotesk',sans-serif;letter-spacing:-.04em;color:#f0cf7a;background:linear-gradient(180deg,#fff0a8 0%,#e2bd5c 52%,#9d6b22 100%);-webkit-background-clip:text;background-clip:text;-webkit-text-fill-color:transparent}.character-hero-score span{color:#c7b98f;font-size:.64rem;font-weight:850;letter-spacing:.11em}
+@media(max-width:760px){.character-hero-score{position:static;justify-items:start;margin:12px 0 4px;text-align:left}.dashboard-intro .eyebrow{padding-right:0}}
 .dashboard-intro .hero-actions{margin:22px 0 0}
 .dashboard-intro:after{content:"M+";position:absolute;right:32px;top:24px;font-family:'Space Grotesk',sans-serif;font-size:7rem;font-weight:700;color:#d7ad520c;pointer-events:none}
 .stat-card,.card,.review-card,.run-row,.utility-player,.death-recaps-group{background:linear-gradient(135deg,rgba(20,29,40,.97),rgba(11,18,27,.97));box-shadow:0 8px 22px #0002}
