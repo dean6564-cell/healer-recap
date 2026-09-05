@@ -50691,7 +50691,8 @@
             "spell-1312146"
           ],
           "reviewState": "assessed",
-          "sequenceContext": "This death occurred after Rinse’s healer-death sequence began and before any combat resurrection was used.",
+          "deathSequenceContext": "Rinse entered Spirit of Redemption at 22:25:36 and reached the recorded death marker at 22:25:45. Kazzataur died at 22:25:51, about six seconds after the healer’s recorded death.",
+          "combatResurrectionContext": "No combat resurrection was used between Rinse’s death and Kazzataur’s death.",
           "id": "kings-rest-2026-09-01-221238-7-death-5"
         },
         {
