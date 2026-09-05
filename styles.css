@@ -760,7 +760,8 @@ main>.wrap{background:rgba(7,12,20,.76);border-color:var(--panel-edge-soft);bord
 body[data-page="dashboard"]:before,
 body[data-page="library"]:before,
 body[data-page="guild"]:before,
-body[data-page="insights"]:before{
+body[data-page="insights"]:before,
+body[data-page="run"]:before{
  background:linear-gradient(180deg,rgba(7,8,20,.44),rgba(7,8,20,.68)),url('https://bnetcmsus-a.akamaihd.net/cms/content_entry_media/AZNVF42KU9BY1756855683235.png') center/cover no-repeat;
 }
 
@@ -874,6 +875,18 @@ footer .footer-horde-logo{position:absolute;left:50%;top:0;transform:translate(-
  #siteNav .navlinks.is-open{display:grid;animation:nav-menu-in .16s ease-out both}
  #siteNav .navlinks a{width:100%;min-height:44px;padding:11px 13px;text-align:left;justify-content:flex-start;border-radius:7px;font-size:.82rem}
 }
+
+/* Run report masthead follows the same continuous artwork and glass treatment as the guild page. */
+body[data-page="run"] main>.wrap{width:min(1120px,calc(100% - 32px));padding:0 0 34px;background:none;border:0;border-radius:0;box-shadow:none;backdrop-filter:none}
+body[data-page="run"] .run-hero.has-dungeon-art{isolation:isolate;min-height:300px;padding:34px 32px;margin-bottom:20px;border:0;border-radius:0;background-image:none!important;box-shadow:none;overflow:visible}
+body[data-page="run"] .run-hero.has-dungeon-art:before{content:"";position:absolute;inset:-16px -24px;z-index:-1;pointer-events:none;background:linear-gradient(90deg,transparent,rgba(5,9,16,.82) 6%,rgba(5,9,16,.68) 60%,transparent);mask-image:linear-gradient(transparent,#000 14%,#000 84%,transparent)}
+body[data-page="run"] .run-hero.has-dungeon-art h1{text-shadow:0 3px 20px #000b}
+body[data-page="run"] #runStats{position:relative;gap:0;padding:18px 8px;background:linear-gradient(90deg,transparent,rgba(5,9,16,.58) 8%,rgba(5,9,16,.66) 50%,rgba(5,9,16,.58) 92%,transparent)}
+body[data-page="run"] #runStats:after{content:"";position:absolute;left:5%;right:5%;bottom:0;height:1px;background:linear-gradient(90deg,transparent,rgba(216,181,102,.42),transparent)}
+body[data-page="run"] #runStats .stat-card{position:relative;padding:16px 18px;border:0;border-radius:0;background:none;box-shadow:none;text-align:center}
+body[data-page="run"] #runStats .stat-card:before{content:"";position:absolute;left:0;top:20%;bottom:20%;width:1px;background:linear-gradient(transparent,rgba(218,194,142,.26),transparent)}
+body[data-page="run"] #runStats .stat-card:first-child:before{display:none}
+@media(max-width:650px){body[data-page="run"] main>.wrap{width:calc(100% - 20px)}body[data-page="run"] .run-hero.has-dungeon-art{min-height:240px;padding:24px 14px}body[data-page="run"] .run-hero.has-dungeon-art:before{inset:-10px 0}body[data-page="run"] #runStats{padding:10px 0;row-gap:8px}body[data-page="run"] #runStats .stat-card{padding:12px 6px}body[data-page="run"] #runStats .stat-card:nth-child(3):before{display:none}}
 @media(max-width:560px){
  #siteNav{padding:10px 8px 8px}
  #siteNav nav .wrap{padding:0 12px;gap:10px}
