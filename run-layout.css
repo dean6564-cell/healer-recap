@@ -58,7 +58,7 @@ body[data-page="run"] .report-tab-panel{scroll-margin-top:var(--report-scroll-of
 .wipe-stat{display:block;text-align:left;font:inherit;color:inherit;margin:0}
 .wipe-stat.has-wipes{border-color:#f0757559;background:linear-gradient(135deg,#3b2026aa,#111821e8);cursor:pointer}
 .wipe-stat.has-wipes .num,.wipe-stat.has-wipes .label{color:#ff9c9c}
-.wipe-stat.no-wipes{border-color:#70dba459;background:linear-gradient(135deg,#16352baa,#111821e8)}
+.wipe-stat.no-wipes{border-color:#70dba459;background:linear-gradient(135deg,#16352baa,#111821e8);cursor:pointer;text-decoration:none}
 .wipe-stat.no-wipes .num,.wipe-stat.no-wipes .label{color:#8fe3af}
 .wipe-stat:focus-visible{outline:2px solid var(--gold-light);outline-offset:4px}
 .wipe-boss-picker{position:fixed;inset:auto;margin:0;padding:16px;width:320px;max-width:calc(100vw - 24px);max-height:70vh;overflow:auto;background:#0d151f;color:var(--text);border:1px solid var(--panel-edge);border-radius:12px;box-shadow:0 12px 34px #0008}
@@ -73,7 +73,7 @@ body[data-page="run"] .report-tab-panel{scroll-margin-top:var(--report-scroll-of
 .utility-player>header>.player-role{flex:none}
 
 /* Match the Player deaths hover highlight on actionable wipe cards. */
-.wipe-stat.has-wipes:hover{box-shadow:0 0 0 1px currentColor;color:#fff}
+.wipe-stat.has-wipes:hover,.wipe-stat.no-wipes:hover{box-shadow:none;color:inherit}
 .wipe-stat.has-wipes{transition:.2s}
 
 /* Selectable player filters and individual encounter attempts. */
