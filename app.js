@@ -245,6 +245,12 @@ function selectedCharacterMember(){
  return match||null;
 }
 function selectedDashboardHref(member=selectedCharacterRecord()){return member?`dashboard.html?character=${encodeURIComponent(member.key||`${member.realm}/${String(member.name).toLowerCase()}`)}`:'index.html'}
+function selectedCharacterParam(member=selectedCharacterRecord()){return member?`character=${encodeURIComponent(member.key||`${member.realm}/${String(member.name).toLowerCase()}`)}`:''}
+function characterHref(path,member=selectedCharacterRecord()){
+ const param=selectedCharacterParam(member);if(!param)return path;
+ const hashIndex=path.indexOf('#'),hash=hashIndex>=0?path.slice(hashIndex):'',base=hashIndex>=0?path.slice(0,hashIndex):path;
+ return `${base}${base.includes('?')?'&':'?'}${param}${hash}`;
+}
 function runIncludesCharacter(run,member){return !!member&&(run.players||[]).some(player=>{const p=playerParts(player);return rosterKey(p.name,p.realm)===rosterKey(member.name,member.realm)})}
 function selectedCharacterRuns(runs,member=selectedCharacterMember()){return member?runs.filter(r=>runIncludesCharacter(r,member)):runs}
 function classIcon(member){const icon={Warrior:'classicon_warrior',Paladin:'classicon_paladin',Hunter:'classicon_hunter',Rogue:'classicon_rogue',Priest:'classicon_priest','Death Knight':'classicon_deathknight',Shaman:'classicon_shaman',Mage:'classicon_mage',Warlock:'classicon_warlock',Monk:'classicon_monk',Druid:'classicon_druid','Demon Hunter':'classicon_demonhunter',Evoker:'classicon_evoker'}[member?.class]||'inv_misc_questionmark';return `https://wow.zamimg.com/images/wow/icons/large/${icon}.jpg`}
@@ -339,7 +345,7 @@ function inGuildArea(){return document.body.dataset.page==='guild'||new URLSearc
 function nav(active=''){
  const el=document.querySelector('#siteNav');if(!el)return;
  const guild=inGuildArea(),hasCharacterContext=new URLSearchParams(location.search).has('character'),selected=guild&&!hasCharacterContext?null:selectedCharacterRecord(),dashboardName=selected?.name||'M+ Recap',dashboardLink=selectedDashboardHref(selected);
- const guildLink=selected?`guild.html?character=${encodeURIComponent(selected.key||'selected')}`:'guild.html';
+ const guildLink=selected?`guild.html?character=${encodeURIComponent(selected.key||'selected')}`:'guild.html',insightsLink=characterHref('insights.html',selected),libraryLink=characterHref('library.html',selected);
  const dashboardBack=selected?`← ${esc(dashboardName)}’s Dashboard`:'← Character selection';
  const footer=document.querySelector('footer .wrap');
  if(footer&&!footer.querySelector('.footer-horde-logo'))footer.insertAdjacentHTML('afterbegin','<img class="footer-horde-logo" src="assets/horde-logo.svg" alt="M+ Recap" width="150" height="90">');
@@ -347,7 +353,7 @@ function nav(active=''){
  <a class="brand" href="${guild?'guild.html':dashboardLink}" aria-label="${guild?'Cause and Effect home':selected?esc(dashboardName)+' dashboard home':'Choose character'}"><img class="brand-priest-icon ${guild?'brand-guild-icon':''}" src="${guild?'assets/guild-crest.svg':esc(selected?.avatar||classIcon(selected))}" alt="" width="72" height="72"><span class="brand-rinse-wordmark">${guild?'Cause and Effect':selected?esc(dashboardName)+'’s':'M+ Recap'}<small>${guild?'Guild M+ Dashboard':selected?'M+ Dashboard':'Choose character'}</small></span><em>Midnight · Season 2</em></a>
  <button class="nav-menu-toggle" type="button" aria-expanded="false" aria-controls="site-nav-links" aria-label="Open navigation menu"><span></span><span></span><span></span></button>
  <div class="navlinks ${guild?'guild-navigation':''}" id="site-nav-links">
- ${guild?`<a href="${dashboardLink}" class="nav-back" data-nav-switch>${dashboardBack}</a><a href="${guildLink}" class="${active==='guild'?'active':''}"><img class="guild-nav-crest" src="assets/guild-crest.svg" alt="" width="26" height="26">Cause and Effect</a><a href="library.html?group=guild" class="${active==='library'?'active':''}">Run Library</a>`:`<a href="${dashboardLink}" class="${active==='home'?'active':''}">Overview</a><a href="insights.html" class="${active==='insights'?'active':''}">Insights</a><a href="library.html" class="${active==='library'?'active':''}">Run Library</a><a href="index.html" class="nav-change-character">Change character</a><a href="${guildLink}" data-nav-switch><img class="guild-nav-crest" src="assets/guild-crest.svg" alt="" width="26" height="26">Cause and Effect</a>`}
+ ${guild?`<a href="${dashboardLink}" class="nav-back" data-nav-switch>${dashboardBack}</a><a href="${guildLink}" class="${active==='guild'?'active':''}"><img class="guild-nav-crest" src="assets/guild-crest.svg" alt="" width="26" height="26">Cause and Effect</a><a href="library.html?group=guild" class="${active==='library'?'active':''}">Run Library</a>`:`<a href="${dashboardLink}" class="${active==='home'?'active':''}">Overview</a><a href="${insightsLink}" class="${active==='insights'?'active':''}">Insights</a><a href="${libraryLink}" class="${active==='library'?'active':''}">Run Library</a><a href="index.html" class="nav-change-character">Change character</a><a href="${guildLink}" data-nav-switch><img class="guild-nav-crest" src="assets/guild-crest.svg" alt="" width="26" height="26">Cause and Effect</a>`}
  </div></div></nav>`;
  const menuButton=el.querySelector('.nav-menu-toggle'),menu=el.querySelector('.navlinks');
  const closeMenu=()=>{menu.classList.remove('is-open');menuButton.setAttribute('aria-expanded','false');menuButton.setAttribute('aria-label','Open navigation menu')};
@@ -921,7 +927,8 @@ function renderLibrary(){
     document.querySelector('main .eyebrow').textContent='CAUSE AND EFFECT · MIDNIGHT · SEASON 2';
     document.querySelector('main h1 + p').textContent='Reviewed runs with two or more guild members. PUG runs remain in the main Run Library.';
   }
-  const all=sortRuns(loadRuns()).filter(r=>!guild||runGuildType(r)?.kind==='guild');
+  const member=guild?null:selectedCharacterMember();
+  const all=sortRuns(guild?loadRuns().filter(r=>runGuildType(r)?.kind==='guild'):selectedCharacterRuns(loadRuns(),member));
   const search=document.querySelector('#searchRuns'),review=document.querySelector('#reviewFilter'),result=document.querySelector('#libraryRuns'),count=document.querySelector('#libraryCount');
   function paint(){
     const q=search.value.toLowerCase().trim(),f=review.value;
@@ -1019,7 +1026,7 @@ function renderResolvedList(runs){
 }
 function renderInsights(){
   nav('insights');
-  const runs=loadRuns();
+  const runs=selectedCharacterRuns(loadRuns());
   renderFocus(runs);
   renderTrends(runs);
   renderBossHistory(runs);
