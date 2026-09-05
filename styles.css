@@ -890,9 +890,9 @@ body[data-page="run"] #runStats .stat-card:first-child:before{display:none}
 body[data-page="run"] #runStats :is(a,button).stat-card{cursor:pointer}
 body[data-page="run"] #runStats :is(a,button).stat-card .num,body[data-page="run"] #runStats :is(a,button).stat-card .label{opacity:.9;transition:opacity .2s ease,color .2s ease}
 body[data-page="run"] #runStats :is(a,button).stat-card:hover{transform:none;background:none;box-shadow:none;filter:none}
-body[data-page="run"] #runStats :is(a,button).stat-card:hover .num,body[data-page="run"] #runStats :is(a,button).stat-card:hover .label{opacity:1}
+body[data-page="run"] #runStats :is(a,button).stat-card:hover .num,body[data-page="run"] #runStats :is(a,button).stat-card:hover .label{opacity:1;color:#fff;-webkit-text-fill-color:#fff}
 body[data-page="run"] #runStats :is(a,button).stat-card .label span{display:inline-block;transition:transform .2s ease}
-body[data-page="run"] #runStats :is(a,button).stat-card:hover .label span{color:var(--gold-light);transform:translate(3px,-1px)}
+body[data-page="run"] #runStats :is(a,button).stat-card:hover .label span{color:#fff;transform:translate(3px,-1px)}
 body[data-page="run"] #runStats .boss-kill-stat.complete{text-decoration:none;cursor:pointer}
 body[data-page="run"] #runStats .boss-kill-stat.complete .num,body[data-page="run"] #runStats .boss-kill-stat.complete .label{color:#8fe3af}
 body[data-page="run"] #runStats .boss-kill-stat.complete:hover{background:none;box-shadow:none}
