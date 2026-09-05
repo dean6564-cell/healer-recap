@@ -437,10 +437,11 @@ function renderDashboard(){
   const classSlug=String(member.class||'').toLowerCase().replace(/[^a-z]+/g,'-');
   document.querySelector('.dashboard-intro')?.style.setProperty('--character-class-art',`url('assets/class-bg-${classSlug}.webp')`);
   document.title=`${member.name}’s M+ Dashboard · Midnight · Season 2`;
-  const heading=document.querySelector('#characterDashboardTitle'),identity=document.querySelector('#characterIdentity'),intro=document.querySelector('#characterIntro'),portrait=document.querySelector('#characterPortrait');
+  const heading=document.querySelector('#characterDashboardTitle'),identity=document.querySelector('#characterIdentity'),intro=document.querySelector('#characterIntro'),portrait=document.querySelector('#characterPortrait'),heroScore=document.querySelector('#characterHeroScore');
   if(heading)heading.textContent=`${member.name}’s M+ Dashboard`;
   if(identity)identity.innerHTML=`<span>${esc(member.spec||member.class||'Guild member')}</span><span class="rinse-healer" style="color:${classColours[member.class]||'#86efac'}">${roleIcon(member.role)} ${esc(member.role||'')}</span><span>${esc(String(member.realm||'').replace(/-/g,' '))} · EU</span>`;
   if(intro)intro.textContent=`${member.name}’s recorded dungeon history, run results and available reviews.`;
+  if(heroScore&&member.score!=null&&Number.isFinite(Number(member.score))){heroScore.hidden=false;heroScore.innerHTML=`<strong>${Number(member.score).toLocaleString('en-GB',{minimumFractionDigits:1,maximumFractionDigits:1})}</strong><span>MYTHIC+ SCORE</span>`}
   if(portrait){portrait.src=member.avatar||classIcon(member);portrait.alt=`${member.name}, ${member.class}`;portrait.dataset.fallback=classIcon(member);portrait.addEventListener('error',()=>{if(portrait.src!==portrait.dataset.fallback)portrait.src=portrait.dataset.fallback},{once:true})}
   const profileTitle=document.querySelector('#characterProfileTitle');if(profileTitle)profileTitle.textContent=`${member.name}’s recorded runs`;
   nav('home');
