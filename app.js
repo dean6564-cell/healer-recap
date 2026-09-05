@@ -836,9 +836,10 @@ function renderRun(){
   document.querySelector('#runTitle').innerHTML=dungeonEmblem(r.dungeon)+`<span>${esc(r.dungeon)}${r.keyLevel?` +${r.keyLevel}`:''}</span>`;
   document.querySelector('#runTitle').classList.add('dungeon-name-heading');
   document.querySelector('#runSub').innerHTML=`${fmtDate(r.date)} · ${esc(r.startTime||'')}${r.endTime?`–${esc(r.endTime)}`:''} · ${r.success?'Completed':'Not completed'} · ${statusPill(r)}`;
+  const allBossesKilled=r.success&&Number(r.bossKills)>0;
   document.querySelector('#runStats').innerHTML=`
     ${runTiming(r).state==='unfinished'?'<div class="stat-card timing-unfinished"><div class="num">—</div><div class="label">Not completed</div></div>':`<div class="stat-card timing-${runTiming(r).state}"><div class="num">${fmtDuration(r.durationSeconds)}</div><div class="label">${runTiming(r).label}</div><small class="timing-margin">${runTiming(r).detail}</small></div>`}
-    <div class="stat-card"><div class="num">${r.bossKills||0}</div><div class="label">Boss kills</div></div>
+    ${allBossesKilled?`<a class="stat-card boss-kill-stat complete" href="#bosses" aria-label="${r.bossKills} boss kills. Open Boss view"><div class="num">${r.bossKills}</div><div class="label">Boss kills <span aria-hidden="true">↗</span></div></a>`:`<div class="stat-card boss-kill-stat"><div class="num">${r.bossKills||0}</div><div class="label">Boss kills</div></div>`}
     ${renderWipeStat(r)}
     <a class="stat-card death-stat-link ${r.deaths>0?'has-deaths':r.deaths===0?'no-deaths':''}" href="#incidents" aria-label="${typeof r.deaths==='number'?r.deaths:'Unknown'} player deaths. Open Damage and deaths"><div class="num">${typeof r.deaths==='number'?r.deaths:'—'}</div><div class="label">Player deaths <span aria-hidden="true">↗</span></div></a>`;
   document.querySelector('#encounters').innerHTML=(r.encounters||[]).map((e,i)=>`
@@ -856,6 +857,12 @@ function renderRun(){
   document.querySelector('.death-stat-link').addEventListener('click',event=>{
     event.preventDefault();
     const tab=document.querySelector('#tab-incidents');
+    tab.click();tab.focus({preventScroll:true});
+    tab.closest('.report-tabs').scrollIntoView({block:'start',behavior:matchMedia('(prefers-reduced-motion: reduce)').matches?'auto':'smooth'});
+  });
+  document.querySelector('.boss-kill-stat.complete')?.addEventListener('click',event=>{
+    event.preventDefault();
+    const tab=document.querySelector('#tab-bosses');
     tab.click();tab.focus({preventScroll:true});
     tab.closest('.report-tabs').scrollIntoView({block:'start',behavior:matchMedia('(prefers-reduced-motion: reduce)').matches?'auto':'smooth'});
   });
