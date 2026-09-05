@@ -539,7 +539,7 @@ tr.has-overkill { background:rgba(239,68,68,.07); }
 
 .party-utility{margin-bottom:26px}
 .utility-party-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(290px,1fr));gap:12px}
-.utility-player{border:1px solid var(--border);border-radius:12px;padding:16px;background:rgba(18,24,32,.65)}
+.utility-player{position:relative;overflow:hidden;border:1px solid var(--border);border-radius:12px;padding:16px;background:linear-gradient(90deg,rgba(8,14,22,.96) 0%,rgba(8,14,22,.82) 48%,rgba(8,14,22,.34) 100%),var(--utility-class-art) 78% center/cover no-repeat,rgba(18,24,32,.65)}
 .utility-player header{display:flex;justify-content:space-between;align-items:center;gap:8px}
 .utility-player header>strong{font-size:.8rem;overflow-wrap:anywhere}
 .utility-player-stats{display:grid;grid-template-columns:repeat(4,1fr);gap:8px;margin-top:16px}
@@ -959,10 +959,3 @@ body[data-page="dashboard"] main>.wrap>.section>.section-title{margin-top:0}
  body[data-page="dashboard"] main>.wrap{width:calc(100% - 20px)}
  body[data-page="dashboard"] main>.wrap>.section{margin-top:26px;padding:18px 12px 20px;border-radius:14px}
 }
-/* Run reports use the same artwork-led, edge-faded structure as guild and character pages. */
-body[data-page="run"] main>.wrap{width:min(1120px,calc(100% - 32px));padding:0 0 34px;background:none;border:0;border-radius:0;box-shadow:none;backdrop-filter:none}
-body[data-page="run"] .run-hero.has-dungeon-art{isolation:isolate;min-height:270px;padding:40px 32px 30px;margin-bottom:22px;border:0;border-radius:0;background-size:0 0!important;overflow:visible;box-shadow:none}
-body[data-page="run"] .run-hero.has-dungeon-art:before{content:"";position:absolute;inset:-18px -24px;z-index:-1;pointer-events:none;background-image:inherit;background-position:center 68%;background-size:cover;background-repeat:no-repeat;mask-image:linear-gradient(transparent,#000 12%,#000 84%,transparent)}
-body[data-page="run"] #runStats{position:relative;gap:0;padding:16px 8px;background:linear-gradient(90deg,transparent,rgba(5,9,16,.58) 8%,rgba(5,9,16,.68) 50%,rgba(5,9,16,.58) 92%,transparent)}
-body[data-page="run"] #runStats .stat-card{border:0;border-radius:0;background:none;box-shadow:none}
-@media(max-width:650px){body[data-page="run"] main>.wrap{width:calc(100% - 20px)}body[data-page="run"] .run-hero.has-dungeon-art{min-height:230px;padding:28px 14px 24px}body[data-page="run"] .run-hero.has-dungeon-art:before{inset:-10px 0}body[data-page="run"] #runStats{padding:10px 0;row-gap:8px}}
