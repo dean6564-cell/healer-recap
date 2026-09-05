@@ -898,9 +898,11 @@ body[data-page="run"] #runStats .boss-kill-stat.complete .num,body[data-page="ru
 body[data-page="run"] #runStats .boss-kill-stat.complete:hover{background:none;box-shadow:none}
 
 /* Preserve the class artwork on report character cards after shared card styling. */
-body[data-page="run"] .utility-player{background:linear-gradient(90deg,rgba(8,14,22,.96) 0%,rgba(8,14,22,.82) 46%,rgba(8,14,22,.28) 100%),var(--utility-class-art) 82% center/cover no-repeat,rgba(18,24,32,.65)}
+body[data-page="run"] .utility-player{isolation:isolate;background:rgba(10,16,25,.7)}
+body[data-page="run"] .utility-player>.utility-card-art{position:absolute;inset:0;z-index:0;pointer-events:none;background:linear-gradient(90deg,rgba(8,14,22,.94) 0%,rgba(8,14,22,.7) 42%,rgba(8,14,22,.12) 100%),var(--utility-class-art) 76% center/cover no-repeat;opacity:.78}
+body[data-page="run"] .utility-player>header,body[data-page="run"] .utility-player>.utility-player-stats,body[data-page="run"] .utility-player>details{position:relative;z-index:1}
 body[data-page="run"] .utility-player summary{transition:color .18s ease}
-body[data-page="run"] .utility-player summary:hover{color:#fff}
+body[data-page="run"] .utility-player summary:hover,body[data-page="run"] .utility-player summary:focus-visible{color:#fff}
 @media(max-width:650px){body[data-page="run"] main>.wrap{width:calc(100% - 20px)}body[data-page="run"] .run-hero.has-dungeon-art{min-height:240px;padding:24px 14px}body[data-page="run"] .run-hero.has-dungeon-art:before{inset:-10px 0}body[data-page="run"] #runStats{padding:10px 0;row-gap:8px}body[data-page="run"] #runStats .stat-card{padding:12px 6px}body[data-page="run"] #runStats .stat-card:nth-child(3):before{display:none}}
 @media(max-width:560px){
  #siteNav{padding:10px 8px 8px}
