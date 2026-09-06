@@ -727,16 +727,32 @@ function utilityCharacterName(r,name){
 
 function renderPartyUtility(r){
   const u=r.utilitySummary,selected=selectedReportPlayer(r),players=[...(r.players||[])].sort((a,b)=>Number(b===selected)-Number(a===selected));
-  return `<section class="party-utility"><div class="recap-heading"><div><span class="tactic-eyebrow">YOUR PARTY · FULL RUN</span><h3>Deaths, control & dispels</h3></div></div>
+  return `<section class="party-utility"><div class="recap-heading utility-section-heading"><div><span class="tactic-eyebrow">YOUR PARTY · FULL RUN</span><h3>Deaths, control & dispels</h3></div><div class="avoidable-view-control" role="group" aria-label="Avoidable damage coverage"><small>AVOIDABLE DAMAGE</small><span><button type="button" data-avoidable-view="death" aria-pressed="true">Death windows</button><button type="button" data-avoidable-view="full" aria-pressed="false">Full run</button></span></div></div>
   <p class="muted">Deaths, avoidable damage within captured 10-second death windows, successful interrupts and removals · CC counts affected targets, not casts stopped.</p>
+  <p class="avoidable-view-note" data-full-run-unavailable hidden>Full-run avoidable damage is unavailable for this report. Death-window evidence remains available.</p>
   <div class="utility-party-grid character-overview-grid">${players.map(name=>{
     const p=u?.players?.find(x=>x.name===name);
-    const classSlug=utilityCharacterClass(r,name).toLowerCase().replace(/[^a-z]+/g,'-'),recaps=(r.deathRecaps?.deaths||[]).filter(d=>d.player===name),evidence=recaps.map(d=>recapAvoidableEvidence(d,r.review)),avoidable=evidence.reduce((sum,x)=>sum+x.amount,0),avoidableKnown=evidence.some(x=>x.known),windowCount=recaps.length,metrics=[['deaths','Deaths',Number(r.deathBreakdown?.[name]||0)],['avoidable','Avoidable damage',avoidableKnown?avoidable.toLocaleString('en-GB'):'â€”'],['interrupts','Interrupts',p?.interrupts??'â€”'],['ccApplications','CC applied',p?.ccApplications??'â€”'],['dispels','Dispels',p?.dispels??'â€”'],['purges','Purges',p?.purges??'â€”']];
+    const classSlug=utilityCharacterClass(r,name).toLowerCase().replace(/[^a-z]+/g,'-'),recaps=(r.deathRecaps?.deaths||[]).filter(d=>d.player===name),evidence=recaps.map(d=>recapAvoidableEvidence(d,r.review)),avoidable=evidence.reduce((sum,x)=>sum+x.amount,0),avoidableKnown=evidence.some(x=>x.known),windowCount=recaps.length,fullRecord=r.fullRunAvoidableDamage?.players?.[name],fullRaw=typeof fullRecord==='object'?fullRecord?.amount:fullRecord,fullKnown=fullRaw!==null&&fullRaw!==undefined&&Number.isFinite(Number(fullRaw)),metrics=[['deaths','Deaths',Number(r.deathBreakdown?.[name]||0)],['avoidable','Avoidable damage',avoidableKnown?avoidable.toLocaleString('en-GB'):'â€”'],['interrupts','Interrupts',p?.interrupts??'â€”'],['ccApplications','CC applied',p?.ccApplications??'â€”'],['dispels','Dispels',p?.dispels??'â€”'],['purges','Purges',p?.purges??'â€”']];
     return `<article class="utility-player character-overview-card ${name===selected?'is-selected':''}"${classSlug?` style="--utility-class-art:url('assets/class-bg-${esc(classSlug)}.webp')"`:''}><span class="utility-card-art" aria-hidden="true"></span><header><span class="utility-player-identity">${guildPartyPortrait(name)}<span>${name===selected?'<small>SELECTED CHARACTER · THIS RUN</small>':''}${utilityCharacterName(r,name)}</span></span>${playerRoleBadge(r,name)}</header>
-    <div class="utility-player-stats">${metrics.map(([key,label,value])=>`<div><b>${esc(String(value))}</b><span>${esc(label)}${key==='avoidable'?` <span class="spell-help utility-metric-help"><button type="button" class="spell-trigger" data-guide-label="Avoidable damage scope" aria-label="Explain avoidable damage scope" aria-expanded="false" aria-controls="spell-guide-card"><span class="spell-info" aria-hidden="true">i</span></button><template class="spell-guide-content"><header class="spell-card-head"><div><span class="spell-card-eyebrow">DAMAGE COVERAGE</span><h4>Avoidable damage in death windows</h4></div><button type="button" class="spell-card-close" aria-label="Close avoidable damage explanation">×</button></header><p>This total only includes verified avoidable damage recorded during this character's captured final 10 seconds before death. Survived avoidable damage elsewhere in the run is not included.</p><footer class="spell-card-sources"><p><strong>0</strong> means the captured evidence confirms none. <strong>â€”</strong> means there is not enough captured evidence to calculate it.</p></footer></template></span><small>${windowCount} captured ${windowCount===1?'death window':'death windows'}</small>`:''}</span></div>`).join('')}</div>
+    <div class="utility-player-stats">${metrics.map(([key,label,value])=>`<div${key==='avoidable'?` data-avoidable-metric data-death-value="${esc(String(value))}" data-death-note="${windowCount} captured ${windowCount===1?'death window':'death windows'}" data-full-value="${fullKnown?esc(Number(fullRaw).toLocaleString('en-GB')):''}" data-full-note="${fullKnown?'Full-run analysis':'Full-run data unavailable'}"`:''}><b>${esc(String(value))}</b><span>${esc(label)}${key==='avoidable'?` <span class="spell-help utility-metric-help"><button type="button" class="spell-trigger" data-guide-label="Avoidable damage scope" aria-label="Explain avoidable damage scope" aria-expanded="false" aria-controls="spell-guide-card"><span class="spell-info" aria-hidden="true">i</span></button><template class="spell-guide-content"><header class="spell-card-head"><div><span class="spell-card-eyebrow">DAMAGE COVERAGE</span><h4>Avoidable damage coverage</h4></div><button type="button" class="spell-card-close" aria-label="Close avoidable damage explanation">×</button></header><p><strong>Death windows</strong> includes verified avoidable damage in the captured final 10 seconds before each death. <strong>Full run</strong> includes survived avoidable damage too when the uploaded report contains reliable full-run classification.</p><footer class="spell-card-sources"><p><strong>0</strong> means the selected coverage confirms none. <strong>â€”</strong> means there is not enough evidence to calculate it.</p></footer></template></span><small>${windowCount} captured ${windowCount===1?'death window':'death windows'}</small>`:''}</span></div>`).join('')}</div>
     ${p?.abilities?.length?`<details><summary>Ability breakdown</summary><ul>${p.abilities.map(b=>`<li><span>${renderUtilityHelp(b)} <small>· ${esc(metrics.find(m=>m[0]===b.kind)?.[1]||b.kind)}</small></span><b>${b.count}</b></li>`).join('')}</ul></details>`:''}</article>`;
   }).join('')}</div>
   ${u?`<details class="tactics-method"><summary>How these counts work</summary><p>${esc(u.method)}</p></details>`:'<p class="muted">Utility counts have not been analysed for this run.</p>'}</section>`;
+}
+function setupAvoidableView(root){
+ const key='mplus-recap-avoidable-view-v1',buttons=[...root.querySelectorAll('[data-avoidable-view]')],metrics=[...root.querySelectorAll('[data-avoidable-metric]')],note=root.querySelector('[data-full-run-unavailable]');
+ if(!buttons.length)return;
+ const hasFull=metrics.some(metric=>metric.dataset.fullValue!=='');
+ const activate=view=>{
+  view=view==='full'?'full':'death';
+  buttons.forEach(button=>button.setAttribute('aria-pressed',String(button.dataset.avoidableView===view)));
+  metrics.forEach(metric=>{metric.querySelector('b').textContent=view==='full'?(metric.dataset.fullValue||'â€”'):metric.dataset.deathValue;metric.querySelector('small').textContent=view==='full'?metric.dataset.fullNote:metric.dataset.deathNote;});
+  if(note)note.hidden=view!=='full'||hasFull;
+  root.dataset.avoidableView=view;
+ };
+ let saved='death';try{saved=localStorage.getItem(key)||'death'}catch{}
+ activate(saved);
+ buttons.forEach(button=>button.addEventListener('click',()=>{activate(button.dataset.avoidableView);try{localStorage.setItem(key,button.dataset.avoidableView)}catch{}}));
 }
 function selectedReportPlayer(r){
  const requested=new URLSearchParams(location.search).get('character'),member=[...guildRoster.values()].find(m=>m.key===requested),saved=selectedCharacterRecord();
@@ -786,7 +802,7 @@ function renderReview(r){
     while(section.firstChild)body.append(section.firstChild);
     detail.append(summary,body);section.replaceWith(detail);
   });
-  setupRecapFilters(el);setupBossExplorer(r);
+  setupRecapFilters(el);setupBossExplorer(r);setupAvoidableView(el);
   const buttons=[...el.querySelectorAll('[data-report-tab]')];
   const reportTabs=el.querySelector('.report-tabs'),siteHeader=document.getElementById('siteNav');
   siteHeader.querySelector('.report-tabs')?.remove();
