@@ -99,7 +99,7 @@ function renderRecapOpportunitySummary(d,v){
   <template class="spell-guide-content"><header class="spell-card-head"><div><span class="spell-card-eyebrow">THIS PLAYER · THIS DEATH WINDOW</span><h4>${esc(action.label)}</h4></div><button type="button" class="spell-card-close" aria-label="Close opportunity details">×</button></header>
   
   <p class="opportunity-window-note">${events.length} related damage ${events.length===1?'event':'events'} in the final 10 seconds.</p>
-  ${events.map(({e,g})=>`<div class="spell-card-section opportunity-instance"><h5>${esc(e.time)} · ${e.offsetSeconds>0?'+':''}${Number(e.offsetSeconds).toFixed(2)}s</h5><p><strong>${esc(e.spell)}</strong> <small>#${esc(String(e.spellId))}</small><br>From ${esc(e.source)} · ${Number(e.amount).toLocaleString('en-GB')} damage</p><h5>Action to look for</h5><p>${esc(g.tactic)}</p>${researchLinks(v,g.sourceIds)}</div>`).join('')}
+  ${events.map(({e,g})=>`<div class="spell-card-section opportunity-instance"><h5>${esc(e.time)} · ${e.offsetSeconds>0?'+':''}${Number(e.offsetSeconds).toFixed(2)}s</h5><p><strong>${esc(e.spell)}</strong> <small>#${esc(String(e.spellId))}</small><br>From ${esc(e.source)} · ${Number(e.amount).toLocaleString('en-GB')} damage</p><h5>Action to look for</h5><p>${esc(namedMechanicTactic(g))}</p>${researchLinks(v,g.sourceIds)}</div>`).join('')}
   <footer class="spell-card-sources"><p>Related hits are not separate proven missed actions. Availability and timing must be checked; repeated ticks may belong to one cast or debuff.</p></footer></template></span>`).join('')}</span>`:'';
 }
 function recapAvoidableEvidence(d,v){
@@ -116,8 +116,8 @@ function renderFinalDamage(d,v){
   const num=n=>Number(n).toLocaleString('en-GB');
   return `<section class="recap-final-hit"><div class="recap-final-heading"><div><span class="tactic-eyebrow">${esc(d.lastDamageLabel||'Last damage in the sequence')}</span><div class="recap-final-spell">${h?renderSpellHelp(h,v):'Not established'}</div>${h?`<p class="recap-final-source">From <strong>${esc(h.source)}</strong> · ${esc(h.time)}</p>`:''}</div>
   ${h?`<div class="recap-final-amount"><small>Hit damage · includes overkill</small><strong>${num(h.amount)}</strong>${h.overkill>0?`<span class="overkill-value">${num(h.overkill)} overkill</span>`:''}</div>`:''}</div>
-  ${h?`<div class="recap-final-response"><h4>${renderVerifiedActions(g)?'Opportunity on this hit':'Response to review'}</h4><p>${esc(g?.tactic||d.correction||'Counterplay has not been established for this hit.')}</p>${researchLinks(v,g?.sourceIds||[])}</div>`:''}
-  ${other.length?`<details class="recap-other-opportunities"><summary>Other opportunities in the final 10 seconds (${other.length})</summary>${other.map(e=>`<div><strong>${renderSpellHelp(e,v)}</strong><p>${esc(v.spellGuide[e.spellId].tactic)}</p></div>`).join('')}</details>`:''}
+  ${h?`<div class="recap-final-response"><h4>${renderVerifiedActions(g)?'Opportunity on this hit':'Response to review'}</h4><p>${esc(g?namedMechanicTactic(g):d.correction||'Counterplay has not been established for this hit.')}</p>${researchLinks(v,g?.sourceIds||[])}</div>`:''}
+  ${other.length?`<details class="recap-other-opportunities"><summary>Other opportunities in the final 10 seconds (${other.length})</summary>${other.map(e=>`<div><strong>${renderSpellHelp(e,v)}</strong><p>${esc(namedMechanicTactic(v.spellGuide[e.spellId]))}</p></div>`).join('')}</details>`:''}
   <p class="recap-opportunity-note">Opportunities show known counterplay for recorded damage. They do not by themselves confirm a missed action, available cooldown or individual fault. See the assessment below for what this run supports.</p></section>`;
 }
 function groupRecapAttempts(r,deaths){
@@ -623,16 +623,11 @@ function renderVerifiedActions(g){
   const types=['interrupt','cleanse','control','move','soak','defensive'];
   return (g?.verifiedActions||[]).filter(x=>types.includes(x.type)&&x.sourceIds?.length).map(x=>`<span class="verified-action action-${x.type}"><span aria-hidden="true">↗</span> Opportunity: ${esc(x.label)}</span>`).join('');
 }
-let activeReportRole='';
-function perspectiveMechanicTactic(g,h){
- const tailored=g?.roleTactics?.[activeReportRole];
- if(tailored)return tailored;
- if(Number(h?.spellId)===0){
-  if(activeReportRole==='Tank')return 'Gather and control enemies before the party resumes. Keep hostile melee facing and reach away from party members; kite Infernal contact on Lithiel.';
-  if(activeReportRole==='Healer')return 'Let the tank establish control before moving in to heal. Stay outside hostile melee reach and keep enough distance to react if an enemy changes target.';
-  if(activeReportRole==='DPS')return 'Let the tank establish control before attacking. Stay outside hostile melee reach and stop damage briefly if an enemy changes target.';
- }
- return g?.tactic||'Check the source, hit amount and surrounding events in the timeline.';
+let activeReportRun=null;
+function namedMechanicTactic(g){
+ const tactic=g?.tactic||'Check the source, hit amount and surrounding events in the timeline.';
+ const tank=(activeReportRun?.playerRoles||[]).find(player=>player.role==='Tank')?.name;
+ return tank&&/^Tank\b/.test(tactic)?tactic.replace(/^Tank\b/,playerParts(tank).name):tactic;
 }
 function renderSpellHelp(h,v){
   const known=v?.spellGuide?.[h.spellId],label=esc(h.spell);
@@ -649,7 +644,7 @@ function renderSpellHelp(h,v){
   ${g.verifiedActions?.length?`<div class="verified-counterplay"><h5>Opportunity to prevent damage</h5><div class="spell-action-badges">${renderVerifiedActions(g)}</div><p>Watch for this mechanic next time and use the response below. Damage was recorded and a counter is known; whether it was available in this moment is not established.</p></div>`:''}
   <div class="spell-caster"><h5>Source of this hit</h5><p>${esc(h.source||'Not recorded')}</p></div>
   <div class="spell-card-section"><h5>What happens</h5><p>${esc(g.description)}</p></div>
-  <div class="spell-card-section spell-action"><h5>Next time — what to do</h5><p>${esc(perspectiveMechanicTactic(g,h))}</p></div>
+  <div class="spell-card-section spell-action"><h5>Next time — what to do</h5><p>${esc(namedMechanicTactic(g))}</p></div>
   <div class="spell-options"><div><h5>Interrupt</h5><p>${esc(g.interrupt)}</p></div><div><h5>Dispel</h5><p>${esc(g.dispel)}</p></div></div>
   <footer class="spell-card-sources"><h5>${known?'Tactics sources':'Evidence status'}</h5>${known?researchLinks(v,g.sourceIds):'<p>Source and spell ID come from this run’s combat log. Tactics research is pending; this hit alone does not establish a player mistake.</p>'}</footer></template></span>`;
 }
@@ -743,41 +738,11 @@ function renderPartyUtility(r){
   }).join('')}</div>
   ${u?`<details class="tactics-method"><summary>How these counts work</summary><p>${esc(u.method)}</p></details>`:'<p class="muted">Utility counts have not been analysed for this run.</p>'}</section>`;
 }
-function runPerspective(r){
- const params=new URLSearchParams(location.search),requested=params.get('character'),saved=selectedCharacterRecord();
- const requestedMember=[...guildRoster.values()].find(member=>member.key===requested),matches=(player,value)=>{if(!value)return false;const p=playerParts(player),target=typeof value==='object'?value:requestedMember;return player===value||rosterKey(p.name,p.realm)===value||(target&&rosterKey(p.name,p.realm)===rosterKey(target.name,target.realm))};
- let player=(r.players||[]).find(p=>matches(p,requested))||(r.players||[]).find(p=>matches(p,saved));
- if(!player)player=(r.players||[]).find(p=>playerParts(p).name.toLowerCase()==='rinse')||(r.players||[])[0]||'';
- return {mode:params.get('view')==='party'?'party':'personal',player};
-}
-function reviewSubjectPlayer(r){
- const declared=r.review?.subjectPlayer||r.analysisSubject||r.uploaderCharacter;
- if(declared){const match=(r.players||[]).find(player=>player===declared||playerParts(player).name.toLowerCase()===String(declared).toLowerCase());if(match)return match}
- return (r.players||[]).find(player=>playerParts(player).name.toLowerCase()==='rinse')||(r.players||[])[0]||'';
-}
-function perspectiveMeta(r,player){
- const parts=playerParts(player),member=guildRoster.get(rosterKey(parts.name,parts.realm)),role=playerRoleFor(r,player,member?.role),roleEntry=(r.playerRoles||[]).find(x=>x.name===player)||{};
- return {name:parts.name||player,player,role:role||'Role unknown',spec:member?.spec||'',className:member?.class||utilityCharacterClass(r,player),specializationId:roleEntry.specializationId,portrait:deathPlayerPortrait(r,player)};
-}
-function renderPerspectiveBar(r,perspective){
- const meta=perspectiveMeta(r,perspective.player);
- return `<section class="perspective-bar" aria-label="Run report perspective"><div class="perspective-switch" role="group" aria-label="Report view"><button type="button" data-perspective-mode="personal" class="${perspective.mode==='personal'?'active':''}" aria-pressed="${perspective.mode==='personal'}">${esc(meta.name)}’s Analysis</button><button type="button" data-perspective-mode="party" class="${perspective.mode==='party'?'active':''}" aria-pressed="${perspective.mode==='party'}">Party Overview</button></div><div class="perspective-current">${meta.portrait}<span><small>${perspective.mode==='personal'?'CHARACTER PERSPECTIVE':'RUN CONTEXT'}</small><strong>${perspective.mode==='personal'?esc(meta.name):'Entire party'}</strong><em>${perspective.mode==='personal'?esc([meta.spec,meta.className,meta.role].filter(Boolean).join(' · ')):'Shared events and group performance'}</em></span></div></section>`;
-}
-function renderPersonalSnapshot(r,player){
- const meta=perspectiveMeta(r,player),utility=r.utilitySummary?.players?.find(x=>x.name===player)||{},deaths=Number(r.deathBreakdown?.[player]||0),recaps=(r.deathRecaps?.deaths||[]).filter(d=>d.player===player),avoidableEvidence=recaps.map(d=>recapAvoidableEvidence(d,r.review)),avoidable=avoidableEvidence.reduce((sum,x)=>sum+x.amount,0),avoidableKnown=avoidableEvidence.some(x=>x.known),sequenceNotes=[...new Set(recaps.map(d=>d.deathSequenceContext||d.sequenceContext).filter(Boolean))],combatResNotes=[...new Set(recaps.map(d=>d.combatResurrectionContext).filter(Boolean))];
- const priorities=meta.role==='Healer'?'Healing, dispels, survival and avoidable pressure':meta.role==='Tank'?'Mitigation, control, interrupts and boss targeting':meta.role==='DPS'?'Interrupts, defensives, control and dangerous mechanics':'Recorded actions, deaths and avoidable pressure';
- const metrics=[['Deaths',deaths],['Avoidable damage in captured death windows',avoidableKnown?avoidable.toLocaleString('en-GB'):'—'],['Interrupts',utility.interrupts??'—'],['CC applied',utility.ccApplications??'—'],['Dispels',utility.dispels??'—'],['Purges',utility.purges??'—']];
- return `<section class="personal-snapshot"><header>${meta.portrait}<div><span class="tactic-eyebrow">${esc(meta.role)} PERSPECTIVE</span><h2>${esc(meta.name)}’s personal analysis</h2><p>${esc(priorities)} are prioritised for this character. Shared run evidence remains available in every report tab.</p></div></header><div class="personal-metrics">${metrics.map(([label,value])=>`<div><strong>${esc(String(value))}</strong><span>${esc(label)}</span></div>`).join('')}</div>${sequenceNotes.map(note=>`<p class="personal-evidence-note"><strong>Death sequence:</strong> ${esc(note)}</p>`).join('')}${combatResNotes.map(note=>`<p class="personal-evidence-note"><strong>Combat resurrection:</strong> ${esc(note)}</p>`).join('')}${recaps.length?`<p class="personal-evidence-note">${recaps.length} captured death ${recaps.length===1?'recap is':'recaps are'} available for this character. Open Damage & deaths for the recorded evidence.</p>`:'<p class="personal-evidence-note">No captured death recap is available for this character in this run.</p>'}</section>`;
-}
-function renderReview(r,perspective=runPerspective(r)){
+function renderReview(r){
   const v=r.review||{},el=document.querySelector('#reviewSection');
   const empty='<p class="muted">No reviewed information is available in this section yet.</p>';
-  const meta=perspectiveMeta(r,perspective.player),subject=reviewSubjectPlayer(r),isOriginal=perspective.player===subject,subjectName=playerParts(subject).name||'the original character';
-  activeReportRole=meta.role;
-  const overview=perspective.mode==='party'
-   ?`${renderPartyUtility(r)}<div class="review-heading"><div><div class="eyebrow">PARTY OVERVIEW</div><h2>${esc(v.verdict||'Factual run report')}</h2><p>${esc(v.summary||'Shared boss attempts, party activity and deaths recorded for this run.')}</p></div>${v.confidence?`<span class="confidence ${esc(v.confidence)}">${esc(confidenceLabel(v.confidence))}</span>`:''}</div><div class="review-grid">${listBlock('What went well',v.whatWentWell,'positive')}</div>`
-   :isOriginal?`${renderPartyUtility(r)}<div class="review-heading"><div><div class="eyebrow">COACHING REVIEW</div><h2>${esc(v.verdict||'Factual run report')}</h2><p>${esc(v.summary||'This run has not been reviewed yet. Boss attempts, party and deaths are available under Run details.')}</p></div>${v.confidence?`<span class="confidence ${esc(v.confidence)}">${esc(confidenceLabel(v.confidence))}</span>`:''}</div><div class="review-grid">${renderRinseChecklist(r)||listBlock('Next-run priorities',v.nextRunPriorities,'priority')}${listBlock('What went well',v.whatWentWell,'positive')}</div><details class="boss-extra"><summary>Recurring issues across your runs</summary>${renderRecurringIssues(loadRuns(),r.id)}</details>`
-   :`${renderPersonalSnapshot(r,perspective.player)}${renderPartyUtility(r)}<article class="personal-analysis-limit"><strong>Personal interpretation</strong><p>This legacy run’s stored coaching narrative was originally reviewed for ${esc(subjectName)}. ${esc(meta.name)}’s recorded facts are shown here without relabelling another character’s conclusions as this character’s mistakes. Newly processed runs can store a separate tailored analysis for every participant.</p></article>`;
+  activeReportRun=r;
+  const overview=`${renderPartyUtility(r)}<div class="review-heading"><div><div class="eyebrow">COACHING REVIEW</div><h2>${esc(v.verdict||'Factual run report')}</h2><p>${esc(v.summary||'This run has not been reviewed yet. Boss attempts, party and deaths are available under Run details.')}</p></div>${v.confidence?`<span class="confidence ${esc(v.confidence)}">${esc(confidenceLabel(v.confidence))}</span>`:''}</div><div class="review-grid">${renderRinseChecklist(r)||listBlock('Next-run priorities',v.nextRunPriorities,'priority')}${listBlock('What went well',v.whatWentWell,'positive')}</div><details class="boss-extra"><summary>Recurring issues across your runs</summary>${renderRecurringIssues(loadRuns(),r.id)}</details>`;
   const panels=[
     ['overview','Overview',overview],
     ['incidents','Damage & deaths',`<div class="report-section-intro"><h2>Damage & deaths</h2><p>Look for opportunity badges to learn which casts to interrupt, channels to control and hazards to avoid. These are possible prevention opportunities, not confirmed missed actions. Open a spell for the response and sources.</p></div>${renderDeathRecaps(r)}${v.incidents?.length?`<details class="death-recap-block death-recaps-group"><summary class="recap-heading"><div><span class="tactic-eyebrow">MECHANICS TO REVIEW</span><h3>Where the run diverged from the tactics</h3></div><span class="tactic-count">${v.incidents.length} ${v.incidents.length===1?'incident':'incidents'}</span></summary><div class="death-recaps-content">${renderIncidents(v,r)}</div></details>`:empty}`],
@@ -785,7 +750,7 @@ function renderReview(r,perspective=runPerspective(r)){
     ['tactics','Next-run tactics',`<div class="report-section-intro"><h2>Next-run tactics</h2><p>Practical corrections and who needs to act.</p></div><div class="review-grid">${renderTactics(v)||empty}${listBlock('Things to improve',v.improvements,'warning')}${renderGroupVsHealer(v.groupVsHealer)}</div>`],
     ['details','Run details',`<div class="report-section-intro"><h2>Run details & sources</h2><p>Boss results, party, death totals and the evidence behind this review.</p></div><div id="reportFacts"></div><div class="review-grid">${renderBossNotes(v.bossNotes)}${renderResearch(v)}${listBlock('Evidence limits',v.evidenceLimits,'muted-card')}</div>`]
   ];
-  el.innerHTML=`${renderPerspectiveBar(r,perspective)}<div class="report-tabs" role="tablist" aria-label="Run report sections">${panels.map(([id,label],i)=>`<button type="button" role="tab" id="tab-${id}" aria-controls="panel-${id}" aria-selected="${i===0}" tabindex="${i===0?0:-1}" data-report-tab="${id}" class="${id==='incidents'&&r.deaths>0?'report-tab-deaths':''}">${label}${id==='incidents'&&r.deaths>0?` <span class="death-tab-badge">${esc(String(r.deaths))} ${r.deaths===1?'death':'deaths'}</span>`:''}</button>`).join('')}</div>
+  el.innerHTML=`<div class="report-tabs" role="tablist" aria-label="Run report sections">${panels.map(([id,label],i)=>`<button type="button" role="tab" id="tab-${id}" aria-controls="panel-${id}" aria-selected="${i===0}" tabindex="${i===0?0:-1}" data-report-tab="${id}" class="${id==='incidents'&&r.deaths>0?'report-tab-deaths':''}">${label}${id==='incidents'&&r.deaths>0?` <span class="death-tab-badge">${esc(String(r.deaths))} ${r.deaths===1?'death':'deaths'}</span>`:''}</button>`).join('')}</div>
   ${panels.map(([id,label,html],i)=>`<section class="report-tab-panel" id="panel-${id}" role="tabpanel" aria-labelledby="tab-${id}" tabindex="0" ${i?'hidden':''}>${html}</section>`).join('')}`;
   // Keep factual information available even when a run has not been reviewed.
   const facts=document.querySelector('#encounters')?.closest('.two-col');
@@ -838,7 +803,6 @@ function renderReview(r,perspective=runPerspective(r)){
   });
   activate(location.hash.slice(1));
   window.addEventListener('hashchange',()=>activate(location.hash.slice(1)));
-  el.querySelectorAll('[data-perspective-mode]').forEach(button=>button.addEventListener('click',()=>{const next=new URL(location.href);if(button.dataset.perspectiveMode==='party')next.searchParams.set('view','party');else next.searchParams.delete('view');location.assign(next)}));
 }
 
 function renderMetrics(r){
@@ -884,7 +848,6 @@ function renderRun(){
   nav('library');
   const id=new URLSearchParams(location.search).get('id'),r=loadRuns().find(x=>x.id===id);
   if(!r){document.querySelector('main .wrap').innerHTML='<h1>Run not found</h1>';return}
-  const perspective=runPerspective(r);
   const hero=document.querySelector('#runHero'),art=dungeonArtwork(r.dungeon);
   if(art)document.body.style.setProperty('--dungeon-page-art',`url("${art}")`);
   if(hero&&art){hero.classList.add('has-dungeon-art');hero.style.backgroundImage=`linear-gradient(90deg,rgba(7,11,16,.93),rgba(7,11,16,.57) 62%,rgba(7,11,16,.18)),url("${art}")`;}
@@ -903,10 +866,10 @@ function renderRun(){
   document.querySelector('#encounters').innerHTML=(r.encounters||[]).map((e,i)=>`
     <div class="encounter-row"><div><strong>${esc(e.name)}</strong><span>Attempt ${1+r.encounters.slice(0,i).filter(x=>x.name===e.name).length}</span>${bossPullEvidence(e,r,true)}</div>
     <div class="run-meta"><span>${e.durationSeconds?fmtDuration(e.durationSeconds):'—'}</span><span class="pill ${e.success?'kill':'wipe'}">${e.success?'Kill':'Wipe'}</span></div></div>`).join('')||'<p class="muted">No encounter markers available.</p>';
-  document.querySelector('#party').innerHTML=(r.players||[]).map(p=>`<span class="party-chip ${perspective.mode==='personal'&&p===perspective.player?'self':''}">${esc(p)} ${playerRoleBadge(r,p)}</span>`).join('');
+  document.querySelector('#party').innerHTML=(r.players||[]).map(p=>`<span class="party-chip ${String(p).includes('Rinse')?'self':''}">${esc(p)} ${playerRoleBadge(r,p)}</span>`).join('');
   const db=r.deathBreakdown||{};
   document.querySelector('#deaths').innerHTML=Object.keys(db).length?Object.entries(db).sort((a,b)=>b[1]-a[1]).map(([p,n])=>`<div class="death-row"><span>${esc(p)}</span><strong>${n}</strong></div>`).join(''):'<p class="muted">Detailed death breakdown unavailable.</p>';
-  renderReview(r,perspective);
+  renderReview(r);
   setupWipeStat();
   document.querySelector('#reviewSection').addEventListener('error',event=>{
     const img=event.target;if(!img.matches?.('.party-guild-portrait'))return;
