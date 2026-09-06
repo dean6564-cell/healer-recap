@@ -23,7 +23,7 @@ function dungeonArtwork(name){
 function renderRinseChecklist(r){
   const items=r.review?.rinseChecklist||[];
   if(!items.length)return '';
-  return `<article class="review-card wide next-checklist"><span class="tactic-eyebrow">BEFORE YOUR NEXT PULL</span><h3>Rinse’s three priorities</h3><p class="muted">Personal preparation; group assignments remain in Next-run tactics.</p>
+  return `<article class="review-card wide next-checklist"><span class="tactic-eyebrow">BEFORE YOUR NEXT PULL</span><h3>Rinseâ€™s three priorities</h3><p class="muted">Personal preparation; group assignments remain in Next-run tactics.</p>
   ${items.map(item=>`<div class="checklist-item"><div class="checklist-text"><span><small>${esc(item.encounter)}</small>${esc(item.text)}</span></div><div class="checklist-source">${researchLinks(r.review,item.sourceIds)}</div></div>`).join('')}</article>`;
 }
 function renderRecurringIssues(runs,currentId){
@@ -95,7 +95,7 @@ function renderRecapOpportunitySummary(d,v){
       groups.get(key).events.push({e,g});
     }
   }
-  return groups.size?`<span class="recap-opportunity-overview" aria-label="Opportunities in this death window">${[...groups.values()].map(({action,events})=>`<span class="spell-help"><button type="button" class="spell-trigger verified-action action-${action.type} opportunity-trigger" data-guide-label="Opportunity details for ${esc(d.player)}" aria-expanded="false" aria-controls="spell-guide-card"><span aria-hidden="true">↗</span> Opportunity: ${esc(action.label)}</button>
+  return groups.size?`<span class="recap-opportunity-overview" aria-label="Opportunities in this death window">${[...groups.values()].map(({action,events})=>`<span class="spell-help"><button type="button" class="spell-trigger verified-action action-${action.type} opportunity-trigger" data-guide-label="Opportunity details for ${esc(d.player)}" aria-expanded="false" aria-controls="spell-guide-card"><span aria-hidden="true">â†—</span> Opportunity: ${esc(action.label)}</button>
   <template class="spell-guide-content"><header class="spell-card-head"><div><span class="spell-card-eyebrow">THIS PLAYER · THIS DEATH WINDOW</span><h4>${esc(action.label)}</h4></div><button type="button" class="spell-card-close" aria-label="Close opportunity details">×</button></header>
   
   <p class="opportunity-window-note">${events.length} related damage ${events.length===1?'event':'events'} in the final 10 seconds.</p>
@@ -127,7 +127,7 @@ function groupRecapAttempts(r,deaths){
   const number=(seen.get(en.name)||0)+1;seen.set(en.name,number);
   const start=relative(en.startTime),duration=Number(en.durationSeconds),rawEnd=relative(en.endTime);
   const end=start!==null&&Number.isFinite(duration)&&duration>0?start+duration:rawEnd!==null&&start!==null&&rawEnd<start?rawEnd+86400:rawEnd;
-  return {key:'attempt-'+index,label:en.name+' · Attempt '+number,result:en.success===true?'Kill':en.success===false?'Wipe':'Result unknown',start,end,time:en.startTime?.slice(0,8)+'–'+(en.endTime?.slice(0,8)||'?')};
+  return {key:'attempt-'+index,label:en.name+' · Attempt '+number,result:en.success===true?'Kill':en.success===false?'Wipe':'Result unknown',start,end,time:en.startTime?.slice(0,8)+'â€“'+(en.endTime?.slice(0,8)||'?')};
  });
  const groups=new Map();
  deaths.forEach(d=>{
@@ -163,7 +163,7 @@ function renderDeathRecaps(r,encounter){
   const pending=ds.filter(d=>d.reviewState!=='assessed').length;
   const number=n=>Number(n).toLocaleString('en-GB');
   return `<details class="death-recap-block death-recaps-group" data-player-recaps><summary class="recap-heading"><div><span class="tactic-eyebrow">EVERY RECORDED DEATH</span><h3>Death recaps</h3></div><span class="tactic-count">${encounter?ds.length+' in this encounter':all.length+' / '+r.deaths+' captured'}</span></summary><div class="death-recaps-content">
-  <p class="muted">${ds.length-pending} assessed · ${pending} need more context. Open a player’s death to see the final 10 seconds.</p>
+  <p class="muted">${ds.length-pending} assessed · ${pending} need more context. Open a playerâ€™s death to see the final 10 seconds.</p>
   <div class="recap-party" aria-label="Filter deaths by player">${[...new Set([...(r.players||[]),...ds.map(d=>d.player)])].map(name=>{const classSlug=utilityCharacterClass(r,name).toLowerCase().replace(/[^a-z]+/g,'-');return `<button type="button" class="recap-party-member" data-recap-player="${esc(name)}" aria-pressed="false"${classSlug?` style="--recap-class-art:url('assets/class-bg-${esc(classSlug)}.webp')"`:''}><span class="recap-card-art" aria-hidden="true"></span><span class="recap-player-identity">${guildPartyPortrait(name)}${utilityCharacterName(r,name)}</span><span class="recap-player-meta">${playerRoleBadge(r,name)}<span class="recap-player-count">${ds.filter(d=>d.player===name).length}</span></span></button>`}).join('')}</div>
   <p class="recap-player-status muted" role="status"></p>
   ${ds.length?'':'<p>No player deaths recorded in this encounter.</p>'}
@@ -177,7 +177,7 @@ function renderDeathRecaps(r,encounter){
   <p class="muted">No tracked event is not proof that a defensive was available or unused. Healing totals exclude separate shields.</p>
   <label class="recap-filter-label">Timeline view <select class="recap-filter"><option value="all">Damage, healing & actions</option><option value="damage">Damage only</option><option value="healing">Healing received</option><option value="actions">Survival & utility</option></select></label>
   <div class="recap-table-wrap"><table class="recap-table"><caption>10-second window · negative time is before the death sequence · small positive offsets account for log ordering</caption><thead><tr><th>Before</th><th>Event</th><th>Spell</th><th>Source</th><th>Amount</th></tr></thead><tbody>
-  ${d.events.map(e=>`<tr data-recap-kind="${e.kind}" class="${e.overkill>0?'has-overkill':''}"><td>${e.offsetSeconds>0?'+':''}${e.offsetSeconds.toFixed(2)}s</td><td>${e.kind==='aura'?(e.event==='SPELL_AURA_APPLIED'?'Effect gained':'Effect ended'):e.kind==='cast'?'Cast':e.kind==='healing'?'Heal':'Damage'}</td><td>${e.kind==='damage'?renderSpellHelp(e,r.review):esc(e.spell)}</td><td>${esc(e.source)}</td><td class="${e.kind==='healing'?'healing-value':''}">${e.amount===null?'—':number(e.amount)}${e.overkill>0?`<small class="overkill-value">${number(e.overkill)} overkill</small>`:''}</td></tr>`).join('')}
+  ${d.events.map(e=>`<tr data-recap-kind="${e.kind}" class="${e.overkill>0?'has-overkill':''}"><td>${e.offsetSeconds>0?'+':''}${e.offsetSeconds.toFixed(2)}s</td><td>${e.kind==='aura'?(e.event==='SPELL_AURA_APPLIED'?'Effect gained':'Effect ended'):e.kind==='cast'?'Cast':e.kind==='healing'?'Heal':'Damage'}</td><td>${e.kind==='damage'?renderSpellHelp(e,r.review):esc(e.spell)}</td><td>${esc(e.source)}</td><td class="${e.kind==='healing'?'healing-value':''}">${e.amount===null?'â€”':number(e.amount)}${e.overkill>0?`<small class="overkill-value">${number(e.overkill)} overkill</small>`:''}</td></tr>`).join('')}
   </tbody></table><p class="recap-no-events" hidden>No events of this type in the selected window.</p></div></div></details>`).join('')}</section>`;}).join('')}
   <details class="tactics-method"><summary>About this recap</summary><p>This recap is generated from recorded combat events. It highlights factual events and possible improvement opportunities, while leaving uncertain causes clearly marked for review.</p></details></div></details>`;
 }
@@ -288,7 +288,7 @@ function runGuildType(r){
 function runTypeBadge(r,large=false){
  const type=runGuildType(r);if(!type)return '';
  const label=type.kind==='guild'?(type.count===5?'GUILD':type.count+' guild members'):'PUG';
- const icon=type.kind==='guild'?'<img src="assets/guild-crest.svg" alt="" width="24" height="24">':'<span class="pug-icon" aria-hidden="true">◆</span>';
+ const icon=type.kind==='guild'?'<img src="assets/guild-crest.svg" alt="" width="24" height="24">':'<span class="pug-icon" aria-hidden="true">â—†</span>';
  return `<span class="run-type-badge spell-help ${type.kind} ${large?'large':''}"><span class="spell-trigger guild-member-trigger" role="button" tabindex="0" aria-expanded="false" aria-controls="spell-guide-card" data-guide-label="Run party members">${icon}<span><strong>${label}</strong></span></span>
  <template class="spell-guide-content"><header class="spell-card-head"><div><span class="spell-card-eyebrow">RUN PARTY</span><h4>${type.kind==='guild'?'Cause and Effect':'PUG group'}</h4></div><button type="button" class="spell-card-close" aria-label="Close party details">×</button></header><p>${type.count} of ${(r.players||[]).length} players matched the guild roster.</p><div class="guild-tooltip-members">${(r.players||[]).map(player=>`<div><strong>${esc(String(player).replace(/-EU$/i,''))}</strong>${playerRoleBadge(r,player)}</div>`).join('')}</div></template></span>`;
 }
@@ -309,7 +309,7 @@ const esc=s=>String(s??'').replace(/[&<>"']/g,c=>({'&':'&amp;','<':'&lt;','>':'&
 const slugify=s=>String(s||'unknown').toLowerCase().normalize('NFD').replace(/[\u0300-\u036f]/g,'').replace(/[^a-z0-9]+/g,'-').replace(/^-|-$/g,'');
 const compact=s=>String(s||'').trim();
 
-// Review-list items can be a plain string or {text, tags:[]} — these two helpers
+// Review-list items can be a plain string or {text, tags:[]} â€” these two helpers
 // let every renderer accept either form without caring which one it got.
 const noteText=x=>typeof x==='string'?x:(x&&x.text)||'';
 const noteTags=x=>(x&&Array.isArray(x.tags))?x.tags:[];
@@ -348,7 +348,7 @@ function deleteRun(id){
   return true;
 }
 function clearAllRuns(){saveRuns([])}
-function fmtDuration(s){if(s==null)return'—';s=Math.round(+s||0);return`${Math.floor(s/60)}:${String(s%60).padStart(2,'0')}`}
+function fmtDuration(s){if(s==null)return'â€”';s=Math.round(+s||0);return`${Math.floor(s/60)}:${String(s%60).padStart(2,'0')}`}
 function fmtDate(iso){if(!iso)return'Unknown date';return new Date(iso+'T12:00:00').toLocaleDateString('en-GB',{day:'numeric',month:'long',year:'numeric'})}
 function sortRuns(runs){return runs.slice().sort((a,b)=>`${b.date||''}${b.startTime||''}`.localeCompare(`${a.date||''}${a.startTime||''}`))}
 function isReviewed(r){return !!(r.review && (r.review.summary || r.review.improvements?.length || r.review.whatWentWell?.length))}
@@ -359,11 +359,11 @@ function nav(active=''){
  const el=document.querySelector('#siteNav');if(!el)return;
  const guild=inGuildArea(),hasCharacterContext=new URLSearchParams(location.search).has('character'),selected=guild&&!hasCharacterContext?null:selectedCharacterRecord(),dashboardName=selected?.name||'M+ Recap',dashboardLink=selectedDashboardHref(selected);
  const guildLink=selected?`guild.html?character=${encodeURIComponent(selected.key||'selected')}`:'guild.html',insightsLink=characterHref('insights.html',selected),libraryLink=characterHref('library.html',selected);
- const dashboardBack=selected?`← ${esc(dashboardName)}’s Dashboard`:'← Character selection';
+ const dashboardBack=selected?`â† ${esc(dashboardName)}â€™s Dashboard`:'â† Character selection';
  const footer=document.querySelector('footer .wrap');
  if(footer&&!footer.querySelector('.footer-horde-logo'))footer.insertAdjacentHTML('afterbegin','<img class="footer-horde-logo" src="assets/horde-logo.svg" alt="M+ Recap" width="150" height="90">');
  el.innerHTML=`<nav aria-label="${guild?'Guild':'Main'} navigation"><div class="wrap nav-wrap">
- <a class="brand" href="${guild?'guild.html':dashboardLink}" aria-label="${guild?'Cause and Effect home':selected?esc(dashboardName)+' dashboard home':'Choose character'}"><img class="brand-priest-icon ${guild?'brand-guild-icon':''}" src="${guild?'assets/guild-crest.svg':esc(selected?.avatar||classIcon(selected))}" alt="" width="72" height="72"><span class="brand-rinse-wordmark">${guild?'Cause and Effect':selected?esc(dashboardName)+'’s':'M+ Recap'}<small>${guild?'Guild M+ Dashboard':selected?'M+ Dashboard':'Choose character'}</small></span><em>Midnight · Season 2</em></a>
+ <a class="brand" href="${guild?'guild.html':dashboardLink}" aria-label="${guild?'Cause and Effect home':selected?esc(dashboardName)+' dashboard home':'Choose character'}"><img class="brand-priest-icon ${guild?'brand-guild-icon':''}" src="${guild?'assets/guild-crest.svg':esc(selected?.avatar||classIcon(selected))}" alt="" width="72" height="72"><span class="brand-rinse-wordmark">${guild?'Cause and Effect':selected?esc(dashboardName)+'â€™s':'M+ Recap'}<small>${guild?'Guild M+ Dashboard':selected?'M+ Dashboard':'Choose character'}</small></span><em>Midnight · Season 2</em></a>
  <button class="nav-menu-toggle" type="button" aria-expanded="false" aria-controls="site-nav-links" aria-label="Open navigation menu"><span></span><span></span><span></span></button>
  <div class="navlinks ${guild?'guild-navigation':''}" id="site-nav-links">
  ${guild?`<a href="${dashboardLink}" class="nav-back" data-nav-switch>${dashboardBack}</a><a href="${guildLink}" class="${active==='guild'?'active':''}"><img class="nav-destination-icon guild-nav-crest" src="assets/guild-crest.svg" alt="" width="26" height="26">Cause and Effect</a><a href="library.html?group=guild" class="${active==='library'?'active':''}">Run Library</a>`:`<a href="${dashboardLink}" class="${active==='home'?'active':''}">Overview</a><a href="${insightsLink}" class="${active==='insights'?'active':''}">Insights</a><a href="${libraryLink}" class="${active==='library'?'active':''}">Run Library</a><a href="index.html" class="nav-change-character"><img class="nav-destination-icon nav-character-icon" src="assets/horde-emblem.svg" alt="" width="26" height="26">Change character</a><a href="${guildLink}" data-nav-switch><img class="nav-destination-icon guild-nav-crest" src="assets/guild-crest.svg" alt="" width="26" height="26">Cause and Effect</a>`}
@@ -439,7 +439,7 @@ function renderCharacterProfileRuns(runs,member){
       <strong>${esc(r.dungeon)}</strong>
       <p>+${esc(r.level)} · ${r.durationMs>0?fmtDuration(Math.floor(r.durationMs/1000)):'Time unavailable'} · <span class="${r.timed?'in-time':'over-time'}">${r.timed===true?'In time':r.timed===false?'Over time':'Timing unknown'}</span></p>
       <p>${Number.isFinite(r.completedAt)?esc(new Date(r.completedAt).toLocaleString('en-GB')):'Date unavailable'}</p>
-      <span class="profile-run-status">${tracked?'Tracked · View run →':'Not tracked'}</span>
+      <span class="profile-run-status">${tracked?'Tracked · View run â†’':'Not tracked'}</span>
     </${tag}>`;
   }).join(''):'<p class="muted">No guild-profile runs available yet.</p>';
 }
@@ -449,14 +449,14 @@ function renderDashboard(){
   if(!member){location.replace('index.html');return;}
   const classSlug=String(member.class||'').toLowerCase().replace(/[^a-z]+/g,'-');
   document.querySelector('.dashboard-intro')?.style.setProperty('--character-class-art',`url('assets/class-bg-${classSlug}.webp')`);
-  document.title=`${member.name}’s M+ Dashboard · Midnight · Season 2`;
+  document.title=`${member.name}â€™s M+ Dashboard · Midnight · Season 2`;
   const heading=document.querySelector('#characterDashboardTitle'),identity=document.querySelector('#characterIdentity'),intro=document.querySelector('#characterIntro'),portrait=document.querySelector('#characterPortrait'),heroScore=document.querySelector('#characterHeroScore');
-  if(heading)heading.textContent=`${member.name}’s M+ Dashboard`;
+  if(heading)heading.textContent=`${member.name}â€™s M+ Dashboard`;
   if(identity)identity.innerHTML=`<span>${esc(member.spec||member.class||'Guild member')}</span><span class="rinse-healer" style="color:${classColours[member.class]||'#86efac'}">${roleIcon(member.role)} ${esc(member.role||'')}</span><span>${esc(String(member.realm||'').replace(/-/g,' '))} · EU</span>`;
-  if(intro)intro.textContent=`${member.name}’s recorded dungeon history, run results and available reviews.`;
+  if(intro)intro.textContent=`${member.name}â€™s recorded dungeon history, run results and available reviews.`;
   if(heroScore&&member.score!=null&&Number.isFinite(Number(member.score))){heroScore.hidden=false;heroScore.innerHTML=`<strong>${Number(member.score).toLocaleString('en-GB',{minimumFractionDigits:1,maximumFractionDigits:1})}</strong><span>MYTHIC+ SCORE</span>`}
   if(portrait){portrait.src=member.avatar||classIcon(member);portrait.alt=`${member.name}, ${member.class}`;portrait.dataset.fallback=classIcon(member);portrait.addEventListener('error',()=>{if(portrait.src!==portrait.dataset.fallback)portrait.src=portrait.dataset.fallback},{once:true})}
-  const profileTitle=document.querySelector('#characterProfileTitle');if(profileTitle)profileTitle.textContent=`${member.name}’s recorded runs`;
+  const profileTitle=document.querySelector('#characterProfileTitle');if(profileTitle)profileTitle.textContent=`${member.name}â€™s recorded runs`;
   nav('home');
   const runs=sortRuns(selectedCharacterRuns(loadRuns(),member)), t=calcTotals(runs);
   document.querySelector('#stats').innerHTML=`
@@ -474,8 +474,8 @@ function renderDashboard(){
     return`<a class="dungeon-card${artwork?' has-dungeon-art':''}" ${artwork?`style="--dungeon-art:url('${esc(artwork)}')"`:''} href="dungeon.html?dungeon=${encodeURIComponent(slugify(name))}">
       <div class="dungeon-card-copy"><div class="dungeon-label">${rs.length} run${rs.length===1?'':'s'} tracked</div>
       <h3 class="dungeon-name-heading">${dungeonEmblem(name)}<span>${esc(name)}</span></h3><p>Latest: ${fmtDate(recent.date)}${recent.startTime?` · ${esc(recent.startTime)}`:''}${recent.keyLevel?` · +${recent.keyLevel}`:''}</p>
-      ${personal?`<div class="dungeon-personal-best"><span class="personal-best-label">${esc(member.name)}’s best · Guild profile</span><strong>+${personal.level} <span>·</span> ${Number.isFinite(personal.durationMs)&&personal.durationMs>0?fmtDuration(personal.durationMs/1000):'Time unavailable'}</strong><span class="personal-best-result ${personal.timed===true?'in-time':personal.timed===false?'over-time':''}">${personal.timed===true?'In time':personal.timed===false?'Over time':'Timing unknown'}</span></div>`:`<p class="personal-best-unavailable">${esc(member.name)}’s guild-profile best unavailable</p>`}
-      </div><span class="arrow" aria-hidden="true">→</span>
+      ${personal?`<div class="dungeon-personal-best"><span class="personal-best-label">${esc(member.name)}â€™s best · Guild profile</span><strong>+${personal.level} <span>·</span> ${Number.isFinite(personal.durationMs)&&personal.durationMs>0?fmtDuration(personal.durationMs/1000):'Time unavailable'}</strong><span class="personal-best-result ${personal.timed===true?'in-time':personal.timed===false?'over-time':''}">${personal.timed===true?'In time':personal.timed===false?'Over time':'Timing unknown'}</span></div>`:`<p class="personal-best-unavailable">${esc(member.name)}â€™s guild-profile best unavailable</p>`}
+      </div><span class="arrow" aria-hidden="true">â†’</span>
     </a>`}).join('');
   document.querySelector('#recentRuns').innerHTML=runs.slice(0,8).map(runRow).join('');
   renderCharacterProfileRuns(runs,member);
@@ -539,7 +539,7 @@ function renderTrends(runs,elId='#trendsArea'){
     <div class="trend-card">
       <div class="trend-head"><h3>${esc(label)}</h3><span>${esc(hint)}</span></div>
       ${sparklineSVG(vals)}
-      <div class="trend-range">Oldest → newest, last ${chron.length} runs</div>
+      <div class="trend-range">Oldest â†’ newest, last ${chron.length} runs</div>
     </div>`).join('');
 }
 
@@ -555,7 +555,7 @@ function renderDungeon(){
   document.querySelector('#dungeonSub').textContent=`Midnight · Season 2 history · ${runs.length} tracked run${runs.length===1?'':'s'}`;
   document.querySelector('#dungeonStats').innerHTML=`
     <div class="stat-card"><div class="num">${runs.length}</div><div class="label">Runs</div></div>
-    <div class="stat-card"><div class="num">${best?`+${best}`:'—'}</div><div class="label">Best key</div></div>
+    <div class="stat-card"><div class="num">${best?`+${best}`:'â€”'}</div><div class="label">Best key</div></div>
     <div class="stat-card"><div class="num">${t.wipes}</div><div class="label">Boss wipes</div></div>
     <div class="stat-card"><div class="num">${t.reviewed}</div><div class="label">Reviewed runs</div></div>`;
   document.querySelector('#dungeonRuns').innerHTML=runs.map(runRow).join('');
@@ -563,7 +563,7 @@ function renderDungeon(){
   const improvements=[];
   runs.filter(isReviewed).forEach(r=>(r.review?.improvements||[]).forEach(x=>improvements.push({r,text:x})));
   document.querySelector('#dungeonNotes').innerHTML=improvements.length?improvements.slice(0,8).map(x=>`
-    <a class="card linked-card" href="run.html?id=${encodeURIComponent(x.r.id)}"><p>${esc(noteText(x.text))}</p><span>${fmtDate(x.r.date)}${x.r.keyLevel?` · +${x.r.keyLevel}`:''} →</span></a>`).join('')
+    <a class="card linked-card" href="run.html?id=${encodeURIComponent(x.r.id)}"><p>${esc(noteText(x.text))}</p><span>${fmtDate(x.r.date)}${x.r.keyLevel?` · +${x.r.keyLevel}`:''} â†’</span></a>`).join('')
     :'<div class="card"><p>No reviewed improvement notes yet.</p></div>';
 }
 
@@ -595,11 +595,11 @@ function renderTactics(v){
   const sources=(v.sources||[]).filter(s=>{try{return new URL(s.url).protocol==='https:'}catch(e){return false}});
   return `<details class="death-recap-block death-recaps-group wide"><summary class="recap-heading"><div><span class="tactic-eyebrow">YOUR NEXT-RUN PLAN</span><h3>What to do differently</h3></div><span class="tactic-count">${v.tactics.length} ${v.tactics.length===1?'priority':'priorities'}</span></summary><div class="death-recaps-content">
     <div class="tactics-card-list">${v.tactics.map((t,index)=>{
-      const parts=String(t.title||'').split(' — '),boss=parts.length>1?parts.shift():'Action plan',title=parts.join(' — ');
+      const parts=String(t.title||'').split(' â€” '),boss=parts.length>1?parts.shift():'Action plan',title=parts.join(' â€” ');
       return `<article class="tactic-card"><header class="tactic-card-header"><span class="tactic-number">${String(index+1).padStart(2,'0')}</span><div><span class="tactic-eyebrow">${esc(boss)}</span><h4>${esc(title)}</h4></div></header>
       <ol class="tactic-actions">${(t.steps||[]).map(step=>`<li><span>${esc(step)}</span></li>`).join('')}</ol>
       <details class="tactic-evidence"><summary>Why this matters for this run</summary><div><h5>Observed in the log</h5><p>${esc(t.evidence||'')}</p><h5>Assessment</h5><p>${esc(t.assessment||'')}</p></div></details>
-      <div class="tactic-sources"><span>TACTICS SOURCES</span>${sources.filter(s=>(t.sourceIds||[]).includes(s.id)).map(s=>`<a href="${esc(s.url)}" target="_blank" rel="noopener noreferrer">${esc(s.title)} ↗</a>`).join('')}</div></article>`;
+      <div class="tactic-sources"><span>TACTICS SOURCES</span>${sources.filter(s=>(t.sourceIds||[]).includes(s.id)).map(s=>`<a href="${esc(s.url)}" target="_blank" rel="noopener noreferrer">${esc(s.title)} â†—</a>`).join('')}</div></article>`;
     }).join('')}</div>
     ${v.tacticsNote?`<details class="tactics-method"><summary>About these recommendations</summary><p>${esc(v.tacticsNote)}</p></details>`:''}</div></details>`;
 }
@@ -611,17 +611,17 @@ function researchLinks(v,ids){
 function renderBossHealing(r){
   if(!r.bossHealing?.encounters?.length)return '';
   const h=r.bossHealing,rate=n=>Number(n).toLocaleString('en-GB',{maximumFractionDigits:0});
-  return `<article class="review-card wide"><h3>Rinse’s HPS by boss attempt</h3>
+  return `<article class="review-card wide"><h3>Rinseâ€™s HPS by boss attempt</h3>
   <p>Healing events after overheal; separate shield absorption excluded.</p>
-  <div style="overflow-x:auto"><table style="width:100%;text-align:left"><caption>Full-fight averages — healing per second</caption>
+  <div style="overflow-x:auto"><table style="width:100%;text-align:left"><caption>Full-fight averages â€” healing per second</caption>
   <thead><tr><th scope="col">Boss</th><th scope="col">Result</th><th scope="col">All targets</th><th scope="col">Players only</th><th scope="col">Avatar only</th></tr></thead>
-  <tbody>${h.encounters.map(b=>`<tr><th scope="row">${esc(b.name)}</th><td>${b.success?'Kill':'Wipe'}</td><td>${rate(b.hps)}</td><td>${rate(b.playerHps)}</td><td>${b.avatarHps?rate(b.avatarHps):'—'}</td></tr>`).join('')}</tbody></table></div>
+  <tbody>${h.encounters.map(b=>`<tr><th scope="row">${esc(b.name)}</th><td>${b.success?'Kill':'Wipe'}</td><td>${rate(b.hps)}</td><td>${rate(b.playerHps)}</td><td>${b.avatarHps?rate(b.avatarHps):'â€”'}</td></tr>`).join('')}</tbody></table></div>
   <p>${researchLinks(r.review,h.sourceIds)}</p>
   <details><summary>Calculation details</summary><ul>${h.encounters.map(b=>`<li>${esc(b.name)}: ${rate(b.effectiveHealing)} net healing / ${Number(b.durationSeconds).toFixed(3)} seconds; ${b.eventCount} events; ${b.overhealPercent}% overheal. HPS excluding heal-absorbed amounts: ${rate(b.hpRestoringHps)}.</li>`).join('')}</ul></details></article>`;
 }
 function renderVerifiedActions(g){
   const types=['interrupt','cleanse','control','move','soak','defensive'];
-  return (g?.verifiedActions||[]).filter(x=>types.includes(x.type)&&x.sourceIds?.length).map(x=>`<span class="verified-action action-${x.type}"><span aria-hidden="true">↗</span> Opportunity: ${esc(x.label)}</span>`).join('');
+  return (g?.verifiedActions||[]).filter(x=>types.includes(x.type)&&x.sourceIds?.length).map(x=>`<span class="verified-action action-${x.type}"><span aria-hidden="true">â†—</span> Opportunity: ${esc(x.label)}</span>`).join('');
 }
 let activeReportRun=null;
 function namedMechanicTactic(g){
@@ -644,9 +644,9 @@ function renderSpellHelp(h,v){
   ${g.verifiedActions?.length?`<div class="verified-counterplay"><h5>Opportunity to prevent damage</h5><div class="spell-action-badges">${renderVerifiedActions(g)}</div><p>Watch for this mechanic next time and use the response below. Damage was recorded and a counter is known; whether it was available in this moment is not established.</p></div>`:''}
   <div class="spell-caster"><h5>Source of this hit</h5><p>${esc(h.source||'Not recorded')}</p></div>
   <div class="spell-card-section"><h5>What happens</h5><p>${esc(g.description)}</p></div>
-  <div class="spell-card-section spell-action"><h5>Next time — what to do</h5><p>${esc(namedMechanicTactic(g))}</p></div>
+  <div class="spell-card-section spell-action"><h5>Next time â€” what to do</h5><p>${esc(namedMechanicTactic(g))}</p></div>
   <div class="spell-options"><div><h5>Interrupt</h5><p>${esc(g.interrupt)}</p></div><div><h5>Dispel</h5><p>${esc(g.dispel)}</p></div></div>
-  <footer class="spell-card-sources"><h5>${known?'Tactics sources':'Evidence status'}</h5>${known?researchLinks(v,g.sourceIds):'<p>Source and spell ID come from this run’s combat log. Tactics research is pending; this hit alone does not establish a player mistake.</p>'}</footer></template></span>`;
+  <footer class="spell-card-sources"><h5>${known?'Tactics sources':'Evidence status'}</h5>${known?researchLinks(v,g.sourceIds):'<p>Source and spell ID come from this runâ€™s combat log. Tactics research is pending; this hit alone does not establish a player mistake.</p>'}</footer></template></span>`;
 }
 
 function renderIncidentDamage(i,v,r){
@@ -662,11 +662,11 @@ function renderIncidentDamage(i,v,r){
     const ordered=[...hits].sort((a,b)=>a.time.localeCompare(b.time));
     const total=hits.reduce((sum,h)=>sum+Number(h.hit),0),overkill=hits.reduce((sum,h)=>sum+Math.max(0,Number(h.overkill)||0),0);
     return `<details class="player-timeline">
-    <summary><span class="player-identity"><span class="player-timeline-name">${esc(player)} ${r?playerRoleBadge(r,player):''}</span><span class="player-expand-label">View damage timeline</span></span><span class="player-timeline-stats"><span class="player-stat"><small>Hits</small><strong>${hits.length}</strong></span><span class="player-stat"><small>Damage</small><strong>${number(total)}</strong></span>${overkill?`<span class="player-stat overkill-value"><small>Overkill</small><strong>${number(overkill)}</strong></span>`:''}</span><span class="timeline-chevron" aria-hidden="true">⌄</span></summary>
+    <summary><span class="player-identity"><span class="player-timeline-name">${esc(player)} ${r?playerRoleBadge(r,player):''}</span><span class="player-expand-label">View damage timeline</span></span><span class="player-timeline-stats"><span class="player-stat"><small>Hits</small><strong>${hits.length}</strong></span><span class="player-stat"><small>Damage</small><strong>${number(total)}</strong></span>${overkill?`<span class="player-stat overkill-value"><small>Overkill</small><strong>${number(overkill)}</strong></span>`:''}</span><span class="timeline-chevron" aria-hidden="true">âŒ„</span></summary>
     <div class="player-timeline-table"><table style="width:100%;text-align:left">
-    <caption>${esc(player)} — chronological incident hits. Hover or tap a spell for tactics.</caption>
+    <caption>${esc(player)} â€” chronological incident hits. Hover or tap a spell for tactics.</caption>
     <thead><tr><th scope="col">Time</th><th scope="col">Spell / ID</th><th scope="col">Hit damage</th><th scope="col">Overkill</th></tr></thead>
-    <tbody>${ordered.map(h=>`<tr class="${h.overkill>0?'has-overkill':''}"><td>${esc(h.time)}</td><td>${renderSpellHelp(h,v)}</td><td>${number(h.hit)}</td><td>${h.overkill>0?`<strong class="overkill-value" title="Damage beyond remaining health">${number(h.overkill)}<small>Overkill</small></strong>`:'—'}</td></tr>`).join('')}</tbody>
+    <tbody>${ordered.map(h=>`<tr class="${h.overkill>0?'has-overkill':''}"><td>${esc(h.time)}</td><td>${renderSpellHelp(h,v)}</td><td>${number(h.hit)}</td><td>${h.overkill>0?`<strong class="overkill-value" title="Damage beyond remaining health">${number(h.overkill)}<small>Overkill</small></strong>`:'â€”'}</td></tr>`).join('')}</tbody>
     </table></div></details>`;
   }).join('')}</div></details>`;
 }
@@ -728,10 +728,10 @@ function utilityCharacterName(r,name){
 function renderPartyUtility(r){
   const u=r.utilitySummary,selected=selectedReportPlayer(r),players=[...(r.players||[])].sort((a,b)=>Number(b===selected)-Number(a===selected));
   return `<section class="party-utility"><div class="recap-heading"><div><span class="tactic-eyebrow">YOUR PARTY · FULL RUN</span><h3>Control & dispels</h3></div></div>
-  <p class="muted">Deaths, avoidable damage, successful interrupts and removals · CC counts affected targets, not casts stopped.</p>
+  <p class="muted">Deaths, avoidable damage within captured 10-second death windows, successful interrupts and removals · CC counts affected targets, not casts stopped.</p>
   <div class="utility-party-grid character-overview-grid">${players.map(name=>{
     const p=u?.players?.find(x=>x.name===name);
-    const classSlug=utilityCharacterClass(r,name).toLowerCase().replace(/[^a-z]+/g,'-'),recaps=(r.deathRecaps?.deaths||[]).filter(d=>d.player===name),evidence=recaps.map(d=>recapAvoidableEvidence(d,r.review)),avoidable=evidence.reduce((sum,x)=>sum+x.amount,0),avoidableKnown=evidence.some(x=>x.known),metrics=[['deaths','Deaths',Number(r.deathBreakdown?.[name]||0)],['avoidable','Avoidable damage',avoidableKnown?avoidable.toLocaleString('en-GB'):'—'],['interrupts','Interrupts',p?.interrupts??'—'],['ccApplications','CC applied',p?.ccApplications??'—'],['dispels','Dispels',p?.dispels??'—'],['purges','Purges',p?.purges??'—']];
+    const classSlug=utilityCharacterClass(r,name).toLowerCase().replace(/[^a-z]+/g,'-'),recaps=(r.deathRecaps?.deaths||[]).filter(d=>d.player===name),evidence=recaps.map(d=>recapAvoidableEvidence(d,r.review)),avoidable=evidence.reduce((sum,x)=>sum+x.amount,0),avoidableKnown=evidence.some(x=>x.known),metrics=[['deaths','Deaths',Number(r.deathBreakdown?.[name]||0)],['avoidable','Avoidable damage in death windows',avoidableKnown?avoidable.toLocaleString('en-GB'):'â€”'],['interrupts','Interrupts',p?.interrupts??'â€”'],['ccApplications','CC applied',p?.ccApplications??'â€”'],['dispels','Dispels',p?.dispels??'â€”'],['purges','Purges',p?.purges??'â€”']];
     return `<article class="utility-player character-overview-card ${name===selected?'is-selected':''}"${classSlug?` style="--utility-class-art:url('assets/class-bg-${esc(classSlug)}.webp')"`:''}><span class="utility-card-art" aria-hidden="true"></span><header><span class="utility-player-identity">${guildPartyPortrait(name)}<span>${name===selected?'<small>SELECTED CHARACTER · THIS RUN</small>':''}${utilityCharacterName(r,name)}</span></span>${playerRoleBadge(r,name)}</header>
     <div class="utility-player-stats">${metrics.map(([,label,value])=>`<div><b>${esc(String(value))}</b><span>${esc(label)}</span></div>`).join('')}</div>
     ${p?.abilities?.length?`<details><summary>Ability breakdown</summary><ul>${p.abilities.map(b=>`<li><span>${renderUtilityHelp(b)} <small>· ${esc(metrics.find(m=>m[0]===b.kind)?.[1]||b.kind)}</small></span><b>${b.count}</b></li>`).join('')}</ul></details>`:''}</article>`;
@@ -827,11 +827,11 @@ function renderMetrics(r){
 
 function renderWipeStat(r){
  const wipes=(r.encounters||[]).filter(e=>e.success===false),count=r.bossWipes??wipes.length;
- const label=`<div class="num">${esc(count)}</div><div class="label">Boss wipes <span aria-hidden="true">↗</span></div>`;
+ const label=`<div class="num">${esc(count)}</div><div class="label">Boss wipes <span aria-hidden="true">â†—</span></div>`;
  if(!count)return `<a class="stat-card wipe-stat no-wipes" href="#bosses" data-open-boss-view aria-label="0 boss wipes. Open Boss view">${label}</a>`;
  const names=[...new Set(wipes.map(e=>e.name))];
  if(count===1&&names.length===1)return `<a class="stat-card wipe-stat has-wipes" href="#bosses" data-wipe-boss="${esc(names[0])}" aria-label="1 boss wipe. Review ${esc(names[0])}">${label}</a>`;
- return `<button type="button" class="stat-card wipe-stat has-wipes" popovertarget="wipe-boss-picker" aria-label="${esc(count)} boss wipes. Choose a boss to review">${label}</button><div id="wipe-boss-picker" class="wipe-boss-picker" popover><strong>Review boss wipes</strong>${names.map(name=>`<a href="#bosses" data-wipe-boss="${esc(name)}"><span>${esc(name)}</span><small>${wipes.filter(e=>e.name===name).length} wipe${wipes.filter(e=>e.name===name).length===1?'':'s'} →</small></a>`).join('')||'<p>Boss encounter details are unavailable.</p>'}</div>`;
+ return `<button type="button" class="stat-card wipe-stat has-wipes" popovertarget="wipe-boss-picker" aria-label="${esc(count)} boss wipes. Choose a boss to review">${label}</button><div id="wipe-boss-picker" class="wipe-boss-picker" popover><strong>Review boss wipes</strong>${names.map(name=>`<a href="#bosses" data-wipe-boss="${esc(name)}"><span>${esc(name)}</span><small>${wipes.filter(e=>e.name===name).length} wipe${wipes.filter(e=>e.name===name).length===1?'':'s'} â†’</small></a>`).join('')||'<p>Boss encounter details are unavailable.</p>'}</div>`;
 }
 function setupWipeStat(){
  const picker=document.getElementById('wipe-boss-picker'),trigger=document.querySelector('[popovertarget="wipe-boss-picker"]');
@@ -861,16 +861,16 @@ function renderRun(){
   hero?.insertAdjacentHTML('beforeend',runTypeBadge(r,true));
   document.querySelector('#runTitle').innerHTML=dungeonEmblem(r.dungeon)+`<span>${esc(r.dungeon)}${r.keyLevel?` +${r.keyLevel}`:''}</span>`;
   document.querySelector('#runTitle').classList.add('dungeon-name-heading');
-  document.querySelector('#runSub').innerHTML=`${fmtDate(r.date)} · ${esc(r.startTime||'')}${r.endTime?`–${esc(r.endTime)}`:''} · ${r.success?'Completed':'Not completed'} · ${statusPill(r)}`;
+  document.querySelector('#runSub').innerHTML=`${fmtDate(r.date)} · ${esc(r.startTime||'')}${r.endTime?`â€“${esc(r.endTime)}`:''} · ${r.success?'Completed':'Not completed'} · ${statusPill(r)}`;
   const allBossesKilled=r.success&&Number(r.bossKills)>0;
   document.querySelector('#runStats').innerHTML=`
-    ${runTiming(r).state==='unfinished'?'<div class="stat-card timing-unfinished"><div class="num">—</div><div class="label">Not completed</div></div>':`<div class="stat-card timing-${runTiming(r).state}"><div class="num">${fmtDuration(r.durationSeconds)}</div><div class="label timing-label">${runTiming(r).label}<small class="timing-margin">${runTiming(r).detail}</small></div></div>`}
-    ${allBossesKilled?`<a class="stat-card boss-kill-stat complete" href="#bosses" data-open-boss-view aria-label="${r.bossKills} boss kills. Open Boss view"><div class="num">${r.bossKills}</div><div class="label">Boss kills <span aria-hidden="true">↗</span></div></a>`:`<div class="stat-card boss-kill-stat"><div class="num">${r.bossKills||0}</div><div class="label">Boss kills</div></div>`}
+    ${runTiming(r).state==='unfinished'?'<div class="stat-card timing-unfinished"><div class="num">â€”</div><div class="label">Not completed</div></div>':`<div class="stat-card timing-${runTiming(r).state}"><div class="num">${fmtDuration(r.durationSeconds)}</div><div class="label timing-label">${runTiming(r).label}<small class="timing-margin">${runTiming(r).detail}</small></div></div>`}
+    ${allBossesKilled?`<a class="stat-card boss-kill-stat complete" href="#bosses" data-open-boss-view aria-label="${r.bossKills} boss kills. Open Boss view"><div class="num">${r.bossKills}</div><div class="label">Boss kills <span aria-hidden="true">â†—</span></div></a>`:`<div class="stat-card boss-kill-stat"><div class="num">${r.bossKills||0}</div><div class="label">Boss kills</div></div>`}
     ${renderWipeStat(r)}
-    <a class="stat-card death-stat-link ${r.deaths>0?'has-deaths':r.deaths===0?'no-deaths':''}" href="#incidents" aria-label="${typeof r.deaths==='number'?r.deaths:'Unknown'} player deaths. Open Damage and deaths"><div class="num">${typeof r.deaths==='number'?r.deaths:'—'}</div><div class="label">Player deaths <span aria-hidden="true">↗</span></div></a>`;
+    <a class="stat-card death-stat-link ${r.deaths>0?'has-deaths':r.deaths===0?'no-deaths':''}" href="#incidents" aria-label="${typeof r.deaths==='number'?r.deaths:'Unknown'} player deaths. Open Damage and deaths"><div class="num">${typeof r.deaths==='number'?r.deaths:'â€”'}</div><div class="label">Player deaths <span aria-hidden="true">â†—</span></div></a>`;
   document.querySelector('#encounters').innerHTML=(r.encounters||[]).map((e,i)=>`
     <div class="encounter-row"><div><strong>${esc(e.name)}</strong><span>Attempt ${1+r.encounters.slice(0,i).filter(x=>x.name===e.name).length}</span>${bossPullEvidence(e,r,true)}</div>
-    <div class="run-meta"><span>${e.durationSeconds?fmtDuration(e.durationSeconds):'—'}</span><span class="pill ${e.success?'kill':'wipe'}">${e.success?'Kill':'Wipe'}</span></div></div>`).join('')||'<p class="muted">No encounter markers available.</p>';
+    <div class="run-meta"><span>${e.durationSeconds?fmtDuration(e.durationSeconds):'â€”'}</span><span class="pill ${e.success?'kill':'wipe'}">${e.success?'Kill':'Wipe'}</span></div></div>`).join('')||'<p class="muted">No encounter markers available.</p>';
   document.querySelector('#party').innerHTML=(r.players||[]).map(p=>`<span class="party-chip ${String(p).includes('Rinse')?'self':''}">${esc(p)} ${playerRoleBadge(r,p)}</span>`).join('');
   const db=r.deathBreakdown||{};
   document.querySelector('#deaths').innerHTML=Object.keys(db).length?Object.entries(db).sort((a,b)=>b[1]-a[1]).map(([p,n])=>`<div class="death-row"><span>${esc(p)}</span><strong>${n}</strong></div>`).join(''):'<p class="muted">Detailed death breakdown unavailable.</p>';
@@ -929,7 +929,7 @@ function setupImporter(){
     if(!file)return;
     if(file.size>25*1024*1024){status.innerHTML='<strong>File is too large</strong><span>Select a processed M+ Recap JSON file smaller than 25 MB.</span>';return;}
     if(!file.name.toLowerCase().endsWith('.json')){status.innerHTML='<strong>Unsupported file</strong><span>Raw combat logs are not accepted. Select a processed M+ Recap JSON file.</span>';return;}
-    status.innerHTML=`<strong>Reading ${esc(file.name)}</strong><span>Checking the reviewed-run format…</span>`;
+    status.innerHTML=`<strong>Reading ${esc(file.name)}</strong><span>Checking the reviewed-run formatâ€¦</span>`;
     preview.innerHTML='';
     try{
       const text=await file.text(),raw=JSON.parse(text);
@@ -939,13 +939,13 @@ function setupImporter(){
       if(runs.some(r=>isPublished(r.id)))throw new Error('This file updates a published run. Send it to Codex to update the permanent library.');
       preview.innerHTML=runs.map(r=>`<div class="import-card">
         <div><div class="eyebrow">${esc(r.date)} · ${r.keyLevel?`MYTHIC +${r.keyLevel}`:'MYTHIC+'}</div><h3>${esc(r.dungeon)}</h3>
-        <p>${isReviewed(r)?'Includes AI coaching review':'Facts only'} · ${r.bossKills??'—'} boss kills · ${r.bossWipes??'—'} wipes</p></div>${statusPill(r)}
+        <p>${isReviewed(r)?'Includes AI coaching review':'Facts only'} · ${r.bossKills??'â€”'} boss kills · ${r.bossWipes??'â€”'} wipes</p></div>${statusPill(r)}
       </div>`).join('');
       document.querySelector('#confirmImport').disabled=false;
       document.querySelector('#confirmImport').onclick=()=>{
         const results=runs.map(importOne),updated=results.filter(x=>x.updated).length,added=results.length-updated;
         status.innerHTML=`<strong>Saved as local draft</strong><span>${added?`${added} new run${added===1?'':'s'} added. `:''}${updated?`${updated} existing run${updated===1?'':'s'} upgraded with the reviewed data.`:''}</span>`;
-        preview.innerHTML+=`<div class="hero-actions"><a class="button" href="run.html?id=${encodeURIComponent(results[0].run.id)}">Open reviewed run →</a><a class="button secondary" href="index.html">Dashboard</a></div>`;
+        preview.innerHTML+=`<div class="hero-actions"><a class="button" href="run.html?id=${encodeURIComponent(results[0].run.id)}">Open reviewed run â†’</a><a class="button secondary" href="index.html">Dashboard</a></div>`;
         document.querySelector('#confirmImport').disabled=true;
       };
       status.innerHTML=`<strong>${runs.length} reviewed run${runs.length===1?'':'s'} ready</strong><span>Importing a review with the same run ID updates the existing entry rather than duplicating it.</span>`;
@@ -1037,7 +1037,7 @@ function renderTagInsights(runs){
     const rows=tag?items.filter(it=>it.tags.includes(tag)):items;
     listEl.innerHTML=rows.length?rows.slice().reverse().map(it=>`
       <a class="card linked-card" href="run.html?id=${encodeURIComponent(it.run.id)}">
-        <p>${esc(it.text)}</p><span>${esc(SOURCE_LABELS[it.source]||it.source)} · ${fmtDate(it.run.date)} →</span>
+        <p>${esc(it.text)}</p><span>${esc(SOURCE_LABELS[it.source]||it.source)} · ${fmtDate(it.run.date)} â†’</span>
       </a>`).join(''):'<div class="card"><p>No notes carry that tag yet.</p></div>';
   };
   cloudEl.querySelectorAll('.tag-chip').forEach(btn=>btn.addEventListener('click',()=>{
@@ -1061,7 +1061,7 @@ function renderResolvedList(runs){
     <div class="focus-card">
       <a href="run.html?id=${encodeURIComponent(x.run.id)}"><span>${esc(x.run.dungeon)}${x.run.keyLevel?` +${x.run.keyLevel}`:''}</span><strong>${esc(x.text)}</strong></a>
       <button class="resolve-btn" data-key="${esc(x.key)}" type="button">Reopen</button>
-    </div>`).join(''):'<div class="card"><p>Nothing marked resolved yet — resolved priorities from the dashboard will show up here.</p></div>';
+    </div>`).join(''):'<div class="card"><p>Nothing marked resolved yet â€” resolved priorities from the dashboard will show up here.</p></div>';
   el.querySelectorAll('.resolve-btn').forEach(btn=>btn.addEventListener('click',()=>{
     const r=loadResolved();r.delete(btn.dataset.key);saveResolved(r);renderResolvedList(runs);
   }));
