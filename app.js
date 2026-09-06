@@ -623,6 +623,17 @@ function renderVerifiedActions(g){
   const types=['interrupt','cleanse','control','move','soak','defensive'];
   return (g?.verifiedActions||[]).filter(x=>types.includes(x.type)&&x.sourceIds?.length).map(x=>`<span class="verified-action action-${x.type}"><span aria-hidden="true">↗</span> Opportunity: ${esc(x.label)}</span>`).join('');
 }
+let activeReportRole='';
+function perspectiveMechanicTactic(g,h){
+ const tailored=g?.roleTactics?.[activeReportRole];
+ if(tailored)return tailored;
+ if(Number(h?.spellId)===0){
+  if(activeReportRole==='Tank')return 'Gather and control enemies before the party resumes. Keep hostile melee facing and reach away from party members; kite Infernal contact on Lithiel.';
+  if(activeReportRole==='Healer')return 'Let the tank establish control before moving in to heal. Stay outside hostile melee reach and keep enough distance to react if an enemy changes target.';
+  if(activeReportRole==='DPS')return 'Let the tank establish control before attacking. Stay outside hostile melee reach and stop damage briefly if an enemy changes target.';
+ }
+ return g?.tactic||'Check the source, hit amount and surrounding events in the timeline.';
+}
 function renderSpellHelp(h,v){
   const known=v?.spellGuide?.[h.spellId],label=esc(h.spell);
   const g=known||{
@@ -638,7 +649,7 @@ function renderSpellHelp(h,v){
   ${g.verifiedActions?.length?`<div class="verified-counterplay"><h5>Opportunity to prevent damage</h5><div class="spell-action-badges">${renderVerifiedActions(g)}</div><p>Watch for this mechanic next time and use the response below. Damage was recorded and a counter is known; whether it was available in this moment is not established.</p></div>`:''}
   <div class="spell-caster"><h5>Source of this hit</h5><p>${esc(h.source||'Not recorded')}</p></div>
   <div class="spell-card-section"><h5>What happens</h5><p>${esc(g.description)}</p></div>
-  <div class="spell-card-section spell-action"><h5>Next time — what to do</h5><p>${esc(g.tactic)}</p></div>
+  <div class="spell-card-section spell-action"><h5>Next time — what to do</h5><p>${esc(perspectiveMechanicTactic(g,h))}</p></div>
   <div class="spell-options"><div><h5>Interrupt</h5><p>${esc(g.interrupt)}</p></div><div><h5>Dispel</h5><p>${esc(g.dispel)}</p></div></div>
   <footer class="spell-card-sources"><h5>${known?'Tactics sources':'Evidence status'}</h5>${known?researchLinks(v,g.sourceIds):'<p>Source and spell ID come from this run’s combat log. Tactics research is pending; this hit alone does not establish a player mistake.</p>'}</footer></template></span>`;
 }
@@ -762,6 +773,7 @@ function renderReview(r,perspective=runPerspective(r)){
   const v=r.review||{},el=document.querySelector('#reviewSection');
   const empty='<p class="muted">No reviewed information is available in this section yet.</p>';
   const meta=perspectiveMeta(r,perspective.player),subject=reviewSubjectPlayer(r),isOriginal=perspective.player===subject,subjectName=playerParts(subject).name||'the original character';
+  activeReportRole=meta.role;
   const overview=perspective.mode==='party'
    ?`${renderPartyUtility(r)}<div class="review-heading"><div><div class="eyebrow">PARTY OVERVIEW</div><h2>${esc(v.verdict||'Factual run report')}</h2><p>${esc(v.summary||'Shared boss attempts, party activity and deaths recorded for this run.')}</p></div>${v.confidence?`<span class="confidence ${esc(v.confidence)}">${esc(confidenceLabel(v.confidence))}</span>`:''}</div><div class="review-grid">${listBlock('What went well',v.whatWentWell,'positive')}</div>`
    :isOriginal?`${renderPartyUtility(r)}<div class="review-heading"><div><div class="eyebrow">COACHING REVIEW</div><h2>${esc(v.verdict||'Factual run report')}</h2><p>${esc(v.summary||'This run has not been reviewed yet. Boss attempts, party and deaths are available under Run details.')}</p></div>${v.confidence?`<span class="confidence ${esc(v.confidence)}">${esc(confidenceLabel(v.confidence))}</span>`:''}</div><div class="review-grid">${renderRinseChecklist(r)||listBlock('Next-run priorities',v.nextRunPriorities,'priority')}${listBlock('What went well',v.whatWentWell,'positive')}</div><details class="boss-extra"><summary>Recurring issues across your runs</summary>${renderRecurringIssues(loadRuns(),r.id)}</details>`
