@@ -726,14 +726,14 @@ function utilityCharacterName(r,name){
 }
 
 function renderPartyUtility(r){
-  const u=r.utilitySummary,metrics=[['interrupts','Interrupts'],['ccApplications','CC applied'],['dispels','Dispels'],['purges','Purges']];
+  const u=r.utilitySummary,selected=selectedReportPlayer(r),players=[...(r.players||[])].sort((a,b)=>Number(b===selected)-Number(a===selected));
   return `<section class="party-utility"><div class="recap-heading"><div><span class="tactic-eyebrow">YOUR PARTY · FULL RUN</span><h3>Control & dispels</h3></div></div>
-  <p class="muted">Successful interrupts and removals · CC counts affected targets, not casts stopped.</p>
-  <div class="utility-party-grid">${(r.players||[]).map(name=>{
+  <p class="muted">Deaths, avoidable damage, successful interrupts and removals · CC counts affected targets, not casts stopped.</p>
+  <div class="utility-party-grid character-overview-grid">${players.map(name=>{
     const p=u?.players?.find(x=>x.name===name);
-    const classSlug=utilityCharacterClass(r,name).toLowerCase().replace(/[^a-z]+/g,'-');
-    return `<article class="utility-player"${classSlug?` style="--utility-class-art:url('assets/class-bg-${esc(classSlug)}.webp')"`:''}><span class="utility-card-art" aria-hidden="true"></span><header><span class="utility-player-identity">${guildPartyPortrait(name)}${utilityCharacterName(r,name)}</span>${playerRoleBadge(r,name)}</header>
-    <div class="utility-player-stats">${metrics.map(([key,label])=>`<div><b>${p?Number(p[key]||0).toLocaleString('en-GB'):'—'}</b><span>${label}</span></div>`).join('')}</div>
+    const classSlug=utilityCharacterClass(r,name).toLowerCase().replace(/[^a-z]+/g,'-'),recaps=(r.deathRecaps?.deaths||[]).filter(d=>d.player===name),evidence=recaps.map(d=>recapAvoidableEvidence(d,r.review)),avoidable=evidence.reduce((sum,x)=>sum+x.amount,0),avoidableKnown=evidence.some(x=>x.known),metrics=[['deaths','Deaths',Number(r.deathBreakdown?.[name]||0)],['avoidable','Avoidable damage',avoidableKnown?avoidable.toLocaleString('en-GB'):'—'],['interrupts','Interrupts',p?.interrupts??'—'],['ccApplications','CC applied',p?.ccApplications??'—'],['dispels','Dispels',p?.dispels??'—'],['purges','Purges',p?.purges??'—']];
+    return `<article class="utility-player character-overview-card ${name===selected?'is-selected':''}"${classSlug?` style="--utility-class-art:url('assets/class-bg-${esc(classSlug)}.webp')"`:''}><span class="utility-card-art" aria-hidden="true"></span><header><span class="utility-player-identity">${guildPartyPortrait(name)}<span>${name===selected?'<small>SELECTED CHARACTER · THIS RUN</small>':''}${utilityCharacterName(r,name)}</span></span>${playerRoleBadge(r,name)}</header>
+    <div class="utility-player-stats">${metrics.map(([,label,value])=>`<div><b>${esc(String(value))}</b><span>${esc(label)}</span></div>`).join('')}</div>
     ${p?.abilities?.length?`<details><summary>Ability breakdown</summary><ul>${p.abilities.map(b=>`<li><span>${renderUtilityHelp(b)} <small>· ${esc(metrics.find(m=>m[0]===b.kind)?.[1]||b.kind)}</small></span><b>${b.count}</b></li>`).join('')}</ul></details>`:''}</article>`;
   }).join('')}</div>
   ${u?`<details class="tactics-method"><summary>How these counts work</summary><p>${esc(u.method)}</p></details>`:'<p class="muted">Utility counts have not been analysed for this run.</p>'}</section>`;
@@ -743,17 +743,11 @@ function selectedReportPlayer(r){
  const matches=(player,value)=>{if(!value)return false;const parts=playerParts(player),target=typeof value==='object'?value:member;return player===value||rosterKey(parts.name,parts.realm)===value||(target&&rosterKey(parts.name,parts.realm)===rosterKey(target.name,target.realm))};
  return (r.players||[]).find(player=>matches(player,requested))||(r.players||[]).find(player=>matches(player,saved))||(r.players||[]).find(player=>playerParts(player).name.toLowerCase()==='rinse')||(r.players||[])[0]||'';
 }
-function renderCharacterRunSummary(r){
- const player=selectedReportPlayer(r);if(!player)return '';
- const name=playerParts(player).name,role=playerRoleFor(r,player),utility=r.utilitySummary?.players?.find(x=>x.name===player)||{},deaths=Number(r.deathBreakdown?.[player]||0),recaps=(r.deathRecaps?.deaths||[]).filter(d=>d.player===player),evidence=recaps.map(d=>recapAvoidableEvidence(d,r.review)),avoidable=evidence.reduce((sum,x)=>sum+x.amount,0),known=evidence.some(x=>x.known),classSlug=utilityCharacterClass(r,player).toLowerCase().replace(/[^a-z]+/g,'-');
- const metrics=[['Deaths',deaths],['Avoidable damage',known?avoidable.toLocaleString('en-GB'):'—'],['Interrupts',utility.interrupts??'—'],['CC applied',utility.ccApplications??'—'],['Dispels',utility.dispels??'—'],['Purges',utility.purges??'—']];
- return `<section class="character-run-summary"${classSlug?` style="--summary-class-art:url('assets/class-bg-${esc(classSlug)}.webp')"`:''}><span class="character-summary-art" aria-hidden="true"></span><header><span class="utility-player-identity">${deathPlayerPortrait(r,player)}<span><small>SELECTED CHARACTER · THIS RUN</small><strong>${esc(name)}</strong></span></span>${playerRoleBadge(r,player)}</header><div class="character-summary-metrics">${metrics.map(([label,value])=>`<div><b>${esc(String(value))}</b><span>${esc(label)}</span></div>`).join('')}</div></section>`;
-}
 function renderReview(r){
   const v=r.review||{},el=document.querySelector('#reviewSection');
   const empty='<p class="muted">No reviewed information is available in this section yet.</p>';
   activeReportRun=r;
-  const overview=`${renderCharacterRunSummary(r)}${renderPartyUtility(r)}<div class="review-heading"><div><div class="eyebrow">COACHING REVIEW</div><h2>${esc(v.verdict||'Factual run report')}</h2><p>${esc(v.summary||'This run has not been reviewed yet. Boss attempts, party and deaths are available under Run details.')}</p></div>${v.confidence?`<span class="confidence ${esc(v.confidence)}">${esc(confidenceLabel(v.confidence))}</span>`:''}</div><div class="review-grid">${renderRinseChecklist(r)||listBlock('Next-run priorities',v.nextRunPriorities,'priority')}${listBlock('What went well',v.whatWentWell,'positive')}</div><details class="boss-extra"><summary>Recurring issues across your runs</summary>${renderRecurringIssues(loadRuns(),r.id)}</details>`;
+  const overview=`${renderPartyUtility(r)}<div class="review-heading"><div><div class="eyebrow">COACHING REVIEW</div><h2>${esc(v.verdict||'Factual run report')}</h2><p>${esc(v.summary||'This run has not been reviewed yet. Boss attempts, party and deaths are available under Run details.')}</p></div>${v.confidence?`<span class="confidence ${esc(v.confidence)}">${esc(confidenceLabel(v.confidence))}</span>`:''}</div><div class="review-grid">${renderRinseChecklist(r)||listBlock('Next-run priorities',v.nextRunPriorities,'priority')}${listBlock('What went well',v.whatWentWell,'positive')}</div><details class="boss-extra"><summary>Recurring issues across your runs</summary>${renderRecurringIssues(loadRuns(),r.id)}</details>`;
   const panels=[
     ['overview','Overview',overview],
     ['incidents','Damage & deaths',`<div class="report-section-intro"><h2>Damage & deaths</h2><p>Look for opportunity badges to learn which casts to interrupt, channels to control and hazards to avoid. These are possible prevention opportunities, not confirmed missed actions. Open a spell for the response and sources.</p></div>${renderDeathRecaps(r)}${v.incidents?.length?`<details class="death-recap-block death-recaps-group"><summary class="recap-heading"><div><span class="tactic-eyebrow">MECHANICS TO REVIEW</span><h3>Where the run diverged from the tactics</h3></div><span class="tactic-count">${v.incidents.length} ${v.incidents.length===1?'incident':'incidents'}</span></summary><div class="death-recaps-content">${renderIncidents(v,r)}</div></details>`:empty}`],
